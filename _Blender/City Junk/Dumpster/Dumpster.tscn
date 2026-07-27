@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://hqn4x453vjmw"]
+
+[ext_resource type="PackedScene" uid="uid://dvj0nj1rpaxnf" path="res://_Blender/City Junk/Dumpster/Dumpster.glb" id="1_jyk55"]
+[ext_resource type="Material" uid="uid://bdyq2gubmhnyt" path="res://_Blender/City Junk/Dumpster/Dumpster.tres" id="2_xcj18"]
+[ext_resource type="Material" uid="uid://xc0amehop120" path="res://_Blender/City Junk/Dumpster/Dumpster Lid.tres" id="3_8tput"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lfxu0"]
+size = Vector3(0.5564575, 0.6065674, 0.7550354)
+
+[node name="Dumpster" type="RigidBody3D" unique_id=1890881782]
+collision_layer = 2
+collision_mask = 0
+mass = 200.0
+
+[node name="Dumpster2" parent="." unique_id=208830411 instance=ExtResource("1_jyk55")]
+
+[node name="Dumpster" parent="Dumpster2" index="0" unique_id=218099565]
+surface_material_override/0 = ExtResource("2_xcj18")
+
+[node name="Dumpster Lid L" parent="Dumpster2" index="1" unique_id=347124763]
+surface_material_override/0 = ExtResource("3_8tput")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=57577797]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00021362305, 0.30059814, -0.0059661865)
+shape = SubResource("BoxShape3D_lfxu0")
+
+[editable path="Dumpster2"]

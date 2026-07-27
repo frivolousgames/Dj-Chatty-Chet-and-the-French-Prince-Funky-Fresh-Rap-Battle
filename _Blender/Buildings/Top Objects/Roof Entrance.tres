@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://i6sxhdw6xy73"]
+
+[ext_resource type="Texture2D" uid="uid://3iucid4p6oqk" path="res://_Blender/Buildings/Top Objects/Fan Normal.png" id="2_wk6dr"]
+
+[resource]
+albedo_color = Color(0.26953125, 0.26953125, 0.26953125, 1)
+metallic = 0.05
+roughness = 0.46
+normal_texture = ExtResource("2_wk6dr")

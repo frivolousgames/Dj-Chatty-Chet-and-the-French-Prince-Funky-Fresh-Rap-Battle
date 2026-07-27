@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://bs1ddme77upld"]
+
+[ext_resource type="PackedScene" uid="uid://cm2shk2g53ta1" path="res://_Blender/Buildings/Top Objects/Water Tank.glb" id="1_trt7q"]
+[ext_resource type="Material" uid="uid://b5tfjsec0phm4" path="res://_Blender/Buildings/Top Objects/Metal Corrugated 1.tres" id="2_tp118"]
+[ext_resource type="Material" uid="uid://pb4dwa0da760" path="res://_Blender/Buildings/Top Objects/Mteal Rusted 1.tres" id="3_obisj"]
+
+[node name="Water Tank" type="Node3D" unique_id=1180133866]
+
+[node name="Water Tank" parent="." unique_id=763967983 instance=ExtResource("1_trt7q")]
+
+[node name="Roof Water Tower" parent="Water Tank" index="0" unique_id=1340432725]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0068762302, 0.30119145, -0.02350372)
+surface_material_override/0 = ExtResource("2_tp118")
+surface_material_override/1 = ExtResource("3_obisj")
+
+[editable path="Water Tank"]

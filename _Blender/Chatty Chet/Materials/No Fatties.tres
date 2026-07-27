@@ -1,0 +1,13 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bm71tsmljjnw4"]
+
+[ext_resource type="Texture2D" uid="uid://dhghrk32jmr5g" path="res://_Blender/Chatty Chet/Chatty Chet_Sex Machine.png" id="1_d7dx2"]
+[ext_resource type="Texture2D" uid="uid://crywsmqbubd5v" path="res://_Blender/Chatty Chet/Chatty Chet_shirt normal.png" id="2_werrc"]
+
+[resource]
+resource_name = "No Fatties"
+cull_mode = 2
+albedo_texture = ExtResource("1_d7dx2")
+roughness = 0.83
+normal_enabled = true
+normal_texture = ExtResource("2_werrc")
+metadata/_gltf_primary_texture_coord = 0

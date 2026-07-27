@@ -1,0 +1,14 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://7w8urp6ykijc"]
+
+[ext_resource type="Texture2D" uid="uid://bsm478pf0e7bs" path="res://_Blender/Chatty Chet/Chatty Chet_MC Body 1.jpg" id="1_i6gle"]
+[ext_resource type="Texture2D" uid="uid://duqxoxchg32ih" path="res://_Blender/Chatty Chet/Ron big body normals.png" id="2_1n7rs"]
+
+[resource]
+resource_name = "Ron body big"
+cull_mode = 2
+albedo_color = Color(0.47397548, 0.47397578, 0.47397572, 1)
+albedo_texture = ExtResource("1_i6gle")
+roughness = 0.71
+normal_enabled = true
+normal_texture = ExtResource("2_1n7rs")
+metadata/_gltf_primary_texture_coord = 0

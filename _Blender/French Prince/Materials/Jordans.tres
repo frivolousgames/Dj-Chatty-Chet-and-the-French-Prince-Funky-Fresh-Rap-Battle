@@ -1,0 +1,15 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://5y3pl8winkho"]
+
+[ext_resource type="Texture2D" uid="uid://c0vqk2uu2ct5g" path="res://_Blender/French Prince/Clothing Images/Jordans normal.png" id="1_5kqlq"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_t6wc8"]
+load_path = "res://.godot/imported/French Prince_Jordans.png-4969adf4b27ec0df96aa093346c23e55.s3tc.ctex"
+
+[resource]
+resource_name = "Jordans"
+cull_mode = 2
+albedo_texture = SubResource("CompressedTexture2D_t6wc8")
+roughness = 0.8605442
+normal_enabled = true
+normal_texture = ExtResource("1_5kqlq")
+metadata/_gltf_primary_texture_coord = 0

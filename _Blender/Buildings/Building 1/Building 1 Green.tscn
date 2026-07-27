@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://cku8ljwawweb3"]
+
+[ext_resource type="PackedScene" uid="uid://cn70bfhsi8b0g" path="res://_Blender/Buildings/Building 1/Building 1.glb" id="1_jvwbp"]
+[ext_resource type="Material" uid="uid://cckaxfh4q8t3c" path="res://_Blender/Buildings/Building 1/Building 1 Green.tres" id="2_jvwbp"]
+[ext_resource type="Material" uid="uid://02im1ripr70t" path="res://_Blender/Buildings/Asphalt.tres" id="3_c01xo"]
+[ext_resource type="PackedScene" uid="uid://df4n4i8clxdb3" path="res://_Blender/Buildings/Top Objects/Roof Entrance.tscn" id="4_c01xo"]
+[ext_resource type="PackedScene" uid="uid://dwkmcie5cjcnp" path="res://_Blender/Buildings/Top Objects/Roof Fan.tscn" id="5_tuwmi"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lfxu0"]
+size = Vector3(2.0063477, 2.9997864, 2.0010376)
+
+[node name="Building 1" type="StaticBody3D" unique_id=871680850 groups=["Vehicle Static Hit"]]
+collision_layer = 2
+collision_mask = 0
+
+[node name="Building 1" parent="." unique_id=1035405939 instance=ExtResource("1_jvwbp")]
+
+[node name="Building 3" parent="Building 1" index="0" unique_id=1670121792]
+surface_material_override/0 = ExtResource("2_jvwbp")
+surface_material_override/1 = ExtResource("3_c01xo")
+
+[node name="Roof Entrance" parent="Building 1" unique_id=1550113668 instance=ExtResource("4_c01xo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4269104, 2.9948516, -0.10559082)
+
+[node name="Roof Fan" parent="Building 1" unique_id=1301821086 instance=ExtResource("5_tuwmi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1977539, 2.8324585, 0.5606079)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1888071725]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0280762, 1.4967499, 0.0035095215)
+shape = SubResource("BoxShape3D_lfxu0")
+
+[editable path="Building 1"]

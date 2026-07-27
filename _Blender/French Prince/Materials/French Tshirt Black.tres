@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://de1y0d3k6h66q"]
+
+[ext_resource type="Texture2D" uid="uid://dxtlg8jfgi3ol" path="res://_Blender/French Prince/Clothing Images/French Striped Shirt Black.png" id="1_opa8h"]
+[ext_resource type="Texture2D" uid="uid://ckxmseo3l2s42" path="res://_Blender/French Prince/Clothing Images/2 Sided Normal.png" id="2_vmgnx"]
+
+[resource]
+albedo_texture = ExtResource("1_opa8h")
+normal_enabled = true
+normal_texture = ExtResource("2_vmgnx")

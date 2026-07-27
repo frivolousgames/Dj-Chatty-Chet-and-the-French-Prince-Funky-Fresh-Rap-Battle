@@ -1,0 +1,13 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dl1eyi2ji43wq"]
+
+[ext_resource type="Texture2D" uid="uid://bmmb0y0bxobw8" path="res://_Blender/Chatty Chet/Chatty Chet_Black Jorts.png" id="1_ae7ut"]
+[ext_resource type="Texture2D" uid="uid://crsqjxbja5djq" path="res://_Blender/Chatty Chet/Chatty Chet_Jorts Normal.png" id="2_e31bi"]
+
+[resource]
+resource_name = "Ron Jorts big"
+cull_mode = 2
+albedo_texture = ExtResource("1_ae7ut")
+roughness = 0.5
+normal_enabled = true
+normal_texture = ExtResource("2_e31bi")
+metadata/_gltf_primary_texture_coord = 0

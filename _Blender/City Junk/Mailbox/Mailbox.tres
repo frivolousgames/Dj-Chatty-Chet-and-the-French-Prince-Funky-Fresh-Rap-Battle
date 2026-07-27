@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://15phyet6cldk"]
+
+[ext_resource type="Texture2D" uid="uid://cp8vblpsvh3di" path="res://_Blender/City Junk/Mailbox/Mailbox.png" id="1_mrgs4"]
+[ext_resource type="Texture2D" uid="uid://c5qtasdtgmayw" path="res://_Blender/City Junk/Mailbox/Mailbox Normal.png" id="2_ydgsf"]
+
+[resource]
+albedo_texture = ExtResource("1_mrgs4")
+metallic = 1.0
+roughness = 0.46
+normal_enabled = true
+normal_texture = ExtResource("2_ydgsf")

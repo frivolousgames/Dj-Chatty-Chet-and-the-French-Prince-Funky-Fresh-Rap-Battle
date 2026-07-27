@@ -1,0 +1,13 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://36q7yha4018i"]
+
+[ext_resource type="Texture2D" uid="uid://cppxceka0h8uy" path="res://_Blender/French Prince/Clothing Images/Windbreaker.png" id="1_r1skx"]
+[ext_resource type="Texture2D" uid="uid://bmmt1xrw123b6" path="res://_Blender/French Prince/Clothing Images/Windbreaker Normal.png" id="2_kl2pl"]
+
+[resource]
+resource_name = "Colored Long Sleeve"
+cull_mode = 2
+albedo_texture = ExtResource("1_r1skx")
+roughness = 0.61
+normal_enabled = true
+normal_texture = ExtResource("2_kl2pl")
+metadata/_gltf_primary_texture_coord = 0

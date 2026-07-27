@@ -1,0 +1,140 @@
+[gd_scene format=3 uid="uid://di6odykrybq8d"]
+
+[ext_resource type="PackedScene" uid="uid://dmxbqjirjp2dp" path="res://_Blender/French Prince/French Prince.glb" id="1_fdg0a"]
+[ext_resource type="Material" uid="uid://dsbxfflf3jerj" path="res://_Blender/French Prince/Materials/Beret.tres" id="2_xxayv"]
+[ext_resource type="Material" uid="uid://de1y0d3k6h66q" path="res://_Blender/French Prince/Materials/French Tshirt Black.tres" id="3_bg8hf"]
+[ext_resource type="PackedScene" uid="uid://tk5y16m6h1y1" path="res://_Blender/Chatty Chet/Chatty Chet.glb" id="4_t3qis"]
+[ext_resource type="Material" uid="uid://cqgvrben04ath" path="res://_Blender/French Prince/Materials/Frame.tres" id="5_qldcd"]
+[ext_resource type="Material" uid="uid://bltq5ggeopy7h" path="res://_Blender/French Prince/Materials/Glass.tres" id="6_ciqre"]
+[ext_resource type="Material" uid="uid://ct1e1fym1gam" path="res://_Blender/Chatty Chet/Materials/Ron sock big.tres" id="7_ciqre"]
+[ext_resource type="PackedScene" uid="uid://dtetjn6q2f2dw" path="res://_Blender/Skittelz/Skittlez.glb" id="8_aqg8a"]
+
+[node name="Battle" type="Node3D" unique_id=312454677]
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1832492647]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.12, -6.025, -54.965)
+fov = 35.1
+
+[node name="French Prince2" parent="." unique_id=320182299 instance=ExtResource("1_fdg0a")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 21.2, -16.168, -80.026)
+
+[node name="Beret" parent="French Prince2/French Prince/Skeleton3D/Head" parent_id_path=PackedInt32Array(320182299, 79954402) index="0" unique_id=68350094]
+surface_material_override/0 = ExtResource("2_xxayv")
+
+[node name="Rect Sunglasses Hi" parent="French Prince2/French Prince/Skeleton3D/Head" parent_id_path=PackedInt32Array(320182299, 79954402) index="1" unique_id=1337987441]
+transform = Transform3D(-0.12675722, 0.0036855598, 0.00027307295, 0.003670569, 0.12664239, -0.0054100044, -0.00042994283, -0.005399798, -0.12669535, 0.0019049644, 0.11108065, 0.096138)
+
+[node name="Body" parent="French Prince2/French Prince/Skeleton3D" parent_id_path=PackedInt32Array(320182299, 1645039461) index="3" unique_id=114346742]
+"blend_shapes/Long Sleeve Shrink" = 1.0
+blend_shapes/Aa_1 = 0.4007648
+
+[node name="C B Tshirt 2 Sided" parent="French Prince2/French Prince/Skeleton3D" parent_id_path=PackedInt32Array(320182299, 1645039461) index="5" unique_id=1155397387]
+"blend_shapes/Jacket Shrink" = 1.0
+surface_material_override/0 = ExtResource("3_bg8hf")
+
+[node name="C L Jeans lo" parent="French Prince2/French Prince/Skeleton3D" parent_id_path=PackedInt32Array(320182299, 1645039461) index="7" unique_id=1533615448]
+blend_shapes/Hightops = 1.0
+blend_shapes/Jacket = 1.0
+
+[node name="Hair" parent="French Prince2/French Prince/Skeleton3D" parent_id_path=PackedInt32Array(320182299, 1645039461) index="9" unique_id=1520954331]
+blend_shapes/Beret = 1.0
+
+[node name="Scarf" parent="French Prince2/French Prince/Skeleton3D" parent_id_path=PackedInt32Array(320182299, 1645039461) index="11" unique_id=1064520534]
+"blend_shapes/Small Collar" = 1.0
+
+[node name="teeth bottom lo" parent="French Prince2/French Prince/Skeleton3D" parent_id_path=PackedInt32Array(320182299, 1645039461) index="12" unique_id=1544796734]
+blend_shapes/Aa_1 = 0.4007648
+
+[node name="Tongue lo" parent="French Prince2/French Prince/Skeleton3D" parent_id_path=PackedInt32Array(320182299, 1645039461) index="14" unique_id=2288942]
+blend_shapes/Aa_1 = 0.4007648
+
+[node name="Chatty Chet2" parent="." unique_id=1739436542 instance=ExtResource("4_t3qis")]
+transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, 11.245651, -12.065739, -79.7222)
+
+[node name="Chatty Chet" parent="Chatty Chet2" index="0" unique_id=1684206729]
+transform = Transform3D(7.471, 0, 0, 0, 7.471, 0, 0, 0, 7.471, 3.9087386, -4.2088013, 0.13717651)
+
+[node name="Round Glasses Lo" parent="Chatty Chet2/Chatty Chet/Skeleton3D/Head" parent_id_path=PackedInt32Array(1739436542, 262123475) index="0" unique_id=743964047]
+surface_material_override/0 = ExtResource("5_qldcd")
+surface_material_override/1 = ExtResource("6_ciqre")
+
+[node name="Body" parent="Chatty Chet2/Chatty Chet/Skeleton3D" parent_id_path=PackedInt32Array(1739436542, 1517257518) index="3" unique_id=1461483818]
+"blend_shapes/Long Sleeve Shrink" = 1.0
+
+[node name="C B T-Shirt" parent="Chatty Chet2/Chatty Chet/Skeleton3D" parent_id_path=PackedInt32Array(1739436542, 1517257518) index="5" unique_id=609558423]
+blend_shapes/Untucked = 1.0
+blend_shapes/Hoodie = 1.0
+
+[node name="C F Short Socks" parent="Chatty Chet2/Chatty Chet/Skeleton3D" parent_id_path=PackedInt32Array(1739436542, 1517257518) index="6" unique_id=1208650935]
+"blend_shapes/High Tops" = 1.0
+surface_material_override/0 = ExtResource("7_ciqre")
+
+[node name="C L Jorts Lo" parent="Chatty Chet2/Chatty Chet/Skeleton3D" parent_id_path=PackedInt32Array(1739436542, 1517257518) index="8" unique_id=420021717]
+blend_shapes/Hoodie = 1.0
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=491785567]
+light_energy = 0.683
+light_volumetric_fog_energy = 0.842
+light_angular_distance = 30.3
+light_specular = 0.0
+shadow_bias = 0.991
+
+[node name="Skittlez" parent="." unique_id=2012853682 instance=ExtResource("8_aqg8a")]
+transform = Transform3D(-0.93, 0, -1.404261e-07, 0, 0.93, 0, 1.404261e-07, 0, -0.93, 57.162373, -9.67253, -49.636963)
+
+[node name="Skeleton3D" parent="Skittlez/Main Character Rig" parent_id_path=PackedInt32Array(2012853682, 596653033) index="0" unique_id=1494924437]
+bones/0/rotation = Quaternion(-0.012658386, 0.999805, -0.015074568, -0.0016053434)
+bones/12/rotation = Quaternion(0.011929125, 0.9978359, -0.064660236, 0.00058579445)
+bones/13/rotation = Quaternion(0.011929053, 0.9978359, -0.06466022, 0.0005857994)
+bones/16/rotation = Quaternion(0.0017332691, 0.99884194, -0.048078366, -0.00067640014)
+bones/17/position = Vector3(-0.6499506, 0.7394897, 0.0027870755)
+bones/17/rotation = Quaternion(0.0017336095, 0.99884194, -0.048078373, -0.0006763999)
+bones/18/position = Vector3(-0.95647883, 0.7700292, -0.0010621632)
+bones/18/rotation = Quaternion(0.0017327985, 0.99884194, -0.048078366, -0.000676519)
+bones/19/position = Vector3(-1.2545967, 0.72562885, 0.0027871057)
+bones/19/rotation = Quaternion(0.0017336113, 0.9988418, -0.04807841, -0.00067639997)
+bones/20/position = Vector3(-0.36407006, 0.32065466, 0.002787185)
+bones/20/rotation = Quaternion(0.0017334071, 0.9988418, -0.04807841, -0.0006764001)
+bones/21/position = Vector3(-0.6491265, 0.3256278, 0.0027871726)
+bones/21/rotation = Quaternion(0.0017327982, 0.9988418, -0.048078366, -0.00067651895)
+bones/22/position = Vector3(-0.9557915, 0.3162773, 0.0027871556)
+bones/22/rotation = Quaternion(0.0017336094, 0.99884194, -0.048078366, -0.0006763999)
+bones/23/position = Vector3(-1.2517456, 0.302968, 0.0027871418)
+bones/24/position = Vector3(-0.36464566, -0.062115774, 0.0027872114)
+bones/24/rotation = Quaternion(0.0017332684, 0.9988418, -0.048078343, -0.0006763999)
+bones/25/position = Vector3(-0.64970237, -0.0571422, 0.002787199)
+bones/25/rotation = Quaternion(0.0017327993, 0.99884194, -0.048078395, -0.000676519)
+bones/26/position = Vector3(-0.95636714, -0.06649337, 0.0027872133)
+bones/26/rotation = Quaternion(0.0017334741, 0.99884194, -0.04807838, -0.0006763999)
+bones/27/position = Vector3(-1.2543488, -0.071002625, 0.0027871847)
+bones/27/rotation = Quaternion(0.0017330648, 0.99884194, -0.048078366, -0.0006764)
+bones/28/position = Vector3(-0.9686681, -0.4853958, 0.002787249)
+bones/28/rotation = Quaternion(0.0017329288, 0.99884194, -0.048078366, -0.0006763999)
+bones/29/position = Vector3(-1.2666498, -0.4899053, 0.002787254)
+bones/29/rotation = Quaternion(0.001733337, 0.99884194, -0.048078366, -0.0006764)
+bones/87/rotation = Quaternion(-3.122909e-08, 0.97122234, -0.23817503, -7.3325246e-08)
+
+[node name="jaw" parent="Skittlez/Main Character Rig/Skeleton3D" index="0" unique_id=247749768]
+transform = Transform3D(-0.9999995, -2.6309863e-08, -5.631591e-07, 5.1318784e-07, -0.4090619, -0.9125061, -2.0535663e-07, -0.9125061, 0.40906197, -1.0826625e-08, 1.7936187, -0.0059610065)
+
+[node name="teeth bottom lo" parent="Skittlez/Main Character Rig/Skeleton3D/jaw" index="0" unique_id=443647160]
+blend_shapes/Aa_1 = 0.4007648
+
+[node name="Bone_001" parent="Skittlez/Main Character Rig/Skeleton3D" index="1" unique_id=139546301]
+transform = Transform3D(0.9999996, 1.3038516e-08, -7.916242e-09, -7.858034e-10, 0.9999995, 1.3411045e-07, 9.313226e-09, -7.4505806e-08, 0.9999994, -0.050657198, 1.8900427, -0.07888766)
+
+[node name="Head" parent="Skittlez/Main Character Rig/Skeleton3D" index="2" unique_id=1475528591]
+transform = Transform3D(-0.9997143, 0.023730721, -0.0027117264, 0.023882216, 0.99135303, -0.12902667, -0.00037361775, -0.12905458, -0.991637, -0.0010970598, 1.7845274, 0.021708434)
+
+[node name="Body" parent="Skittlez/Main Character Rig/Skeleton3D" index="3" unique_id=1067898362]
+blend_shapes/Aa_1 = 0.4007648
+
+[node name="C B T-Shirt" parent="Skittlez/Main Character Rig/Skeleton3D" index="4" unique_id=281480671]
+blend_shapes/Untucked = 1.0
+
+[node name="Tongue lo" parent="Skittlez/Main Character Rig/Skeleton3D" index="10" unique_id=1263173090]
+blend_shapes/Aa_1 = 0.4007648
+
+[editable path="French Prince2"]
+[editable path="Chatty Chet2"]
+[editable path="Skittlez"]

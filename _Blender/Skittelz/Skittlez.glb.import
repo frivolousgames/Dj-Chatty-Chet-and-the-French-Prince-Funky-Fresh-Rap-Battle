@@ -1,0 +1,118 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://dtetjn6q2f2dw"
+path="res://.godot/imported/Skittlez.glb-d4af9992cff3a0399d92f48d4edc1cc3.scn"
+
+[deps]
+
+source_file="res://_Blender/Skittelz/Skittlez.glb"
+dest_files=["res://.godot/imported/Skittlez.glb-d4af9992cff3a0399d92f48d4edc1cc3.scn"]
+
+[params]
+
+nodes/root_type=""
+nodes/root_name=""
+nodes/root_script=null
+mesh_library/use_node_names_as_mesh_names=false
+array_mesh/deduplicate_surfaces=true
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+nodes/import_as_skeleton_bones=false
+nodes/use_name_suffixes=true
+nodes/use_node_type_suffixes=true
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=false
+animation/remove_immutable_tracks=true
+animation/import_rest_as_RESET=false
+import_script/path=""
+materials/extract=0
+materials/extract_format=0
+materials/extract_path=""
+_subresources={
+"materials": {
+"Eminem Hair": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://_Blender/Skittelz/Materials/Eminem Hair.tres",
+"use_external/path": "uid://c2sxfyrt8kbtj"
+},
+"Gums": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://_Blender/Skittelz/Materials/Gums.tres",
+"use_external/path": "uid://dxtjywwr057mr"
+},
+"Mouth": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://_Blender/Skittelz/Materials/Mouth.tres",
+"use_external/path": "uid://bujllpatpci6l"
+},
+"No Fatties": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://_Blender/Skittelz/Materials/Moms Spaghetti Shirt.tres",
+"use_external/path": "uid://clu60lfh4nnvf"
+},
+"Ron Head": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://_Blender/Skittelz/Materials/Ron Head.tres",
+"use_external/path": "uid://tirkwm77u7le"
+},
+"Ron Jeans Big": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://_Blender/Skittelz/Materials/Ron Jeans Big.tres",
+"use_external/path": "uid://boyoovyhxu86v"
+},
+"Ron body big": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://_Blender/Skittelz/Materials/Ron body big.tres",
+"use_external/path": "uid://dw4su20ixejis"
+},
+"Ron dad shoes big": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://_Blender/Skittelz/Materials/Ron dad shoes big.tres",
+"use_external/path": "uid://78605aokd2nl"
+},
+"Ron sock big": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://_Blender/Skittelz/Materials/Ron sock big.tres",
+"use_external/path": "uid://ddcdp0inr1564"
+},
+"Ron sock top big": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://_Blender/Skittelz/Materials/Ron sock top big.tres",
+"use_external/path": "uid://dodvl3rdiga1w"
+},
+"Ron tongue big": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://_Blender/Skittelz/Materials/Ron tongue big.tres",
+"use_external/path": "uid://dk3fdxuepx78u"
+},
+"Teeth": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://_Blender/Skittelz/Materials/Teeth.tres",
+"use_external/path": "uid://fptylaknwrvh"
+},
+"eye": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://_Blender/Skittelz/Materials/eye.tres",
+"use_external/path": "uid://ipc6uilraa3u"
+},
+"ron eyebrows big": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://_Blender/Skittelz/Materials/ron eyebrows big.tres",
+"use_external/path": "uid://ct2ppj7xg35yp"
+}
+}
+}
+gltf/naming_version=2
+gltf/embedded_image_handling=1
+gltf/texture_map_mode=1

@@ -1,0 +1,15 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://do7fs0la3k7m1"]
+
+[ext_resource type="Texture2D" uid="uid://b7mftcri13bld" path="res://_Blender/Chatty Chet/Chatty Chet_MC Face 1.png" id="1_wlvkc"]
+[ext_resource type="Texture2D" uid="uid://7iach86kt1d7" path="res://_Blender/Chatty Chet/Chatty Chet_MC Face 1 Normal.png" id="2_s1fib"]
+
+[resource]
+resource_name = "Ron Head"
+cull_mode = 2
+albedo_color = Color(0.4745098, 0.4745098, 0.4745098, 1)
+albedo_texture = ExtResource("1_wlvkc")
+roughness = 0.71
+normal_enabled = true
+normal_scale = 0.3
+normal_texture = ExtResource("2_s1fib")
+metadata/_gltf_primary_texture_coord = 0

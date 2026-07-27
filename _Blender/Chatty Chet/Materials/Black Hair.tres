@@ -1,0 +1,15 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://km640m07qcxj"]
+
+[ext_resource type="Texture2D" uid="uid://cb726aes245oc" path="res://_Blender/French Prince/Texture Images/Hair Brown.jpg" id="1_j0nk4"]
+[ext_resource type="Texture2D" uid="uid://bntrcff7fqqd5" path="res://_Blender/French Prince/Texture Images/Hair Brown Normal.png" id="2_2u3r0"]
+
+[resource]
+resource_name = "Black Hair"
+cull_mode = 2
+albedo_color = Color(0, 0, 0, 1)
+albedo_texture = ExtResource("1_j0nk4")
+roughness = 0.83
+normal_enabled = true
+normal_scale = 2.58
+normal_texture = ExtResource("2_2u3r0")
+uv1_scale = Vector3(6.68, 6.68, 6.68)

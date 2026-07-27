@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://05s1rkah5ykw"]
+
+[resource]
+resource_name = "Gums"
+cull_mode = 2
+albedo_color = Color(0.9063318, 0.44271812, 0.3964894, 1)
+roughness = 0.39999998

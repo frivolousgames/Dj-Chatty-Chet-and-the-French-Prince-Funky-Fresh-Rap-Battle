@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bdyq2gubmhnyt"]
+
+[ext_resource type="Texture2D" uid="uid://6wepgyv37trd" path="res://_Blender/City Junk/Dumpster/Dumpster Color.png" id="1_jsi4i"]
+[ext_resource type="Texture2D" uid="uid://bu3tf1yyr6rmv" path="res://_Blender/City Junk/Dumpster/Dumpster Color Normal.png" id="2_v33mx"]
+
+[resource]
+albedo_texture = ExtResource("1_jsi4i")
+normal_enabled = true
+normal_texture = ExtResource("2_v33mx")
+uv1_scale = Vector3(6, 6, 6)

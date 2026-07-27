@@ -1,0 +1,13 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://boyoovyhxu86v"]
+
+[ext_resource type="Texture2D" uid="uid://b0oux71ttkgy3" path="res://_Blender/Skittelz/Clothing Textures/Jeans Blue.png" id="1_v23nc"]
+[ext_resource type="Texture2D" uid="uid://c1itiqdlq5fy0" path="res://_Blender/Skittelz/Clothing Textures/Jeans Normal.png" id="2_3e0xj"]
+
+[resource]
+resource_name = "Ron Jeans Big"
+cull_mode = 2
+albedo_color = Color(0.9063318, 0.9063318, 0.9063318, 1)
+albedo_texture = ExtResource("1_v23nc")
+roughness = 0.5
+normal_enabled = true
+normal_texture = ExtResource("2_3e0xj")

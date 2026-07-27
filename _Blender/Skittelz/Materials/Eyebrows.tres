@@ -1,0 +1,14 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://ct2ppj7xg35yp"]
+
+[ext_resource type="Texture2D" uid="uid://xuia60ipdsfu" path="res://_Blender/Main Character/Textures/Hair Brown.jpg" id="1_b1mmp"]
+[ext_resource type="Texture2D" uid="uid://bntrcff7fqqd5" path="res://_Blender/French Prince/Texture Images/Hair Brown Normal.png" id="2_hwgv0"]
+
+[resource]
+resource_name = "ron eyebrows big"
+cull_mode = 2
+albedo_texture = ExtResource("1_b1mmp")
+roughness = 0.8
+normal_enabled = true
+normal_scale = 10.19
+normal_texture = ExtResource("2_hwgv0")
+uv1_scale = Vector3(2.355, 2.355, 2.355)

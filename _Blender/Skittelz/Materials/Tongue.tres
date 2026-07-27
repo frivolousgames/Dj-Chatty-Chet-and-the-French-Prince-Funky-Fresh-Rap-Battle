@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dk3fdxuepx78u"]
+
+[resource]
+resource_name = "Ron tongue big"
+cull_mode = 2
+albedo_color = Color(0.9063318, 0.3632622, 0.3586339, 1)
+roughness = 0.5

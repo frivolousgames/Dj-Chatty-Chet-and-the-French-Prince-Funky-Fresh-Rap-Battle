@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cngkgk3cb2v6j"]
+
+[ext_resource type="Texture2D" uid="uid://ikljeu16bby2" path="res://_Blender/Roads/Parking Lot Small.png" id="1_svhs7"]
+[ext_resource type="Texture2D" uid="uid://kmj8m6i05ee2" path="res://_Blender/Roads/Parking Lot Small Normal.png" id="2_svhs7"]
+
+[resource]
+albedo_color = Color(0.96875, 0.9992676, 1, 1)
+albedo_texture = ExtResource("1_svhs7")
+normal_enabled = true
+normal_texture = ExtResource("2_svhs7")

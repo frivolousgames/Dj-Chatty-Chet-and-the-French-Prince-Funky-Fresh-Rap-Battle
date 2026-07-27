@@ -1,0 +1,14 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://ipc6uilraa3u"]
+
+[ext_resource type="Texture2D" uid="uid://ctsaex8581xmr" path="res://_Blender/Skittelz/Ron big eye Base Color blue.png" id="1_4c8mu"]
+[ext_resource type="Texture2D" uid="uid://c4vaxpny4qg31" path="res://_Blender/Skittelz/Ron big eye normal.png" id="2_n1sg6"]
+
+[resource]
+resource_name = "eye"
+cull_mode = 2
+albedo_color = Color(0.9063318, 0.9063318, 0.9063318, 1)
+albedo_texture = ExtResource("1_4c8mu")
+roughness = 0.0
+normal_enabled = true
+normal_scale = 0.68
+normal_texture = ExtResource("2_n1sg6")

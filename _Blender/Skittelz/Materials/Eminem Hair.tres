@@ -1,0 +1,14 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://c2sxfyrt8kbtj"]
+
+[ext_resource type="Texture2D" uid="uid://d3pq1uxxs8l1g" path="res://_Blender/Main Character/Textures/Eminem Hair.png" id="1_sekkq"]
+[ext_resource type="Texture2D" uid="uid://dqdjcph711h08" path="res://_Blender/Main Character/Textures/Eminem Hair Normal.png" id="2_bwmy3"]
+
+[resource]
+resource_name = "Eminem Hair"
+cull_mode = 2
+albedo_color = Color(0.9063318, 0.9063318, 0.9063318, 1)
+albedo_texture = ExtResource("1_sekkq")
+roughness = 0.5
+normal_enabled = true
+normal_scale = -0.9
+normal_texture = ExtResource("2_bwmy3")

@@ -1,0 +1,13 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dw4su20ixejis"]
+
+[ext_resource type="Texture2D" uid="uid://5oshkqb48e5s" path="res://_Blender/Main Character/Textures/MC Body 1.jpg" id="1_3gjqj"]
+[ext_resource type="Texture2D" uid="uid://bj78r1txati0e" path="res://_Blender/Main Character/Textures/MC Body 1 Normal.png" id="2_pr6ci"]
+
+[resource]
+resource_name = "Ron body big"
+cull_mode = 2
+albedo_texture = ExtResource("1_3gjqj")
+roughness = 0.66
+normal_enabled = true
+normal_scale = 0.68
+normal_texture = ExtResource("2_pr6ci")

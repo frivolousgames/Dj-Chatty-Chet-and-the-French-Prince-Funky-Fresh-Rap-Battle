@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cqgvrben04ath"]
+
+[resource]
+resource_name = "Frame"
+cull_mode = 2
+albedo_color = Color(0.17388636, 0.17344445, 0.16551563, 1)
+metallic = 1.0
+metallic_specular = 0.52
+roughness = 0.25

@@ -1,0 +1,12 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cci6j53w1o7i4"]
+
+[ext_resource type="Texture2D" uid="uid://csx4rl0ebnnss" path="res://_Blender/Main Character/Materials/Masks/Gas Mask/Metal Normal.png" id="1_ssmfi"]
+
+[resource]
+albedo_color = Color(0.359375, 0.359375, 0.359375, 1)
+metallic = 0.84
+roughness = 0.48
+normal_enabled = true
+normal_scale = 0.37
+normal_texture = ExtResource("1_ssmfi")
+uv1_scale = Vector3(5, 5, 5)

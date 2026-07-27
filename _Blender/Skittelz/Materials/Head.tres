@@ -1,0 +1,13 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://tirkwm77u7le"]
+
+[ext_resource type="Texture2D" uid="uid://dnwlewwep737t" path="res://_Blender/Main Character/Textures/MC Face 1.png" id="1_uxh2f"]
+[ext_resource type="Texture2D" uid="uid://b1vgte17bfda1" path="res://_Blender/Main Character/Textures/MC Face 1 Normal.png" id="2_bukxa"]
+
+[resource]
+resource_name = "Ron Head"
+cull_mode = 2
+albedo_texture = ExtResource("1_uxh2f")
+roughness = 0.66
+normal_enabled = true
+normal_scale = 0.68
+normal_texture = ExtResource("2_bukxa")

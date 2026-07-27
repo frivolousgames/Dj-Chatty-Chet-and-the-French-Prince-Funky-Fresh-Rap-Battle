@@ -1,0 +1,92 @@
+[gd_scene format=3 uid="uid://cgwdxbwb2gn77"]
+
+[ext_resource type="PackedScene" uid="uid://dnrqli5ttp8d6" path="res://_Blender/City Junk/Hydrant/Fire Hydrant.glb" id="1_bu2hy"]
+[ext_resource type="Script" uid="uid://dsa866xw2k28y" path="res://_Blender/City Junk/Hydrant/FireHydrant.cs" id="1_nqob1"]
+[ext_resource type="Material" uid="uid://i8duthoxydsn" path="res://_Blender/City Junk/Hydrant/Mteal Rusted Red.tres" id="2_4sdre"]
+[ext_resource type="Texture2D" uid="uid://cg2bpyulbv2qd" path="res://_Writing/particle.png" id="3_4sdre"]
+[ext_resource type="PackedScene" uid="uid://bptq37y60vtxm" path="res://_Blender/City Junk/Hydrant/Fire Hydrant Hole.glb" id="5_6x6fe"]
+[ext_resource type="Material" uid="uid://dqawbvcaq15ul" path="res://_Blender/City Junk/Hydrant/Flat Black.tres" id="6_nhfbm"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_lfxu0"]
+height = 0.3701172
+radius = 0.0703125
+
+[sub_resource type="Gradient" id="Gradient_nqob1"]
+colors = PackedColorArray(0.94262296, 0.94262296, 0.94262296, 0.94262296, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_6x6fe"]
+gradient = SubResource("Gradient_nqob1")
+
+[sub_resource type="Curve" id="Curve_6x6fe"]
+_data = [Vector2(0, 0.123595595), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_nqob1"]
+curve = SubResource("Curve_6x6fe")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_lfxu0"]
+inherit_velocity_ratio = 0.07
+direction = Vector3(0, 1, 0)
+spread = 4.764
+initial_velocity_min = 5.0
+initial_velocity_max = 10.0
+gravity = Vector3(0, -14.97, 0)
+linear_accel_min = -2.2351742e-06
+linear_accel_max = -2.2351742e-06
+scale_min = 0.0
+scale_curve = SubResource("CurveTexture_nqob1")
+color = Color(0.9098039, 1, 0.99607843, 0.11764706)
+color_ramp = SubResource("GradientTexture1D_6x6fe")
+collision_mode = 1
+collision_friction = 0.0
+collision_bounce = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r6c0r"]
+transparency = 1
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("3_4sdre")
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_hjb8m"]
+material = SubResource("StandardMaterial3D_r6c0r")
+
+[node name="Fire Hydrant" type="Node3D" unique_id=1751279221]
+
+[node name="RigidBody3D" type="RigidBody3D" parent="." unique_id=1485573775]
+collision_layer = 3
+collision_mask = 3
+
+[node name="Fire Hydrant2" parent="RigidBody3D" unique_id=402206182 instance=ExtResource("1_bu2hy")]
+
+[node name="Fire Hydrant" parent="RigidBody3D/Fire Hydrant2" index="0" unique_id=1900028707]
+surface_material_override/0 = ExtResource("2_4sdre")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D" unique_id=880301589]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.00048828125, 0)
+shape = SubResource("CylinderShape3D_lfxu0")
+
+[node name="WaterParticleSystem" type="GPUParticles3D" parent="." unique_id=1711981400 node_paths=PackedStringArray("rb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0018639266, -0.19100273, 0)
+emitting = false
+amount = 500
+lifetime = 0.8
+explosiveness = 0.11
+randomness = 0.5
+trail_lifetime = 0.5
+process_material = SubResource("ParticleProcessMaterial_lfxu0")
+draw_pass_1 = SubResource("QuadMesh_hjb8m")
+script = ExtResource("1_nqob1")
+rb = NodePath("../RigidBody3D")
+
+[node name="Fire Hydrant Hole" parent="." unique_id=346630449 instance=ExtResource("5_6x6fe")]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, -0.1866799, 0)
+
+[node name="Cylinder_001" parent="Fire Hydrant Hole" index="0" unique_id=305520013]
+surface_material_override/0 = ExtResource("6_nhfbm")
+
+[editable path="RigidBody3D/Fire Hydrant2"]
+[editable path="Fire Hydrant Hole"]

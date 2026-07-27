@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://78605aokd2nl"]
+
+[ext_resource type="Texture2D" uid="uid://bm0s7mohjmkxb" path="res://_Blender/Skittelz/Clothing Textures/Budidas White Lo.png" id="1_jh5oo"]
+
+[resource]
+resource_name = "Ron dad shoes big"
+cull_mode = 2
+albedo_color = Color(0.9063318, 0.9063318, 0.9063318, 1)
+albedo_texture = ExtResource("1_jh5oo")
+roughness = 0.5

@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dvyk5cpb0e3ye"]
+
+[ext_resource type="Texture2D" uid="uid://dxactnc2lqnoy" path="res://_Blender/French Prince/French Prince_Ron big eye Base Color.png" id="1_gsf0f"]
+
+[resource]
+resource_name = "eye"
+cull_mode = 2
+albedo_texture = ExtResource("1_gsf0f")
+metallic_specular = 1.0
+roughness = 0.0
+metadata/_gltf_primary_texture_coord = 0

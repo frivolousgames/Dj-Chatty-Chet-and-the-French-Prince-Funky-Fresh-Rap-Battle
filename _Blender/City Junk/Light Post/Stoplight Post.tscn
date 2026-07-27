@@ -1,0 +1,88 @@
+[gd_scene format=3 uid="uid://dncu7q6b7s5uv"]
+
+[ext_resource type="PackedScene" uid="uid://b7x2onbhnrsp5" path="res://_Blender/City Junk/Light Post/Light Post.glb" id="1_m6x58"]
+[ext_resource type="Material" uid="uid://ctdbq5w1wdj11" path="res://_Blender/City Junk/Light Post/Light Post Metal.tres" id="2_bhm0e"]
+[ext_resource type="Material" uid="uid://ipifbnacj0jr" path="res://_Blender/City Junk/Light Post/Light Bulb.tres" id="3_vuftn"]
+[ext_resource type="PackedScene" uid="uid://dqd73fn3w4q7i" path="res://_Blender/City Junk/Light Post/Stoplight 4 Way.tscn" id="5_rqsus"]
+[ext_resource type="PackedScene" uid="uid://0lc4yxdm8j10" path="res://_Blender/City Junk/Light Post/Stoplight Pole.glb" id="5_vuftn"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_lfxu0"]
+height = 5.107361
+radius = 0.11376953
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lfxu0"]
+size = Vector3(1.167633, 0.16448975, 0.12695313)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_748sp"]
+transparency = 1
+blend_mode = 1
+albedo_color = Color(1, 0.9843137, 0.81960785, 0.011764706)
+emission = Color(1, 0.99697876, 0.96484375, 1)
+emission_energy_multiplier = 0.25
+anisotropy = 1.0
+proximity_fade_distance = 0.01
+distance_fade_mode = 1
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_lfxu0"]
+material = SubResource("StandardMaterial3D_748sp")
+top_radius = 1.9
+bottom_radius = 0.07
+height = 4.7631836
+
+[node name="Light Post" type="StaticBody3D" unique_id=1902395794 groups=["Vehicle Static Hit"]]
+collision_layer = 7
+collision_mask = 7
+
+[node name="Light Post2" parent="." unique_id=964516304 instance=ExtResource("1_m6x58")]
+
+[node name="Light Post" parent="Light Post2" index="0" unique_id=1200936480]
+transform = Transform3D(0.974454, 0, -0.2245872, 0, 1, 0, 0.2245872, 0, 0.974454, 0, 0, 0)
+surface_material_override/0 = ExtResource("2_bhm0e")
+
+[node name="Light Bulb" parent="Light Post2" index="1" unique_id=1901513395]
+transform = Transform3D(0.9893276, 0, -0.14570826, 0, 1, 0, 0.14570826, 0, 0.9893276, -1.0714964, 4.701714, 0.0046438426)
+surface_material_override/0 = ExtResource("3_vuftn")
+
+[node name="Post Collider" type="CollisionShape3D" parent="." unique_id=1185040929]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5619812, 0)
+shape = SubResource("CylinderShape3D_lfxu0")
+
+[node name="Light Collider" type="CollisionShape3D" parent="." unique_id=1965855073]
+transform = Transform3D(0.9832549, 0.18223552, 0, -0.18223552, 0.9832549, 0, 0, 0, 1, -0.59367204, 4.6479883, 0.0050937086)
+shape = SubResource("BoxShape3D_lfxu0")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1821638756]
+transform = Transform3D(1, 0, 0, 0, -1, 8.742278e-08, 0, -8.742278e-08, -1, -1.0867937, 2.3510497, 0.0032381415)
+mesh = SubResource("CylinderMesh_lfxu0")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=2069097658]
+transform = Transform3D(1, 0, 0, 0, 1.3113416e-07, 1, 0, -1, 1.3113416e-07, -1.0756978, 4.3964167, 0.0032381415)
+light_color = Color(0.9654136, 0.97265625, 0.7408905, 1)
+light_energy = 11.564
+light_volumetric_fog_energy = 3.693
+light_size = 0.673
+shadow_enabled = true
+distance_fade_enabled = true
+spot_range = 6.127566
+spot_angle = 45.64
+spot_angle_attenuation = 0.732043
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1385651931]
+transform = Transform3D(1, 0, 0, 0, 1.3113416e-07, 1, 0, -1, 1.3113416e-07, -1.0756978, 4.505467, 0.0032381713)
+light_color = Color(0.9976196, 1, 0.6953125, 1)
+light_energy = 0.158
+light_indirect_energy = 16.0
+light_volumetric_fog_energy = 10.347
+light_size = 1.0
+light_specular = 3.644
+
+[node name="Stoplight Pole2" parent="." unique_id=1239344290 instance=ExtResource("5_vuftn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.26521754, 0)
+
+[node name="Stoplight Pole" parent="Stoplight Pole2" index="0" unique_id=1189056846]
+surface_material_override/0 = ExtResource("2_bhm0e")
+
+[node name="Stop Light" parent="Stoplight Pole2" unique_id=656891348 instance=ExtResource("5_rqsus")]
+
+[editable path="Light Post2"]
+[editable path="Stoplight Pole2"]

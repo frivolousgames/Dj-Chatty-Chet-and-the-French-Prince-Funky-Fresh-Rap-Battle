@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bmlbywv0f1d81"]
+
+[resource]
+resource_name = "Teeth"
+cull_mode = 2
+metallic_specular = 0.77
+roughness = 0.15

@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://b5tfjsec0phm4"]
+
+[ext_resource type="Texture2D" uid="uid://bxka1kyi6xy1h" path="res://_Blender/Buildings/Top Objects/Metal_Corrugated_018_basecolor.png" id="1_7iqed"]
+[ext_resource type="Texture2D" uid="uid://b5m5qmhs2um1x" path="res://_Blender/Buildings/Top Objects/Metal_Corrugated_018_normal.png" id="2_32ya8"]
+
+[resource]
+albedo_texture = ExtResource("1_7iqed")
+metallic = 1.0
+roughness = 0.6
+normal_enabled = true
+normal_texture = ExtResource("2_32ya8")

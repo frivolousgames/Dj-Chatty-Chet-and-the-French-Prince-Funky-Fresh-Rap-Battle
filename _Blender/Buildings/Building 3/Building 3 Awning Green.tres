@@ -1,0 +1,14 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://b1628q0i0s28w"]
+
+[ext_resource type="Texture2D" uid="uid://cerdeewf5chel" path="res://_Blender/Buildings/Building 3/Building 3 Awning Solid.png" id="1_ggkrw"]
+[ext_resource type="Texture2D" uid="uid://bumjwihwf8b1a" path="res://_Blender/Buildings/Building 3/Building 3 Awning Normal.png" id="2_fiu2x"]
+
+[resource]
+resource_name = "Building 2"
+cull_mode = 2
+albedo_color = Color(0.14381409, 0.25390625, 0.16875684, 1)
+albedo_texture = ExtResource("1_ggkrw")
+roughness = 0.82
+normal_enabled = true
+normal_texture = ExtResource("2_fiu2x")
+uv1_offset = Vector3(0, 0.605, 0)

@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://ccv28v68qsfvd"]
+
+[ext_resource type="Texture2D" uid="uid://bj15y4gqquchd" path="res://_Blender/Roads/Road 1.png" id="1_25qms"]
+[ext_resource type="Texture2D" uid="uid://dbb5exs2kmihj" path="res://_Blender/Roads/Road 1 Normal.png" id="2_sftqr"]
+
+[resource]
+resource_name = "Quad"
+albedo_texture = ExtResource("1_25qms")
+roughness = 0.5
+normal_enabled = true
+normal_texture = ExtResource("2_sftqr")

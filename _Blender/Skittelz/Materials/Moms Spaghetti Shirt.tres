@@ -1,0 +1,13 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://clu60lfh4nnvf"]
+
+[ext_resource type="Texture2D" uid="uid://dpr05ek0kelo8" path="res://_Blender/Skittelz/Clothing Textures/Spaghetti Shirt.png" id="1_tuc05"]
+[ext_resource type="Texture2D" uid="uid://d1o63alohs2dp" path="res://_Blender/Skittelz/Clothing Textures/T Shirt Normal.png" id="2_btwn5"]
+
+[resource]
+resource_name = "No Fatties"
+cull_mode = 2
+albedo_color = Color(0.9063318, 0.9063318, 0.9063318, 1)
+albedo_texture = ExtResource("1_tuc05")
+roughness = 0.81
+normal_enabled = true
+normal_texture = ExtResource("2_btwn5")

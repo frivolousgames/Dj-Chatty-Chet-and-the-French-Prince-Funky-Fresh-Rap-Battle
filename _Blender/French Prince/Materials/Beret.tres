@@ -1,0 +1,12 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dsbxfflf3jerj"]
+
+[ext_resource type="Texture2D" uid="uid://dxfhvcchei5w7" path="res://_Blender/French Prince/Texture Images/Felt.png" id="1_7aert"]
+[ext_resource type="Texture2D" uid="uid://nrg01lccf8dt" path="res://_Blender/French Prince/Texture Images/Felt Normal.png" id="2_dcnm2"]
+
+[resource]
+albedo_color = Color(1, 0.047058824, 0.20392157, 1)
+albedo_texture = ExtResource("1_7aert")
+normal_enabled = true
+normal_scale = 1.63
+normal_texture = ExtResource("2_dcnm2")
+uv1_scale = Vector3(4, 4, 4)

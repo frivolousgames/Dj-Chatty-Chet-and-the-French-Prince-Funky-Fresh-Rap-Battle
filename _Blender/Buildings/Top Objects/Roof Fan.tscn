@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://dwkmcie5cjcnp"]
+
+[ext_resource type="PackedScene" uid="uid://cspbokr4qc7dj" path="res://_Blender/Buildings/Top Objects/Roof Fan.glb" id="1_84rmp"]
+[ext_resource type="Material" uid="uid://bofdcpc255w11" path="res://_Blender/Buildings/Top Objects/Roof Fan.tres" id="2_yphm3"]
+
+[node name="Roof Fan" type="Node3D" unique_id=1301821086]
+
+[node name="Roof Fan" parent="." unique_id=860606094 instance=ExtResource("1_84rmp")]
+
+[node name="Roof AC Uniit" parent="Roof Fan" index="0" unique_id=2014171490]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.115, -2.886, -0.54)
+surface_material_override/0 = ExtResource("2_yphm3")
+
+[editable path="Roof Fan"]
