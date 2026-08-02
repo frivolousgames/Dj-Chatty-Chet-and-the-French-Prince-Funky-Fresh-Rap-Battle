@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://1clxdy6mc07j"]
+
+[ext_resource type="Texture2D" uid="uid://u4hip8duj7sw" path="res://_Blender/Chatty Chet/Chatty Chet_sock big normal.png" id="1_v7pph"]
+
+[resource]
+albedo_color = Color(0, 0, 0, 1)
+roughness = 0.8
+normal_enabled = true
+normal_scale = 0.37
+normal_texture = ExtResource("1_v7pph")
+uv1_scale = Vector3(15, 15, 15)

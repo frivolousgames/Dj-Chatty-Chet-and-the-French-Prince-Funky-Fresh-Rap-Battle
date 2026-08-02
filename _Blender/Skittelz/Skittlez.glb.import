@@ -63,37 +63,37 @@ _subresources={
 },
 "Ron Head": {
 "use_external/enabled": true,
-"use_external/fallback_path": "res://_Blender/Skittelz/Materials/Ron Head.tres",
+"use_external/fallback_path": "res://_Blender/Skittelz/Materials/Head.tres",
 "use_external/path": "uid://tirkwm77u7le"
 },
 "Ron Jeans Big": {
 "use_external/enabled": true,
-"use_external/fallback_path": "res://_Blender/Skittelz/Materials/Ron Jeans Big.tres",
+"use_external/fallback_path": "res://_Blender/Skittelz/Materials/Jeans Blue.tres",
 "use_external/path": "uid://boyoovyhxu86v"
 },
 "Ron body big": {
 "use_external/enabled": true,
-"use_external/fallback_path": "res://_Blender/Skittelz/Materials/Ron body big.tres",
+"use_external/fallback_path": "res://_Blender/Skittelz/Materials/Body.tres",
 "use_external/path": "uid://dw4su20ixejis"
 },
 "Ron dad shoes big": {
 "use_external/enabled": true,
-"use_external/fallback_path": "res://_Blender/Skittelz/Materials/Ron dad shoes big.tres",
+"use_external/fallback_path": "res://_Blender/Skittelz/Materials/Budidas White.tres",
 "use_external/path": "uid://78605aokd2nl"
 },
 "Ron sock big": {
 "use_external/enabled": true,
-"use_external/fallback_path": "res://_Blender/Skittelz/Materials/Ron sock big.tres",
+"use_external/fallback_path": "res://_Blender/Skittelz/Materials/Socks.tres",
 "use_external/path": "uid://ddcdp0inr1564"
 },
 "Ron sock top big": {
 "use_external/enabled": true,
-"use_external/fallback_path": "res://_Blender/Skittelz/Materials/Ron sock top big.tres",
+"use_external/fallback_path": "res://_Blender/Skittelz/Materials/Sock Top.tres",
 "use_external/path": "uid://dodvl3rdiga1w"
 },
 "Ron tongue big": {
 "use_external/enabled": true,
-"use_external/fallback_path": "res://_Blender/Skittelz/Materials/Ron tongue big.tres",
+"use_external/fallback_path": "res://_Blender/Skittelz/Materials/Tongue.tres",
 "use_external/path": "uid://dk3fdxuepx78u"
 },
 "Teeth": {
@@ -108,7 +108,7 @@ _subresources={
 },
 "ron eyebrows big": {
 "use_external/enabled": true,
-"use_external/fallback_path": "res://_Blender/Skittelz/Materials/ron eyebrows big.tres",
+"use_external/fallback_path": "res://_Blender/Skittelz/Materials/Eyebrows.tres",
 "use_external/path": "uid://ct2ppj7xg35yp"
 }
 }

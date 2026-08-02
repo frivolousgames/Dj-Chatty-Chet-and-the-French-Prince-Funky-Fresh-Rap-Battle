@@ -1,0 +1,85 @@
+[gd_resource type="AnimationNodeStateMachine" format=3 uid="uid://cie4723qfd4xj"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_cvbt1"]
+animation = &"Idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_avihn"]
+animation = &"Run"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_8amax"]
+animation = &"Walk"
+
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_jho1b"]
+sync = true
+
+[sub_resource type="AnimationNodeTimeScale" id="AnimationNodeTimeScale_cvbt1"]
+
+[sub_resource type="AnimationNodeTimeScale" id="AnimationNodeTimeScale_avihn"]
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_v74wu"]
+graph_offset = Vector2(-77.79739, 111.84752)
+nodes/output/position = Vector2(1080, 300)
+nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_avihn")
+nodes/TimeScale/position = Vector2(352.12897, 229.14099)
+"nodes/TimeScale 2/node" = SubResource("AnimationNodeTimeScale_cvbt1")
+"nodes/TimeScale 2/position" = Vector2(361.44598, 487.355)
+nodes/Blend2/node = SubResource("AnimationNodeBlend2_jho1b")
+nodes/Blend2/position = Vector2(820, 280)
+nodes/Animation/node = SubResource("AnimationNodeAnimation_8amax")
+nodes/Animation/position = Vector2(100, 200)
+"nodes/Animation 2/node" = SubResource("AnimationNodeAnimation_avihn")
+"nodes/Animation 2/position" = Vector2(100, 480)
+node_connections = [&"output", 0, &"Blend2", &"TimeScale", 0, &"Animation", &"TimeScale 2", 0, &"Animation 2", &"Blend2", 0, &"TimeScale", &"Blend2", 1, &"TimeScale 2"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_yh1yp"]
+animation = &"Turn"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_qowyy"]
+animation = &"Walk Backwards"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_wkyc6"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_imq3v"]
+xfade_time = 0.1
+advance_mode = 2
+advance_condition = &"is_moving"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_2ypng"]
+xfade_time = 0.1
+advance_mode = 2
+advance_condition = &"is_turning"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_isnsp"]
+xfade_time = 0.1
+advance_mode = 2
+advance_condition = &"!is_walk_backward"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_cvbt1"]
+xfade_time = 0.1
+advance_mode = 2
+advance_condition = &"!is_moving"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_avihn"]
+xfade_time = 0.1
+advance_mode = 2
+advance_condition = &"is_walk_backward"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_8amax"]
+xfade_time = 0.1
+advance_mode = 2
+advance_condition = &"!is_turning"
+
+[resource]
+states/End/position = Vector2(1178, 65)
+states/Idle/node = SubResource("AnimationNodeAnimation_cvbt1")
+states/Idle/position = Vector2(408, 87)
+"states/Move Forward/node" = SubResource("AnimationNodeBlendTree_v74wu")
+"states/Move Forward/position" = Vector2(640, -28)
+states/Start/position = Vector2(140, 87)
+states/Turn/node = SubResource("AnimationNodeAnimation_yh1yp")
+states/Turn/position = Vector2(780, 87)
+"states/Walk Backwards/node" = SubResource("AnimationNodeAnimation_qowyy")
+"states/Walk Backwards/position" = Vector2(648, 217)
+transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_wkyc6"), "Idle", "Move Forward", SubResource("AnimationNodeStateMachineTransition_imq3v"), "Idle", "Turn", SubResource("AnimationNodeStateMachineTransition_2ypng"), "Walk Backwards", "Idle", SubResource("AnimationNodeStateMachineTransition_isnsp"), "Move Forward", "Idle", SubResource("AnimationNodeStateMachineTransition_cvbt1"), "Idle", "Walk Backwards", SubResource("AnimationNodeStateMachineTransition_avihn"), "Turn", "Idle", SubResource("AnimationNodeStateMachineTransition_8amax")]
+graph_offset = Vector2(10, -56)
