@@ -1,0 +1,419 @@
+[gd_resource type="AnimationNodeBlendTree" format=3 uid="uid://2u5bpgm3dfkx"]
+
+[ext_resource type="AnimationNodeStateMachine" uid="uid://clbf55e2lg71j" path="res://temp state machie.tres" id="1_l8r6w"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_dk7q4"]
+animation = &"Idle One Handed"
+
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_opa1x"]
+filter_enabled = true
+filters = ["Player/Skeleton3D:f_index.01.R", "Player/Skeleton3D:f_index.02.R", "Player/Skeleton3D:f_index.03.R", "Player/Skeleton3D:f_middle.01.R", "Player/Skeleton3D:f_middle.02.R", "Player/Skeleton3D:f_middle.03.R", "Player/Skeleton3D:f_pinky.01.R", "Player/Skeleton3D:f_pinky.02.R", "Player/Skeleton3D:f_pinky.03.R", "Player/Skeleton3D:f_ring.01.R", "Player/Skeleton3D:f_ring.02.R", "Player/Skeleton3D:f_ring.03.R", "Player/Skeleton3D:palm.02.R", "Player/Skeleton3D:palm.03.R", "Player/Skeleton3D:palm.04.R", "Player/Skeleton3D:thumb.01.R", "Player/Skeleton3D:thumb.02.R", "Player/Skeleton3D:thumb.03.R"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_u24tn"]
+animation = &"Raised One Handed"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_c0ee6"]
+animation = &"Raised One Handed"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_u5r5f"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_7r2r6"]
+advance_mode = 2
+advance_expression = "currentWeapon == 0"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_1weq7"]
+advance_mode = 2
+advance_expression = "currentWeapon == 3"
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_l8r6w"]
+"states/Glock Raised/node" = SubResource("AnimationNodeAnimation_u24tn")
+"states/Glock Raised/position" = Vector2(402, 101)
+"states/Uzi Raised/node" = SubResource("AnimationNodeAnimation_c0ee6")
+"states/Uzi Raised/position" = Vector2(648, 100)
+transitions = ["Start", "Glock Raised", SubResource("AnimationNodeStateMachineTransition_u5r5f"), "Uzi Raised", "Glock Raised", SubResource("AnimationNodeStateMachineTransition_7r2r6"), "Glock Raised", "Uzi Raised", SubResource("AnimationNodeStateMachineTransition_1weq7")]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_c10rt"]
+animation = &"Raised One Handed"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_3ofxr"]
+animation = &"Raised One Handed"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_u24tn"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_e2mcl"]
+advance_mode = 2
+advance_expression = "currentWeapon == 0"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_c0ee6"]
+advance_mode = 2
+advance_expression = "currentWeapon == 3"
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_c10rt"]
+"states/Idle Glock/node" = SubResource("AnimationNodeAnimation_c10rt")
+"states/Idle Glock/position" = Vector2(428, 95)
+"states/Raised One Handed/node" = SubResource("AnimationNodeAnimation_3ofxr")
+"states/Raised One Handed/position" = Vector2(641, 95)
+transitions = ["Start", "Idle Glock", SubResource("AnimationNodeStateMachineTransition_u24tn"), "Raised One Handed", "Idle Glock", SubResource("AnimationNodeStateMachineTransition_e2mcl"), "Idle Glock", "Raised One Handed", SubResource("AnimationNodeStateMachineTransition_c0ee6")]
+
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_dggd4"]
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_x0ksm"]
+graph_offset = Vector2(38.963257, 458.85944)
+nodes/output/position = Vector2(1580, 580)
+"nodes/Raised Blend/node" = SubResource("AnimationNodeBlend2_dggd4")
+"nodes/Raised Blend/position" = Vector2(1260, 580)
+"nodes/One Handed Raised/node" = SubResource("AnimationNodeStateMachine_l8r6w")
+"nodes/One Handed Raised/position" = Vector2(880, 940)
+nodes/Animation/node = SubResource("AnimationNodeAnimation_dk7q4")
+nodes/Animation/position = Vector2(500, 440)
+"nodes/One Heanded Idle/node" = SubResource("AnimationNodeStateMachine_c10rt")
+"nodes/One Heanded Idle/position" = Vector2(460, 780)
+"nodes/Idle Blend/node" = SubResource("AnimationNodeBlend2_opa1x")
+"nodes/Idle Blend/position" = Vector2(900, 560)
+node_connections = [&"output", 0, &"Raised Blend", &"Raised Blend", 0, &"Idle Blend", &"Raised Blend", 1, &"One Handed Raised", &"Idle Blend", 0, &"Animation", &"Idle Blend", 1, &"One Heanded Idle"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_aqhks"]
+animation = &"Walk Backwards One Handed"
+
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_u5r5f"]
+filter_enabled = true
+filters = ["Player/Skeleton3D:f_index.01.R", "Player/Skeleton3D:f_index.02.R", "Player/Skeleton3D:f_index.03.R", "Player/Skeleton3D:f_middle.01.R", "Player/Skeleton3D:f_middle.02.R", "Player/Skeleton3D:f_middle.03.R", "Player/Skeleton3D:f_pinky.01.R", "Player/Skeleton3D:f_pinky.02.R", "Player/Skeleton3D:f_pinky.03.R", "Player/Skeleton3D:f_ring.01.R", "Player/Skeleton3D:f_ring.02.R", "Player/Skeleton3D:f_ring.03.R", "Player/Skeleton3D:palm.01.R", "Player/Skeleton3D:palm.02.R", "Player/Skeleton3D:palm.03.R", "Player/Skeleton3D:palm.04.R", "Player/Skeleton3D:thumb.01.R", "Player/Skeleton3D:thumb.02.R", "Player/Skeleton3D:thumb.03.R"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_u5r5f"]
+animation = &"Idle One Handed"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_jgmgb"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_u5r5f"]
+"states/Idle Glock/node" = SubResource("AnimationNodeAnimation_u5r5f")
+"states/Idle Glock/position" = Vector2(398, 100)
+transitions = ["Start", "Idle Glock", SubResource("AnimationNodeStateMachineTransition_jgmgb")]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_l8r6w"]
+animation = &"One Hande Fix"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_e2mcl"]
+animation = &"Raised One Handed"
+
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_c0ee6"]
+filter_enabled = true
+filters = ["Player/Skeleton3D:spine.002"]
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_7r2r6"]
+graph_offset = Vector2(161.85907, 61.235016)
+nodes/output/position = Vector2(1200, 220)
+nodes/Animation/node = SubResource("AnimationNodeAnimation_e2mcl")
+nodes/Animation/position = Vector2(547.57367, 185.20874)
+"nodes/Animation 2/node" = SubResource("AnimationNodeAnimation_l8r6w")
+"nodes/Animation 2/position" = Vector2(540, 420)
+nodes/Blend2/node = SubResource("AnimationNodeBlend2_c0ee6")
+nodes/Blend2/position = Vector2(880, 260)
+node_connections = [&"output", 0, &"Blend2", &"Blend2", 0, &"Animation", &"Blend2", 1, &"Animation 2"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_c10rt"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_jgmgb"]
+"states/Glock Raised/node" = SubResource("AnimationNodeBlendTree_7r2r6")
+"states/Glock Raised/position" = Vector2(504, 100)
+transitions = ["Start", "Glock Raised", SubResource("AnimationNodeStateMachineTransition_c10rt")]
+
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_l8r6w"]
+filter_enabled = true
+filters = ["Player/Skeleton3D:Head", "Player/Skeleton3D:Neck", "Player/Skeleton3D:f_index.01.R", "Player/Skeleton3D:f_index.02.R", "Player/Skeleton3D:f_index.03.R", "Player/Skeleton3D:f_middle.01.R", "Player/Skeleton3D:f_middle.02.R", "Player/Skeleton3D:f_middle.03.R", "Player/Skeleton3D:f_pinky.01.R", "Player/Skeleton3D:f_pinky.02.R", "Player/Skeleton3D:f_pinky.03.R", "Player/Skeleton3D:f_ring.01.R", "Player/Skeleton3D:f_ring.02.R", "Player/Skeleton3D:f_ring.03.R", "Player/Skeleton3D:forearm.R", "Player/Skeleton3D:hand.R", "Player/Skeleton3D:palm.01.R", "Player/Skeleton3D:palm.02.R", "Player/Skeleton3D:palm.03.R", "Player/Skeleton3D:palm.04.R", "Player/Skeleton3D:shoulder.R", "Player/Skeleton3D:spine.001", "Player/Skeleton3D:spine.002", "Player/Skeleton3D:spine.003", "Player/Skeleton3D:thumb.01.R", "Player/Skeleton3D:thumb.02.R", "Player/Skeleton3D:thumb.03.R", "Player/Skeleton3D:upper_arm.R"]
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_hd0tm"]
+graph_offset = Vector2(-238.0412, 136.6506)
+nodes/output/position = Vector2(1080, 240)
+nodes/Animation/node = SubResource("AnimationNodeAnimation_aqhks")
+nodes/Animation/position = Vector2(-20, 220)
+"nodes/One Handed Raised/node" = SubResource("AnimationNodeStateMachine_jgmgb")
+"nodes/One Handed Raised/position" = Vector2(180, 660)
+"nodes/Raised Blend/node" = SubResource("AnimationNodeBlend2_l8r6w")
+"nodes/Raised Blend/position" = Vector2(680, 320)
+"nodes/One Handed Idle/node" = SubResource("AnimationNodeStateMachine_u5r5f")
+"nodes/One Handed Idle/position" = Vector2(-172.0824, 505.8006)
+"nodes/Idle Blend/node" = SubResource("AnimationNodeBlend2_u5r5f")
+"nodes/Idle Blend/position" = Vector2(352.46652, 347.49423)
+node_connections = [&"output", 0, &"Raised Blend", &"Raised Blend", 0, &"Idle Blend", &"Raised Blend", 1, &"One Handed Raised", &"Idle Blend", 0, &"Animation", &"Idle Blend", 1, &"One Handed Idle"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_0xaec"]
+animation = &"Run"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_kjiig"]
+animation = &"Walk"
+
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_dk7q4"]
+filter_enabled = true
+filters = ["Player/Skeleton3D:f_index.01.R", "Player/Skeleton3D:f_index.02.R", "Player/Skeleton3D:f_index.03.R", "Player/Skeleton3D:f_middle.01.R", "Player/Skeleton3D:f_middle.02.R", "Player/Skeleton3D:f_middle.03.R", "Player/Skeleton3D:f_pinky.01.R", "Player/Skeleton3D:f_pinky.02.R", "Player/Skeleton3D:f_pinky.03.R", "Player/Skeleton3D:f_ring.01.R", "Player/Skeleton3D:f_ring.02.R", "Player/Skeleton3D:f_ring.03.R", "Player/Skeleton3D:palm.01.R", "Player/Skeleton3D:palm.02.R", "Player/Skeleton3D:palm.03.R", "Player/Skeleton3D:palm.04.R", "Player/Skeleton3D:thumb.01.R", "Player/Skeleton3D:thumb.02.R", "Player/Skeleton3D:thumb.03.R"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_jgmgb"]
+animation = &"One Hande Fix"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_duglo"]
+animation = &"Raised One Handed"
+
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_dnogb"]
+filter_enabled = true
+filters = ["Player/Skeleton3D:spine.002"]
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_3csld"]
+graph_offset = Vector2(-20, 90)
+nodes/output/position = Vector2(1140, 200)
+nodes/Animation/node = SubResource("AnimationNodeAnimation_duglo")
+nodes/Animation/position = Vector2(620, 200)
+"nodes/Animation 2/node" = SubResource("AnimationNodeAnimation_jgmgb")
+"nodes/Animation 2/position" = Vector2(600, 460)
+nodes/Blend2/node = SubResource("AnimationNodeBlend2_dnogb")
+nodes/Blend2/position = Vector2(920, 300)
+node_connections = [&"output", 0, &"Blend2", &"Blend2", 0, &"Animation", &"Blend2", 1, &"Animation 2"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_juctq"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_u24tn"]
+resource_local_to_scene = true
+"states/Glock Raised/node" = SubResource("AnimationNodeBlendTree_3csld")
+"states/Glock Raised/position" = Vector2(462, 119)
+states/Start/position = Vector2(230, 113)
+transitions = ["Start", "Glock Raised", SubResource("AnimationNodeStateMachineTransition_juctq")]
+
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_u24tn"]
+filter_enabled = true
+filters = ["Player/Skeleton3D:Head", "Player/Skeleton3D:Neck", "Player/Skeleton3D:f_index.01.R", "Player/Skeleton3D:f_index.02.R", "Player/Skeleton3D:f_index.03.R", "Player/Skeleton3D:f_middle.01.R", "Player/Skeleton3D:f_middle.02.R", "Player/Skeleton3D:f_middle.03.R", "Player/Skeleton3D:f_pinky.01.R", "Player/Skeleton3D:f_pinky.02.R", "Player/Skeleton3D:f_pinky.03.R", "Player/Skeleton3D:f_ring.01.R", "Player/Skeleton3D:f_ring.02.R", "Player/Skeleton3D:f_ring.03.R", "Player/Skeleton3D:forearm.R", "Player/Skeleton3D:hand.R", "Player/Skeleton3D:palm.01.R", "Player/Skeleton3D:palm.02.R", "Player/Skeleton3D:palm.03.R", "Player/Skeleton3D:palm.04.R", "Player/Skeleton3D:shoulder.R", "Player/Skeleton3D:spine.001", "Player/Skeleton3D:spine.002", "Player/Skeleton3D:spine.003", "Player/Skeleton3D:thumb.01.R", "Player/Skeleton3D:thumb.02.R", "Player/Skeleton3D:thumb.03.R", "Player/Skeleton3D:upper_arm.R"]
+
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_j04hv"]
+sync = true
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_aqhks"]
+resource_local_to_scene = true
+graph_offset = Vector2(29.685944, 227.61058)
+nodes/output/position = Vector2(1460, 260)
+nodes/Animation/node = SubResource("AnimationNodeAnimation_kjiig")
+nodes/Animation/position = Vector2(120, 80)
+"nodes/Animation 2/node" = SubResource("AnimationNodeAnimation_0xaec")
+"nodes/Animation 2/position" = Vector2(120, 300)
+"nodes/Idle Blend/node" = SubResource("AnimationNodeBlend2_dk7q4")
+"nodes/Idle Blend/position" = Vector2(820, 300)
+"nodes/Run Blend/node" = SubResource("AnimationNodeBlend2_j04hv")
+"nodes/Run Blend/position" = Vector2(500, 180)
+"nodes/One Handed Raised/node" = SubResource("AnimationNodeStateMachine_u24tn")
+"nodes/One Handed Raised/position" = Vector2(740, 600)
+"nodes/One Handed Idle/node" = ExtResource("1_l8r6w")
+"nodes/One Handed Idle/position" = Vector2(340, 520)
+"nodes/Raised Blend/node" = SubResource("AnimationNodeBlend2_u24tn")
+"nodes/Raised Blend/position" = Vector2(1100, 280)
+node_connections = [&"output", 0, &"Raised Blend", &"Idle Blend", 0, &"Run Blend", &"Idle Blend", 1, &"One Handed Idle", &"Run Blend", 0, &"Animation", &"Run Blend", 1, &"Animation 2", &"Raised Blend", 0, &"Idle Blend", &"Raised Blend", 1, &"One Handed Raised"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_3csld"]
+animation = &"Strafe R"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_juctq"]
+animation = &"Strafe L"
+
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_m3uft"]
+filter_enabled = true
+filters = ["Player/Skeleton3D:f_index.01.R", "Player/Skeleton3D:f_index.02.R", "Player/Skeleton3D:f_index.03.R", "Player/Skeleton3D:f_middle.01.R", "Player/Skeleton3D:f_middle.02.R", "Player/Skeleton3D:f_middle.03.R", "Player/Skeleton3D:f_pinky.01.R", "Player/Skeleton3D:f_pinky.02.R", "Player/Skeleton3D:f_pinky.03.R", "Player/Skeleton3D:f_ring.01.R", "Player/Skeleton3D:f_ring.02.R", "Player/Skeleton3D:f_ring.03.R", "Player/Skeleton3D:palm.01.R", "Player/Skeleton3D:palm.02.R", "Player/Skeleton3D:palm.03.R", "Player/Skeleton3D:palm.04.R", "Player/Skeleton3D:thumb.01.R", "Player/Skeleton3D:thumb.02.R", "Player/Skeleton3D:thumb.03.R"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_m3uft"]
+animation = &"Idle One Handed"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_3ofxr"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_7r2r6"]
+"states/Idle Glock/node" = SubResource("AnimationNodeAnimation_m3uft")
+"states/Idle Glock/position" = Vector2(468, 109)
+transitions = ["Start", "Idle Glock", SubResource("AnimationNodeStateMachineTransition_3ofxr")]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_jt4lt"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_c0ee6"]
+"states/Glock Raised/node" = SubResource("AnimationNodeBlendTree_7r2r6")
+"states/Glock Raised/position" = Vector2(565, 109)
+transitions = ["Start", "Glock Raised", SubResource("AnimationNodeStateMachineTransition_jt4lt")]
+
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_3ofxr"]
+filter_enabled = true
+filters = ["Player/Skeleton3D:Head", "Player/Skeleton3D:Neck", "Player/Skeleton3D:f_index.01.R", "Player/Skeleton3D:f_index.02.R", "Player/Skeleton3D:f_index.03.R", "Player/Skeleton3D:f_middle.01.R", "Player/Skeleton3D:f_middle.02.R", "Player/Skeleton3D:f_middle.03.R", "Player/Skeleton3D:f_pinky.01.R", "Player/Skeleton3D:f_pinky.02.R", "Player/Skeleton3D:f_pinky.03.R", "Player/Skeleton3D:f_ring.01.R", "Player/Skeleton3D:f_ring.02.R", "Player/Skeleton3D:f_ring.03.R", "Player/Skeleton3D:forearm.R", "Player/Skeleton3D:hand.R", "Player/Skeleton3D:palm.01.R", "Player/Skeleton3D:palm.02.R", "Player/Skeleton3D:palm.03.R", "Player/Skeleton3D:palm.04.R", "Player/Skeleton3D:shoulder.R", "Player/Skeleton3D:spine.001", "Player/Skeleton3D:spine.002", "Player/Skeleton3D:spine.003", "Player/Skeleton3D:thumb.01.R", "Player/Skeleton3D:thumb.02.R", "Player/Skeleton3D:thumb.03.R", "Player/Skeleton3D:upper_arm.R"]
+
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_e2mcl"]
+sync = true
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_l8r6w"]
+graph_offset = Vector2(-415.77032, 212.34424)
+nodes/output/position = Vector2(1020, 320)
+nodes/Animation/node = SubResource("AnimationNodeAnimation_juctq")
+nodes/Animation/position = Vector2(-540, 20)
+"nodes/Animation 2/node" = SubResource("AnimationNodeAnimation_3csld")
+"nodes/Animation 2/position" = Vector2(-540, 280)
+"nodes/Strafe Dir Blend/node" = SubResource("AnimationNodeBlend2_e2mcl")
+"nodes/Strafe Dir Blend/position" = Vector2(-144.94597, 115.95678)
+"nodes/Idle Blend/node" = SubResource("AnimationNodeBlend2_m3uft")
+"nodes/Idle Blend/position" = Vector2(233.52406, 256.07123)
+"nodes/Raised Blend/node" = SubResource("AnimationNodeBlend2_3ofxr")
+"nodes/Raised Blend/position" = Vector2(574.95233, 378.47003)
+"nodes/One Handed Idle/node" = SubResource("AnimationNodeStateMachine_7r2r6")
+"nodes/One Handed Idle/position" = Vector2(-183.59824, 563.6788)
+"nodes/One Handed Raised/node" = SubResource("AnimationNodeStateMachine_c0ee6")
+"nodes/One Handed Raised/position" = Vector2(291.50244, 719.8983)
+node_connections = [&"output", 0, &"Raised Blend", &"Strafe Dir Blend", 0, &"Animation", &"Strafe Dir Blend", 1, &"Animation 2", &"Idle Blend", 0, &"Strafe Dir Blend", &"Idle Blend", 1, &"One Handed Idle", &"Raised Blend", 0, &"Idle Blend", &"Raised Blend", 1, &"One Handed Raised"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_dnogb"]
+animation = &"Turn R"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ngyjq"]
+animation = &"Turn L"
+
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_c10rt"]
+filter_enabled = true
+filters = ["Player/Skeleton3D:f_index.01.R", "Player/Skeleton3D:f_index.02.R", "Player/Skeleton3D:f_index.03.R", "Player/Skeleton3D:f_middle.01.R", "Player/Skeleton3D:f_middle.02.R", "Player/Skeleton3D:f_middle.03.R", "Player/Skeleton3D:f_pinky.01.R", "Player/Skeleton3D:f_pinky.02.R", "Player/Skeleton3D:f_pinky.03.R", "Player/Skeleton3D:f_ring.01.R", "Player/Skeleton3D:f_ring.02.R", "Player/Skeleton3D:f_ring.03.R", "Player/Skeleton3D:palm.01.R", "Player/Skeleton3D:palm.02.R", "Player/Skeleton3D:palm.03.R", "Player/Skeleton3D:palm.04.R", "Player/Skeleton3D:thumb.01.R", "Player/Skeleton3D:thumb.02.R", "Player/Skeleton3D:thumb.03.R"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_jt4lt"]
+animation = &"Idle One Handed"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_duglo"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_jt4lt"]
+"states/Idle Glock/node" = SubResource("AnimationNodeAnimation_jt4lt")
+"states/Idle Glock/position" = Vector2(421, 94)
+transitions = ["Start", "Idle Glock", SubResource("AnimationNodeStateMachineTransition_duglo")]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_l8r6w"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_duglo"]
+"states/Glock Raised/node" = SubResource("AnimationNodeBlendTree_7r2r6")
+"states/Glock Raised/position" = Vector2(460, 109)
+transitions = ["Start", "Glock Raised", SubResource("AnimationNodeStateMachineTransition_l8r6w")]
+
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_35xqn"]
+filter_enabled = true
+filters = ["", "Player/Skeleton3D:Head", "Player/Skeleton3D:Neck", "Player/Skeleton3D:f_index.01.R", "Player/Skeleton3D:f_index.02.R", "Player/Skeleton3D:f_index.03.R", "Player/Skeleton3D:f_middle.01.R", "Player/Skeleton3D:f_middle.02.R", "Player/Skeleton3D:f_middle.03.R", "Player/Skeleton3D:f_pinky.01.R", "Player/Skeleton3D:f_pinky.02.R", "Player/Skeleton3D:f_pinky.03.R", "Player/Skeleton3D:f_ring.01.R", "Player/Skeleton3D:f_ring.02.R", "Player/Skeleton3D:f_ring.03.R", "Player/Skeleton3D:forearm.R", "Player/Skeleton3D:hand.R", "Player/Skeleton3D:palm.01.R", "Player/Skeleton3D:palm.02.R", "Player/Skeleton3D:palm.03.R", "Player/Skeleton3D:palm.04.R", "Player/Skeleton3D:shoulder.R", "Player/Skeleton3D:spine.001", "Player/Skeleton3D:spine.002", "Player/Skeleton3D:spine.003", "Player/Skeleton3D:thumb.01.R", "Player/Skeleton3D:thumb.02.R", "Player/Skeleton3D:thumb.03.R", "Player/Skeleton3D:upper_arm.R"]
+
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_3csld"]
+sync = true
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_fb2r8"]
+graph_offset = Vector2(-346.76312, 97.85887)
+nodes/output/position = Vector2(1040, 260)
+nodes/Animation/node = SubResource("AnimationNodeAnimation_ngyjq")
+nodes/Animation/position = Vector2(-100, -100)
+"nodes/Idle Blend/node" = SubResource("AnimationNodeBlend2_c10rt")
+"nodes/Idle Blend/position" = Vector2(420, 280)
+"nodes/Raised Blend/node" = SubResource("AnimationNodeBlend2_35xqn")
+"nodes/Raised Blend/position" = Vector2(700, 260)
+"nodes/One Handed Idle/node" = SubResource("AnimationNodeStateMachine_jt4lt")
+"nodes/One Handed Idle/position" = Vector2(20, 380)
+"nodes/One Handed Raised/node" = SubResource("AnimationNodeStateMachine_duglo")
+"nodes/One Handed Raised/position" = Vector2(300, 580)
+"nodes/Animation 2/node" = SubResource("AnimationNodeAnimation_dnogb")
+"nodes/Animation 2/position" = Vector2(-100, 140)
+"nodes/Turn Dir Blend/node" = SubResource("AnimationNodeBlend2_3csld")
+"nodes/Turn Dir Blend/position" = Vector2(140, -40)
+node_connections = [&"output", 0, &"Raised Blend", &"Idle Blend", 0, &"Turn Dir Blend", &"Idle Blend", 1, &"One Handed Idle", &"Raised Blend", 0, &"Idle Blend", &"Raised Blend", 1, &"One Handed Raised", &"Turn Dir Blend", 0, &"Animation", &"Turn Dir Blend", 1, &"Animation 2"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_dggd4"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_dk7q4"]
+xfade_time = 0.1
+advance_mode = 2
+advance_condition = &"is_moving"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_0xaec"]
+xfade_time = 0.1
+advance_mode = 2
+advance_condition = &"is_turning"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_x0ksm"]
+xfade_time = 0.1
+advance_mode = 2
+advance_condition = &"is_walk_backward"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_kjiig"]
+xfade_time = 0.1
+advance_mode = 2
+advance_condition = &"is_not_moving"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ngyjq"]
+xfade_time = 0.1
+advance_mode = 2
+advance_condition = &"is_not_walk_backward"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_35xqn"]
+xfade_time = 0.1
+advance_mode = 2
+advance_condition = &"is_not_turning"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_dnogb"]
+xfade_time = 0.1
+advance_mode = 2
+advance_condition = &"is_strafing"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_3csld"]
+xfade_time = 0.1
+advance_mode = 2
+advance_condition = &"is_not_strafing"
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_kjiig"]
+states/End/position = Vector2(999, 136)
+states/Idle/node = SubResource("AnimationNodeBlendTree_x0ksm")
+states/Idle/position = Vector2(441, 125)
+"states/Move Backward/node" = SubResource("AnimationNodeBlendTree_hd0tm")
+"states/Move Backward/position" = Vector2(661, 125)
+"states/Move Forward/node" = SubResource("AnimationNodeBlendTree_aqhks")
+"states/Move Forward/position" = Vector2(591, 32)
+states/Start/position = Vector2(186, 125)
+states/Strafe/node = SubResource("AnimationNodeBlendTree_l8r6w")
+states/Strafe/position = Vector2(637, 240)
+states/Turn/node = SubResource("AnimationNodeBlendTree_fb2r8")
+states/Turn/position = Vector2(441, 269)
+transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_dggd4"), "Idle", "Move Forward", SubResource("AnimationNodeStateMachineTransition_dk7q4"), "Idle", "Turn", SubResource("AnimationNodeStateMachineTransition_0xaec"), "Idle", "Move Backward", SubResource("AnimationNodeStateMachineTransition_x0ksm"), "Move Forward", "Idle", SubResource("AnimationNodeStateMachineTransition_kjiig"), "Move Backward", "Idle", SubResource("AnimationNodeStateMachineTransition_ngyjq"), "Turn", "Idle", SubResource("AnimationNodeStateMachineTransition_35xqn"), "Idle", "Strafe", SubResource("AnimationNodeStateMachineTransition_dnogb"), "Strafe", "Idle", SubResource("AnimationNodeStateMachineTransition_3csld")]
+graph_offset = Vector2(-59, -22)
+
+[sub_resource type="AnimationNodeOneShot" id="AnimationNodeOneShot_0xaec"]
+filter_enabled = true
+filters = ["", "..", "Player/Skeleton3D:Head", "Player/Skeleton3D:Neck", "Player/Skeleton3D:f_index.01.R", "Player/Skeleton3D:f_index.02.R", "Player/Skeleton3D:f_index.03.R", "Player/Skeleton3D:f_middle.01.R", "Player/Skeleton3D:f_middle.02.R", "Player/Skeleton3D:f_middle.03.R", "Player/Skeleton3D:f_pinky.01.R", "Player/Skeleton3D:f_pinky.02.R", "Player/Skeleton3D:f_pinky.03.R", "Player/Skeleton3D:f_ring.01.R", "Player/Skeleton3D:f_ring.02.R", "Player/Skeleton3D:f_ring.03.R", "Player/Skeleton3D:forearm.R", "Player/Skeleton3D:hand.R", "Player/Skeleton3D:palm.01.R", "Player/Skeleton3D:palm.02.R", "Player/Skeleton3D:palm.03.R", "Player/Skeleton3D:palm.04.R", "Player/Skeleton3D:shoulder.R", "Player/Skeleton3D:spine.001", "Player/Skeleton3D:spine.003", "Player/Skeleton3D:thumb.01.R", "Player/Skeleton3D:thumb.02.R", "Player/Skeleton3D:upper_arm.R"]
+fadeout_time = 0.5
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_x0ksm"]
+animation = &"Glock Shoot"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_7r2r6"]
+animation = &"Uzi Shoot"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_j04hv"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_10frf"]
+advance_mode = 2
+advance_expression = "currentWeapon == 3"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_6hg1c"]
+advance_mode = 2
+advance_expression = "currentWeapon == 0"
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_ngyjq"]
+"states/Glock Shoot/node" = SubResource("AnimationNodeAnimation_x0ksm")
+"states/Glock Shoot/position" = Vector2(425, 100)
+"states/Uzi Shoot/node" = SubResource("AnimationNodeAnimation_7r2r6")
+"states/Uzi Shoot/position" = Vector2(634, 100)
+transitions = ["Start", "Glock Shoot", SubResource("AnimationNodeStateMachineTransition_j04hv"), "Glock Shoot", "Uzi Shoot", SubResource("AnimationNodeStateMachineTransition_10frf"), "Uzi Shoot", "Glock Shoot", SubResource("AnimationNodeStateMachineTransition_6hg1c")]
+
+[resource]
+resource_local_to_scene = true
+graph_offset = Vector2(-727.3411, 118.724396)
+nodes/output/position = Vector2(260, 360)
+nodes/Locomotion/node = SubResource("AnimationNodeStateMachine_kjiig")
+nodes/Locomotion/position = Vector2(-480, 180)
+"nodes/One Handed Shoot/node" = SubResource("AnimationNodeOneShot_0xaec")
+"nodes/One Handed Shoot/position" = Vector2(-100, 300)
+"nodes/One Handed Weapons/node" = SubResource("AnimationNodeStateMachine_ngyjq")
+"nodes/One Handed Weapons/position" = Vector2(-480, 720)
+node_connections = [&"output", 0, &"One Handed Shoot", &"One Handed Shoot", 0, &"Locomotion", &"One Handed Shoot", 1, &"One Handed Weapons"]

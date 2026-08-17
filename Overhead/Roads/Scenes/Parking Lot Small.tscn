@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://duvo42rkdv8f8"]
+
+[ext_resource type="PackedScene" uid="uid://doh807cnrjrdm" path="res://_Blender/Quad.glb" id="1_6fwrc"]
+[ext_resource type="Material" uid="uid://cngkgk3cb2v6j" path="res://Overhead/Roads/Materials/Parking Lot Small.tres" id="2_0upvq"]
+
+[node name="Parkign Lot Small" type="Node3D" unique_id=1947390145]
+
+[node name="Quad2" parent="." unique_id=922310679 instance=ExtResource("1_6fwrc")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+
+[node name="Quad" parent="Quad2" index="0" unique_id=611090815]
+surface_material_override/0 = ExtResource("2_0upvq")
+
+[editable path="Quad2"]

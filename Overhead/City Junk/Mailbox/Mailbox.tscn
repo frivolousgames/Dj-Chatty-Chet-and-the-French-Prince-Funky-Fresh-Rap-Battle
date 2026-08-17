@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://balde0218iav"]
+
+[ext_resource type="PackedScene" uid="uid://fo5fwf15161l" path="res://Overhead/City Junk/Mailbox/Mailbox.glb" id="1_p6qpl"]
+[ext_resource type="Material" uid="uid://15phyet6cldk" path="res://Overhead/City Junk/Mailbox/Mailbox.tres" id="2_uxm40"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lfxu0"]
+size = Vector3(0.21289063, 1.7139282, 0.7050781)
+
+[node name="Mailbox" type="RigidBody3D" unique_id=1585405726]
+collision_layer = 3
+collision_mask = 3
+mass = 80.0
+center_of_mass_mode = 1
+center_of_mass = Vector3(0, 0.36, 0)
+
+[node name="Mailbox2" parent="." unique_id=2055422999 instance=ExtResource("1_p6qpl")]
+transform = Transform3D(3.36, 0, 0, 0, 3.36, 0, 0, 0, 3.36, 0, 0, 0)
+
+[node name="Mailbox" parent="Mailbox2" index="0" unique_id=481711723]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.0011801007, 0.20638102, 0)
+surface_material_override/0 = ExtResource("2_uxm40")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=535199761]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8572693, 0)
+shape = SubResource("BoxShape3D_lfxu0")
+
+[editable path="Mailbox2"]

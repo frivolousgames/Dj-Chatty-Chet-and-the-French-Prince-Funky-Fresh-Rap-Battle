@@ -1,0 +1,223 @@
+[gd_scene format=3 uid="uid://b865civlh0q33"]
+
+[ext_resource type="Script" uid="uid://c6my7v4v8cbh0" path="res://Overhead/Car/CarMover.cs" id="1_3cb30"]
+[ext_resource type="PackedScene" uid="uid://dcvxumesawl6f" path="res://Overhead/Car/Tiretrack Decal.tscn" id="2_ogu7u"]
+[ext_resource type="PackedScene" uid="uid://c2g1hek7toyio" path="res://Overhead/Car/Vehicle Static Hit Particles.tscn" id="3_fv4aa"]
+[ext_resource type="PackedScene" uid="uid://djwymdkxkxuue" path="res://Overhead/Car/Car.glb" id="3_ru8vy"]
+[ext_resource type="Material" uid="uid://c82gwxdoo3bj5" path="res://Overhead/Car/Car.tres" id="4_fv4aa"]
+[ext_resource type="Texture2D" uid="uid://cg2bpyulbv2qd" path="res://_Writing/particle.png" id="5_8tet2"]
+[ext_resource type="PackedScene" uid="uid://comgeoedl1oab" path="res://Overhead/Car/Wheel.glb" id="6_yabek"]
+[ext_resource type="Material" uid="uid://dhpl8vx04h85k" path="res://Overhead/Car/Headlight Bulb.tres" id="7_ogu7u"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mpqd1"]
+transparency = 1
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("5_8tet2")
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_lfxu0"]
+material = SubResource("StandardMaterial3D_mpqd1")
+
+[sub_resource type="Curve" id="Curve_4tir5"]
+_data = [Vector2(0.042553194, 0.516854), 0.0, -0.38022465, 0, 0, Vector2(0.9521277, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_3rqkp"]
+offsets = PackedFloat32Array(0, 0.19753087, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 0.44705883, 1, 1, 1, 0)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lfxu0"]
+size = Vector3(2.8320313, 0.97525024, 7.1694336)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hjb8m"]
+size = Vector3(2.2304688, 0.7159424, 3.288086)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_lfxu0"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_748sp"]
+transparency = 1
+blend_mode = 1
+albedo_color = Color(1, 0.9843137, 0.81960785, 0.011764706)
+emission = Color(1, 0.99697876, 0.96484375, 1)
+emission_energy_multiplier = 0.25
+anisotropy = 1.0
+proximity_fade_distance = 0.01
+distance_fade_mode = 1
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_ogu7u"]
+material = SubResource("StandardMaterial3D_748sp")
+top_radius = 1.9
+bottom_radius = 0.07
+height = 4.7631836
+
+[node name="Car" type="VehicleBody3D" unique_id=805560789 node_paths=PackedStringArray("TailLights", "HeadLights") groups=["Player Vehicle"]]
+collision_layer = 4
+collision_mask = 7
+axis_lock_angular_z = true
+mass = 1000.0
+continuous_cd = true
+contact_monitor = true
+max_contacts_reported = 5
+script = ExtResource("1_3cb30")
+MaxSteeringAngle = 0.5
+MaxEngineForce = 15000.0
+MaxBrakeForce = 225.0
+TailLights = [null, null]
+TireDecalThreshold = 7.5
+TireTrack = ExtResource("2_ogu7u")
+HeadLights = NodePath("Headlights")
+DamageParticles = ExtResource("3_fv4aa")
+
+[node name="Car" parent="." unique_id=2094350815 instance=ExtResource("3_ru8vy")]
+transform = Transform3D(3.36, 0, 0, 0, 3.36, 0, 0, 0, 3.36, 0, 1.0559013, 0)
+
+[node name="Car " parent="Car" index="0" unique_id=941774328]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="Tail Pipe" parent="Car/Car " index="6" unique_id=1009769616]
+surface_material_override/0 = ExtResource("4_fv4aa")
+
+[node name="CPUParticles3D" type="CPUParticles3D" parent="Car/Car /Tail Pipe" index="0" unique_id=1741097038]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.10290527)
+amount = 30
+explosiveness = 0.17
+randomness = 0.5
+mesh = SubResource("QuadMesh_lfxu0")
+direction = Vector3(0, 0, -1)
+spread = 55.24
+gravity = Vector3(0, 5, 0)
+initial_velocity_min = 0.1
+initial_velocity_max = 1.0
+scale_amount_min = 0.0
+scale_amount_curve = SubResource("Curve_4tir5")
+color = Color(1, 1, 1, 0.011764706)
+color_ramp = SubResource("Gradient_3rqkp")
+
+[node name="Tail Light L" type="OmniLight3D" parent="Car/Car " index="7" unique_id=1042368974]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3411007, -0.018886268, -1.0385971)
+visible = false
+light_color = Color(0.9999935, 0.35591963, 0.38769603, 1)
+light_energy = 0.05
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.0
+light_size = 0.04
+light_specular = 0.817
+
+[node name="Tail Light R" type="OmniLight3D" parent="Car/Car " index="8" unique_id=469775526]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.34663057, -0.018886268, -1.0385971)
+visible = false
+light_color = Color(0.9999935, 0.35591963, 0.38769603, 1)
+light_energy = 0.05
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.0
+light_size = 0.04
+light_specular = 0.817
+
+[node name="Body Collider" type="CollisionShape3D" parent="." unique_id=1755754264]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9418913, 0.23849487)
+shape = SubResource("BoxShape3D_lfxu0")
+
+[node name="Top Collider" type="CollisionShape3D" parent="." unique_id=532090409]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7874491, 0.020355225)
+shape = SubResource("BoxShape3D_hjb8m")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=2079960638]
+transform = Transform3D(-1, -1.4712579e-07, 3.3966664e-08, 0, 0.22495104, 0.97437006, -1.509958e-07, 0.97437006, -0.22495104, 0, 30.951, -4.655)
+fov = 30.1
+near = 0.039
+
+[node name="Wheel FL" type="VehicleWheel3D" parent="." unique_id=12028068]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1601827, 0.54428375, 2.4914284)
+engine_force = 50.0
+brake = 25.0
+steering = 0.37576938
+use_as_traction = true
+use_as_steering = true
+wheel_radius = 0.155
+
+[node name="Wheel" parent="Wheel FL" unique_id=86960338 instance=ExtResource("6_yabek")]
+transform = Transform3D(3.6, 0, 0, 0, 3.6, 0, 0, 0, 3.6, 0, -0.004, -0.002)
+
+[node name="Wheel FR" type="VehicleWheel3D" parent="." unique_id=1284201633]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.166, 0.5442978, 2.4911098)
+engine_force = 50.0
+brake = 25.0
+steering = 0.37576938
+use_as_traction = true
+use_as_steering = true
+wheel_radius = 0.155
+
+[node name="Wheel2" parent="Wheel FR" unique_id=180419207 instance=ExtResource("6_yabek")]
+transform = Transform3D(-3.6, 0, -5.4358486e-07, 0, 3.6, 0, 5.4358486e-07, 0, -3.6, 0, -0.004, -0.002)
+
+[node name="Wheel BL" type="VehicleWheel3D" parent="." unique_id=587912886]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1368062, 0.54428375, -1.9014101)
+engine_force = 50.0
+wheel_radius = 0.155
+wheel_friction_slip = 5.0
+
+[node name="Wheel" parent="Wheel BL" unique_id=1289626241 instance=ExtResource("6_yabek")]
+transform = Transform3D(3.6, 0, 0, 0, 3.6, 0, 0, 0, 3.6, 0, -0.004, -0.002)
+
+[node name="Wheel BR" type="VehicleWheel3D" parent="." unique_id=623286091]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.166, 0.5442978, -1.9017284)
+engine_force = 50.0
+wheel_radius = 0.155
+wheel_friction_slip = 5.0
+
+[node name="Wheel2" parent="Wheel BR" unique_id=1390947086 instance=ExtResource("6_yabek")]
+transform = Transform3D(-3.6, 0, -5.4358486e-07, 0, 3.6, 0, 5.4358486e-07, 0, -3.6, 0, -0.004, -0.002)
+
+[node name="Headlights" type="Node3D" parent="." unique_id=577231109]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0559013, 3.933876)
+visible = false
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Headlights" unique_id=623343471]
+transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, 0.9681473, -0.08083987, 0.19422245)
+layers = 1023
+light_color = Color(0.9921875, 0.97353554, 0.6937561, 1)
+light_energy = 3.534
+light_size = 0.168
+shadow_enabled = true
+spot_range = 10.92
+spot_angle = 38.61
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="Headlights" unique_id=896794545]
+transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, -0.9555989, -0.08083987, 0.19422245)
+layers = 1023
+light_color = Color(0.9921875, 0.97353554, 0.6937561, 1)
+light_energy = 3.534
+light_size = 0.168
+shadow_enabled = true
+spot_range = 10.92
+spot_angle = 38.62
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Headlights" unique_id=406522791]
+transform = Transform3D(0.336, 0, 0, 0, -2.928663e-09, -0.336, 0, 0.067, -1.4687027e-08, -0.9543424, -0.05034423, -0.27629375)
+mesh = SubResource("CylinderMesh_lfxu0")
+surface_material_override/0 = ExtResource("7_ogu7u")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Headlights" unique_id=426319245]
+transform = Transform3D(0.336, 0, 0, 0, -2.928663e-09, -0.336, 0, 0.067, -1.4687027e-08, 0.95186657, -0.05034423, -0.27629375)
+mesh = SubResource("CylinderMesh_lfxu0")
+surface_material_override/0 = ExtResource("7_ogu7u")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Headlights" unique_id=1348458395]
+transform = Transform3D(0.336, 0, 0, 0, -2.928663e-09, -0.336, 0, 0.067, -1.4687027e-08, 0.25838375, -0.048555374, 0.113419056)
+visible = false
+mesh = SubResource("CylinderMesh_ogu7u")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Headlights" unique_id=1217010048]
+transform = Transform3D(0.336, 0, 0, 0, -2.928663e-09, -0.336, 0, 0.067, -1.4687027e-08, -0.23954678, -0.048555374, 0.113419056)
+visible = false
+mesh = SubResource("CylinderMesh_ogu7u")
+
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="." unique_id=499268476]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0122917, 0.07128906)
+size = Vector3(0.8330078, 0.27825928, 2.1425781)
+
+[editable path="Car"]

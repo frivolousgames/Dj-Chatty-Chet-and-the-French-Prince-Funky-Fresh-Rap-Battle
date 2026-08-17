@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://b4y10hmrjatc5"]
+
+[ext_resource type="Texture2D" uid="uid://dwfn3ryb6jy5f" path="res://Overhead/Buildings/Building 1/Building 1 Faces.png" id="1_cog61"]
+[ext_resource type="Texture2D" uid="uid://bgemujldqwvge" path="res://Overhead/Buildings/Building 1/Building 1 Faces Normal.png" id="2_brhl7"]
+
+[resource]
+albedo_color = Color(1, 0.8334961, 0.65625, 1)
+albedo_texture = ExtResource("1_cog61")
+normal_enabled = true
+normal_scale = 2.0
+normal_texture = ExtResource("2_brhl7")

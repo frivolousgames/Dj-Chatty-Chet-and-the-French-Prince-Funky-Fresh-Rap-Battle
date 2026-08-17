@@ -1,0 +1,15 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dgfv76ax1dpr3"]
+
+[ext_resource type="Texture2D" uid="uid://buieg47e1ic8p" path="res://Overhead/Overhead Player/Muzzle Flash/Flash1.png" id="1_g5cbs"]
+
+[resource]
+resource_local_to_scene = true
+resource_name = "Muzzle Flash"
+transparency = 1
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_g5cbs")
+emission_enabled = true
+emission = Color(1, 1, 0.44705883, 1)
+emission_energy_multiplier = 5.58
+billboard_mode = 1
+billboard_keep_scale = true

@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://dyup7ii0u876b"]
+
+[ext_resource type="PackedScene" uid="uid://c1em647vub4ch" path="res://Overhead/City Junk/Bench/Bench.glb" id="1_4gglq"]
+[ext_resource type="Material" uid="uid://cn1h70qmymce0" path="res://Overhead/City Junk/Bench/Bench Wood.tres" id="2_bgmo7"]
+[ext_resource type="Material" uid="uid://bh21gq31if1a" path="res://Overhead/City Junk/Bench/Bench Metal.tres" id="3_h4acg"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lfxu0"]
+size = Vector3(2.0197754, 1.1480865, 0.8987427)
+
+[node name="Bench" type="RigidBody3D" unique_id=2086597506]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=26346393]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5764694, 0.015106201)
+shape = SubResource("BoxShape3D_lfxu0")
+
+[node name="Bench2" parent="." unique_id=1031394141 instance=ExtResource("1_4gglq")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+
+[node name="Bench" parent="Bench2" index="0" unique_id=938219746]
+surface_material_override/0 = ExtResource("2_bgmo7")
+surface_material_override/1 = ExtResource("3_h4acg")
+
+[editable path="Bench2"]

@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://c5cpyuwydwyim"]
+
+[ext_resource type="PackedScene" uid="uid://j1fijxtypgo1" path="res://Overhead/Roads/Scenes/Road 4 Way.tscn" id="1_afo48"]
+[ext_resource type="PackedScene" uid="uid://dqjxbowsxeakk" path="res://Overhead/Roads/Scenes/Road Straight.tscn" id="2_x4p6g"]
+[ext_resource type="PackedScene" uid="uid://bqjukcw4ayh2b" path="res://Overhead/Roads/Scenes/Road Alley 4 Way.tscn" id="3_4f33n"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lfxu0"]
+size = Vector3(1000, 0.49975586, 1000)
+
+[node name="Map 01" type="StaticBody3D" unique_id=1847420341]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=888476880]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25012207, 0)
+shape = SubResource("BoxShape3D_lfxu0")
+
+[node name="Road 1" parent="." unique_id=1764185264 instance=ExtResource("1_afo48")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 2, -15)
+
+[node name="Quad" parent="Road 1" index="2" unique_id=113599578]
+transform = Transform3D(16, 0, 0, 0, 16, 0, 0, 0, 16, 0, 0, -1)
+
+[node name="Road Alley 4 Way" parent="." unique_id=1180312315 instance=ExtResource("3_4f33n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, -48)
+
+[node name="Road Straight" parent="." unique_id=603536972 instance=ExtResource("2_x4p6g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 2, 16)
+
+[node name="Road Straight2" parent="." unique_id=2122120544 instance=ExtResource("2_x4p6g")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -48, 2, -16)
+
+[editable path="Road 1"]

@@ -1,0 +1,12 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://c43hypg1luany"]
+
+[ext_resource type="Texture2D" uid="uid://j83vv0hxi27y" path="res://Overhead/Buildings/Top Objects/Brick_Wall_026_basecolor.png" id="1_rq4qm"]
+[ext_resource type="Texture2D" uid="uid://b3twclel47ftm" path="res://Overhead/Buildings/Top Objects/Brick_Wall_026_normal.png" id="2_u6ja7"]
+
+[resource]
+albedo_color = Color(0.32990336, 0.33203125, 0.29312134, 1)
+albedo_texture = ExtResource("1_rq4qm")
+roughness = 0.72
+normal_enabled = true
+normal_texture = ExtResource("2_u6ja7")
+uv1_scale = Vector3(5, 5, 5)

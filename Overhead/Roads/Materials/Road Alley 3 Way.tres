@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://du5qafdr60eol"]
+
+[ext_resource type="Texture2D" uid="uid://bewqdobxb7xoh" path="res://Overhead/Roads/Images/Road Alley 3 Way.png" id="1_01k5j"]
+[ext_resource type="Texture2D" uid="uid://bxatoa22rcudb" path="res://Overhead/Roads/Images/Road Alley 3 Way Normal.png" id="2_q1a34"]
+
+[resource]
+albedo_texture = ExtResource("1_01k5j")
+normal_enabled = true
+normal_texture = ExtResource("2_q1a34")

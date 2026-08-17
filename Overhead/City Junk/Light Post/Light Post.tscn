@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://chksc5xpresfg"]
+
+[ext_resource type="PackedScene" uid="uid://b7x2onbhnrsp5" path="res://Overhead/City Junk/Light Post/Light Post.glb" id="1_771pm"]
+[ext_resource type="Material" uid="uid://ctdbq5w1wdj11" path="res://Overhead/City Junk/Light Post/Light Post Metal.tres" id="2_8nn3l"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_8nn3l"]
+height = 14.314087
+radius = 0.31152344
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lfxu0"]
+size = Vector3(3.897293, 0.16448975, 0.12695313)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_748sp"]
+transparency = 1
+blend_mode = 1
+albedo_color = Color(1, 0.9843137, 0.81960785, 0.011764706)
+emission = Color(1, 0.99697876, 0.96484375, 1)
+emission_energy_multiplier = 0.25
+anisotropy = 1.0
+proximity_fade_distance = 0.01
+distance_fade_mode = 1
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_lfxu0"]
+material = SubResource("StandardMaterial3D_748sp")
+top_radius = 2.1
+bottom_radius = 0.1
+height = 14.590576
+
+[node name="Light Post" type="StaticBody3D" unique_id=1902395794 groups=["Vehicle Static Hit"]]
+collision_layer = 7
+collision_mask = 7
+
+[node name="Light Post2" parent="." unique_id=964516304 instance=ExtResource("1_771pm")]
+
+[node name="Light Post" parent="Light Post2" index="0" unique_id=416960185]
+transform = Transform3D(2.7998934, 0, 0.024434298, 0, 2.8, 0, -0.024434298, 0, 2.7998934, 0, 0, 0)
+surface_material_override/0 = ExtResource("2_8nn3l")
+
+[node name="Post Collider" type="CollisionShape3D" parent="." unique_id=1185040929]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.198761, 0)
+shape = SubResource("CylinderShape3D_8nn3l")
+
+[node name="Light Collider" type="CollisionShape3D" parent="." unique_id=1965855073]
+transform = Transform3D(0.9832549, 0.18223552, 0, -0.18223552, 0.9832549, 0, 0, 0, 1, -1.9356478, 12.925072, 0.0050937086)
+shape = SubResource("BoxShape3D_lfxu0")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1821638756]
+transform = Transform3D(3.045, 0, 0, 0, -1, 4.8318657e-07, 0, -1.509958e-07, -3.2, -2.9942245, 5.567486, -0.01322676)
+visible = false
+transparency = 0.57
+mesh = SubResource("CylinderMesh_lfxu0")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1385651931]
+transform = Transform3D(1, 0, 0, 0, 1.3113416e-07, 1, 0, -1, 1.3113416e-07, -3.0120873, 12.307426, 0.0032381713)
+light_color = Color(0.9976196, 1, 0.6953125, 1)
+light_energy = 3.325
+light_indirect_energy = 16.0
+light_volumetric_fog_energy = 10.347
+light_size = 1.0
+light_specular = 3.644
+omni_range = 2.5
+
+[node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=1129668921]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -3.0459478, 12.973495, 0)
+light_color = Color(1, 1, 0.8156863, 1)
+light_energy = 16.0
+light_size = 1.0
+spot_range = 14.642537
+spot_attenuation = 0.0
+spot_angle = 30.71246
+
+[editable path="Light Post2"]

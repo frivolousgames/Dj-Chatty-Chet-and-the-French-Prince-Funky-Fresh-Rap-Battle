@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://de1jdv4cvejyr"]
+
+[ext_resource type="Script" uid="uid://bsym0bmcr51xa" path="res://Overhead/Overhead Player/Bullets/ShotgunSpray.cs" id="1_8my0s"]
+[ext_resource type="Texture2D" uid="uid://72uc3sh8wtb2" path="res://Overhead/Overhead Player/Bullets/Circle.png" id="2_8my0s"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_lfxu0"]
+points = PackedVector3Array(-2.99, -1.715, -4.83, 2.9, -1.715, -4.87, 0, 0, 0, 0, 0.06, 0, 2.905, 1.7, -4.89, -2.98, 1.7, -4.81)
+
+[sub_resource type="Gradient" id="Gradient_8c05q"]
+offsets = PackedFloat32Array(0, 0.26548672, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_ejopp"]
+gradient = SubResource("Gradient_8c05q")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_r6c0r"]
+lifetime_randomness = 0.43
+angle_min = 1.0728835e-05
+angle_max = 1.0728835e-05
+direction = Vector3(0, 0, -1)
+spread = 33.75
+initial_velocity_min = 10.0
+initial_velocity_max = 20.0
+gravity = Vector3(0, 0, 0)
+linear_accel_min = 6.7299976
+linear_accel_max = 99.99999
+scale_min = 0.9
+scale_max = 0.9
+color_ramp = SubResource("GradientTexture1D_ejopp")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fb2r8"]
+transparency = 1
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("2_8my0s")
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 9.0
+billboard_mode = 1
+billboard_keep_scale = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_aqhks"]
+material = SubResource("StandardMaterial3D_fb2r8")
+size = Vector2(0.05, 0.05)
+
+[node name="Shotgun Spray" type="Area3D" unique_id=1100571900 node_paths=PackedStringArray("particles3D")]
+script = ExtResource("1_8my0s")
+waitTime = 1.0
+particles3D = NodePath("GPUParticles3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1851691424]
+shape = SubResource("ConvexPolygonShape3D_lfxu0")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=1268563712]
+emitting = false
+amount = 50
+lifetime = 0.2
+one_shot = true
+explosiveness = 1.0
+randomness = 0.51
+process_material = SubResource("ParticleProcessMaterial_r6c0r")
+draw_pass_1 = SubResource("QuadMesh_aqhks")

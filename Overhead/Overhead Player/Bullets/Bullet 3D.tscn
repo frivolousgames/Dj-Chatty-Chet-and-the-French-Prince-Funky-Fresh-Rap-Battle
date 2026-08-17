@@ -1,0 +1,81 @@
+[gd_scene format=3 uid="uid://bclrx4uxawrjn"]
+
+[ext_resource type="Script" uid="uid://da0ix8pag7f78" path="res://Overhead/Overhead Player/Bullets/Bullet3dMover.cs" id="1_b4lll"]
+[ext_resource type="PackedScene" uid="uid://b4rn1gw1406to" path="res://Overhead/Overhead Player/Bullets/bullet.fbx" id="2_1w2bf"]
+[ext_resource type="Material" uid="uid://coq2vhctiexfj" path="res://Overhead/Overhead Player/Bullets/Bullet Material.tres" id="3_ek20n"]
+[ext_resource type="Texture2D" uid="uid://cg2bpyulbv2qd" path="res://_Writing/particle.png" id="4_qpxfl"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_b4lll"]
+size = Vector3(0.028320313, 0.029296875, 0.18267822)
+
+[sub_resource type="Gradient" id="Gradient_dpqey"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_dpqey"]
+gradient = SubResource("Gradient_dpqey")
+
+[sub_resource type="Curve" id="Curve_8i4j5"]
+_limits = [0.0, 5.0, 0.0, 1.0]
+_data = [Vector2(0.007194236, 1.4606743), 0.0, -0.8009217, 0, 0, Vector2(0.98561156, 0.08988774), 0.59715724, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_dpqey"]
+curve = SubResource("Curve_8i4j5")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_lfxu0"]
+lifetime_randomness = 0.53
+direction = Vector3(0, 0, 1)
+spread = 0.0
+initial_velocity_min = 2.0
+initial_velocity_max = 2.0
+gravity = Vector3(0, 0, 0)
+scale_curve = SubResource("CurveTexture_dpqey")
+color = Color(1, 1, 1, 0.40392157)
+color_ramp = SubResource("GradientTexture1D_dpqey")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r6c0r"]
+transparency = 1
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("4_qpxfl")
+billboard_mode = 1
+billboard_keep_scale = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_hjb8m"]
+material = SubResource("StandardMaterial3D_r6c0r")
+size = Vector2(0.01, 0.01)
+
+[node name="Bullet 3D" type="RigidBody3D" unique_id=1669801883]
+collision_layer = 0
+collision_mask = 0
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+gravity_scale = 0.0
+script = ExtResource("1_b4lll")
+velocity = 18.0
+waitTime = 2.0
+
+[node name="bullet" parent="." unique_id=426940860 instance=ExtResource("2_1w2bf")]
+transform = Transform3D(0.39, 0, 0, 0, 0.39, 0, 0, 0, 0.39, 0, -0.011094455, 0.048569873)
+
+[node name="bullet" parent="bullet" index="0" unique_id=2102825140]
+transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 100, 0, -100, -1.1920929e-05, 0, 0.030680709, -0.277126)
+surface_material_override/0 = ExtResource("3_ek20n")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1137311286]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.09024048)
+shape = SubResource("BoxShape3D_b4lll")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=1132092052]
+amount = 50
+randomness = 0.2
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_lfxu0")
+draw_pass_1 = SubResource("QuadMesh_hjb8m")
+
+[node name="RayCast3D" type="RayCast3D" parent="." unique_id=277688073]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.16166392)
+target_position = Vector3(0, 0, -0.035)
+debug_shape_custom_color = Color(1, 0, 0, 1)
+
+[editable path="bullet"]

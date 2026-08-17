@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://o4pcv7jm2bp1"]
+
+[ext_resource type="Texture2D" uid="uid://3iucid4p6oqk" path="res://Overhead/Buildings/Top Objects/Fan Normal.png" id="1_57hws"]
+
+[resource]
+albedo_color = Color(0, 0, 0, 1)
+normal_texture = ExtResource("1_57hws")

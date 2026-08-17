@@ -1,0 +1,27 @@
+[gd_resource type="AnimationNodeStateMachine" format=3 uid="uid://clbf55e2lg71j"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_r1avm"]
+animation = &"Idle One Handed"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_adio0"]
+animation = &"Idle One Handed"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ubsxa"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_2h362"]
+advance_mode = 2
+advance_expression = "currentWeapon == 3"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_opv5a"]
+advance_mode = 2
+advance_expression = "currentWeapon == 0"
+
+[resource]
+resource_local_to_scene = true
+"states/Glock Idle/node" = SubResource("AnimationNodeAnimation_r1avm")
+"states/Glock Idle/position" = Vector2(379, 99)
+states/Start/position = Vector2(201, 100)
+"states/UZI Idle/node" = SubResource("AnimationNodeAnimation_adio0")
+"states/UZI Idle/position" = Vector2(552, 96)
+transitions = ["Start", "Glock Idle", SubResource("AnimationNodeStateMachineTransition_ubsxa"), "Glock Idle", "UZI Idle", SubResource("AnimationNodeStateMachineTransition_2h362"), "UZI Idle", "Glock Idle", SubResource("AnimationNodeStateMachineTransition_opv5a")]

@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://xc0amehop120"]
+
+[ext_resource type="Texture2D" uid="uid://iibh6njnrdwy" path="res://Overhead/City Junk/Dumpster/Dumpster Lid Color.png" id="1_dqh4w"]
+[ext_resource type="Texture2D" uid="uid://df3niq60l424j" path="res://Overhead/City Junk/Dumpster/Dumpster Lid Normal.png" id="2_2gjdg"]
+
+[resource]
+albedo_texture = ExtResource("1_dqh4w")
+normal_enabled = true
+normal_scale = 3.12
+normal_texture = ExtResource("2_2gjdg")

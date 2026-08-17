@@ -1,7 +1,0 @@
-[gd_scene format=3 uid="uid://c1vns5d3q0lf7"]
-
-[ext_resource type="PackedScene" uid="uid://bm6o2jahpq4uf" path="res://_Blender/Buildings/Building 2/Building 2.glb" id="1_5e3t1"]
-
-[node name="Building 2" type="Node3D" unique_id=293873216]
-
-[node name="Building 22" parent="." unique_id=226202289 instance=ExtResource("1_5e3t1")]

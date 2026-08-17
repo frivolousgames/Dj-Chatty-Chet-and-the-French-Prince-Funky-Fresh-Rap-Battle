@@ -1,0 +1,13 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://pb4dwa0da760"]
+
+[ext_resource type="Texture2D" uid="uid://cf4hnwcdpvqm5" path="res://Overhead/Buildings/Top Objects/Metal_Rusted_002_COLOR.png" id="1_47xbj"]
+[ext_resource type="Texture2D" uid="uid://c4dddfh1i487v" path="res://Overhead/Buildings/Top Objects/Metal_Rusted_002_Norm.png" id="2_icya3"]
+
+[resource]
+albedo_color = Color(0.8828125, 0.66345644, 0.4069214, 1)
+albedo_texture = ExtResource("1_47xbj")
+metallic = 1.0
+roughness = 0.79
+normal_enabled = true
+normal_texture = ExtResource("2_icya3")
+uv1_scale = Vector3(5, 5, 5)

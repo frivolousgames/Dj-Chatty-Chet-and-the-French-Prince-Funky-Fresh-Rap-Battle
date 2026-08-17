@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://evtpmhr25syv"]
+
+[ext_resource type="Texture2D" uid="uid://c3gc6arid3en5" path="res://Overhead/Car/Bumper.png" id="1_3ub30"]
+
+[resource]
+albedo_color = Color(1, 0.89344263, 0, 1)
+albedo_texture = ExtResource("1_3ub30")
+roughness = 0.5

@@ -1,0 +1,532 @@
+[gd_scene format=3 uid="uid://u24ogysd4uwa"]
+
+[ext_resource type="Texture2D" uid="uid://lhwg1voh31qe" path="res://_Writing/Notebook.png" id="1_4p6s8"]
+[ext_resource type="Texture2D" uid="uid://2ldy2mju6cwy" path="res://_Writing/Stars Small.png" id="1_ox6st"]
+[ext_resource type="FontFile" uid="uid://bybjleoamaalv" path="res://_Fonts/ReenieBeanie.ttf" id="2_e8cgc"]
+[ext_resource type="Script" uid="uid://dbffuageecasb" path="res://_Writing/Parallax_Stars.cs" id="2_icrqj"]
+[ext_resource type="Texture2D" uid="uid://dmy48juogyqak" path="res://_Writing/Stars Med.png" id="3_h1ojj"]
+[ext_resource type="Texture2D" uid="uid://dtsq2jasu1rwm" path="res://_Writing/Stars Big.png" id="4_puct6"]
+[ext_resource type="PackedScene" uid="uid://knm4vwipyfoj" path="res://_Writing/bullet.tscn" id="7_puct6"]
+[ext_resource type="Texture2D" uid="uid://33vnkf0km2bx" path="res://_Writing/Spaceship.png" id="8_h1ojj"]
+[ext_resource type="Script" uid="uid://cywjbkff4av5n" path="res://_Writing/Spaceship.cs" id="9_puct6"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_lfxu0"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_hjb8m"]
+font = ExtResource("2_e8cgc")
+font_size = 23
+font_color = Color(0.072842635, 0.072842635, 0.072842635, 1)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_r6c0r"]
+
+[sub_resource type="Environment" id="Environment_5kqlq"]
+background_mode = 3
+background_canvas_max_layer = 105
+tonemap_exposure = 1.01
+glow_enabled = true
+glow_intensity = 0.05
+glow_bloom = 0.39
+glow_hdr_threshold = 1.53
+
+[node name="Node2D" type="Node2D" unique_id=856797311]
+
+[node name="Canvas" type="CanvasLayer" parent="." unique_id=395250034]
+
+[node name="BG Black" type="Sprite2D" parent="Canvas" unique_id=1977672397]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(946.50006, 547.50006)
+scale = Vector2(2488.9998, 1377)
+texture = SubResource("CanvasTexture_lfxu0")
+
+[node name="Notebook" type="Sprite2D" parent="Canvas" unique_id=139623900]
+position = Vector2(410, 530)
+scale = Vector2(0.28, 0.28)
+texture = ExtResource("1_4p6s8")
+
+[node name="Set 1" type="Node2D" parent="Canvas/Notebook" unique_id=777768652]
+position = Vector2(-1511.628, -1813.9536)
+scale = Vector2(4.651163, 4.651163)
+
+[node name="Rap Line 1" type="Label" parent="Canvas/Notebook/Set 1" unique_id=1692187342]
+offset_left = 169.0
+offset_top = 122.0
+offset_right = 484.0
+offset_bottom = 146.0
+text = "Lil dong sounds like a confession not a"
+label_settings = SubResource("LabelSettings_hjb8m")
+vertical_alignment = 1
+
+[node name="Line Sprite" type="Sprite2D" parent="Canvas/Notebook/Set 1/Rap Line 1" unique_id=2099445994]
+modulate = Color(0.20871013, 0.20871016, 0.20871013, 1)
+position = Vector2(340.00003, 18.000015)
+scale = Vector2(61.00004, 1.9999981)
+texture = SubResource("CanvasTexture_r6c0r")
+
+[node name="Rap Line 2" type="Label" parent="Canvas/Notebook/Set 1" unique_id=2089584225]
+offset_left = 169.0
+offset_top = 148.0
+offset_right = 520.0
+offset_bottom = 199.0
+text = "Chinese, Japanese, it don't matter you're all
+"
+label_settings = SubResource("LabelSettings_hjb8m")
+vertical_alignment = 1
+
+[node name="Rap Line 3" type="Label" parent="Canvas/Notebook/Set 1/Rap Line 2" unique_id=1984519284]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 24.0
+offset_right = 317.0
+offset_bottom = 48.0
+text = "the same"
+label_settings = SubResource("LabelSettings_hjb8m")
+vertical_alignment = 1
+
+[node name="Line Sprite2" type="Sprite2D" parent="Canvas/Notebook/Set 1/Rap Line 2" unique_id=1553863436]
+modulate = Color(0.20871013, 0.20871016, 0.20871013, 1)
+position = Vector2(390.99994, 17.000015)
+scale = Vector2(61.00004, 1.9999981)
+texture = SubResource("CanvasTexture_r6c0r")
+
+[node name="Set 2" type="Node2D" parent="Canvas/Notebook" unique_id=2104296724]
+position = Vector2(-1511.6279, -1474.4186)
+scale = Vector2(4.651163, 4.651163)
+
+[node name="Set 3" type="Node2D" parent="Canvas/Notebook/Set 2" unique_id=155039901]
+position = Vector2(0, 71.99998)
+
+[node name="Rap Line 1" type="Label" parent="Canvas/Notebook/Set 2/Set 3" unique_id=2050021293]
+offset_left = 169.0
+offset_top = 122.0
+offset_right = 484.0
+offset_bottom = 146.0
+text = "I've got a confession too, I've never heard"
+label_settings = SubResource("LabelSettings_hjb8m")
+vertical_alignment = 1
+
+[node name="Line Sprite" type="Sprite2D" parent="Canvas/Notebook/Set 2/Set 3/Rap Line 1" unique_id=622772766]
+modulate = Color(0.20871013, 0.20871016, 0.20871013, 1)
+position = Vector2(377.99994, 18.999985)
+scale = Vector2(61.00004, 1.9999981)
+texture = SubResource("CanvasTexture_r6c0r")
+
+[node name="Rap Line 3" type="Label" parent="Canvas/Notebook/Set 2/Set 3/Rap Line 1" unique_id=1309806947]
+layout_mode = 0
+offset_left = -1.5258789e-05
+offset_top = 23.0
+offset_right = 339.0
+offset_bottom = 47.0
+text = "rhymes before"
+label_settings = SubResource("LabelSettings_hjb8m")
+vertical_alignment = 1
+
+[node name="Rap Line 2" type="Label" parent="Canvas/Notebook/Set 2/Set 3" unique_id=191007528]
+offset_left = 168.99998
+offset_top = 172.0
+offset_right = 528.0
+offset_bottom = 223.0
+text = "you might be       but your rapping is quite
+"
+label_settings = SubResource("LabelSettings_hjb8m")
+vertical_alignment = 1
+
+[node name="Line Sprite2" type="Sprite2D" parent="Canvas/Notebook/Set 2/Set 3/Rap Line 2" unique_id=395734012]
+modulate = Color(0.20871013, 0.20871016, 0.20871013, 1)
+position = Vector2(129.74995, 15.999985)
+scale = Vector2(58.500004, 1.9999981)
+texture = SubResource("CanvasTexture_r6c0r")
+
+[node name="Line Sprite3" type="Sprite2D" parent="Canvas/Notebook/Set 2/Set 3/Rap Line 2" unique_id=2025341382]
+modulate = Color(0.20871013, 0.20871016, 0.20871013, 1)
+position = Vector2(391.99994, 15.999985)
+scale = Vector2(61.00004, 1.9999981)
+texture = SubResource("CanvasTexture_r6c0r")
+
+[node name="Rap Line 1" type="Label" parent="Canvas/Notebook/Set 2" unique_id=1401793841]
+offset_left = 169.0
+offset_top = 122.0
+offset_right = 484.0
+offset_bottom = 146.0
+text = "Maybe if you pry your       open with some chopsticks"
+label_settings = SubResource("LabelSettings_hjb8m")
+vertical_alignment = 1
+
+[node name="Line Sprite" type="Sprite2D" parent="Canvas/Notebook/Set 2/Rap Line 1" unique_id=362235423]
+modulate = Color(0.20871013, 0.20871016, 0.20871013, 1)
+position = Vector2(202.99995, 18.999985)
+scale = Vector2(61.00004, 1.9999981)
+texture = SubResource("CanvasTexture_r6c0r")
+
+[node name="Rap Line 2" type="Label" parent="Canvas/Notebook/Set 2" unique_id=22352302]
+offset_left = 169.0
+offset_top = 148.0
+offset_right = 520.0
+offset_bottom = 199.0
+text = "You can look at me and see what an actual
+"
+label_settings = SubResource("LabelSettings_hjb8m")
+vertical_alignment = 1
+
+[node name="Rap Line 3" type="Label" parent="Canvas/Notebook/Set 2/Rap Line 2" unique_id=824997857]
+layout_mode = 0
+offset_left = 1.9999847
+offset_top = 22.999985
+offset_right = 317.0
+offset_bottom = 46.999985
+text = "cock is"
+label_settings = SubResource("LabelSettings_hjb8m")
+vertical_alignment = 1
+
+[node name="Line Sprite2" type="Sprite2D" parent="Canvas/Notebook/Set 2/Rap Line 2" unique_id=548099051]
+modulate = Color(0.20871013, 0.20871016, 0.20871013, 1)
+position = Vector2(395.99994, 15.999985)
+scale = Vector2(61.00004, 1.9999981)
+texture = SubResource("CanvasTexture_r6c0r")
+
+[node name="Set 3" type="Node2D" parent="Canvas/Notebook" unique_id=2019083805]
+position = Vector2(-1511.6279, -800)
+scale = Vector2(4.651163, 4.651163)
+
+[node name="Rap Line 1" type="Label" parent="Canvas/Notebook/Set 3" unique_id=1978005774]
+offset_left = 169.0
+offset_top = 122.0
+offset_right = 484.0
+offset_bottom = 146.0
+text = "You've got daddy's       maybe you can buy some skills"
+label_settings = SubResource("LabelSettings_hjb8m")
+vertical_alignment = 1
+
+[node name="Line Sprite" type="Sprite2D" parent="Canvas/Notebook/Set 3/Rap Line 1" unique_id=1991339831]
+modulate = Color(0.20871013, 0.20871016, 0.20871013, 1)
+position = Vector2(169.99995, 18.999985)
+scale = Vector2(61.00004, 1.9999981)
+texture = SubResource("CanvasTexture_r6c0r")
+
+[node name="Rap Line 2" type="Label" parent="Canvas/Notebook/Set 3" unique_id=414577600]
+offset_left = 169.0
+offset_top = 148.0
+offset_right = 520.0
+offset_bottom = 199.0
+text = "Or better yet, why don't your       ass come pay my
+"
+label_settings = SubResource("LabelSettings_hjb8m")
+vertical_alignment = 1
+
+[node name="Rap Line 3" type="Label" parent="Canvas/Notebook/Set 3/Rap Line 2" unique_id=323716430]
+layout_mode = 0
+offset_left = 1.9999847
+offset_top = 22.999985
+offset_right = 317.0
+offset_bottom = 46.999985
+text = "bills"
+label_settings = SubResource("LabelSettings_hjb8m")
+vertical_alignment = 1
+
+[node name="Line Sprite2" type="Sprite2D" parent="Canvas/Notebook/Set 3/Rap Line 2" unique_id=144829705]
+modulate = Color(0.20871013, 0.20871016, 0.20871013, 1)
+position = Vector2(258.99994, 15.999985)
+scale = Vector2(61.00004, 1.9999981)
+texture = SubResource("CanvasTexture_r6c0r")
+
+[node name="Set 4" type="Node2D" parent="Canvas/Notebook" unique_id=926203879]
+position = Vector2(-1511.6279, -469.76746)
+scale = Vector2(4.651163, 4.651163)
+
+[node name="Rap Line 1" type="Label" parent="Canvas/Notebook/Set 4" unique_id=1722703264]
+offset_left = 169.0
+offset_top = 122.0
+offset_right = 484.0
+offset_bottom = 146.0
+text = "You should fuck off  back to China, we only like"
+label_settings = SubResource("LabelSettings_hjb8m")
+vertical_alignment = 1
+
+[node name="Line Sprite" type="Sprite2D" parent="Canvas/Notebook/Set 4/Rap Line 1" unique_id=203754827]
+modulate = Color(0.20871013, 0.20871016, 0.20871013, 1)
+position = Vector2(32.999985, 44.99998)
+scale = Vector2(61.00004, 1.9999981)
+texture = SubResource("CanvasTexture_r6c0r")
+
+[node name="Rap Line 3" type="Label" parent="Canvas/Notebook/Set 4/Rap Line 1" unique_id=986085571]
+layout_mode = 0
+offset_left = 68.99998
+offset_top = 25.0
+offset_right = 410.99997
+offset_bottom = 49.0
+text = "Asians here"
+label_settings = SubResource("LabelSettings_hjb8m")
+vertical_alignment = 1
+
+[node name="Rap Line 2" type="Label" parent="Canvas/Notebook/Set 4" unique_id=1222432809]
+offset_left = 168.99998
+offset_top = 174.0
+offset_right = 596.0
+offset_bottom = 225.0
+text = "Not dumbass            who think jerking off
+"
+label_settings = SubResource("LabelSettings_hjb8m")
+vertical_alignment = 1
+
+[node name="Rap Line 3" type="Label" parent="Canvas/Notebook/Set 4/Rap Line 2" unique_id=402955754]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 24.999985
+offset_right = 317.0
+offset_bottom = 48.999985
+text = "is a career"
+label_settings = SubResource("LabelSettings_hjb8m")
+vertical_alignment = 1
+
+[node name="Line Sprite2" type="Sprite2D" parent="Canvas/Notebook/Set 4/Rap Line 2" unique_id=1826624340]
+modulate = Color(0.20871013, 0.20871016, 0.20871013, 1)
+position = Vector2(156.00891, 15.919601)
+scale = Vector2(109.017876, 1.8392316)
+texture = SubResource("CanvasTexture_r6c0r")
+
+[node name="Line Sprite3" type="Sprite2D" parent="Canvas/Notebook/Set 4/Rap Line 2" unique_id=2095759876]
+modulate = Color(0.20871013, 0.20871016, 0.20871013, 1)
+position = Vector2(411.69638, 16.839218)
+scale = Vector2(61.00004, 1.9999981)
+texture = SubResource("CanvasTexture_r6c0r")
+
+[node name="Set 5" type="Node2D" parent="Canvas/Notebook" unique_id=1204340927]
+position = Vector2(-1511.6282, -9.302246)
+scale = Vector2(4.6511636, 4.6511636)
+
+[node name="Rap Line 1" type="Label" parent="Canvas/Notebook/Set 5" unique_id=1337031551]
+offset_left = 169.0
+offset_top = 122.0
+offset_right = 484.0
+offset_bottom = 146.0
+text = "I know real culture, like          and apple pie"
+label_settings = SubResource("LabelSettings_hjb8m")
+vertical_alignment = 1
+
+[node name="Line Sprite" type="Sprite2D" parent="Canvas/Notebook/Set 5/Rap Line 1" unique_id=1291238117]
+modulate = Color(0.20871013, 0.20871016, 0.20871013, 1)
+position = Vector2(247.24994, 18.999924)
+scale = Vector2(89.500015, 1.9999981)
+texture = SubResource("CanvasTexture_r6c0r")
+
+[node name="Rap Line 2" type="Label" parent="Canvas/Notebook/Set 5" unique_id=1621139505]
+offset_left = 169.0
+offset_top = 148.0
+offset_right = 520.0
+offset_bottom = 199.0
+text = "Not eating       for dinner, with grasshoppers on the
+"
+label_settings = SubResource("LabelSettings_hjb8m")
+vertical_alignment = 1
+
+[node name="Rap Line 3" type="Label" parent="Canvas/Notebook/Set 5/Rap Line 2" unique_id=1667884844]
+layout_mode = 0
+offset_left = 2.0000153
+offset_top = 26.999924
+offset_right = 317.0
+offset_bottom = 50.999924
+text = "side"
+label_settings = SubResource("LabelSettings_hjb8m")
+vertical_alignment = 1
+
+[node name="Line Sprite2" type="Sprite2D" parent="Canvas/Notebook/Set 5/Rap Line 2" unique_id=2017589738]
+modulate = Color(0.20871013, 0.20871016, 0.20871013, 1)
+position = Vector2(115.99997, 18.999924)
+scale = Vector2(61.00004, 1.9999981)
+texture = SubResource("CanvasTexture_r6c0r")
+
+[node name="Set 6" type="Node2D" parent="Canvas/Notebook" unique_id=314446770]
+position = Vector2(-1511.628, 348.83716)
+scale = Vector2(4.6511636, 4.6511636)
+
+[node name="Rap Line 1" type="Label" parent="Canvas/Notebook/Set 6" unique_id=1711790667]
+offset_left = 169.0
+offset_top = 122.0
+offset_right = 484.0
+offset_bottom = 146.0
+text = "You sure you're not from Thailand? You give off"
+label_settings = SubResource("LabelSettings_hjb8m")
+vertical_alignment = 1
+
+[node name="Line Sprite" type="Sprite2D" parent="Canvas/Notebook/Set 6/Rap Line 1" unique_id=767175376]
+modulate = Color(0.20871013, 0.20871016, 0.20871013, 1)
+position = Vector2(407.99988, 15.999988)
+scale = Vector2(61.00004, 1.9999981)
+texture = SubResource("CanvasTexture_r6c0r")
+
+[node name="Rap Line 3" type="Label" parent="Canvas/Notebook/Set 6/Rap Line 1" unique_id=1432974579]
+layout_mode = 0
+offset_left = 0.9999771
+offset_top = 27.0
+offset_right = 342.99997
+offset_bottom = 51.0
+text = "vibes"
+label_settings = SubResource("LabelSettings_hjb8m")
+vertical_alignment = 1
+
+[node name="Rap Line 2" type="Label" parent="Canvas/Notebook/Set 6" unique_id=1585795351]
+offset_left = 168.99998
+offset_top = 174.99994
+offset_right = 598.0
+offset_bottom = 225.99994
+text = "Naw just a       from China, they call it the
+"
+label_settings = SubResource("LabelSettings_hjb8m")
+vertical_alignment = 1
+
+[node name="Rap Line 3" type="Label" parent="Canvas/Notebook/Set 6/Rap Line 2" unique_id=1872949520]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 24.999985
+offset_right = 317.0
+offset_bottom = 48.999985
+text = "       suprise"
+label_settings = SubResource("LabelSettings_hjb8m")
+vertical_alignment = 1
+
+[node name="Line Sprite2" type="Sprite2D" parent="Canvas/Notebook/Set 6/Rap Line 2" unique_id=724840079]
+modulate = Color(0.20871013, 0.20871016, 0.20871013, 1)
+position = Vector2(123.999985, 15.999985)
+scale = Vector2(61.00004, 1.9999981)
+texture = SubResource("CanvasTexture_r6c0r")
+
+[node name="Line Sprite3" type="Sprite2D" parent="Canvas/Notebook/Set 6/Rap Line 2" unique_id=292219262]
+modulate = Color(0.20871013, 0.20871016, 0.20871013, 1)
+position = Vector2(34.74999, 44.999977)
+scale = Vector2(64.500015, 1.9999981)
+texture = SubResource("CanvasTexture_r6c0r")
+
+[node name="Set 7" type="Node2D" parent="Canvas/Notebook" unique_id=1329522888]
+position = Vector2(-1511.628, 823.25574)
+scale = Vector2(4.6511636, 4.6511636)
+
+[node name="Rap Line 1" type="Label" parent="Canvas/Notebook/Set 7" unique_id=435156751]
+offset_left = 169.0
+offset_top = 122.0
+offset_right = 484.0
+offset_bottom = 146.0
+text = "Good luck with all your       before your government"
+label_settings = SubResource("LabelSettings_hjb8m")
+vertical_alignment = 1
+
+[node name="Line Sprite" type="Sprite2D" parent="Canvas/Notebook/Set 7/Rap Line 1" unique_id=1944960855]
+modulate = Color(0.20871013, 0.20871016, 0.20871013, 1)
+position = Vector2(213.99992, 17.999987)
+scale = Vector2(61.00004, 1.9999981)
+texture = SubResource("CanvasTexture_r6c0r")
+
+[node name="Rap Line 3" type="Label" parent="Canvas/Notebook/Set 7/Rap Line 1" unique_id=1291975472]
+layout_mode = 0
+offset_left = 0.9999771
+offset_top = 27.0
+offset_right = 342.99997
+offset_bottom = 51.0
+text = "takes it away"
+label_settings = SubResource("LabelSettings_hjb8m")
+vertical_alignment = 1
+
+[node name="Rap Line 2" type="Label" parent="Canvas/Notebook/Set 7" unique_id=952983530]
+offset_left = 168.99998
+offset_top = 174.99994
+offset_right = 598.0
+offset_bottom = 225.99994
+text = "Now suck my           American dick, in parentheses
+"
+label_settings = SubResource("LabelSettings_hjb8m")
+vertical_alignment = 1
+
+[node name="Rap Line 3" type="Label" parent="Canvas/Notebook/Set 7/Rap Line 2" unique_id=1100274534]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 27.999985
+offset_right = 317.0
+offset_bottom = 51.999985
+text = "(you're       )"
+label_settings = SubResource("LabelSettings_hjb8m")
+vertical_alignment = 1
+
+[node name="Line Sprite2" type="Sprite2D" parent="Canvas/Notebook/Set 7/Rap Line 2" unique_id=772027972]
+modulate = Color(0.20871013, 0.20871016, 0.20871013, 1)
+position = Vector2(152.01784, 15.999985)
+scale = Vector2(97.035736, 1.9999981)
+texture = SubResource("CanvasTexture_r6c0r")
+
+[node name="Line Sprite3" type="Sprite2D" parent="Canvas/Notebook/Set 7/Rap Line 2" unique_id=844942060]
+modulate = Color(0.20871013, 0.20871016, 0.20871013, 1)
+position = Vector2(81.37496, 45.999977)
+scale = Vector2(55.249992, 1.9999981)
+texture = SubResource("CanvasTexture_r6c0r")
+
+[node name="Stars Small 1" type="Sprite2D" parent="Canvas" unique_id=1982571673]
+visible = false
+position = Vector2(1386.2594, 535.2594)
+scale = Vector2(1.090485, 1.090485)
+texture = ExtResource("1_ox6st")
+script = ExtResource("2_icrqj")
+ScrollSpeed = 600.0
+
+[node name="Stars Small  2" type="Sprite2D" parent="Canvas" unique_id=267392443]
+visible = false
+position = Vector2(1386.3286, -561.6714)
+scale = Vector2(1.0904856, 1.0904856)
+texture = ExtResource("1_ox6st")
+script = ExtResource("2_icrqj")
+ScrollSpeed = 600.0
+
+[node name="Stars Med 1" type="Sprite2D" parent="Canvas" unique_id=1218064166]
+visible = false
+modulate = Color(1, 1, 1, 0.73333335)
+position = Vector2(1386.2594, 535.2594)
+scale = Vector2(1.090485, 1.090485)
+texture = ExtResource("3_h1ojj")
+script = ExtResource("2_icrqj")
+ScrollSpeed = 600.0
+
+[node name="Stars Med 2" type="Sprite2D" parent="Canvas" unique_id=1940988609]
+visible = false
+modulate = Color(1, 1, 1, 0.73333335)
+position = Vector2(1386.3286, -561.6714)
+scale = Vector2(1.0904856, 1.0904856)
+texture = ExtResource("3_h1ojj")
+script = ExtResource("2_icrqj")
+ScrollSpeed = 600.0
+
+[node name="Stars Big 1" type="Sprite2D" parent="Canvas" unique_id=688809537]
+visible = false
+modulate = Color(1, 1, 1, 0.42352942)
+position = Vector2(1386.2594, 535.2594)
+scale = Vector2(1.090485, 1.090485)
+texture = ExtResource("4_puct6")
+script = ExtResource("2_icrqj")
+ScrollSpeed = 600.0
+
+[node name="Stars Big 2" type="Sprite2D" parent="Canvas" unique_id=900459217]
+visible = false
+modulate = Color(1, 1, 1, 0.42352942)
+position = Vector2(1386.3286, -561.6714)
+scale = Vector2(1.0904856, 1.0904856)
+texture = ExtResource("4_puct6")
+script = ExtResource("2_icrqj")
+ScrollSpeed = 600.0
+
+[node name="Spaceship" type="Sprite2D" parent="Canvas" unique_id=818278364 node_paths=PackedStringArray("bulletSpawnL", "bulletSpawnR", "mainNode")]
+visible = false
+modulate = Color(2.6034334, 2.6034334, 2.6034334, 1)
+position = Vector2(879, 532)
+scale = Vector2(0.07, 0.07)
+texture = ExtResource("8_h1ojj")
+script = ExtResource("9_puct6")
+speed = 700.0
+bulletSpawnL = NodePath("BulletSpawnL")
+bulletSpawnR = NodePath("BulletSpawnR")
+shootWait = 0.2
+bullet = ExtResource("7_puct6")
+mainNode = NodePath("..")
+
+[node name="BulletSpawnR" type="Node2D" parent="Canvas/Spaceship" unique_id=322192605]
+position = Vector2(257.14285, -42.857143)
+
+[node name="BulletSpawnL" type="Node2D" parent="Canvas/Spaceship" unique_id=1662372971]
+position = Vector2(-271.42856, -42.857143)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2025579916]
+environment = SubResource("Environment_5kqlq")

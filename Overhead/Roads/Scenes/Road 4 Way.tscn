@@ -1,0 +1,69 @@
+[gd_scene format=3 uid="uid://j1fijxtypgo1"]
+
+[ext_resource type="Material" uid="uid://ccv28v68qsfvd" path="res://_Blender/Quad.tres" id="1_0chpk"]
+[ext_resource type="PackedScene" uid="uid://d04o1timvt1p1" path="res://Overhead/City Junk/Light Post/Stop Lights/Stoplight Post Double.tscn" id="1_8m1v6"]
+[ext_resource type="Material" uid="uid://b6g8xn20kxaah" path="res://Overhead/Roads/Materials/Road 4 Way.tres" id="2_0chpk"]
+[ext_resource type="PackedScene" uid="uid://cgwdxbwb2gn77" path="res://Overhead/City Junk/Hydrant/Fire Hydrant.tscn" id="4_bwrvv"]
+[ext_resource type="PackedScene" uid="uid://da1tjgbpt30e6" path="res://Overhead/City Junk/City Garbage Can/City Can.tscn" id="5_8kujs"]
+[ext_resource type="PackedScene" uid="uid://balde0218iav" path="res://Overhead/City Junk/Mailbox/Mailbox.tscn" id="6_78spf"]
+[ext_resource type="PackedScene" uid="uid://dyup7ii0u876b" path="res://Overhead/City Junk/Bench/Bench.tscn" id="6_ntl2a"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_cnrv6"]
+_surfaces = [{
+"aabb": AABB(-2, 0, 0, 2, 1e-05, 2),
+"format": 34896613377,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 0, 0, 3, 0, 1, 0),
+"name": "Quad",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 255, 255, 0, 0, 255, 255, 0, 0, 0, 0, 0, 0, 255, 255, 0, 0, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_f5anv"]
+resource_name = "Quad_Plane"
+_surfaces = [{
+"aabb": AABB(-2, 0, 0, 2, 1e-05, 2),
+"attribute_data": PackedByteArray(65, 0, 189, 255, 189, 255, 65, 0, 189, 255, 189, 255, 65, 0, 65, 0),
+"format": 34896613399,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 0, 0, 3, 0, 1, 0),
+"material": ExtResource("1_0chpk"),
+"name": "Quad",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 255, 255, 255, 191, 255, 255, 0, 0, 0, 0, 255, 191, 255, 255, 0, 0, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 255, 191, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127)
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_cnrv6")
+
+[node name="Road 4 Way" type="Node3D" unique_id=1764185264]
+
+[node name="Stop Light Post" parent="." unique_id=2093212956 instance=ExtResource("1_8m1v6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.649672, 0, 21.333519)
+
+[node name="Stop Light Post2" parent="." unique_id=1902699080 instance=ExtResource("1_8m1v6")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -21.275255, 0, 10.718283)
+
+[node name="Quad" type="MeshInstance3D" parent="." unique_id=113599578]
+transform = Transform3D(16, 0, 0, 0, 16, 0, 0, 0, 16, 0, 0, 0)
+mesh = SubResource("ArrayMesh_f5anv")
+surface_material_override/0 = ExtResource("2_0chpk")
+
+[node name="Fire Hydrant" parent="." unique_id=1751279221 instance=ExtResource("4_bwrvv")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -24.478012, 0, 10.709366)
+
+[node name="Citty Can" parent="." unique_id=2041047398 instance=ExtResource("5_8kujs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.341248, 0, 24.44107)
+
+[node name="Citty Can2" parent="." unique_id=1859815590 instance=ExtResource("5_8kujs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.601465, 0, 7.519493)
+
+[node name="Mailbox" parent="." unique_id=1585405726 instance=ExtResource("6_78spf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.60563, 0, 21.291492)
+
+[node name="Bench" parent="." unique_id=2086597506 instance=ExtResource("6_ntl2a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.65039, 0, 8.633514)

@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://dchpumgppxwec"]
+
+[ext_resource type="PackedScene" uid="uid://c53guwyrklau1" path="res://Overhead/City Junk/Signs/Sign Post.tscn" id="1_vrtj8"]
+[ext_resource type="PackedScene" uid="uid://datsl4ft67b30" path="res://Overhead/City Junk/Signs/One Way.glb" id="2_55lbc"]
+[ext_resource type="Material" uid="uid://d30gcbhc86ybu" path="res://Overhead/City Junk/Signs/One Way Sign.tres" id="3_sufsi"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hjb8m"]
+size = Vector3(0.71777344, 0.23046875, 0.027954102)
+
+[node name="One Way Sign" type="Node3D" unique_id=1762005356]
+
+[node name="Sign Post" parent="." unique_id=1231648536 instance=ExtResource("1_vrtj8")]
+collision_layer = 4
+
+[node name="One Way2" parent="Sign Post" unique_id=1618179421 instance=ExtResource("2_55lbc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4181938, 0.009819031)
+
+[node name="One Way" parent="Sign Post/One Way2" index="0" unique_id=1229223058]
+transform = Transform3D(3.36, 0, 0, 0, 3.36, 0, 0, 0, 3.36, 0, 0.48180723, -0.044284817)
+surface_material_override/0 = ExtResource("3_sufsi")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sign Post/One Way2" unique_id=594591467]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.48339844, -0.04815674)
+shape = SubResource("BoxShape3D_hjb8m")
+
+[editable path="Sign Post/One Way2"]

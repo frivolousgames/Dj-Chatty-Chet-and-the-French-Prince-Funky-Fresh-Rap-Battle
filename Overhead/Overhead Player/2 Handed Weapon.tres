@@ -1,0 +1,582 @@
+[gd_resource type="AnimationNodeBlendTree" format=3 uid="uid://ckli37wqyn3rd"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_dk7q4"]
+animation = &"Idle One Handed"
+
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_opa1x"]
+
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_dggd4"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_8a4u8"]
+animation = &"AK47 Stance"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_wkx8g"]
+animation = &"Shotgun Stance"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_4nx6x"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_yn2ha"]
+advance_mode = 2
+advance_expression = "currentWeapon == 2"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_bwfan"]
+advance_mode = 2
+advance_expression = "currentWeapon == 1"
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_l8r6w"]
+resource_local_to_scene = true
+"states/AK47 Stance/node" = SubResource("AnimationNodeAnimation_8a4u8")
+"states/AK47 Stance/position" = Vector2(445, 100)
+"states/Shotgun Stance/node" = SubResource("AnimationNodeAnimation_wkx8g")
+"states/Shotgun Stance/position" = Vector2(645, 100)
+transitions = ["Start", "AK47 Stance", SubResource("AnimationNodeStateMachineTransition_4nx6x"), "AK47 Stance", "Shotgun Stance", SubResource("AnimationNodeStateMachineTransition_yn2ha"), "Shotgun Stance", "AK47 Stance", SubResource("AnimationNodeStateMachineTransition_bwfan")]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_6l5kq"]
+animation = &"AK47 Idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_qhg2u"]
+animation = &"Shotgun Idle"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_8a4u8"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_t7t7s"]
+advance_mode = 2
+advance_expression = "currentWeapon == 2"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_sioyf"]
+advance_mode = 2
+advance_expression = "currentWeapon == 1"
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_c10rt"]
+resource_local_to_scene = true
+"states/AK47 Idle/node" = SubResource("AnimationNodeAnimation_6l5kq")
+"states/AK47 Idle/position" = Vector2(435, 100)
+"states/Shotgun Idle/node" = SubResource("AnimationNodeAnimation_qhg2u")
+"states/Shotgun Idle/position" = Vector2(639, 100)
+transitions = ["Start", "AK47 Idle", SubResource("AnimationNodeStateMachineTransition_8a4u8"), "AK47 Idle", "Shotgun Idle", SubResource("AnimationNodeStateMachineTransition_t7t7s"), "Shotgun Idle", "AK47 Idle", SubResource("AnimationNodeStateMachineTransition_sioyf")]
+graph_offset = Vector2(-11, 39)
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_x0ksm"]
+graph_offset = Vector2(-109.615265, 268.38193)
+nodes/output/position = Vector2(1780, 580)
+"nodes/Raised Blend/node" = SubResource("AnimationNodeBlend2_dggd4")
+"nodes/Raised Blend/position" = Vector2(1280, 580)
+"nodes/Idle Blend/node" = SubResource("AnimationNodeBlend2_opa1x")
+"nodes/Idle Blend/position" = Vector2(880, 560)
+nodes/Animation/node = SubResource("AnimationNodeAnimation_dk7q4")
+nodes/Animation/position = Vector2(500, 480)
+"nodes/Two Heanded Idles/node" = SubResource("AnimationNodeStateMachine_c10rt")
+"nodes/Two Heanded Idles/position" = Vector2(440, 740)
+"nodes/Two Handed Raised/node" = SubResource("AnimationNodeStateMachine_l8r6w")
+"nodes/Two Handed Raised/position" = Vector2(860, 880)
+node_connections = [&"output", 0, &"Raised Blend", &"Raised Blend", 0, &"Idle Blend", &"Raised Blend", 1, &"Two Handed Raised", &"Idle Blend", 0, &"Animation", &"Idle Blend", 1, &"Two Heanded Idles"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_aqhks"]
+animation = &"Walk Backwards One Handed"
+
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_dk7q4"]
+filter_enabled = true
+filters = ["", "Player/Skeleton3D:f_index.01.L", "Player/Skeleton3D:f_index.01.R", "Player/Skeleton3D:f_index.02.L", "Player/Skeleton3D:f_index.02.R", "Player/Skeleton3D:f_index.03.L", "Player/Skeleton3D:f_index.03.R", "Player/Skeleton3D:f_middle.01.L", "Player/Skeleton3D:f_middle.01.R", "Player/Skeleton3D:f_middle.02.L", "Player/Skeleton3D:f_middle.02.R", "Player/Skeleton3D:f_middle.03.L", "Player/Skeleton3D:f_middle.03.R", "Player/Skeleton3D:f_pinky.01.L", "Player/Skeleton3D:f_pinky.01.R", "Player/Skeleton3D:f_pinky.02.L", "Player/Skeleton3D:f_pinky.02.R", "Player/Skeleton3D:f_pinky.03.L", "Player/Skeleton3D:f_pinky.03.R", "Player/Skeleton3D:f_ring.01.L", "Player/Skeleton3D:f_ring.01.R", "Player/Skeleton3D:f_ring.02.L", "Player/Skeleton3D:f_ring.02.R", "Player/Skeleton3D:f_ring.03.L", "Player/Skeleton3D:f_ring.03.R", "Player/Skeleton3D:forearm.L", "Player/Skeleton3D:forearm.R", "Player/Skeleton3D:hand.L", "Player/Skeleton3D:hand.R", "Player/Skeleton3D:palm.01.R", "Player/Skeleton3D:palm.02.L", "Player/Skeleton3D:palm.02.R", "Player/Skeleton3D:palm.03.R", "Player/Skeleton3D:palm.04.R", "Player/Skeleton3D:shoulder.L", "Player/Skeleton3D:shoulder.R", "Player/Skeleton3D:thumb.01.L", "Player/Skeleton3D:thumb.01.R", "Player/Skeleton3D:thumb.02.L", "Player/Skeleton3D:thumb.02.R", "Player/Skeleton3D:thumb.03.L", "Player/Skeleton3D:thumb.03.R", "Player/Skeleton3D:upper_arm.L", "Player/Skeleton3D:upper_arm.R"]
+
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_l8r6w"]
+filter_enabled = true
+filters = ["", "Player/Skeleton3D:Head", "Player/Skeleton3D:Neck", "Player/Skeleton3D:f_index.01.L", "Player/Skeleton3D:f_index.01.R", "Player/Skeleton3D:f_index.02.L", "Player/Skeleton3D:f_index.02.R", "Player/Skeleton3D:f_index.03.L", "Player/Skeleton3D:f_index.03.R", "Player/Skeleton3D:f_middle.01.L", "Player/Skeleton3D:f_middle.01.R", "Player/Skeleton3D:f_middle.02.L", "Player/Skeleton3D:f_middle.02.R", "Player/Skeleton3D:f_middle.03.L", "Player/Skeleton3D:f_middle.03.R", "Player/Skeleton3D:f_pinky.01.L", "Player/Skeleton3D:f_pinky.01.R", "Player/Skeleton3D:f_pinky.02.L", "Player/Skeleton3D:f_pinky.02.R", "Player/Skeleton3D:f_pinky.03.L", "Player/Skeleton3D:f_pinky.03.R", "Player/Skeleton3D:f_ring.01.L", "Player/Skeleton3D:f_ring.01.R", "Player/Skeleton3D:f_ring.02.L", "Player/Skeleton3D:f_ring.02.R", "Player/Skeleton3D:f_ring.03.L", "Player/Skeleton3D:f_ring.03.R", "Player/Skeleton3D:forearm.L", "Player/Skeleton3D:forearm.R", "Player/Skeleton3D:hand.L", "Player/Skeleton3D:hand.R", "Player/Skeleton3D:palm.01.R", "Player/Skeleton3D:palm.02.L", "Player/Skeleton3D:palm.02.R", "Player/Skeleton3D:palm.03.R", "Player/Skeleton3D:palm.04.R", "Player/Skeleton3D:shoulder.L", "Player/Skeleton3D:shoulder.R", "Player/Skeleton3D:spine.001", "Player/Skeleton3D:spine.002", "Player/Skeleton3D:spine.003", "Player/Skeleton3D:thumb.01.L", "Player/Skeleton3D:thumb.01.R", "Player/Skeleton3D:thumb.02.L", "Player/Skeleton3D:thumb.02.R", "Player/Skeleton3D:thumb.03.L", "Player/Skeleton3D:thumb.03.R", "Player/Skeleton3D:upper_arm.L", "Player/Skeleton3D:upper_arm.R"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_g8bv4"]
+animation = &"AK47 Idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_yn2ha"]
+animation = &"Shotgun Idle"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_snmtt"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_jqdk8"]
+advance_mode = 2
+advance_expression = "currentWeapon == 2"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_gca0t"]
+advance_mode = 2
+advance_expression = "currentWeapon == 1"
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_u5r5f"]
+"states/AK47 Idle/node" = SubResource("AnimationNodeAnimation_g8bv4")
+"states/AK47 Idle/position" = Vector2(409, 78)
+"states/Shotgun Idle/node" = SubResource("AnimationNodeAnimation_yn2ha")
+"states/Shotgun Idle/position" = Vector2(633, 87)
+transitions = ["Start", "AK47 Idle", SubResource("AnimationNodeStateMachineTransition_snmtt"), "AK47 Idle", "Shotgun Idle", SubResource("AnimationNodeStateMachineTransition_jqdk8"), "Shotgun Idle", "AK47 Idle", SubResource("AnimationNodeStateMachineTransition_gca0t")]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_snmtt"]
+animation = &"AK47 Walk Shoot Offset"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_lvhlq"]
+animation = &"AK47 Stance"
+
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_n5lpe"]
+filter_enabled = true
+filters = ["Player/Skeleton3D:spine.002"]
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_8a4u8"]
+nodes/output/position = Vector2(1240, 260)
+nodes/Animation/node = SubResource("AnimationNodeAnimation_lvhlq")
+nodes/Animation/position = Vector2(640, 220)
+"nodes/Animation 2/node" = SubResource("AnimationNodeAnimation_snmtt")
+"nodes/Animation 2/position" = Vector2(580, 460)
+nodes/Blend2/node = SubResource("AnimationNodeBlend2_n5lpe")
+nodes/Blend2/position = Vector2(927.6539, 296.33386)
+node_connections = [&"output", 0, &"Blend2", &"Blend2", 0, &"Animation", &"Blend2", 1, &"Animation 2"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_bwfan"]
+animation = &"AK47 Walk Shoot Offset"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_jqdk8"]
+animation = &"Shotgun Stance"
+
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_gca0t"]
+filter_enabled = true
+filters = ["Player/Skeleton3D:spine.002"]
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_4rykc"]
+graph_offset = Vector2(-13, 60)
+nodes/output/position = Vector2(1140, 220)
+nodes/Animation/node = SubResource("AnimationNodeAnimation_jqdk8")
+nodes/Animation/position = Vector2(580, 180)
+"nodes/Animation 2/node" = SubResource("AnimationNodeAnimation_bwfan")
+"nodes/Animation 2/position" = Vector2(500, 460)
+nodes/Blend2/node = SubResource("AnimationNodeBlend2_gca0t")
+nodes/Blend2/position = Vector2(840, 320)
+node_connections = [&"output", 0, &"Blend2", &"Blend2", 0, &"Animation", &"Blend2", 1, &"Animation 2"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_6l5kq"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_vt8h8"]
+advance_mode = 2
+advance_expression = "currentWeapon == 2"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_r7lim"]
+advance_mode = 2
+advance_expression = "currentWeapon == 1"
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_jgmgb"]
+"states/AK47 Raised/node" = SubResource("AnimationNodeBlendTree_8a4u8")
+"states/AK47 Raised/position" = Vector2(404, 92)
+"states/Shotgun Raised/node" = SubResource("AnimationNodeBlendTree_4rykc")
+"states/Shotgun Raised/position" = Vector2(621, 92)
+transitions = ["Start", "AK47 Raised", SubResource("AnimationNodeStateMachineTransition_6l5kq"), "AK47 Raised", "Shotgun Raised", SubResource("AnimationNodeStateMachineTransition_vt8h8"), "Shotgun Raised", "AK47 Raised", SubResource("AnimationNodeStateMachineTransition_r7lim")]
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_hd0tm"]
+graph_offset = Vector2(-393.28345, 159.25803)
+nodes/output/position = Vector2(1040, 340)
+nodes/Animation/node = SubResource("AnimationNodeAnimation_aqhks")
+nodes/Animation/position = Vector2(0, 240)
+"nodes/Idle Blend/node" = SubResource("AnimationNodeBlend2_dk7q4")
+"nodes/Idle Blend/position" = Vector2(360, 340)
+"nodes/Raised Blend/node" = SubResource("AnimationNodeBlend2_l8r6w")
+"nodes/Raised Blend/position" = Vector2(660, 400)
+"nodes/Two Handed Idle/node" = SubResource("AnimationNodeStateMachine_u5r5f")
+"nodes/Two Handed Idle/position" = Vector2(-172.0824, 505.8006)
+"nodes/Two Handed Raised/node" = SubResource("AnimationNodeStateMachine_jgmgb")
+"nodes/Two Handed Raised/position" = Vector2(240, 680)
+node_connections = [&"output", 0, &"Raised Blend", &"Idle Blend", 0, &"Animation", &"Idle Blend", 1, &"Two Handed Idle", &"Raised Blend", 0, &"Idle Blend", &"Raised Blend", 1, &"Two Handed Raised"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_0xaec"]
+animation = &"Run"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_kjiig"]
+animation = &"Walk"
+
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_u24tn"]
+filter_enabled = true
+filters = ["", "Player/Skeleton3D:Head", "Player/Skeleton3D:Neck", "Player/Skeleton3D:f_index.01.L", "Player/Skeleton3D:f_index.01.R", "Player/Skeleton3D:f_index.02.L", "Player/Skeleton3D:f_index.02.R", "Player/Skeleton3D:f_index.03.L", "Player/Skeleton3D:f_index.03.R", "Player/Skeleton3D:f_middle.01.L", "Player/Skeleton3D:f_middle.01.R", "Player/Skeleton3D:f_middle.02.L", "Player/Skeleton3D:f_middle.02.R", "Player/Skeleton3D:f_middle.03.L", "Player/Skeleton3D:f_middle.03.R", "Player/Skeleton3D:f_pinky.01.L", "Player/Skeleton3D:f_pinky.01.R", "Player/Skeleton3D:f_pinky.02.L", "Player/Skeleton3D:f_pinky.02.R", "Player/Skeleton3D:f_pinky.03.L", "Player/Skeleton3D:f_pinky.03.R", "Player/Skeleton3D:f_ring.01.L", "Player/Skeleton3D:f_ring.01.R", "Player/Skeleton3D:f_ring.02.L", "Player/Skeleton3D:f_ring.02.R", "Player/Skeleton3D:f_ring.03.L", "Player/Skeleton3D:f_ring.03.R", "Player/Skeleton3D:forearm.L", "Player/Skeleton3D:forearm.R", "Player/Skeleton3D:hand.L", "Player/Skeleton3D:hand.R", "Player/Skeleton3D:palm.01.R", "Player/Skeleton3D:palm.02.L", "Player/Skeleton3D:palm.02.R", "Player/Skeleton3D:palm.03.R", "Player/Skeleton3D:palm.04.R", "Player/Skeleton3D:shoulder.L", "Player/Skeleton3D:shoulder.R", "Player/Skeleton3D:spine.001", "Player/Skeleton3D:spine.002", "Player/Skeleton3D:spine.003", "Player/Skeleton3D:thumb.01.L", "Player/Skeleton3D:thumb.01.R", "Player/Skeleton3D:thumb.02.L", "Player/Skeleton3D:thumb.02.R", "Player/Skeleton3D:thumb.03.L", "Player/Skeleton3D:thumb.03.R", "Player/Skeleton3D:upper_arm.L", "Player/Skeleton3D:upper_arm.R"]
+
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_j04hv"]
+sync = true
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_0u8c2"]
+animation = &"AK47 Idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_4rykc"]
+animation = &"Shotgun Idle"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_goh7v"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ycr51"]
+advance_mode = 2
+advance_expression = "currentWeapon == 2"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_sfl2x"]
+advance_mode = 2
+advance_expression = "currentWeapon == 1"
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_xx1ut"]
+"states/AK47 Idle/node" = SubResource("AnimationNodeAnimation_0u8c2")
+"states/AK47 Idle/position" = Vector2(424, 119)
+"states/Shotgun Idle/node" = SubResource("AnimationNodeAnimation_4rykc")
+"states/Shotgun Idle/position" = Vector2(624, 111)
+transitions = ["Start", "AK47 Idle", SubResource("AnimationNodeStateMachineTransition_goh7v"), "AK47 Idle", "Shotgun Idle", SubResource("AnimationNodeStateMachineTransition_ycr51"), "Shotgun Idle", "AK47 Idle", SubResource("AnimationNodeStateMachineTransition_sfl2x")]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_4nx6x"]
+animation = &"AK47 Walk Shoot Offset"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_hoasu"]
+animation = &"AK47 Stance"
+
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_g8bv4"]
+filter_enabled = true
+filters = ["Player/Skeleton3D:spine.002"]
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_6l5kq"]
+graph_offset = Vector2(-166.19312, 12.702469)
+nodes/output/position = Vector2(1240, 180)
+nodes/Animation/node = SubResource("AnimationNodeAnimation_hoasu")
+nodes/Animation/position = Vector2(400, 180)
+"nodes/Animation 2/node" = SubResource("AnimationNodeAnimation_4nx6x")
+"nodes/Animation 2/position" = Vector2(400, 440)
+nodes/Blend2/node = SubResource("AnimationNodeBlend2_g8bv4")
+nodes/Blend2/position = Vector2(780, 240)
+node_connections = [&"output", 0, &"Blend2", &"Blend2", 0, &"Animation", &"Blend2", 1, &"Animation 2"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_t7t7s"]
+animation = &"AK47 Walk Shoot Offset"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_sioyf"]
+animation = &"Shotgun Stance"
+
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_yn2ha"]
+filter_enabled = true
+filters = ["Player/Skeleton3D:spine.002"]
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_g8bv4"]
+nodes/output/position = Vector2(1180, 180)
+nodes/Animation/node = SubResource("AnimationNodeAnimation_sioyf")
+nodes/Animation/position = Vector2(600, 140)
+"nodes/Animation 2/node" = SubResource("AnimationNodeAnimation_t7t7s")
+"nodes/Animation 2/position" = Vector2(540, 420)
+nodes/Blend2/node = SubResource("AnimationNodeBlend2_yn2ha")
+nodes/Blend2/position = Vector2(894.6388, 224.98837)
+node_connections = [&"output", 0, &"Blend2", &"Blend2", 0, &"Animation", &"Blend2", 1, &"Animation 2"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_hoasu"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_nokbr"]
+advance_mode = 2
+advance_expression = "currentWeapon == 2"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_026u6"]
+advance_mode = 2
+advance_expression = "currentWeapon == 1"
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_u24tn"]
+"states/AK47 Raised/node" = SubResource("AnimationNodeBlendTree_6l5kq")
+"states/AK47 Raised/position" = Vector2(451, 100)
+"states/Shotgun Raised/node" = SubResource("AnimationNodeBlendTree_g8bv4")
+"states/Shotgun Raised/position" = Vector2(689, 100)
+transitions = ["Start", "AK47 Raised", SubResource("AnimationNodeStateMachineTransition_hoasu"), "AK47 Raised", "Shotgun Raised", SubResource("AnimationNodeStateMachineTransition_nokbr"), "Shotgun Raised", "AK47 Raised", SubResource("AnimationNodeStateMachineTransition_026u6")]
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_aqhks"]
+resource_local_to_scene = true
+graph_offset = Vector2(-198.2901, 149.64552)
+nodes/output/position = Vector2(1280, 300)
+nodes/Animation/node = SubResource("AnimationNodeAnimation_kjiig")
+nodes/Animation/position = Vector2(-120, 80)
+"nodes/Animation 2/node" = SubResource("AnimationNodeAnimation_0xaec")
+"nodes/Animation 2/position" = Vector2(-120, 300)
+"nodes/Idle Blend/node" = SubResource("AnimationNodeBlend2_dk7q4")
+"nodes/Idle Blend/position" = Vector2(540, 380)
+"nodes/Run Blend/node" = SubResource("AnimationNodeBlend2_j04hv")
+"nodes/Run Blend/position" = Vector2(260, 200)
+"nodes/Two Handed Raised/node" = SubResource("AnimationNodeStateMachine_u24tn")
+"nodes/Two Handed Raised/position" = Vector2(620, 720)
+"nodes/Raised Blend/node" = SubResource("AnimationNodeBlend2_u24tn")
+"nodes/Raised Blend/position" = Vector2(920, 400)
+"nodes/Two Handed Idle/node" = SubResource("AnimationNodeStateMachine_xx1ut")
+"nodes/Two Handed Idle/position" = Vector2(200, 600)
+node_connections = [&"output", 0, &"Raised Blend", &"Idle Blend", 0, &"Run Blend", &"Idle Blend", 1, &"Two Handed Idle", &"Run Blend", 0, &"Animation", &"Run Blend", 1, &"Animation 2", &"Raised Blend", 0, &"Idle Blend", &"Raised Blend", 1, &"Two Handed Raised"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_hl3me"]
+animation = &"Strafe R"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_vhxfd"]
+animation = &"Strafe L"
+
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_6l5kq"]
+filter_enabled = true
+filters = ["", "Player/Skeleton3D:Head", "Player/Skeleton3D:Neck", "Player/Skeleton3D:f_index.01.L", "Player/Skeleton3D:f_index.01.R", "Player/Skeleton3D:f_index.02.L", "Player/Skeleton3D:f_index.02.R", "Player/Skeleton3D:f_index.03.L", "Player/Skeleton3D:f_index.03.R", "Player/Skeleton3D:f_middle.01.L", "Player/Skeleton3D:f_middle.01.R", "Player/Skeleton3D:f_middle.02.L", "Player/Skeleton3D:f_middle.02.R", "Player/Skeleton3D:f_middle.03.L", "Player/Skeleton3D:f_middle.03.R", "Player/Skeleton3D:f_pinky.01.L", "Player/Skeleton3D:f_pinky.01.R", "Player/Skeleton3D:f_pinky.02.L", "Player/Skeleton3D:f_pinky.02.R", "Player/Skeleton3D:f_pinky.03.L", "Player/Skeleton3D:f_pinky.03.R", "Player/Skeleton3D:f_ring.01.L", "Player/Skeleton3D:f_ring.01.R", "Player/Skeleton3D:f_ring.02.L", "Player/Skeleton3D:f_ring.02.R", "Player/Skeleton3D:f_ring.03.L", "Player/Skeleton3D:f_ring.03.R", "Player/Skeleton3D:forearm.L", "Player/Skeleton3D:forearm.R", "Player/Skeleton3D:hand.L", "Player/Skeleton3D:hand.R", "Player/Skeleton3D:palm.01.R", "Player/Skeleton3D:palm.02.L", "Player/Skeleton3D:palm.02.R", "Player/Skeleton3D:palm.03.R", "Player/Skeleton3D:palm.04.R", "Player/Skeleton3D:shoulder.L", "Player/Skeleton3D:shoulder.R", "Player/Skeleton3D:spine", "Player/Skeleton3D:spine.001", "Player/Skeleton3D:spine.002", "Player/Skeleton3D:spine.003", "Player/Skeleton3D:thumb.01.L", "Player/Skeleton3D:thumb.01.R", "Player/Skeleton3D:thumb.02.L", "Player/Skeleton3D:thumb.02.R", "Player/Skeleton3D:thumb.03.L", "Player/Skeleton3D:thumb.03.R", "Player/Skeleton3D:upper_arm.L", "Player/Skeleton3D:upper_arm.R"]
+
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_8a4u8"]
+filter_enabled = true
+filters = ["", "Player/Skeleton3D:Head", "Player/Skeleton3D:Neck", "Player/Skeleton3D:f_index.01.L", "Player/Skeleton3D:f_index.01.R", "Player/Skeleton3D:f_index.02.L", "Player/Skeleton3D:f_index.02.R", "Player/Skeleton3D:f_index.03.L", "Player/Skeleton3D:f_index.03.R", "Player/Skeleton3D:f_middle.01.L", "Player/Skeleton3D:f_middle.01.R", "Player/Skeleton3D:f_middle.02.L", "Player/Skeleton3D:f_middle.02.R", "Player/Skeleton3D:f_middle.03.L", "Player/Skeleton3D:f_middle.03.R", "Player/Skeleton3D:f_pinky.01.L", "Player/Skeleton3D:f_pinky.01.R", "Player/Skeleton3D:f_pinky.02.L", "Player/Skeleton3D:f_pinky.02.R", "Player/Skeleton3D:f_pinky.03.L", "Player/Skeleton3D:f_pinky.03.R", "Player/Skeleton3D:f_ring.01.L", "Player/Skeleton3D:f_ring.01.R", "Player/Skeleton3D:f_ring.02.L", "Player/Skeleton3D:f_ring.02.R", "Player/Skeleton3D:f_ring.03.L", "Player/Skeleton3D:f_ring.03.R", "Player/Skeleton3D:forearm.L", "Player/Skeleton3D:forearm.R", "Player/Skeleton3D:hand.L", "Player/Skeleton3D:hand.R", "Player/Skeleton3D:palm.01.R", "Player/Skeleton3D:palm.02.L", "Player/Skeleton3D:palm.02.R", "Player/Skeleton3D:palm.03.R", "Player/Skeleton3D:palm.04.R", "Player/Skeleton3D:shoulder.L", "Player/Skeleton3D:shoulder.R", "Player/Skeleton3D:spine.001", "Player/Skeleton3D:spine.002", "Player/Skeleton3D:spine.003", "Player/Skeleton3D:thumb.01.L", "Player/Skeleton3D:thumb.01.R", "Player/Skeleton3D:thumb.02.L", "Player/Skeleton3D:thumb.02.R", "Player/Skeleton3D:thumb.03.L", "Player/Skeleton3D:thumb.03.R", "Player/Skeleton3D:upper_arm.L", "Player/Skeleton3D:upper_arm.R"]
+
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_qy1sn"]
+sync = true
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_qy1sn"]
+animation = &"AK47 Idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_gca0t"]
+animation = &"Shotgun Idle"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_0isq4"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_4rykc"]
+advance_mode = 2
+advance_expression = "currentWeapon == 2"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_3fln7"]
+advance_mode = 2
+advance_expression = "currentWeapon == 1"
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_hoasu"]
+"states/AK47 Idle/node" = SubResource("AnimationNodeAnimation_qy1sn")
+"states/AK47 Idle/position" = Vector2(377, 100)
+"states/Shotgun Idle/node" = SubResource("AnimationNodeAnimation_gca0t")
+"states/Shotgun Idle/position" = Vector2(578, 100)
+transitions = ["Start", "AK47 Idle", SubResource("AnimationNodeStateMachineTransition_0isq4"), "AK47 Idle", "Shotgun Idle", SubResource("AnimationNodeStateMachineTransition_4rykc"), "Shotgun Idle", "AK47 Idle", SubResource("AnimationNodeStateMachineTransition_3fln7")]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_0isq4"]
+animation = &"AK47 Walk Shoot Offset"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_rl47y"]
+animation = &"AK47 Stance"
+
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_634qg"]
+filter_enabled = true
+filters = ["Player/Skeleton3D:spine.002"]
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_hoasu"]
+graph_offset = Vector2(155.72229, 190.30704)
+nodes/output/position = Vector2(1520, 340)
+nodes/Animation/node = SubResource("AnimationNodeAnimation_rl47y")
+nodes/Animation/position = Vector2(680, 220)
+"nodes/Animation 2/node" = SubResource("AnimationNodeAnimation_0isq4")
+"nodes/Animation 2/position" = Vector2(680, 520)
+nodes/Blend2/node = SubResource("AnimationNodeBlend2_634qg")
+nodes/Blend2/position = Vector2(1121.0977, 362.26672)
+node_connections = [&"output", 0, &"Blend2", &"Blend2", 0, &"Animation", &"Blend2", 1, &"Animation 2"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_n5lpe"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_hl3me"]
+advance_mode = 2
+advance_expression = "currentWeapon == 2"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_vhxfd"]
+advance_mode = 2
+advance_expression = "currentWeapon == 1"
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_4nx6x"]
+"states/AK47 Raised/node" = SubResource("AnimationNodeBlendTree_hoasu")
+"states/AK47 Raised/position" = Vector2(388, 107)
+"states/Shotgun raised/node" = SubResource("AnimationNodeBlendTree_4rykc")
+"states/Shotgun raised/position" = Vector2(642, 107)
+transitions = ["Start", "AK47 Raised", SubResource("AnimationNodeStateMachineTransition_n5lpe"), "AK47 Raised", "Shotgun raised", SubResource("AnimationNodeStateMachineTransition_hl3me"), "Shotgun raised", "AK47 Raised", SubResource("AnimationNodeStateMachineTransition_vhxfd")]
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_4nx6x"]
+graph_offset = Vector2(-252.97452, 46.040955)
+nodes/output/position = Vector2(1420, 280)
+nodes/Animation/node = SubResource("AnimationNodeAnimation_vhxfd")
+nodes/Animation/position = Vector2(200, 40)
+"nodes/Animation 2/node" = SubResource("AnimationNodeAnimation_hl3me")
+"nodes/Animation 2/position" = Vector2(200, 260)
+"nodes/Strafe Dir Bleend/node" = SubResource("AnimationNodeBlend2_qy1sn")
+"nodes/Strafe Dir Bleend/position" = Vector2(521.96655, 124.476364)
+"nodes/Two Handed Idle/node" = SubResource("AnimationNodeStateMachine_hoasu")
+"nodes/Two Handed Idle/position" = Vector2(360, 480)
+"nodes/Two Handed Raised/node" = SubResource("AnimationNodeStateMachine_4nx6x")
+"nodes/Two Handed Raised/position" = Vector2(700, 580)
+"nodes/Idle Blend/node" = SubResource("AnimationNodeBlend2_6l5kq")
+"nodes/Idle Blend/position" = Vector2(800, 220)
+"nodes/Raised Blend/node" = SubResource("AnimationNodeBlend2_8a4u8")
+"nodes/Raised Blend/position" = Vector2(1060, 280)
+node_connections = [&"output", 0, &"Raised Blend", &"Strafe Dir Bleend", 0, &"Animation", &"Strafe Dir Bleend", 1, &"Animation 2", &"Idle Blend", 0, &"Strafe Dir Bleend", &"Idle Blend", 1, &"Two Handed Idle", &"Raised Blend", 0, &"Idle Blend", &"Raised Blend", 1, &"Two Handed Raised"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_fs83b"]
+animation = &"Turn R"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_026u6"]
+animation = &"Turn L"
+
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_c10rt"]
+filter_enabled = true
+filters = ["", "Player/Skeleton3D:f_index.01.L", "Player/Skeleton3D:f_index.01.R", "Player/Skeleton3D:f_index.02.L", "Player/Skeleton3D:f_index.02.R", "Player/Skeleton3D:f_index.03.L", "Player/Skeleton3D:f_index.03.R", "Player/Skeleton3D:f_middle.01.L", "Player/Skeleton3D:f_middle.01.R", "Player/Skeleton3D:f_middle.02.L", "Player/Skeleton3D:f_middle.02.R", "Player/Skeleton3D:f_middle.03.L", "Player/Skeleton3D:f_middle.03.R", "Player/Skeleton3D:f_pinky.01.L", "Player/Skeleton3D:f_pinky.01.R", "Player/Skeleton3D:f_pinky.02.L", "Player/Skeleton3D:f_pinky.02.R", "Player/Skeleton3D:f_pinky.03.L", "Player/Skeleton3D:f_pinky.03.R", "Player/Skeleton3D:f_ring.01.L", "Player/Skeleton3D:f_ring.01.R", "Player/Skeleton3D:f_ring.02.L", "Player/Skeleton3D:f_ring.02.R", "Player/Skeleton3D:f_ring.03.L", "Player/Skeleton3D:f_ring.03.R", "Player/Skeleton3D:forearm.L", "Player/Skeleton3D:forearm.R", "Player/Skeleton3D:hand.L", "Player/Skeleton3D:hand.R", "Player/Skeleton3D:palm.01.R", "Player/Skeleton3D:palm.02.L", "Player/Skeleton3D:palm.02.R", "Player/Skeleton3D:palm.03.R", "Player/Skeleton3D:palm.04.R", "Player/Skeleton3D:shoulder.L", "Player/Skeleton3D:shoulder.R", "Player/Skeleton3D:thumb.01.L", "Player/Skeleton3D:thumb.01.R", "Player/Skeleton3D:thumb.02.L", "Player/Skeleton3D:thumb.02.R", "Player/Skeleton3D:thumb.03.L", "Player/Skeleton3D:thumb.03.R", "Player/Skeleton3D:upper_arm.L", "Player/Skeleton3D:upper_arm.R"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_n5lpe"]
+animation = &"AK47 Idle"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_0ux4l"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_jt4lt"]
+"states/AK47 Idle/node" = SubResource("AnimationNodeAnimation_n5lpe")
+"states/AK47 Idle/position" = Vector2(429, 113)
+transitions = ["Start", "AK47 Idle", SubResource("AnimationNodeStateMachineTransition_0ux4l")]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_0ux4l"]
+animation = &"AK47 Walk Shoot Offset"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_nokbr"]
+animation = &"AK47 Stance"
+
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_fs83b"]
+filter_enabled = true
+filters = ["Player/Skeleton3D:spine.002"]
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_nokbr"]
+nodes/output/position = Vector2(1280, 200)
+nodes/Animation/node = SubResource("AnimationNodeAnimation_nokbr")
+nodes/Animation/position = Vector2(580, 160)
+"nodes/Animation 2/node" = SubResource("AnimationNodeAnimation_0ux4l")
+"nodes/Animation 2/position" = Vector2(580, 440)
+nodes/Blend2/node = SubResource("AnimationNodeBlend2_fs83b")
+nodes/Blend2/position = Vector2(915.0626, 263.53802)
+node_connections = [&"output", 0, &"Blend2", &"Blend2", 0, &"Animation", &"Blend2", 1, &"Animation 2"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_fs83b"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_qy1sn"]
+advance_mode = 2
+advance_expression = "currentWeapon == 2"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_rl47y"]
+advance_mode = 2
+advance_expression = "currentWeapon == 1"
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_duglo"]
+"states/AK47 Raised/node" = SubResource("AnimationNodeBlendTree_nokbr")
+"states/AK47 Raised/position" = Vector2(367, 100)
+"states/Shotgun Raised/node" = SubResource("AnimationNodeBlendTree_4rykc")
+"states/Shotgun Raised/position" = Vector2(612, 100)
+transitions = ["Start", "AK47 Raised", SubResource("AnimationNodeStateMachineTransition_fs83b"), "AK47 Raised", "Shotgun Raised", SubResource("AnimationNodeStateMachineTransition_qy1sn"), "Shotgun Raised", "AK47 Raised", SubResource("AnimationNodeStateMachineTransition_rl47y")]
+
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_35xqn"]
+filter_enabled = true
+filters = ["", "Player/Skeleton3D:Head", "Player/Skeleton3D:Neck", "Player/Skeleton3D:f_index.01.L", "Player/Skeleton3D:f_index.01.R", "Player/Skeleton3D:f_index.02.L", "Player/Skeleton3D:f_index.02.R", "Player/Skeleton3D:f_index.03.L", "Player/Skeleton3D:f_index.03.R", "Player/Skeleton3D:f_middle.01.L", "Player/Skeleton3D:f_middle.01.R", "Player/Skeleton3D:f_middle.02.L", "Player/Skeleton3D:f_middle.02.R", "Player/Skeleton3D:f_middle.03.L", "Player/Skeleton3D:f_middle.03.R", "Player/Skeleton3D:f_pinky.01.L", "Player/Skeleton3D:f_pinky.01.R", "Player/Skeleton3D:f_pinky.02.L", "Player/Skeleton3D:f_pinky.02.R", "Player/Skeleton3D:f_pinky.03.L", "Player/Skeleton3D:f_pinky.03.R", "Player/Skeleton3D:f_ring.01.L", "Player/Skeleton3D:f_ring.01.R", "Player/Skeleton3D:f_ring.02.L", "Player/Skeleton3D:f_ring.02.R", "Player/Skeleton3D:f_ring.03.L", "Player/Skeleton3D:f_ring.03.R", "Player/Skeleton3D:forearm.L", "Player/Skeleton3D:forearm.R", "Player/Skeleton3D:hand.L", "Player/Skeleton3D:hand.R", "Player/Skeleton3D:palm.01.R", "Player/Skeleton3D:palm.02.L", "Player/Skeleton3D:palm.02.R", "Player/Skeleton3D:palm.03.R", "Player/Skeleton3D:palm.04.R", "Player/Skeleton3D:shoulder.L", "Player/Skeleton3D:shoulder.R", "Player/Skeleton3D:spine.001", "Player/Skeleton3D:spine.002", "Player/Skeleton3D:spine.003", "Player/Skeleton3D:thumb.01.L", "Player/Skeleton3D:thumb.01.R", "Player/Skeleton3D:thumb.02.L", "Player/Skeleton3D:thumb.02.R", "Player/Skeleton3D:thumb.03.L", "Player/Skeleton3D:thumb.03.R", "Player/Skeleton3D:upper_arm.L", "Player/Skeleton3D:upper_arm.R"]
+
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_hl3me"]
+sync = true
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_fb2r8"]
+graph_offset = Vector2(-178.73763, 93.30066)
+nodes/output/position = Vector2(1100, 220)
+"nodes/One Handed Raised/node" = SubResource("AnimationNodeStateMachine_duglo")
+"nodes/One Handed Raised/position" = Vector2(340, 560)
+"nodes/Idle Blend/node" = SubResource("AnimationNodeBlend2_c10rt")
+"nodes/Idle Blend/position" = Vector2(440, 240)
+"nodes/Raised Blend/node" = SubResource("AnimationNodeBlend2_35xqn")
+"nodes/Raised Blend/position" = Vector2(705.40344, 246.40805)
+"nodes/One Handed Idle/node" = SubResource("AnimationNodeStateMachine_jt4lt")
+"nodes/One Handed Idle/position" = Vector2(60, 380)
+nodes/Animation/node = SubResource("AnimationNodeAnimation_026u6")
+nodes/Animation/position = Vector2(-20, -100)
+"nodes/Animation 2/node" = SubResource("AnimationNodeAnimation_fs83b")
+"nodes/Animation 2/position" = Vector2(-20, 140)
+"nodes/Turn Dir Blend/node" = SubResource("AnimationNodeBlend2_hl3me")
+"nodes/Turn Dir Blend/position" = Vector2(240, -40)
+node_connections = [&"output", 0, &"Raised Blend", &"Idle Blend", 0, &"Turn Dir Blend", &"Idle Blend", 1, &"One Handed Idle", &"Raised Blend", 0, &"Idle Blend", &"Raised Blend", 1, &"One Handed Raised", &"Turn Dir Blend", 0, &"Animation", &"Turn Dir Blend", 1, &"Animation 2"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_dggd4"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_dk7q4"]
+xfade_time = 0.1
+advance_mode = 2
+advance_condition = &"is_moving"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_0xaec"]
+xfade_time = 0.1
+advance_mode = 2
+advance_condition = &"is_turning"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_x0ksm"]
+xfade_time = 0.1
+advance_mode = 2
+advance_condition = &"is_walk_backward"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_kjiig"]
+xfade_time = 0.1
+advance_mode = 2
+advance_condition = &"is_not_moving"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ngyjq"]
+xfade_time = 0.1
+advance_mode = 2
+advance_condition = &"is_not_walk_backward"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_35xqn"]
+xfade_time = 0.1
+advance_mode = 2
+advance_condition = &"is_not_turning"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_g8bv4"]
+xfade_time = 0.1
+advance_mode = 2
+advance_condition = &"is_strafing"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_lvhlq"]
+xfade_time = 0.1
+advance_mode = 2
+advance_condition = &"is_not_strafing"
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_kjiig"]
+states/End/position = Vector2(999, 136)
+states/Idle/node = SubResource("AnimationNodeBlendTree_x0ksm")
+states/Idle/position = Vector2(441, 125)
+"states/Move Backward/node" = SubResource("AnimationNodeBlendTree_hd0tm")
+"states/Move Backward/position" = Vector2(648, 26)
+"states/Move Forward/node" = SubResource("AnimationNodeBlendTree_aqhks")
+"states/Move Forward/position" = Vector2(441, -4)
+states/Start/position = Vector2(186, 125)
+states/Strafe/node = SubResource("AnimationNodeBlendTree_4nx6x")
+states/Strafe/position = Vector2(654, 177)
+states/Turn/node = SubResource("AnimationNodeBlendTree_fb2r8")
+states/Turn/position = Vector2(441, 250)
+transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_dggd4"), "Idle", "Move Forward", SubResource("AnimationNodeStateMachineTransition_dk7q4"), "Idle", "Turn", SubResource("AnimationNodeStateMachineTransition_0xaec"), "Idle", "Move Backward", SubResource("AnimationNodeStateMachineTransition_x0ksm"), "Move Forward", "Idle", SubResource("AnimationNodeStateMachineTransition_kjiig"), "Move Backward", "Idle", SubResource("AnimationNodeStateMachineTransition_ngyjq"), "Turn", "Idle", SubResource("AnimationNodeStateMachineTransition_35xqn"), "Idle", "Strafe", SubResource("AnimationNodeStateMachineTransition_g8bv4"), "Strafe", "Idle", SubResource("AnimationNodeStateMachineTransition_lvhlq")]
+graph_offset = Vector2(-129, -31)
+
+[sub_resource type="AnimationNodeOneShot" id="AnimationNodeOneShot_0xaec"]
+filter_enabled = true
+filters = ["", "..", "Player/Skeleton3D/palm_02_R/Shotgun:Pump", "Player/Skeleton3D:Head", "Player/Skeleton3D:Neck", "Player/Skeleton3D:f_index.01.L", "Player/Skeleton3D:f_index.01.R", "Player/Skeleton3D:f_index.02.L", "Player/Skeleton3D:f_index.02.R", "Player/Skeleton3D:f_index.03.L", "Player/Skeleton3D:f_index.03.R", "Player/Skeleton3D:f_middle.01.L", "Player/Skeleton3D:f_middle.01.R", "Player/Skeleton3D:f_middle.02.L", "Player/Skeleton3D:f_middle.02.R", "Player/Skeleton3D:f_middle.03.L", "Player/Skeleton3D:f_middle.03.R", "Player/Skeleton3D:f_pinky.01.L", "Player/Skeleton3D:f_pinky.01.R", "Player/Skeleton3D:f_pinky.02.L", "Player/Skeleton3D:f_pinky.02.R", "Player/Skeleton3D:f_pinky.03.L", "Player/Skeleton3D:f_pinky.03.R", "Player/Skeleton3D:f_ring.01.L", "Player/Skeleton3D:f_ring.01.R", "Player/Skeleton3D:f_ring.02.L", "Player/Skeleton3D:f_ring.02.R", "Player/Skeleton3D:f_ring.03.L", "Player/Skeleton3D:f_ring.03.R", "Player/Skeleton3D:forearm.L", "Player/Skeleton3D:forearm.R", "Player/Skeleton3D:hand.L", "Player/Skeleton3D:hand.R", "Player/Skeleton3D:palm.01.R", "Player/Skeleton3D:palm.02.L", "Player/Skeleton3D:palm.02.R", "Player/Skeleton3D:palm.03.R", "Player/Skeleton3D:palm.04.R", "Player/Skeleton3D:shoulder.L", "Player/Skeleton3D:shoulder.R", "Player/Skeleton3D:spine.001", "Player/Skeleton3D:spine.003", "Player/Skeleton3D:thumb.01.L", "Player/Skeleton3D:thumb.01.R", "Player/Skeleton3D:thumb.02.L", "Player/Skeleton3D:thumb.02.R", "Player/Skeleton3D:thumb.03.L", "Player/Skeleton3D:upper_arm.L", "Player/Skeleton3D:upper_arm.R"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_x0ksm"]
+animation = &"AK47 Shoot"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_634qg"]
+animation = &"Shotgun Shoot"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_j04hv"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_qhg2u"]
+advance_mode = 2
+advance_expression = "currentWeapon == 2"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_wkx8g"]
+advance_mode = 2
+advance_expression = "currentWeapon == 1"
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_ngyjq"]
+states/AK47/node = SubResource("AnimationNodeAnimation_x0ksm")
+states/AK47/position = Vector2(454, 100)
+states/Shotgun/node = SubResource("AnimationNodeAnimation_634qg")
+states/Shotgun/position = Vector2(656, 100)
+transitions = ["Start", "AK47", SubResource("AnimationNodeStateMachineTransition_j04hv"), "AK47", "Shotgun", SubResource("AnimationNodeStateMachineTransition_qhg2u"), "Shotgun", "AK47", SubResource("AnimationNodeStateMachineTransition_wkx8g")]
+
+[resource]
+resource_local_to_scene = true
+graph_offset = Vector2(-772.1782, 110.92905)
+nodes/output/position = Vector2(260, 360)
+nodes/Locomotion/node = SubResource("AnimationNodeStateMachine_kjiig")
+nodes/Locomotion/position = Vector2(-480, 180)
+"nodes/Two Handed Shoot/node" = SubResource("AnimationNodeOneShot_0xaec")
+"nodes/Two Handed Shoot/position" = Vector2(-100, 300)
+"nodes/Two Handed Weapons/node" = SubResource("AnimationNodeStateMachine_ngyjq")
+"nodes/Two Handed Weapons/position" = Vector2(-480, 720)
+node_connections = [&"output", 0, &"Two Handed Shoot", &"Two Handed Shoot", 0, &"Locomotion", &"Two Handed Shoot", 1, &"Two Handed Weapons"]

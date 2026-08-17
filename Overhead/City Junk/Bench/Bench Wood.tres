@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cn1h70qmymce0"]
+
+[ext_resource type="Texture2D" uid="uid://drmqx6rcx1qqn" path="res://Overhead/City Junk/Bench/Bench Wood.png" id="1_a4fab"]
+[ext_resource type="Texture2D" uid="uid://ibajp1k6phmk" path="res://Overhead/City Junk/Bench/Bench Wood Normal.png" id="2_74p7t"]
+
+[resource]
+albedo_texture = ExtResource("1_a4fab")
+normal_enabled = true
+normal_scale = 2.0
+normal_texture = ExtResource("2_74p7t")

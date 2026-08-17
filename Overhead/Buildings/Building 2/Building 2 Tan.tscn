@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://b4olejawymq7l"]
+
+[ext_resource type="PackedScene" uid="uid://bm6o2jahpq4uf" path="res://Overhead/Buildings/Building 2/Building 2.glb" id="1_k3q5a"]
+[ext_resource type="Material" uid="uid://coei4fs05rlwd" path="res://Overhead/Buildings/Building 2/Building 2 Tan.tres" id="2_6svv1"]
+[ext_resource type="Material" uid="uid://cfu2uhqelkqno" path="res://Overhead/Buildings/Asphalt Light.tres" id="3_p7ca2"]
+[ext_resource type="PackedScene" uid="uid://df4n4i8clxdb3" path="res://Overhead/Buildings/Top Objects/Roof Entrance.tscn" id="4_36a1h"]
+[ext_resource type="PackedScene" uid="uid://bs1ddme77upld" path="res://Overhead/Buildings/Top Objects/Water Tank.tscn" id="5_ntagm"]
+[ext_resource type="PackedScene" uid="uid://dwkmcie5cjcnp" path="res://Overhead/Buildings/Top Objects/Roof Fan.tscn" id="6_xrodl"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lfxu0"]
+size = Vector3(5.965542, 10.557739, 9.050964)
+
+[node name="Building 2" type="StaticBody3D" unique_id=320886059 groups=["Vehicle Static Hit"]]
+collision_layer = 4
+collision_mask = 7
+
+[node name="Building 2" parent="." unique_id=1149567379 instance=ExtResource("1_k3q5a")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+
+[node name="Building 4" parent="Building 2" index="0" unique_id=285392221]
+surface_material_override/0 = ExtResource("2_6svv1")
+surface_material_override/1 = ExtResource("3_p7ca2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1855276609]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1040134, 5.263263, -1.5349073)
+shape = SubResource("BoxShape3D_lfxu0")
+
+[node name="Roof Entrance" parent="." unique_id=1550113668 instance=ExtResource("4_36a1h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.92333984, 10.520923, 0)
+
+[node name="Water Tank" parent="." unique_id=1180133866 instance=ExtResource("5_ntagm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5409944, 10.461658, -5.007202)
+
+[node name="Roof Fan" parent="." unique_id=1301821086 instance=ExtResource("6_xrodl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5057983, 10.455188, -1.340332)
+
+[node name="Roof Fan2" parent="." unique_id=664493138 instance=ExtResource("6_xrodl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5057983, 10.455188, 0.69705963)
+
+[node name="Roof Fan3" parent="." unique_id=867744449 instance=ExtResource("6_xrodl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5057983, 10.455188, -0.3397522)
+
+[editable path="Building 2"]

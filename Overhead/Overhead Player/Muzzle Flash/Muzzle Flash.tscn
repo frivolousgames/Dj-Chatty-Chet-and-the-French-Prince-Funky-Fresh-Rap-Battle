@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://c1dblte2aki53"]
+
+[ext_resource type="Texture2D" uid="uid://buieg47e1ic8p" path="res://Overhead/Overhead Player/Muzzle Flash/Flash1.png" id="1_1na4g"]
+[ext_resource type="Material" uid="uid://dgfv76ax1dpr3" path="res://Overhead/Overhead Player/Muzzle Flash/Muzzle Flash Mat.tres" id="1_3k7h1"]
+[ext_resource type="Script" uid="uid://c5u5gm86fbkr5" path="res://Overhead/Overhead Player/Muzzle Flash/MuzzleFlash.cs" id="1_ojivq"]
+[ext_resource type="Texture2D" uid="uid://dn5rx3kau2d0u" path="res://Overhead/Overhead Player/Muzzle Flash/Flash2.png" id="3_5nxjq"]
+[ext_resource type="Texture2D" uid="uid://cetvv7vxmkbab" path="res://Overhead/Overhead Player/Muzzle Flash/Flash3.png" id="4_2y1vs"]
+[ext_resource type="Texture2D" uid="uid://bvfeior278drp" path="res://Overhead/Overhead Player/Muzzle Flash/Flash4.png" id="5_pjtwb"]
+
+[node name="Muzzle Flash" type="Node3D" unique_id=195069731]
+script = ExtResource("1_ojivq")
+flashTexts = Array[Texture2D]([ExtResource("1_1na4g"), ExtResource("3_5nxjq"), ExtResource("4_2y1vs"), ExtResource("5_pjtwb")])
+waitTime = 0.05
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1415298500]
+transform = Transform3D(0.045, 0, 0, 0, 0.045, -7.86805e-09, 0, 7.86805e-09, 0.045, 0, 0, -0.11288181)
+material_override = ExtResource("1_3k7h1")
+texture = ExtResource("1_1na4g")

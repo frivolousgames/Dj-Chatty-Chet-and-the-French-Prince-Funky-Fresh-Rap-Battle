@@ -1,0 +1,248 @@
+[gd_scene format=3 uid="uid://bywn7mr05746g"]
+
+[ext_resource type="PackedScene" uid="uid://dbu1qlf1jnuo8" path="res://Overhead/Overhead Player/Overhead Player.glb" id="1_3aqe3"]
+[ext_resource type="Script" uid="uid://cwg00n8t3bpxg" path="res://Overhead/Overhead Player/OverheadPlayer.cs" id="1_p35m7"]
+[ext_resource type="Resource" uid="uid://bwlk55lhknawj" path="res://Overhead/Overhead Player/Weapon Resources/GlockResource.tres" id="2_ngyjq"]
+[ext_resource type="Resource" uid="uid://dcjl13citt2od" path="res://Overhead/Overhead Player/Weapon Resources/AK47Resource.tres" id="3_35xqn"]
+[ext_resource type="Material" uid="uid://1clxdy6mc07j" path="res://Overhead/Overhead Player/Hoodie.tres" id="3_dggd4"]
+[ext_resource type="AnimationNodeBlendTree" uid="uid://ckli37wqyn3rd" path="res://Overhead/Overhead Player/2 Handed Weapon.tres" id="4_0xaec"]
+[ext_resource type="AnimationNodeBlendTree" uid="uid://2u5bpgm3dfkx" path="res://Overhead/Overhead Player/One Handed Weapon.tres" id="4_dk7q4"]
+[ext_resource type="Resource" uid="uid://cgmleyajyp8b6" path="res://Overhead/Overhead Player/Weapon Resources/ShotgunResource.tres" id="4_j04hv"]
+[ext_resource type="Resource" uid="uid://pqxgdgxbq03a" path="res://Overhead/Overhead Player/Weapon Resources/UZI.tres" id="5_ngyjq"]
+[ext_resource type="PackedScene" uid="uid://c1dblte2aki53" path="res://Overhead/Overhead Player/Muzzle Flash/Muzzle Flash.tscn" id="11_aqhks"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_0xaec"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_x0ksm"]
+advance_mode = 2
+advance_condition = &"is_two_handed"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_kjiig"]
+advance_mode = 2
+advance_condition = &"is_one_handed"
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_c8iyg"]
+"states/One Handed Weapon/node" = ExtResource("4_dk7q4")
+"states/One Handed Weapon/position" = Vector2(303, 109)
+states/Start/position = Vector2(46, 109)
+"states/Two Handed Weapon/node" = ExtResource("4_0xaec")
+"states/Two Handed Weapon/position" = Vector2(600, 109)
+transitions = ["Start", "One Handed Weapon", SubResource("AnimationNodeStateMachineTransition_0xaec"), "One Handed Weapon", "Two Handed Weapon", SubResource("AnimationNodeStateMachineTransition_x0ksm"), "Two Handed Weapon", "One Handed Weapon", SubResource("AnimationNodeStateMachineTransition_kjiig")]
+graph_offset = Vector2(-134, -5)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_lfxu0"]
+radius = 0.28710938
+height = 2.0947266
+
+[node name="Overhead player" type="CharacterBody3D" unique_id=1812290584 node_paths=PackedStringArray("AnimPlayer", "AnimTree", "Weapons", "BulletSpawns")]
+collision_layer = 4
+collision_mask = 7
+script = ExtResource("1_p35m7")
+WalkSpeed = 3.0
+RunSpeed = 5.0
+WalkBackSpeed = 0.9
+JumpVelocity = 1.0
+RotSpeed = 0.03
+AnimPlayer = NodePath("Overhead Player/AnimationPlayer")
+AnimTree = NodePath("Overhead Player/AnimationTree2")
+WeaponResources = Array[Object]([ExtResource("2_ngyjq"), ExtResource("3_35xqn"), ExtResource("4_j04hv"), ExtResource("5_ngyjq")])
+Weapons = [NodePath("Overhead Player/Player/Skeleton3D/palm_02_R/Glock"), NodePath("Overhead Player/Player/Skeleton3D/palm_02_R/Ak47"), NodePath("Overhead Player/Player/Skeleton3D/palm_02_R/Shotgun"), NodePath("Overhead Player/Player/Skeleton3D/palm_02_R/UZI")]
+BulletSpawns = [NodePath("Overhead Player/Player/Skeleton3D/palm_02_R/Glock/GlockBulletSpawn"), NodePath("Overhead Player/Player/Skeleton3D/palm_02_R/Ak47/AK47BulletSpawn"), NodePath("Overhead Player/Player/Skeleton3D/palm_02_R/Shotgun/ShotgunBulletSpawn"), NodePath("Overhead Player/Player/Skeleton3D/palm_02_R/UZI/UZI Bullet Spawn")]
+muzzleflash = ExtResource("11_aqhks")
+
+[node name="Overhead Player" parent="." unique_id=979311808 instance=ExtResource("1_3aqe3")]
+
+[node name="Player" parent="Overhead Player" index="0" unique_id=1156970681]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="Skeleton3D" parent="Overhead Player/Player" index="0" unique_id=1522387237]
+rotation_edit_mode = 1
+bones/0/position = Vector3(6.023558e-09, 1.0099, 0.055200007)
+bones/0/rotation = Quaternion(-0.012658386, 0.999805, -0.015074568, -0.0016053434)
+bones/1/rotation = Quaternion(-0.103040576, -0.0019723475, -0.005005572, 0.9946626)
+bones/2/rotation = Quaternion(-0.0027761322, -0.0031843244, 0.01998097, 0.99979144)
+bones/3/rotation = Quaternion(0.123663746, 6.143216e-05, 0.008385213, 0.99228877)
+bones/5/position = Vector3(0.00052296795, 0.11071952, -0.009583234)
+bones/5/rotation = Quaternion(-0.1528969, 0.0018896033, -0.026533484, 0.98788404)
+bones/6/rotation = Quaternion(-0.06672461, 0.001096544, 0.022622079, 0.9975143)
+bones/8/rotation = Quaternion(-0.65133667, -0.32289326, -0.37856767, 0.5728761)
+bones/9/position = Vector3(0.034751687, 0.31677297, -0.100115925)
+bones/9/rotation = Quaternion(-0.25196788, 0.7090567, -0.5762429, 0.31889644)
+bones/9/scale = Vector3(0.9104271, 0.91042674, 0.9104267)
+bones/10/rotation = Quaternion(0.17380366, -0.113876835, -0.02485355, 0.97785825)
+bones/11/rotation = Quaternion(0.0047022956, 0.2320254, 0.053199783, 0.9712424)
+bones/13/position = Vector3(8.676951e-09, 0.058259852, -1.0435116e-08)
+bones/13/rotation = Quaternion(0.16142653, 0.086632654, -0.15398017, 0.97094095)
+bones/14/rotation = Quaternion(0.07767548, 0.006566706, -0.010083205, 0.9969061)
+bones/15/rotation = Quaternion(-0.026738727, 0.030734023, -0.023772737, 0.99888706)
+bones/16/position = Vector3(-0.015079774, -0.008249421, 0.019099243)
+bones/16/rotation = Quaternion(0.07203916, 0.65900934, 0.14063136, 0.73535025)
+bones/16/scale = Vector3(1.0940803, 1.0940807, 1.0940807)
+bones/17/rotation = Quaternion(0.11680164, 0.096849345, -0.023552686, 0.9881412)
+bones/18/rotation = Quaternion(0.06931753, 0.011807339, 0.0018566723, 0.99752307)
+bones/19/position = Vector3(-0.007021115, 0.066959426, 0.00085929024)
+bones/19/rotation = Quaternion(0.100612395, 0.68148035, 0.025854312, 0.72442615)
+bones/19/scale = Vector3(1.0940806, 1.0940804, 1.0940804)
+bones/20/position = Vector3(-1.0285145e-08, 0.05634341, 1.9724837e-08)
+bones/20/rotation = Quaternion(0.09343182, 0.03826418, -0.11037373, 0.9887487)
+bones/21/rotation = Quaternion(0.081890225, -0.016179694, 0.007651529, 0.99648064)
+bones/22/rotation = Quaternion(0.025393605, -0.011249151, -0.047459736, 0.99848694)
+bones/23/rotation = Quaternion(0.030091181, 0.70335835, -0.01200311, 0.71009684)
+bones/24/position = Vector3(-1.8712283e-08, 0.057517372, 6.529266e-08)
+bones/24/rotation = Quaternion(0.18321666, -0.025719391, -0.011332902, 0.9826707)
+bones/25/rotation = Quaternion(-0.042791948, -0.0010043099, -0.043624695, 0.9981306)
+bones/26/rotation = Quaternion(0.03636132, -0.0062775565, 0.023094356, 0.9990521)
+bones/27/rotation = Quaternion(-0.009492822, 0.7392785, -0.076514386, 0.6689714)
+bones/28/position = Vector3(2.5671058e-08, 0.06273884, 6.1559895e-09)
+bones/28/rotation = Quaternion(0.086544305, -0.13714272, 0.06606639, 0.9845492)
+bones/29/rotation = Quaternion(0.040227287, 0.034441993, -0.01923546, 0.9984116)
+bones/30/rotation = Quaternion(0.006529294, -0.024988271, 0.038822602, 0.9989123)
+bones/31/rotation = Quaternion(-0.6449171, 0.33588392, 0.36427557, 0.58186543)
+bones/32/position = Vector3(-0.03475165, 0.31677294, -0.10011578)
+bones/32/rotation = Quaternion(-0.25196785, -0.7090567, 0.576243, 0.3188965)
+bones/32/scale = Vector3(0.9104271, 0.91042703, 0.9104268)
+bones/33/rotation = Quaternion(0.17380364, 0.11387676, 0.024853557, 0.9778582)
+bones/34/rotation = Quaternion(0.004702318, -0.23202541, -0.0531998, 0.9712424)
+bones/34/scale = Vector3(0.99999976, 1, 1)
+bones/35/rotation = Quaternion(0.11026936, -0.6598495, -0.0918353, 0.73756737)
+bones/36/rotation = Quaternion(0.16142654, -0.08663269, 0.15398026, 0.97094095)
+bones/37/rotation = Quaternion(0.07767547, -0.006566717, 0.010083202, 0.9969061)
+bones/38/rotation = Quaternion(0.5804669, -0.01020754, 0.03749073, 0.81335634)
+bones/39/position = Vector3(0.015079849, -0.008249455, 0.019099038)
+bones/39/rotation = Quaternion(0.07203921, -0.65900934, -0.14063135, 0.73535025)
+bones/39/scale = Vector3(1.0940804, 1.0940807, 1.0940806)
+bones/40/rotation = Quaternion(0.15758157, -0.021662444, 0.078048296, 0.98417854)
+bones/41/rotation = Quaternion(0.06931748, -0.0118073365, -0.0018566524, 0.99752307)
+bones/42/position = Vector3(0.0070212935, 0.066959366, 0.0008592721)
+bones/42/rotation = Quaternion(0.10061242, -0.6814803, -0.025854347, 0.7244262)
+bones/42/scale = Vector3(1.0940797, 1.0940803, 1.0940804)
+bones/43/rotation = Quaternion(0.0934318, -0.03826418, 0.110373735, 0.9887487)
+bones/44/rotation = Quaternion(0.6657176, 0.008303611, -0.01585467, 0.74598914)
+bones/45/rotation = Quaternion(0.62183446, 0.037571836, 0.031102084, 0.7816285)
+bones/46/rotation = Quaternion(0.030091198, -0.7033583, 0.012003093, 0.7100969)
+bones/47/rotation = Quaternion(0.18321669, 0.02571945, 0.011332915, 0.9826707)
+bones/48/rotation = Quaternion(0.5671985, 0.027084455, 0.034213565, 0.8224244)
+bones/49/rotation = Quaternion(0.63092864, -0.008903616, -0.022214273, 0.77547175)
+bones/50/rotation = Quaternion(-0.009492838, -0.73927844, 0.076514445, 0.6689715)
+bones/51/rotation = Quaternion(0.08654428, 0.13714272, -0.06606644, 0.9845492)
+bones/52/rotation = Quaternion(0.6336282, -0.015900502, 0.036103327, 0.7726313)
+bones/53/rotation = Quaternion(0.60703444, -0.0034458975, -0.04604031, 0.7933333)
+bones/58/position = Vector3(0.13779266, -0.032710187, 0.029097894)
+bones/59/rotation = Quaternion(0.09530965, 0.0031467848, -0.029655408, 0.99500096)
+bones/60/rotation = Quaternion(-0.5622367, -0.017741838, 0.026099948, 0.82637393)
+bones/61/rotation = Quaternion(9.765767e-09, 0.97122276, -0.23817307, 7.332527e-08)
+bones/62/position = Vector3(-0.13611925, -0.03965886, 0.028322896)
+bones/62/rotation = Quaternion(0.9982539, 0.0108114, 0.002231074, 0.058029067)
+bones/63/rotation = Quaternion(0.09530879, -0.003146728, 0.029655373, 0.99500096)
+bones/64/rotation = Quaternion(-0.56223446, 0.01774177, -0.026099952, 0.8263755)
+bones/65/rotation = Quaternion(-3.1229096e-08, 0.97122234, -0.23817503, -7.3325246e-08)
+
+[node name="palm_02_R" parent="Overhead Player/Player/Skeleton3D" index="0" unique_id=9684518]
+transform = Transform3D(-0.38347983, -0.06609908, -0.9169237, 0.37182343, -0.91976404, -0.08920177, -0.8407525, -0.37661707, 0.37877294, 0.3641979, 0.960614, 0.022731423)
+
+[node name="Ak47" parent="Overhead Player/Player/Skeleton3D/palm_02_R" index="0" unique_id=809562945]
+visible = false
+
+[node name="AK47BulletSpawn" type="Node3D" parent="Overhead Player/Player/Skeleton3D/palm_02_R/Ak47" index="0" unique_id=1711188683]
+transform = Transform3D(0.99999994, 1.3411045e-07, 0, 2.6077032e-07, 1, 2.3841858e-07, -5.9604645e-08, -3.7252903e-08, 1, -0.055407524, -5.654171, -3.5656157)
+
+[node name="GlockBulletSpawn" type="Node3D" parent="Overhead Player/Player/Skeleton3D/palm_02_R/Glock" parent_id_path=PackedInt32Array(979311808, 1190263338) index="0" unique_id=1548712118]
+transform = Transform3D(1.0000004, -5.2154064e-08, 1.4901161e-08, 2.2351742e-08, 0.9999993, -1.1920929e-07, -4.4703484e-08, 2.9802322e-08, 0.9999999, 1.3230009, -0.12863636, 0.025530845)
+visible = false
+
+[node name="Shotgun" parent="Overhead Player/Player/Skeleton3D/palm_02_R" index="2" unique_id=2075918095]
+visible = false
+
+[node name="ShotgunBulletSpawn" type="Node3D" parent="Overhead Player/Player/Skeleton3D/palm_02_R/Shotgun" index="0" unique_id=148496789]
+transform = Transform3D(0.9999999, -5.9604645e-08, -8.195639e-08, -2.9802322e-07, 0.99999917, 1.7881393e-07, 0, -7.4505806e-08, 0.9999998, 0.01608324, 0.3278327, -6.2307105)
+
+[node name="UZI" parent="Overhead Player/Player/Skeleton3D/palm_02_R" index="3" unique_id=1509516921]
+visible = false
+
+[node name="UZI Bullet Spawn" type="Node3D" parent="Overhead Player/Player/Skeleton3D/palm_02_R/UZI" index="0" unique_id=201874084]
+transform = Transform3D(1.0000004, -2.9802322e-08, -7.450581e-09, 2.9802322e-08, 0.99999976, 4.4703484e-08, 2.9802322e-08, 0, 0.9999998, -0.0056755543, 0.1066086, -1.2184894)
+
+[node name="Body LOW" parent="Overhead Player/Player/Skeleton3D" index="1" unique_id=1782081734]
+blend_shapes/Shrink = 1.0
+
+[node name="Hoodie LOW" parent="Overhead Player/Player/Skeleton3D" index="3" unique_id=2114066105]
+surface_material_override/0 = ExtResource("3_dggd4")
+
+[node name="Jeans LOW" parent="Overhead Player/Player/Skeleton3D" index="4" unique_id=1733219390]
+blend_shapes/Shrink = 1.0
+
+[node name="AnimationPlayer" parent="Overhead Player" index="1" unique_id=2062133393]
+callback_mode_process = 0
+
+[node name="AnimationTree2" type="AnimationTree" parent="Overhead Player" unique_id=919940092]
+tree_root = SubResource("AnimationNodeStateMachine_c8iyg")
+anim_player = NodePath("../AnimationPlayer")
+parameters/conditions/is_one_handed = false
+parameters/conditions/is_two_handed = false
+"parameters/One Handed Weapon/Locomotion/conditions/is_moving" = false
+"parameters/One Handed Weapon/Locomotion/conditions/is_not_moving" = false
+"parameters/One Handed Weapon/Locomotion/conditions/is_not_strafing" = false
+"parameters/One Handed Weapon/Locomotion/conditions/is_not_turning" = false
+"parameters/One Handed Weapon/Locomotion/conditions/is_not_walk_backward" = false
+"parameters/One Handed Weapon/Locomotion/conditions/is_strafing" = false
+"parameters/One Handed Weapon/Locomotion/conditions/is_turning" = false
+"parameters/One Handed Weapon/Locomotion/conditions/is_walk_backward" = false
+"parameters/One Handed Weapon/Locomotion/Idle/Raised Blend/blend_amount" = 0.0
+"parameters/One Handed Weapon/Locomotion/Idle/Idle Blend/blend_amount" = 1.0
+"parameters/One Handed Weapon/Locomotion/Move Backward/One Handed Raised/Glock Raised/Blend2/blend_amount" = 0.58
+"parameters/One Handed Weapon/Locomotion/Move Backward/Raised Blend/blend_amount" = 0.0
+"parameters/One Handed Weapon/Locomotion/Move Backward/Idle Blend/blend_amount" = 1.0
+"parameters/One Handed Weapon/Locomotion/Move Forward/Idle Blend/blend_amount" = 1.0
+"parameters/One Handed Weapon/Locomotion/Move Forward/Run Blend/blend_amount" = 0.0
+"parameters/One Handed Weapon/Locomotion/Move Forward/One Handed Raised/Glock Raised/Blend2/blend_amount" = 0.58
+"parameters/One Handed Weapon/Locomotion/Move Forward/Raised Blend/blend_amount" = 0.0
+"parameters/One Handed Weapon/Locomotion/Strafe/Strafe Dir Blend/blend_amount" = 0.0
+"parameters/One Handed Weapon/Locomotion/Strafe/Idle Blend/blend_amount" = 1.0
+"parameters/One Handed Weapon/Locomotion/Strafe/Raised Blend/blend_amount" = 0.0
+"parameters/One Handed Weapon/Locomotion/Strafe/One Handed Raised/Glock Raised/Blend2/blend_amount" = 0.58
+"parameters/One Handed Weapon/Locomotion/Turn/Idle Blend/blend_amount" = 1.0
+"parameters/One Handed Weapon/Locomotion/Turn/Raised Blend/blend_amount" = 0.0
+"parameters/One Handed Weapon/Locomotion/Turn/One Handed Raised/Glock Raised/Blend2/blend_amount" = 0.58
+"parameters/One Handed Weapon/Locomotion/Turn/Turn Dir Blend/blend_amount" = 1.0
+"parameters/One Handed Weapon/One Handed Shoot/active" = false
+"parameters/One Handed Weapon/One Handed Shoot/internal_active" = false
+"parameters/One Handed Weapon/One Handed Shoot/request" = 0
+"parameters/Two Handed Weapon/Locomotion/conditions/is_moving" = false
+"parameters/Two Handed Weapon/Locomotion/conditions/is_not_moving" = false
+"parameters/Two Handed Weapon/Locomotion/conditions/is_not_strafing" = false
+"parameters/Two Handed Weapon/Locomotion/conditions/is_not_turning" = false
+"parameters/Two Handed Weapon/Locomotion/conditions/is_not_walk_backward" = false
+"parameters/Two Handed Weapon/Locomotion/conditions/is_strafing" = false
+"parameters/Two Handed Weapon/Locomotion/conditions/is_turning" = false
+"parameters/Two Handed Weapon/Locomotion/conditions/is_walk_backward" = false
+"parameters/Two Handed Weapon/Locomotion/Idle/Raised Blend/blend_amount" = 0.0
+"parameters/Two Handed Weapon/Locomotion/Idle/Idle Blend/blend_amount" = 1.0
+"parameters/Two Handed Weapon/Locomotion/Move Backward/Idle Blend/blend_amount" = 1.0
+"parameters/Two Handed Weapon/Locomotion/Move Backward/Raised Blend/blend_amount" = 0.0
+"parameters/Two Handed Weapon/Locomotion/Move Backward/Two Handed Raised/AK47 Raised/Blend2/blend_amount" = 1.0
+"parameters/Two Handed Weapon/Locomotion/Move Backward/Two Handed Raised/Shotgun Raised/Blend2/blend_amount" = 1.0
+"parameters/Two Handed Weapon/Locomotion/Move Forward/Idle Blend/blend_amount" = 1.0
+"parameters/Two Handed Weapon/Locomotion/Move Forward/Run Blend/blend_amount" = 0.0
+"parameters/Two Handed Weapon/Locomotion/Move Forward/Two Handed Raised/AK47 Raised/Blend2/blend_amount" = 1.0
+"parameters/Two Handed Weapon/Locomotion/Move Forward/Two Handed Raised/Shotgun Raised/Blend2/blend_amount" = 1.0
+"parameters/Two Handed Weapon/Locomotion/Move Forward/Raised Blend/blend_amount" = 0.0
+"parameters/Two Handed Weapon/Locomotion/Strafe/Strafe Dir Bleend/blend_amount" = 1.0
+"parameters/Two Handed Weapon/Locomotion/Strafe/Two Handed Raised/AK47 Raised/Blend2/blend_amount" = 1.0
+"parameters/Two Handed Weapon/Locomotion/Strafe/Two Handed Raised/Shotgun raised/Blend2/blend_amount" = 1.0
+"parameters/Two Handed Weapon/Locomotion/Strafe/Idle Blend/blend_amount" = 1.0
+"parameters/Two Handed Weapon/Locomotion/Strafe/Raised Blend/blend_amount" = 0.0
+"parameters/Two Handed Weapon/Locomotion/Turn/One Handed Raised/AK47 Raised/Blend2/blend_amount" = 1.0
+"parameters/Two Handed Weapon/Locomotion/Turn/One Handed Raised/Shotgun Raised/Blend2/blend_amount" = 1.0
+"parameters/Two Handed Weapon/Locomotion/Turn/Idle Blend/blend_amount" = 1.0
+"parameters/Two Handed Weapon/Locomotion/Turn/Raised Blend/blend_amount" = 0.0
+"parameters/Two Handed Weapon/Locomotion/Turn/Turn Dir Blend/blend_amount" = 0.0
+"parameters/Two Handed Weapon/Two Handed Shoot/active" = false
+"parameters/Two Handed Weapon/Two Handed Shoot/internal_active" = false
+"parameters/Two Handed Weapon/Two Handed Shoot/request" = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=658265655]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0217993, 0.01002872)
+shape = SubResource("CapsuleShape3D_lfxu0")
+
+[editable path="Overhead Player"]

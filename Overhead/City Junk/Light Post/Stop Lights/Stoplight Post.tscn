@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://dncu7q6b7s5uv"]
+
+[ext_resource type="Material" uid="uid://ctdbq5w1wdj11" path="res://Overhead/City Junk/Light Post/Light Post Metal.tres" id="2_bhm0e"]
+[ext_resource type="PackedScene" uid="uid://chksc5xpresfg" path="res://Overhead/City Junk/Light Post/Light Post.tscn" id="4_1e06b"]
+[ext_resource type="PackedScene" uid="uid://c74qiyy1758yv" path="res://Overhead/City Junk/Light Post/Stop Lights/4 Way Light Box.tscn" id="4_yxvrs"]
+[ext_resource type="PackedScene" uid="uid://0lc4yxdm8j10" path="res://Overhead/City Junk/Light Post/Stop Lights/Stoplight Pole.glb" id="5_vuftn"]
+
+[node name="Stop Light Post" type="Node3D" unique_id=2093212956 groups=["Vehicle Static Hit"]]
+
+[node name="Stoplight Pole2" parent="." unique_id=1239344290 instance=ExtResource("5_vuftn")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 6.581544, 0)
+
+[node name="Stoplight Pole" parent="Stoplight Pole2" index="0" unique_id=1365605793]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+surface_material_override/0 = ExtResource("2_bhm0e")
+
+[node name="Light Post" parent="." unique_id=1902395794 instance=ExtResource("4_1e06b")]
+
+[node name="Stop Light Box 4 Way" parent="." unique_id=1586857094 instance=ExtResource("4_yxvrs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.3568068, 6.492769, 0)
+
+[editable path="Stoplight Pole2"]

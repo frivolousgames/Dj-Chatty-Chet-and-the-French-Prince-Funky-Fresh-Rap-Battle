@@ -7,28 +7,40 @@
       "RelativeMoniker": "D:0:0:{0338D309-D3D9-4409-BE90-F8B76F069347}|Rap Battle.csproj|solutionrelative:_blender\\overhead player\\overheadplayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{0338D309-D3D9-4409-BE90-F8B76F069347}|Rap Battle.csproj|d:\\godot\\dj-chatty-chet-and-the-french-prince-funky-fresh-rap-battle\\_blender\\overhead player\\weaponitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0338D309-D3D9-4409-BE90-F8B76F069347}|Rap Battle.csproj|solutionrelative:_blender\\overhead player\\weaponitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0338D309-D3D9-4409-BE90-F8B76F069347}|Rap Battle.csproj|d:\\godot\\dj-chatty-chet-and-the-french-prince-funky-fresh-rap-battle\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0338D309-D3D9-4409-BE90-F8B76F069347}|Rap Battle.csproj|solutionrelative:gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{0338D309-D3D9-4409-BE90-F8B76F069347}|Rap Battle.csproj|d:\\godot\\dj-chatty-chet-and-the-french-prince-funky-fresh-rap-battle\\_scenes\\parallax_stars.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0338D309-D3D9-4409-BE90-F8B76F069347}|Rap Battle.csproj|solutionrelative:_scenes\\parallax_stars.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0338D309-D3D9-4409-BE90-F8B76F069347}|Rap Battle.csproj|d:\\godot\\dj-chatty-chet-and-the-french-prince-funky-fresh-rap-battle\\_blender\\car\\destroyparent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0338D309-D3D9-4409-BE90-F8B76F069347}|Rap Battle.csproj|solutionrelative:_blender\\car\\destroyparent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0338D309-D3D9-4409-BE90-F8B76F069347}|Rap Battle.csproj|d:\\godot\\dj-chatty-chet-and-the-french-prince-funky-fresh-rap-battle\\tipoverwhenhit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0338D309-D3D9-4409-BE90-F8B76F069347}|Rap Battle.csproj|solutionrelative:tipoverwhenhit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0338D309-D3D9-4409-BE90-F8B76F069347}|Rap Battle.csproj|d:\\godot\\dj-chatty-chet-and-the-french-prince-funky-fresh-rap-battle\\_scenes\\tiretrackdecal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0338D309-D3D9-4409-BE90-F8B76F069347}|Rap Battle.csproj|solutionrelative:_scenes\\tiretrackdecal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0338D309-D3D9-4409-BE90-F8B76F069347}|Rap Battle.csproj|d:\\godot\\dj-chatty-chet-and-the-french-prince-funky-fresh-rap-battle\\_scenes\\spaceship.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0338D309-D3D9-4409-BE90-F8B76F069347}|Rap Battle.csproj|solutionrelative:_scenes\\spaceship.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{0338D309-D3D9-4409-BE90-F8B76F069347}|Rap Battle.csproj|d:\\godot\\dj-chatty-chet-and-the-french-prince-funky-fresh-rap-battle\\savemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0338D309-D3D9-4409-BE90-F8B76F069347}|Rap Battle.csproj|solutionrelative:savemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{0338D309-D3D9-4409-BE90-F8B76F069347}|Rap Battle.csproj|d:\\godot\\dj-chatty-chet-and-the-french-prince-funky-fresh-rap-battle\\_scenes\\carmover.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0338D309-D3D9-4409-BE90-F8B76F069347}|Rap Battle.csproj|solutionrelative:_scenes\\carmover.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0338D309-D3D9-4409-BE90-F8B76F069347}|Rap Battle.csproj|d:\\godot\\dj-chatty-chet-and-the-french-prince-funky-fresh-rap-battle\\_scenes\\tiretrackdecal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0338D309-D3D9-4409-BE90-F8B76F069347}|Rap Battle.csproj|solutionrelative:_scenes\\tiretrackdecal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0338D309-D3D9-4409-BE90-F8B76F069347}|Rap Battle.csproj|d:\\godot\\dj-chatty-chet-and-the-french-prince-funky-fresh-rap-battle\\tipoverwhenhit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0338D309-D3D9-4409-BE90-F8B76F069347}|Rap Battle.csproj|solutionrelative:tipoverwhenhit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0338D309-D3D9-4409-BE90-F8B76F069347}|Rap Battle.csproj|d:\\godot\\dj-chatty-chet-and-the-french-prince-funky-fresh-rap-battle\\_blender\\car\\destroyparent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0338D309-D3D9-4409-BE90-F8B76F069347}|Rap Battle.csproj|solutionrelative:_blender\\car\\destroyparent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,11 +50,50 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "GameManager.cs",
+              "DocumentMoniker": "D:\\Godot\\Dj-Chatty-Chet-and-the-French-Prince-Funky-Fresh-Rap-Battle\\GameManager.cs",
+              "RelativeDocumentMoniker": "GameManager.cs",
+              "ToolTip": "D:\\Godot\\Dj-Chatty-Chet-and-the-French-Prince-Funky-Fresh-Rap-Battle\\GameManager.cs",
+              "RelativeToolTip": "GameManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-10T12:58:29.478Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "SaveManager.cs",
+              "DocumentMoniker": "D:\\Godot\\Dj-Chatty-Chet-and-the-French-Prince-Funky-Fresh-Rap-Battle\\SaveManager.cs",
+              "RelativeDocumentMoniker": "SaveManager.cs",
+              "ToolTip": "D:\\Godot\\Dj-Chatty-Chet-and-the-French-Prince-Funky-Fresh-Rap-Battle\\SaveManager.cs",
+              "RelativeToolTip": "SaveManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-09T22:46:10.309Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "WeaponItem.cs",
+              "DocumentMoniker": "D:\\Godot\\Dj-Chatty-Chet-and-the-French-Prince-Funky-Fresh-Rap-Battle\\_Blender\\Overhead Player\\WeaponItem.cs",
+              "RelativeDocumentMoniker": "_Blender\\Overhead Player\\WeaponItem.cs",
+              "ToolTip": "D:\\Godot\\Dj-Chatty-Chet-and-the-French-Prince-Funky-Fresh-Rap-Battle\\_Blender\\Overhead Player\\WeaponItem.cs",
+              "RelativeToolTip": "_Blender\\Overhead Player\\WeaponItem.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-06T09:33:13.31Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "DestroyParent.cs",
               "DocumentMoniker": "D:\\Godot\\Dj-Chatty-Chet-and-the-French-Prince-Funky-Fresh-Rap-Battle\\_Blender\\Car\\DestroyParent.cs",
               "RelativeDocumentMoniker": "_Blender\\Car\\DestroyParent.cs",
@@ -50,11 +101,12 @@
               "RelativeToolTip": "_Blender\\Car\\DestroyParent.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-29T17:40:05.103Z"
+              "WhenOpened": "2026-07-29T17:40:05.103Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 8,
               "Title": "TipOverWhenHit.cs",
               "DocumentMoniker": "D:\\Godot\\Dj-Chatty-Chet-and-the-French-Prince-Funky-Fresh-Rap-Battle\\TipOverWhenHit.cs",
               "RelativeDocumentMoniker": "TipOverWhenHit.cs",
@@ -62,31 +114,34 @@
               "RelativeToolTip": "TipOverWhenHit.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-29T17:40:00.796Z"
+              "WhenOpened": "2026-07-29T17:40:00.796Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 7,
               "Title": "TiretrackDecal.cs",
               "DocumentMoniker": "D:\\Godot\\Dj-Chatty-Chet-and-the-French-Prince-Funky-Fresh-Rap-Battle\\_Scenes\\TiretrackDecal.cs",
               "RelativeDocumentMoniker": "_Scenes\\TiretrackDecal.cs",
               "ToolTip": "D:\\Godot\\Dj-Chatty-Chet-and-the-French-Prince-Funky-Fresh-Rap-Battle\\_Scenes\\TiretrackDecal.cs",
               "RelativeToolTip": "_Scenes\\TiretrackDecal.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAowAgAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-29T17:39:55.756Z"
+              "WhenOpened": "2026-07-29T17:39:55.756Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 4,
               "Title": "Spaceship.cs",
               "DocumentMoniker": "D:\\Godot\\Dj-Chatty-Chet-and-the-French-Prince-Funky-Fresh-Rap-Battle\\_Scenes\\Spaceship.cs",
               "RelativeDocumentMoniker": "_Scenes\\Spaceship.cs",
               "ToolTip": "D:\\Godot\\Dj-Chatty-Chet-and-the-French-Prince-Funky-Fresh-Rap-Battle\\_Scenes\\Spaceship.cs",
               "RelativeToolTip": "_Scenes\\Spaceship.cs",
-              "ViewState": "AgIAAEQAAAAAAAAAAAAwwAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-29T17:39:37.661Z"
+              "WhenOpened": "2026-07-29T17:39:37.661Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -96,9 +151,10 @@
               "RelativeDocumentMoniker": "_Scenes\\CarMover.cs",
               "ToolTip": "D:\\Godot\\Dj-Chatty-Chet-and-the-French-Prince-Funky-Fresh-Rap-Battle\\_Scenes\\CarMover.cs",
               "RelativeToolTip": "_Scenes\\CarMover.cs",
-              "ViewState": "AgIAAG8AAAAAAAAAAAAmwAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAzwB8AAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-27T22:31:32.278Z"
+              "WhenOpened": "2026-07-27T22:31:32.278Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -108,22 +164,23 @@
               "RelativeDocumentMoniker": "_Blender\\Overhead Player\\OverheadPlayer.cs",
               "ToolTip": "D:\\Godot\\Dj-Chatty-Chet-and-the-French-Prince-Funky-Fresh-Rap-Battle\\_Blender\\Overhead Player\\OverheadPlayer.cs",
               "RelativeToolTip": "_Blender\\Overhead Player\\OverheadPlayer.cs",
-              "ViewState": "AgIAACwBAAAAAAAAAAAIwFEBAAAlAAAAAAAAAA==",
+              "ViewState": "AgIAAGkBAAAAAAAAAAAQwIABAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-07-27T17:39:30.033Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "Parallax_Stars.cs",
               "DocumentMoniker": "D:\\Godot\\Dj-Chatty-Chet-and-the-French-Prince-Funky-Fresh-Rap-Battle\\_Scenes\\Parallax_Stars.cs",
               "RelativeDocumentMoniker": "_Scenes\\Parallax_Stars.cs",
               "ToolTip": "D:\\Godot\\Dj-Chatty-Chet-and-the-French-Prince-Funky-Fresh-Rap-Battle\\_Scenes\\Parallax_Stars.cs",
               "RelativeToolTip": "_Scenes\\Parallax_Stars.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAWAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-07T22:32:53.05Z"
+              "WhenOpened": "2026-07-07T22:32:53.05Z",
+              "EditorCaption": ""
             }
           ]
         }

@@ -1,0 +1,12 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://c4g0t0a13bxfa"]
+
+[ext_resource type="Texture2D" uid="uid://c3gc6arid3en5" path="res://Overhead/Car/Bumper.png" id="1_tra3j"]
+
+[resource]
+resource_name = "Bumper"
+cull_mode = 2
+albedo_color = Color(0.8992584, 0.8992584, 0.8992584, 1)
+albedo_texture = ExtResource("1_tra3j")
+metallic = 1.0
+metallic_specular = 0.47
+roughness = 0.59

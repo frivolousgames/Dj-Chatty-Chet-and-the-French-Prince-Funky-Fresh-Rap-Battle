@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://knm4vwipyfoj"]
+
+[ext_resource type="Texture2D" uid="uid://coynvl7ucpp4a" path="res://_Writing/Bullet.png" id="1_o0duo"]
+[ext_resource type="Script" uid="uid://cftoruuq3vkub" path="res://Overhead/Overhead Player/Bullets/BulletMover.cs" id="1_u2u4t"]
+[ext_resource type="Texture2D" uid="uid://cg2bpyulbv2qd" path="res://_Writing/particle.png" id="3_eikhq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hjb8m"]
+size = Vector2(4, 10)
+
+[sub_resource type="Curve" id="Curve_hjb8m"]
+_data = [Vector2(0, 0.59550565), 0.0, -0.5760982, 0, 0, Vector2(0.08510638, 0.64044946), 0.0, 0.0, 0, 0, Vector2(1, 0.06741583), 0.44212228, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_lfxu0"]
+offsets = PackedFloat32Array(0, 0.055555556, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[node name="Bullet" type="RigidBody2D" unique_id=552777633]
+gravity_scale = 0.0
+script = ExtResource("1_u2u4t")
+velocity = 1100.0
+waitTime = 2.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1211530816]
+shape = SubResource("RectangleShape2D_hjb8m")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1752606383]
+scale = Vector2(0.039, 0.039)
+texture = ExtResource("1_o0duo")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=405661442]
+amount = 50
+texture = ExtResource("3_eikhq")
+randomness = 0.15
+lifetime_randomness = 0.5
+direction = Vector2(0, 1)
+spread = 91.34
+gravity = Vector2(0, 0)
+initial_velocity_min = 0.4
+initial_velocity_max = 9.15
+scale_amount_min = 0.01
+scale_amount_max = 0.1
+scale_amount_curve = SubResource("Curve_hjb8m")
+color = Color(1, 1, 1, 0.36862746)
+color_ramp = SubResource("Gradient_lfxu0")

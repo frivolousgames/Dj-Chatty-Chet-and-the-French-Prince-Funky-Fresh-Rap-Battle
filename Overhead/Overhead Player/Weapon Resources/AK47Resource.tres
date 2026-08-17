@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="WeaponItem" format=3 uid="uid://dcjl13citt2od"]
+
+[ext_resource type="Script" uid="uid://btre2vno24n1f" path="res://Overhead/Overhead Player/WeaponItem.cs" id="1_3n3ey"]
+[ext_resource type="PackedScene" uid="uid://bclrx4uxawrjn" path="res://Overhead/Overhead Player/Bullets/Bullet 3D.tscn" id="1_se26a"]
+
+[resource]
+script = ExtResource("1_3n3ey")
+WeaponName = "AK47"
+WeaponBullet = ExtResource("1_se26a")
+metadata/_custom_type_script = "uid://btre2vno24n1f"

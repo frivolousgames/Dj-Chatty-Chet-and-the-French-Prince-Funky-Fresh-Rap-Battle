@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://clf6xwyw4yail"]
+
+[ext_resource type="PackedScene" uid="uid://b27drqcw8jxmg" path="res://Overhead/Buildings/Building 3/Building 3.glb" id="1_qy5ey"]
+[ext_resource type="Material" uid="uid://uq3j6gcbqsep" path="res://Overhead/Buildings/Asphalt Dark.tres" id="2_bvrca"]
+[ext_resource type="Material" uid="uid://bjptkhxtxovya" path="res://Overhead/Buildings/Building 3/Building 3 Red.tres" id="2_v0dsx"]
+[ext_resource type="Material" uid="uid://bvh3xvfuwdvsg" path="res://Overhead/Buildings/Building 3/Building 3 Awning Red White.tres" id="3_wi1r7"]
+[ext_resource type="Material" uid="uid://c43hypg1luany" path="res://Overhead/Buildings/Top Objects/Brick Grey.tres" id="4_445pu"]
+[ext_resource type="PackedScene" uid="uid://df4n4i8clxdb3" path="res://Overhead/Buildings/Top Objects/Roof Entrance.tscn" id="6_2kn23"]
+[ext_resource type="PackedScene" uid="uid://dwkmcie5cjcnp" path="res://Overhead/Buildings/Top Objects/Roof Fan.tscn" id="7_08t5f"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lfxu0"]
+size = Vector3(6.0025635, 7.3720093, 6.0092773)
+
+[node name="Building 3" type="StaticBody3D" unique_id=1015380335 groups=["Vehicle Static Hit"]]
+collision_layer = 4
+collision_mask = 7
+
+[node name="Building 3" parent="." unique_id=2011168181 instance=ExtResource("1_qy5ey")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -0.027548134, 0, -1.002996)
+
+[node name="Building 5" parent="Building 3" index="0" unique_id=1541865394]
+surface_material_override/0 = ExtResource("2_bvrca")
+surface_material_override/1 = ExtResource("3_wi1r7")
+surface_material_override/2 = ExtResource("4_445pu")
+surface_material_override/3 = ExtResource("2_v0dsx")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1850515905]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.0803833, 3.6860046, -1.0021973)
+shape = SubResource("BoxShape3D_lfxu0")
+
+[node name="Roof Entrance" parent="." unique_id=1550113668 instance=ExtResource("6_2kn23")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.91794205, 7.3379517, -0.85595703)
+
+[node name="Roof Fan" parent="." unique_id=1301821086 instance=ExtResource("7_08t5f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5501595, 7.3154297, -3.1905136)
+
+[editable path="Building 3"]

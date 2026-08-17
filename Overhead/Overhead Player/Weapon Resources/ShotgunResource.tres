@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="WeaponItem" format=3 uid="uid://cgmleyajyp8b6"]
+
+[ext_resource type="PackedScene" uid="uid://de1jdv4cvejyr" path="res://Overhead/Overhead Player/Bullets/Shotgun Spray.tscn" id="1_d2bje"]
+[ext_resource type="Script" uid="uid://btre2vno24n1f" path="res://Overhead/Overhead Player/WeaponItem.cs" id="1_kgp1f"]
+
+[resource]
+script = ExtResource("1_kgp1f")
+WeaponName = "Shotgun"
+WeaponBullet = ExtResource("1_d2bje")
+metadata/_custom_type_script = "uid://btre2vno24n1f"

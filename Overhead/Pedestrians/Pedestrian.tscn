@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://cvoeq71f7rdp0"]
+
+[ext_resource type="PackedScene" uid="uid://bhoomb3yqtwe3" path="res://Overhead/Pedestrians/Pedestrian.glb" id="1_lhsvs"]
+
+[node name="Pedestrian" type="CharacterBody3D" unique_id=1381419650]
+
+[node name="Pedestrian" parent="." unique_id=1459903753 instance=ExtResource("1_lhsvs")]
+
+[node name="Player" parent="Pedestrian" index="0" unique_id=651747694]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.224083e-05, -4.4098287, 0.13717884)
+
+[editable path="Pedestrian"]

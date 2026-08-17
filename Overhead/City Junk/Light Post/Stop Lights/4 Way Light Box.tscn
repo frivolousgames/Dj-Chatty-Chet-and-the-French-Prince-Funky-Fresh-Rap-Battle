@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://c74qiyy1758yv"]
+
+[ext_resource type="PackedScene" uid="uid://ca3fhh2rmd3wx" path="res://Overhead/City Junk/Light Post/Stop Lights/Stoplight Lights Box.glb" id="1_o6i3p"]
+[ext_resource type="Material" uid="uid://evtpmhr25syv" path="res://Overhead/City Junk/Light Post/Stop Lights/Light Box.tres" id="2_qjjts"]
+[ext_resource type="PackedScene" uid="uid://ce68w6w8fmh8f" path="res://Overhead/City Junk/Light Post/Stop Lights/Stoplight Lights.glb" id="2_v5dok"]
+[ext_resource type="Material" uid="uid://cvlgk3cd188pb" path="res://Overhead/City Junk/Light Post/Stop Lights/Red Light.tres" id="4_0rrdo"]
+[ext_resource type="Material" uid="uid://bhh5iaqsv7tpj" path="res://Overhead/City Junk/Light Post/Stop Lights/Yellow Light.tres" id="5_vnasy"]
+[ext_resource type="Material" uid="uid://xemdqg3yopq3" path="res://Overhead/City Junk/Light Post/Stop Lights/Green Light.tres" id="6_7xdur"]
+
+[node name="Stop Light Box 4 Way" type="Node3D" unique_id=1586857094]
+
+[node name="Stoplight Lights Box" parent="." unique_id=1240714708 instance=ExtResource("1_o6i3p")]
+
+[node name="Light Box" parent="Stoplight Lights Box" index="0" unique_id=60155259]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.47612423, 0)
+surface_material_override/0 = ExtResource("2_qjjts")
+
+[node name="Stoplight Lights" parent="Stoplight Lights Box/Light Box" index="0" unique_id=787307883 instance=ExtResource("2_v5dok")]
+
+[node name="Lights" parent="Stoplight Lights Box/Light Box/Stoplight Lights" index="0" unique_id=458020186]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.12545413, 0.19924927)
+surface_material_override/0 = ExtResource("2_qjjts")
+surface_material_override/1 = ExtResource("4_0rrdo")
+surface_material_override/2 = ExtResource("5_vnasy")
+surface_material_override/3 = ExtResource("6_7xdur")
+
+[node name="Stoplight Lights2" parent="Stoplight Lights Box/Light Box" index="1" unique_id=641658603 instance=ExtResource("2_v5dok")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, -1, 0, 0, 0)
+
+[node name="Lights" parent="Stoplight Lights Box/Light Box/Stoplight Lights2" index="0" unique_id=458020186]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.12545413, 0.19924927)
+surface_material_override/0 = ExtResource("2_qjjts")
+surface_material_override/1 = ExtResource("4_0rrdo")
+surface_material_override/2 = ExtResource("5_vnasy")
+surface_material_override/3 = ExtResource("6_7xdur")
+
+[node name="Stoplight Lights3" parent="Stoplight Lights Box/Light Box" index="2" unique_id=358394865 instance=ExtResource("2_v5dok")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Lights" parent="Stoplight Lights Box/Light Box/Stoplight Lights3" index="0" unique_id=458020186]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.12545413, 0.19924927)
+surface_material_override/0 = ExtResource("2_qjjts")
+surface_material_override/1 = ExtResource("4_0rrdo")
+surface_material_override/2 = ExtResource("5_vnasy")
+surface_material_override/3 = ExtResource("6_7xdur")
+
+[node name="Stoplight Lights4" parent="Stoplight Lights Box/Light Box" index="3" unique_id=2049358706 instance=ExtResource("2_v5dok")]
+transform = Transform3D(-4.371139e-08, -3.821371e-15, -1, -8.742278e-08, 1, 0, -1, -8.742278e-08, 4.371139e-08, 0, 0, 0)
+
+[node name="Lights" parent="Stoplight Lights Box/Light Box/Stoplight Lights4" index="0" unique_id=458020186]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.12545413, 0.19924927)
+surface_material_override/0 = ExtResource("2_qjjts")
+surface_material_override/1 = ExtResource("4_0rrdo")
+surface_material_override/2 = ExtResource("5_vnasy")
+surface_material_override/3 = ExtResource("6_7xdur")
+
+[editable path="Stoplight Lights Box"]
+[editable path="Stoplight Lights Box/Light Box/Stoplight Lights"]
+[editable path="Stoplight Lights Box/Light Box/Stoplight Lights2"]
+[editable path="Stoplight Lights Box/Light Box/Stoplight Lights3"]
+[editable path="Stoplight Lights Box/Light Box/Stoplight Lights4"]

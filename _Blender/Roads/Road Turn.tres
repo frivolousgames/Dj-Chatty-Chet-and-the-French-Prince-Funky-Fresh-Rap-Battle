@@ -1,9 +1,0 @@
-[gd_resource type="StandardMaterial3D" format=3 uid="uid://biclro68uhlph"]
-
-[ext_resource type="Texture2D" uid="uid://15bgaw1kkmef" path="res://_Blender/Roads/Road Turn.png" id="1_xm37g"]
-[ext_resource type="Texture2D" uid="uid://cob53vocwwwo6" path="res://_Blender/Roads/Road Turn Normal.png" id="2_oyc0o"]
-
-[resource]
-albedo_texture = ExtResource("1_xm37g")
-normal_enabled = true
-normal_texture = ExtResource("2_oyc0o")

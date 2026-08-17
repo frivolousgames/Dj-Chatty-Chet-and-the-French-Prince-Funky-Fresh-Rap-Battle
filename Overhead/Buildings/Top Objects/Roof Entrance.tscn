@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://df4n4i8clxdb3"]
+
+[ext_resource type="PackedScene" uid="uid://1orybuwnakii" path="res://Overhead/Buildings/Top Objects/Roof Entrance.glb" id="1_o4sg3"]
+[ext_resource type="Material" uid="uid://c43hypg1luany" path="res://Overhead/Buildings/Top Objects/Brick Grey.tres" id="2_bhnmn"]
+
+[node name="Roof Entrance" unique_id=1550113668 instance=ExtResource("1_o4sg3")]
+
+[node name="Roof Door" parent="." index="0" unique_id=1118913272]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0.4372387, 0)
+surface_material_override/0 = ExtResource("2_bhnmn")
