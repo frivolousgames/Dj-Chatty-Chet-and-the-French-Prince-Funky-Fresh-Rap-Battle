@@ -5,5 +5,4 @@
 
 [resource]
 albedo_texture = ExtResource("1_ranyw")
-normal_enabled = true
 normal_texture = ExtResource("2_8xucg")

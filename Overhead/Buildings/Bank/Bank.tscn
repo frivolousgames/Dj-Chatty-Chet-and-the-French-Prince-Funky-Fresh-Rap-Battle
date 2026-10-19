@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://it1xh4oxm3nj"]
+
+[ext_resource type="PackedScene" uid="uid://dr0dwwoifj0r7" path="res://Overhead/Buildings/Bank/Bank.glb" id="1_5fcxm"]
+[ext_resource type="Material" uid="uid://y3qphdn3e8d7" path="res://Overhead/Buildings/Bank/Bank.tres" id="2_nfcel"]
+[ext_resource type="Material" uid="uid://butn1nehsdo3o" path="res://Overhead/Buildings/Top Objects/Brick White.tres" id="3_cx7nv"]
+[ext_resource type="Material" uid="uid://d2wo6hwljhpdg" path="res://Overhead/Buildings/Bank/Concrete.tres" id="4_c4051"]
+[ext_resource type="Material" uid="uid://cfu2uhqelkqno" path="res://Overhead/Buildings/Asphalt Light.tres" id="5_24vi8"]
+[ext_resource type="PackedScene" uid="uid://df4n4i8clxdb3" path="res://Overhead/Buildings/Top Objects/Roof Entrance.tscn" id="6_c4051"]
+[ext_resource type="PackedScene" uid="uid://dwkmcie5cjcnp" path="res://Overhead/Buildings/Top Objects/Roof Fan.tscn" id="7_24vi8"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lfxu0"]
+size = Vector3(5.953003, 0.56677246, 1.6442871)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hjb8m"]
+size = Vector3(5.9292145, 4.4690857, 4.772217)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_lfxu0"]
+points = PackedVector3Array(-0.815, 0.555, 1.6, 1.14, 0.55, 1.6, 1.14, 0, 2.19, -0.87, 0, 2.19, 1.14, 0, 1.605, -0.815, 0, 1.6)
+
+[node name="Bank" type="StaticBody3D" unique_id=312703726 groups=["Vehicle Static Hit"]]
+collision_layer = 4
+collision_mask = 0
+
+[node name="Bank2" parent="." unique_id=1953343840 groups=["Vehicle Static Hit"] instance=ExtResource("1_5fcxm")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+
+[node name="Bank" parent="Bank2" index="0" unique_id=1115514125]
+surface_material_override/0 = ExtResource("2_nfcel")
+surface_material_override/1 = ExtResource("3_cx7nv")
+surface_material_override/2 = ExtResource("4_c4051")
+surface_material_override/3 = ExtResource("5_24vi8")
+
+[node name="Pillars" parent="Bank2" index="1" unique_id=1216636030]
+surface_material_override/0 = ExtResource("4_c4051")
+
+[node name="Top" parent="Bank2" index="2" unique_id=1817146760]
+surface_material_override/0 = ExtResource("2_nfcel")
+surface_material_override/1 = ExtResource("4_c4051")
+
+[node name="Roof Entrance" parent="." unique_id=1550113668 instance=ExtResource("6_c4051")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.0149987, 4.4264307, -2.113985)
+
+[node name="Roof Fan" parent="." unique_id=1301821086 instance=ExtResource("7_24vi8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.88206613, 4.471178, -4.0400867)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=393721588]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0151978, 0.29608154, 0.7838135)
+shape = SubResource("BoxShape3D_lfxu0")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=92966079]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0050278, 2.2476654, -2.3869548)
+shape = SubResource("BoxShape3D_hjb8m")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="." unique_id=1249011510]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1329315, 0, -0.017914787)
+shape = SubResource("ConvexPolygonShape3D_lfxu0")
+
+[editable path="Bank2"]

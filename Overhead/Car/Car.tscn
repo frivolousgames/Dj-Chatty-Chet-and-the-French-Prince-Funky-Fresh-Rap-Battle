@@ -55,8 +55,9 @@ bottom_radius = 0.07
 height = 4.7631836
 
 [node name="Car" type="VehicleBody3D" unique_id=805560789 node_paths=PackedStringArray("TailLights", "HeadLights") groups=["Player Vehicle"]]
-collision_layer = 4
-collision_mask = 7
+collision_layer = 2
+collision_mask = 119
+axis_lock_angular_x = true
 axis_lock_angular_z = true
 mass = 1000.0
 continuous_cd = true
@@ -66,8 +67,8 @@ script = ExtResource("1_3cb30")
 MaxSteeringAngle = 0.5
 MaxEngineForce = 15000.0
 MaxBrakeForce = 225.0
-TailLights = [null, null]
-TireDecalThreshold = 7.5
+TailLights = [NodePath("Car/Car /Tail Light L"), NodePath("Car/Car /Tail Light R")]
+TireDecalThreshold = 21.0
 TireTrack = ExtResource("2_ogu7u")
 HeadLights = NodePath("Headlights")
 DamageParticles = ExtResource("3_fv4aa")
@@ -75,10 +76,10 @@ DamageParticles = ExtResource("3_fv4aa")
 [node name="Car" parent="." unique_id=2094350815 instance=ExtResource("3_ru8vy")]
 transform = Transform3D(3.36, 0, 0, 0, 3.36, 0, 0, 0, 3.36, 0, 1.0559013, 0)
 
-[node name="Car " parent="Car" index="0" unique_id=941774328]
+[node name="Car " parent="Car" index="0" unique_id=2034696513]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
-[node name="Tail Pipe" parent="Car/Car " index="6" unique_id=1009769616]
+[node name="Tail Pipe" parent="Car/Car " index="6" unique_id=1548325046]
 surface_material_override/0 = ExtResource("4_fv4aa")
 
 [node name="CPUParticles3D" type="CPUParticles3D" parent="Car/Car /Tail Pipe" index="0" unique_id=1741097038]
@@ -93,6 +94,7 @@ gravity = Vector3(0, 5, 0)
 initial_velocity_min = 0.1
 initial_velocity_max = 1.0
 scale_amount_min = 0.0
+scale_amount_max = 3.0
 scale_amount_curve = SubResource("Curve_4tir5")
 color = Color(1, 1, 1, 0.011764706)
 color_ramp = SubResource("Gradient_3rqkp")
@@ -126,7 +128,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7874491, 0.020355225)
 shape = SubResource("BoxShape3D_hjb8m")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=2079960638]
-transform = Transform3D(-1, -1.4712579e-07, 3.3966664e-08, 0, 0.22495104, 0.97437006, -1.509958e-07, 0.97437006, -0.22495104, 0, 30.951, -4.655)
+transform = Transform3D(-1, -1.4712579e-07, 3.3966664e-08, 0, 0.22495104, 0.97437006, -1.509958e-07, 0.97437006, -0.22495104, 0, 45.946, -7.685)
+visible = false
 fov = 30.1
 near = 0.039
 
@@ -217,7 +220,7 @@ visible = false
 mesh = SubResource("CylinderMesh_ogu7u")
 
 [node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="." unique_id=499268476]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0122917, 0.07128906)
-size = Vector3(0.8330078, 0.27825928, 2.1425781)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9558265, 0.21777344)
+size = Vector3(2.8532715, 0.94273376, 7.3828125)
 
 [editable path="Car"]

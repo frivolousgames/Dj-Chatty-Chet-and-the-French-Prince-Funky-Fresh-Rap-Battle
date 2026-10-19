@@ -6,6 +6,7 @@
 [node name="Tiretrack Decal" type="Decal" unique_id=850649037]
 size = Vector3(0.16503906, 2, 0.22753906)
 texture_albedo = ExtResource("1_g2tcw")
+albedo_mix = 0.52
 upper_fade = 0.03882244
 lower_fade = 0.027451608
 script = ExtResource("2_r0v82")

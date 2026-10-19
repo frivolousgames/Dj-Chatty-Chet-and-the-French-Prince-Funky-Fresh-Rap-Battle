@@ -3,7 +3,8 @@
 [ext_resource type="Material" uid="uid://ccv28v68qsfvd" path="res://_Blender/Quad.tres" id="1_axoom"]
 [ext_resource type="PackedScene" uid="uid://chksc5xpresfg" path="res://Overhead/City Junk/Light Post/Light Post.tscn" id="3_oc1ig"]
 [ext_resource type="Material" uid="uid://dsh51u1e1etnc" path="res://Overhead/Roads/Materials/Road Straight.tres" id="3_pn27f"]
-[ext_resource type="PackedScene" uid="uid://30vwb1kc8h4u" path="res://Overhead/City Junk/Tree 1/Tree 1.tscn" id="4_k71en"]
+[ext_resource type="PackedScene" uid="uid://30vwb1kc8h4u" path="res://Overhead/City Junk/Tree 1/Tree Light.tscn" id="4_k71en"]
+[ext_resource type="PackedScene" uid="uid://dyup7ii0u876b" path="res://Overhead/City Junk/Bench/Bench.tscn" id="5_k71en"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_cnrv6"]
 _surfaces = [{
@@ -61,3 +62,21 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -21.
 
 [node name="Tree 3" parent="." unique_id=7022645 instance=ExtResource("4_k71en")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -10.054766, 0, 12.347601)
+
+[node name="Bench" parent="." unique_id=2086597506 instance=ExtResource("5_k71en")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -8.62038, 0.02881372, 27.565502)
+
+[node name="Bench2" parent="." unique_id=1454120050 instance=ExtResource("5_k71en")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -8.62038, 0.02881372, 6.3405037)
+
+[node name="Bench3" parent="." unique_id=1541808912 instance=ExtResource("5_k71en")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -8.62038, 0.02881372, 17.447283)
+
+[node name="Bench4" parent="." unique_id=60922420 instance=ExtResource("5_k71en")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -22.983597, 0.02881372, 27.12387)
+
+[node name="Bench5" parent="." unique_id=131530025 instance=ExtResource("5_k71en")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -22.983597, 0.02881372, 8.256132)
+
+[node name="Bench6" parent="." unique_id=1730339396 instance=ExtResource("5_k71en")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -22.983597, 0.02881372, 16.503408)

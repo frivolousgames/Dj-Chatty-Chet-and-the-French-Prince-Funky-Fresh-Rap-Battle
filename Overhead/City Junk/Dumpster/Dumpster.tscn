@@ -8,17 +8,17 @@
 size = Vector3(1.8376465, 2.3072968, 2.616211)
 
 [node name="Dumpster" type="RigidBody3D" unique_id=1890881782]
-collision_layer = 2
-collision_mask = 0
+collision_layer = 64
+collision_mask = 255
 mass = 200.0
 
 [node name="Dumpster2" parent="." unique_id=208830411 instance=ExtResource("1_jyk55")]
 transform = Transform3D(3.36, 0, 0, 0, 3.36, 0, 0, 0, 3.36, 0, 0, 0)
 
-[node name="Dumpster" parent="Dumpster2" index="0" unique_id=546707566]
+[node name="Dumpster" parent="Dumpster2" index="0" unique_id=487996089]
 surface_material_override/0 = ExtResource("2_xcj18")
 
-[node name="Dumpster Lid L" parent="Dumpster2" index="1" unique_id=58744319]
+[node name="Dumpster Lid L" parent="Dumpster2" index="1" unique_id=1830264851]
 surface_material_override/0 = ExtResource("3_8tput")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=57577797]

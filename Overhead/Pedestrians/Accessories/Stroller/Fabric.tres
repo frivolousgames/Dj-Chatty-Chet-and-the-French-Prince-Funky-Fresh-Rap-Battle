@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cgp62bd4yept"]
+
+[ext_resource type="Texture2D" uid="uid://8n6bnn0gso3g" path="res://Overhead/Pedestrians/Accessories/Stroller/Fabric_Burlap_004_Normal.jpg" id="2_fc5hd"]
+
+[resource]
+albedo_color = Color(0.25944445, 0.71939796, 0.730178, 1)
+roughness = 0.53
+normal_enabled = true
+normal_texture = ExtResource("2_fc5hd")
+uv1_scale = Vector3(7, 7, 7)

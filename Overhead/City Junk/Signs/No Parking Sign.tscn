@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://bqbjsadf56doe"]
+
+[ext_resource type="PackedScene" uid="uid://c53guwyrklau1" path="res://Overhead/City Junk/Signs/Sign Post.tscn" id="1_6q67j"]
+[ext_resource type="PackedScene" uid="uid://bbxpjjmgvfiro" path="res://Overhead/City Junk/Signs/No Parking.glb" id="2_sr3h0"]
+[ext_resource type="Material" uid="uid://dfixdng4dow0m" path="res://Overhead/City Junk/Signs/No Parking.tres" id="3_6q67j"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lfxu0"]
+size = Vector3(0.3095703, 0.42089844, 0.027832031)
+
+[node name="One Way Sign" type="Node3D" unique_id=1762005356]
+
+[node name="Sign Post" parent="." unique_id=1231648536 groups=["Vehicle Static Hit"] instance=ExtResource("1_6q67j")]
+
+[node name="No Parking" parent="Sign Post" unique_id=1695463359 instance=ExtResource("2_sr3h0")]
+transform = Transform3D(2.72, 0, 0, 0, 2.72, 0, 0, 0, 2.72, 0, 1.8422089, -0.044311523)
+
+[node name="No Parking" parent="Sign Post/No Parking" index="0" unique_id=995154448]
+transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, 0, 0.0050293207, 0.0036891997)
+surface_material_override/0 = ExtResource("3_6q67j")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Sign Post" unique_id=1354887514]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8553317, -0.03930664)
+shape = SubResource("BoxShape3D_lfxu0")
+
+[editable path="Sign Post/No Parking"]

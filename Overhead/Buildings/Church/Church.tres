@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cou2rcww7tl1g"]
+
+[ext_resource type="Texture2D" uid="uid://cijv2ikyy10am" path="res://Overhead/Buildings/Church/Church.png" id="1_qpph2"]
+[ext_resource type="Texture2D" uid="uid://cckg2h4wtyhrb" path="res://Overhead/Buildings/Church/Church Normal.png" id="2_f3t7k"]
+
+[resource]
+albedo_texture = ExtResource("1_qpph2")
+normal_enabled = true
+normal_scale = 1.5
+normal_texture = ExtResource("2_f3t7k")

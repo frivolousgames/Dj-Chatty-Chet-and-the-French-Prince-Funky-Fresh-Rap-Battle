@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://bfkbur8n21lt0"]
+
+[ext_resource type="Texture2D" uid="uid://cg2bpyulbv2qd" path="res://_Writing/particle.png" id="1_3gtms"]
+[ext_resource type="Script" uid="uid://dkbuc6wacka87" path="res://Overhead/DestroyParticleSystem.cs" id="2_1nd3p"]
+
+[sub_resource type="Gradient" id="Gradient_odchc"]
+colors = PackedColorArray(0.29612803, 0, 0, 1, 0.87486136, 0.017422434, 0.017422434, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_g3dos"]
+gradient = SubResource("Gradient_odchc")
+
+[sub_resource type="Curve" id="Curve_odchc"]
+_data = [Vector2(0.017647058, 0.8876405), 0.0, -0.6711204, 0, 0, Vector2(0.86470586, 0), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_odchc"]
+curve = SubResource("Curve_odchc")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_lfxu0"]
+direction = Vector3(0, 0, -1)
+flatness = 0.396
+initial_velocity_min = 0.5
+initial_velocity_max = 4.0
+gravity = Vector3(0, -9, 0)
+linear_accel_min = -4.460002
+linear_accel_max = 1.9999977
+tangential_accel_min = -7.8900023
+tangential_accel_max = 7.8999977
+scale_min = 0.01
+scale_max = 0.19999999
+scale_curve = SubResource("CurveTexture_odchc")
+color_ramp = SubResource("GradientTexture1D_g3dos")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_odlsx"]
+transparency = 1
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_3gtms")
+billboard_mode = 1
+billboard_keep_scale = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_r6c0r"]
+material = SubResource("StandardMaterial3D_odlsx")
+
+[node name="Blood Spatter" type="GPUParticles3D" unique_id=1211169511]
+amount = 60
+lifetime = 0.42
+explosiveness = 0.97
+randomness = 0.44
+process_material = SubResource("ParticleProcessMaterial_lfxu0")
+draw_pass_1 = SubResource("QuadMesh_r6c0r")
+script = ExtResource("2_1nd3p")

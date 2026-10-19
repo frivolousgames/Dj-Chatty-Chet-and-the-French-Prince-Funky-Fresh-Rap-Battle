@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://78cfpgprfok2"]
+
+[ext_resource type="Texture2D" uid="uid://ucunk2d60lrp" path="res://Overhead/Blood Decal Small.png" id="1_nvk2j"]
+[ext_resource type="Script" uid="uid://bs7shawo54u0m" path="res://Overhead/GroundBloodDecal.cs" id="2_pfcus"]
+
+[node name="Blood Decal Small" type="Decal" unique_id=1868960435]
+size = Vector3(0.65, 0.05, 0.65)
+texture_albedo = ExtResource("1_nvk2j")
+modulate = Color(0.47369397, 0.0063181156, 0.0063181156, 1)
+albedo_mix = 0.94
+upper_fade = 0.14489055
+lower_fade = 0.16076611
+script = ExtResource("2_pfcus")
+FadeDelay = 5000

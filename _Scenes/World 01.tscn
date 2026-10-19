@@ -1,0 +1,108 @@
+[gd_scene format=3 uid="uid://cb8ng0fo4svuf"]
+
+[ext_resource type="Texture2D" uid="uid://un8183kwq7d5" path="res://moonless_golf_4k.exr" id="1_4w51r"]
+[ext_resource type="Script" uid="uid://ife3afq8yna4" path="res://GameManager.cs" id="1_gnn3o"]
+[ext_resource type="PackedScene" uid="uid://uuqcyukjfey2" path="res://Overhead/Navigation/Navigation 1.tscn" id="1_lsplv"]
+[ext_resource type="PackedScene" uid="uid://bywn7mr05746g" path="res://Overhead/Overhead Player/Overhead Player.tscn" id="2_4w51r"]
+[ext_resource type="PackedScene" uid="uid://b865civlh0q33" path="res://Overhead/Car/Car.tscn" id="3_gnn3o"]
+[ext_resource type="Script" uid="uid://cemvtkk68mphn" path="res://Overhead/NavMarkersArray.cs" id="4_oi4al"]
+[ext_resource type="PackedScene" uid="uid://cvoeq71f7rdp0" path="res://Overhead/Pedestrians/Pedestrian.tscn" id="6_hvfna"]
+[ext_resource type="PackedScene" uid="uid://bnvjuut8ik68e" path="res://Overhead/blood_smear.tscn" id="6_mo1og"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_gnn3o"]
+panorama = ExtResource("1_4w51r")
+
+[sub_resource type="Sky" id="Sky_f4xab"]
+sky_material = SubResource("PanoramaSkyMaterial_gnn3o")
+
+[sub_resource type="Environment" id="Environment_hvfna"]
+background_mode = 2
+sky = SubResource("Sky_f4xab")
+ambient_light_source = 3
+ambient_light_color = Color(0, 0.338562, 0.50390625, 1)
+ambient_light_sky_contribution = 0.96
+ambient_light_energy = 16.0
+glow_enabled = true
+glow_intensity = 0.96
+glow_strength = 0.69
+glow_bloom = 0.18
+glow_hdr_threshold = 0.42
+fog_light_color = Color(0.046230663, 0.05246984, 0.062175233, 1)
+fog_sun_scatter = 0.13
+fog_height = 21.11
+fog_height_density = 0.085
+volumetric_fog_density = 0.1127
+volumetric_fog_albedo = Color(0.22989318, 0.22989318, 0.22989318, 1)
+volumetric_fog_emission_energy = 53.78
+volumetric_fog_gi_inject = 1.15
+volumetric_fog_length = 11.22
+volumetric_fog_sky_affect = 0.567
+
+[node name="World 1" type="Node3D" unique_id=728804321]
+
+[node name="GameManager" type="Node3D" parent="." unique_id=1519901508]
+script = ExtResource("1_gnn3o")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=617760560]
+environment = SubResource("Environment_hvfna")
+
+[node name="NavigationRegion3D" parent="." unique_id=1429912923 instance=ExtResource("1_lsplv")]
+
+[node name="Road Alley 4 Way" parent="NavigationRegion3D/Map 01/Roads" parent_id_path=PackedInt32Array(1429912923, 1847420341, 1913740691) index="0" unique_id=1180312315 groups=["Roads"]]
+
+[node name="Nav Markers" parent="NavigationRegion3D" index="2" unique_id=254681639]
+script = ExtResource("4_oi4al")
+
+[node name="Destination 1" parent="NavigationRegion3D/Nav Markers" index="0" unique_id=1193574330 groups=["Destination Markers"]]
+
+[node name="Destination 2" parent="NavigationRegion3D/Nav Markers" index="1" unique_id=831448574 groups=["Destination Markers"]]
+
+[node name="Destination 3" parent="NavigationRegion3D/Nav Markers" index="2" unique_id=265297822 groups=["Destination Markers"]]
+
+[node name="Destination 4" parent="NavigationRegion3D/Nav Markers" index="3" unique_id=1494962197 groups=["Destination Markers"]]
+
+[node name="Destination 5" parent="NavigationRegion3D/Nav Markers" index="4" unique_id=1121537892 groups=["Destination Markers"]]
+
+[node name="Destination 6" parent="NavigationRegion3D/Nav Markers" index="5" unique_id=614849939 groups=["Destination Markers"]]
+
+[node name="Overhead player" parent="." unique_id=1812290584 instance=ExtResource("2_4w51r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.026905, 0, 11.44474)
+visible = false
+
+[node name="Node3D" parent="Overhead player" unique_id=124006760 instance=ExtResource("6_mo1og")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.1933937, 0, 12.290001)
+
+[node name="Car" parent="." unique_id=805560789 instance=ExtResource("3_gnn3o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33, 0, 7)
+
+[node name="Camera3D" parent="Car" index="3" unique_id=2079960638]
+visible = true
+current = true
+
+[node name="Pedestrian" parent="." unique_id=1381419650 instance=ExtResource("6_hvfna")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, 0.0013282746, 28)
+
+[node name="Pedestrian2" parent="." unique_id=852648243 instance=ExtResource("6_hvfna")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.922, 0.0013282746, 28)
+
+[node name="Pedestrian3" parent="." unique_id=456187998 instance=ExtResource("6_hvfna")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.027199, 0.0013282746, -15.576545)
+
+[node name="Pedestrian7" parent="." unique_id=1949417838 instance=ExtResource("6_hvfna")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.288216, 0.0013282746, -1.1785202)
+
+[node name="Pedestrian4" parent="." unique_id=69495002 instance=ExtResource("6_hvfna")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.068739, 0.0013282746, 15.247674)
+
+[node name="Pedestrian5" parent="." unique_id=379886226 instance=ExtResource("6_hvfna")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.834129, 0.0013282746, 14.532975)
+
+[node name="Pedestrian6" parent="." unique_id=508754124 instance=ExtResource("6_hvfna")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.662796, 0.0013282746, 26.377926)
+
+[editable path="NavigationRegion3D"]
+[editable path="NavigationRegion3D/Map 01"]
+[editable path="Overhead player"]
+[editable path="Overhead player/Overhead Player"]
+[editable path="Car"]
+[editable path="Car/Car"]

@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://hkn1ifudkofx"]
+
+[ext_resource type="Texture2D" uid="uid://dkbvobombe1mo" path="res://Overhead/blood smear 3.png" id="1_thvfq"]
+[ext_resource type="Script" uid="uid://d3hmx4h07g3bf" path="res://Overhead/FadeOverTime.cs" id="2_qsw74"]
+
+[node name="Node3D" type="Decal" unique_id=124006760]
+size = Vector3(1, 0.102, 1)
+texture_albedo = ExtResource("1_thvfq")
+modulate = Color(0.6117647, 0, 0, 1)
+albedo_mix = 0.63
+script = ExtResource("2_qsw74")
+FadeDelay = 5000

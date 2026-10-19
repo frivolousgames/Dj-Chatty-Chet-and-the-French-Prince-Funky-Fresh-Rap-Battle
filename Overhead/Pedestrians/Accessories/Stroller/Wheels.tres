@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bw1iculdrfdj8"]
+
+[ext_resource type="Texture2D" uid="uid://dihwby61koayf" path="res://Overhead/Pedestrians/Accessories/Stroller/Wheel.png" id="1_jivbr"]
+[ext_resource type="Texture2D" uid="uid://bei8bmqqreu7" path="res://Overhead/Pedestrians/Accessories/Stroller/Wheel Normal.png" id="2_h60h4"]
+
+[resource]
+albedo_texture = ExtResource("1_jivbr")
+roughness = 0.53
+normal_enabled = true
+normal_texture = ExtResource("2_h60h4")

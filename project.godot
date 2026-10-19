@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 GameManager="*uid://ife3afq8yna4"
+PhantomCameraManager="*uid://duq6jhf6unyis"
 
 [display]
 
@@ -30,10 +31,18 @@ window/stretch/aspect="expand"
 
 project/assembly_name="Rap Battle"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/godot_inspector_lock/plugin.cfg", "res://addons/phantom_camera/plugin.cfg")
+
 [global_group]
 
 "Player Vehicle"=""
 "Vehicle Static Hit"=""
+"Destination Markers"=""
+Bleedable=""
+GroundCol=""
+Roads=""
 
 [input]
 
@@ -109,6 +118,21 @@ Strafe={
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":16,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":32,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
 ]
 }
+
+[layer_names]
+
+3d_physics/layer_1="Player"
+3d_physics/layer_2="Player Vehicles"
+3d_physics/layer_3="Statiic Objects"
+3d_physics/layer_4="Pedestrians"
+3d_physics/layer_5="Ragdoll"
+3d_physics/layer_6="Ground"
+3d_physics/layer_7="City Objects"
+3d_physics/layer_8="Player Bullets"
+
+[navigation]
+
+3d/default_cell_height=0.00999999999999999
 
 [physics]
 

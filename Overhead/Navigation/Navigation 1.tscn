@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://uuqcyukjfey2"]
+
+[ext_resource type="PackedScene" uid="uid://c5cpyuwydwyim" path="res://Overhead/Maps/Map 01.tscn" id="1_hreiy"]
+[ext_resource type="PackedScene" uid="uid://dithbirbgkt7e" path="res://Overhead/Navigation/Nav Marker.tscn" id="2_aoi7y"]
+
+[node name="NavigationRegion3D" type="Node3D" unique_id=1932520759]
+
+[node name="Map 01" parent="." unique_id=1847420341 instance=ExtResource("1_hreiy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.083466, -2.000122, 21.09662)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=778691089]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.17986679, -0.5, 5.2542934)
+layers = 0
+use_collision = true
+collision_layer = 256
+collision_mask = 0
+size = Vector3(96, 1, 126)
+metadata/_edit_lock_ = true
+
+[node name="Nav Markers" type="Node3D" parent="." unique_id=254681639]
+
+[node name="Destination 1" parent="Nav Markers" unique_id=1193574330 node_paths=PackedStringArray("neighborMarkers") instance=ExtResource("2_aoi7y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.578255, 0, 14.710873)
+neighborMarkers = [NodePath("../Destination 2"), NodePath("../Destination 3")]
+
+[node name="Destination 2" parent="Nav Markers" unique_id=831448574 node_paths=PackedStringArray("neighborMarkers") instance=ExtResource("2_aoi7y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.68175, 0, 14.678181)
+neighborMarkers = [NodePath("../Destination 1"), NodePath("../Destination 4")]
+
+[node name="Destination 3" parent="Nav Markers" unique_id=265297822 node_paths=PackedStringArray("neighborMarkers") instance=ExtResource("2_aoi7y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.539593, 0, -6.725283)
+neighborMarkers = [NodePath("../Destination 1"), NodePath("../Destination 6")]
+
+[node name="Destination 4" parent="Nav Markers" unique_id=1494962197 node_paths=PackedStringArray("neighborMarkers") instance=ExtResource("2_aoi7y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.635973, 0, -36.656105)
+neighborMarkers = [NodePath("../Destination 2"), NodePath("../Destination 6")]
+
+[node name="Destination 5" parent="Nav Markers" unique_id=1121537892 node_paths=PackedStringArray("neighborMarkers") instance=ExtResource("2_aoi7y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.634052, 0, -14.627836)
+neighborMarkers = [NodePath("../Destination 3"), NodePath("../Destination 6")]
+
+[node name="Destination 6" parent="Nav Markers" unique_id=614849939 node_paths=PackedStringArray("neighborMarkers") instance=ExtResource("2_aoi7y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.631113, 0, -36.357025)
+neighborMarkers = [NodePath("../Destination 4"), NodePath("../Destination 5")]

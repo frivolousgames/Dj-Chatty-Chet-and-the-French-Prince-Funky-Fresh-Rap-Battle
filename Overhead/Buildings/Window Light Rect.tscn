@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://bjje25lyoy355"]
+
+[ext_resource type="Material" uid="uid://nb65kd5cfgsl" path="res://Overhead/Buildings/Window Light.tres" id="1_7gqv1"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_lfxu0"]
+
+[node name="Wiindow Light" type="MeshInstance3D" unique_id=585918166]
+transform = Transform3D(0.795, 0, 0, 0, 1, 0, 0, 0, 0.055, 0, 0, 0)
+mesh = SubResource("QuadMesh_lfxu0")
+surface_material_override/0 = ExtResource("1_7gqv1")

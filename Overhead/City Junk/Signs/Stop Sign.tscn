@@ -9,13 +9,12 @@ size = Vector3(0.001, 0.49118042, 0.01361084)
 
 [node name="Stop Sign" type="Node3D" unique_id=1161472926]
 
-[node name="Sign Post" parent="." unique_id=1231648536 instance=ExtResource("1_2x4bp")]
-collision_layer = 4
+[node name="Sign Post" parent="." unique_id=1231648536 groups=["Vehicle Static Hit"] instance=ExtResource("1_2x4bp")]
 
 [node name="Stop Sign2" parent="Sign Post" unique_id=285693245 instance=ExtResource("2_8uxvw")]
 transform = Transform3D(3.36, 0, 0, 0, 3.36, 0, 0, 0, 3.36, 0, 1.8480282, 0)
 
-[node name="Stop Sign" parent="Sign Post/Stop Sign2" index="0" unique_id=1426952318]
+[node name="Stop Sign" parent="Sign Post/Stop Sign2" index="0" unique_id=246064213]
 transform = Transform3D(1.0700003, 0, 0, 0, 1.0700003, 0, 0, 0, 1.0700003, 0, 0.0021030009, 0.00853513)
 surface_material_override/0 = ExtResource("3_qh84v")
 

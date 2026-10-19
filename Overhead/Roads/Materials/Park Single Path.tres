@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://hejmiw3m6mwt"]
+
+[ext_resource type="Texture2D" uid="uid://dff1lgxtqhdyu" path="res://Overhead/Roads/Images/Road Grass Single Path.png" id="1_axk4r"]
+[ext_resource type="Texture2D" uid="uid://df3c8xcu6qscy" path="res://Overhead/Roads/Images/Sand Bare Normal.png" id="2_52arv"]
+
+[resource]
+albedo_texture = ExtResource("1_axk4r")
+normal_texture = ExtResource("2_52arv")

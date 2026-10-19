@@ -10,7 +10,7 @@
 [node name="Stoplight Pole2" parent="." unique_id=1239344290 instance=ExtResource("5_vuftn")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 6.581544, 0)
 
-[node name="Stoplight Pole" parent="Stoplight Pole2" index="0" unique_id=1365605793]
+[node name="Stoplight Pole" parent="Stoplight Pole2" index="0" unique_id=2541650]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 surface_material_override/0 = ExtResource("2_bhm0e")
 

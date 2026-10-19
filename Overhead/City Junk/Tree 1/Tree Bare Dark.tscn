@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://cw8g2c1xse6ur"]
+
+[ext_resource type="PackedScene" uid="uid://d12pn5wgm8u1k" path="res://Overhead/City Junk/Tree 1/Tree 1.glb" id="1_jc503"]
+[ext_resource type="Material" uid="uid://b2qlvnxccg3ak" path="res://Overhead/City Junk/Tree 1/Bark.tres" id="2_j0dyo"]
+[ext_resource type="Material" uid="uid://dx52eblcv4vk" path="res://Overhead/City Junk/Tree 1/Leaves Dark.tres" id="3_jc503"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_8uxvw"]
+height = 3.8017578
+radius = 0.25976563
+
+[node name="Tree 1" type="StaticBody3D" unique_id=936985911 groups=["Vehicle Static Hit"]]
+collision_layer = 4
+collision_mask = 0
+
+[node name="Tree 1" parent="." unique_id=1166249287 instance=ExtResource("1_jc503")]
+transform = Transform3D(3.36, 0, 0, 0, -1.4687026e-07, -3.36, 0, 3.36, -1.4687026e-07, 0, 0.708657, 0)
+
+[node name="Tree 01 Elaborate" parent="Tree 1" index="0" unique_id=1187828335]
+transform = Transform3D(1.4050001, 0, 0, 0, 1.4050001, 7.1054274e-15, 0, -7.1054274e-15, 1.4050001, 0, 8.917678e-09, 0.20401256)
+surface_material_override/0 = ExtResource("2_j0dyo")
+surface_material_override/1 = ExtResource("3_jc503")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=253322051]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.07682037, 1.8955163, -0.019561768)
+shape = SubResource("CylinderShape3D_8uxvw")
+
+[editable path="Tree 1"]

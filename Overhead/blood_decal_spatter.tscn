@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://by2vng5vwh7l6"]
+
+[ext_resource type="Texture2D" uid="uid://ccxw7etmawarh" path="res://Overhead/Blood Decal Spatter.png" id="1_o31ey"]
+
+[node name="Blood Decal Spatter" type="Decal" unique_id=644771901]
+texture_albedo = ExtResource("1_o31ey")
+modulate = Color(0.77621365, 0, 0, 1)
+albedo_mix = 0.77

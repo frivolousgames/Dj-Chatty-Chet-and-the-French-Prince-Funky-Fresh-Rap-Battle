@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://cwid0cr05r5eb"]
+
+[ext_resource type="PackedScene" uid="uid://bt36v77u7hs6" path="res://Overhead/Pedestrians/Accessories/Stroller/Stroller.glb" id="1_87udj"]
+[ext_resource type="Material" uid="uid://cgp62bd4yept" path="res://Overhead/Pedestrians/Accessories/Stroller/Fabric.tres" id="2_215yy"]
+[ext_resource type="Material" uid="uid://c4g0t0a13bxfa" path="res://Overhead/Car/Bumper.tres" id="3_v3au6"]
+[ext_resource type="Material" uid="uid://384teyswvo8s" path="res://Overhead/Pedestrians/Accessories/Stroller/Cushion.tres" id="4_2qbq8"]
+[ext_resource type="Material" uid="uid://bw1iculdrfdj8" path="res://Overhead/Pedestrians/Accessories/Stroller/Wheels.tres" id="5_t4eeh"]
+[ext_resource type="Material" uid="uid://chcfea5sghby4" path="res://Overhead/Pedestrians/Accessories/Stroller/Handles.tres" id="6_2qbq8"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_t4eeh"]
+size = Vector3(5.895, 7.6861267, 5.645065)
+
+[node name="Stroller" type="RigidBody3D" unique_id=1774820]
+collision_layer = 64
+collision_mask = 255
+
+[node name="Stroller2" parent="." unique_id=2077744402 instance=ExtResource("1_87udj")]
+
+[node name="Stroller" parent="Stroller2" index="0" unique_id=402061846]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+surface_material_override/0 = ExtResource("2_215yy")
+surface_material_override/1 = ExtResource("3_v3au6")
+surface_material_override/2 = ExtResource("4_2qbq8")
+surface_material_override/3 = ExtResource("5_t4eeh")
+surface_material_override/4 = ExtResource("6_2qbq8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1400186158]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8834901, -2.2907035)
+shape = SubResource("BoxShape3D_t4eeh")
+
+[editable path="Stroller2"]

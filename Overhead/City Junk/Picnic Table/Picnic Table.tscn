@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://cetxwsdxwbpuj"]
+
+[ext_resource type="PackedScene" uid="uid://cay80gxjhewxa" path="res://Overhead/City Junk/Picnic Table/Picnic Table.glb" id="1_vcip5"]
+[ext_resource type="Material" uid="uid://c4g0t0a13bxfa" path="res://Overhead/Car/Bumper.tres" id="2_ask6u"]
+[ext_resource type="Material" uid="uid://cn1h70qmymce0" path="res://Overhead/City Junk/Bench/Bench Wood.tres" id="3_7eytx"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lfxu0"]
+size = Vector3(3.1149902, 1.0742188, 2.5692139)
+
+[node name="Picnic Table" type="RigidBody3D" unique_id=1391091169 groups=["Vehicle Static Hit"]]
+collision_layer = 64
+collision_mask = 255
+mass = 150.0
+
+[node name="Picnic Table2" parent="." unique_id=70992024 instance=ExtResource("1_vcip5")]
+
+[node name="Picnic Table" parent="Picnic Table2" index="0" unique_id=2130097090]
+transform = Transform3D(1.7, 0, 0, 0, 1.7, 0, 0, 0, 1.7, 0, 0, 0)
+surface_material_override/0 = ExtResource("2_ask6u")
+surface_material_override/1 = ExtResource("3_7eytx")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1438662507]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.52246094, 0.03363037)
+shape = SubResource("BoxShape3D_lfxu0")
+
+[editable path="Picnic Table2"]

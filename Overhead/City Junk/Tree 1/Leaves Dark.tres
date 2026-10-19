@@ -1,0 +1,15 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dx52eblcv4vk"]
+
+[ext_resource type="Texture2D" uid="uid://t8td8bxun0hy" path="res://Overhead/City Junk/Tree 1/Tree 1_Leave Bunches Dark.png" id="1_3x25g"]
+[ext_resource type="Texture2D" uid="uid://ddipewqewsftu" path="res://Overhead/City Junk/Tree 1/Tree 1_Leave Normal.png" id="2_4l58v"]
+
+[resource]
+transparency = 1
+cull_mode = 2
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_3x25g")
+roughness = 0.78
+normal_enabled = true
+normal_scale = 0.68
+normal_texture = ExtResource("2_4l58v")
+stencil_flags = 2

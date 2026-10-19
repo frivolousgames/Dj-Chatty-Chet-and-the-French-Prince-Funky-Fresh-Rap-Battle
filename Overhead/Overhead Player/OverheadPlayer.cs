@@ -1,8 +1,5 @@
 using Godot;
 using System;
-using System.ComponentModel;
-using System.Diagnostics;
-using System.Runtime.InteropServices.JavaScript;
 using System.Threading.Tasks;
 
 public partial class OverheadPlayer : CharacterBody3D
@@ -93,6 +90,8 @@ public partial class OverheadPlayer : CharacterBody3D
 	public static Vector3 bulletDirection { get; set; }
 	[Export]
 	public PackedScene muzzleflash;
+	public static float weaponForce;
+	public static int weaponDamage;
 
     ////All Weapon Blends
 
@@ -114,13 +113,18 @@ public partial class OverheadPlayer : CharacterBody3D
 
 	public override void _Ready()
 	{
-        //Weapons
-        currentWeapon = SaveManager.LoadValue(GameManager.slotNumber, "Weapons", "Current", 2);
+		//Weapons
+		//currentWeapon = SaveManager.LoadValue(GameManager.slotNumber, "Weapons", "Current", 2); //TEMP until weapon is switchable
+		currentWeapon = 0;//TEMP
 		isOneHanded = WeaponResources[currentWeapon].IsOneHanded;
         Weapons[currentWeapon].Visible = true;
 		currentBullet = WeaponResources[currentWeapon].WeaponBullet;
-		GD.Print("currentWeapon: " + currentWeapon);
-        GD.Print("isOneHanded: " + isOneHanded);
+		weaponForce = WeaponResources[currentWeapon].WeaponForce;
+		weaponDamage = WeaponResources[currentWeapon].WeaponDamage;
+
+		//GD.Print("currentWeapon: " + currentWeapon);
+        //GD.Print("isOneHanded: " + isOneHanded);
+        //GD.Print("damage: " + weaponDamage);
 
         AnimTree.Active = true;
 		speed = WalkSpeed;
@@ -164,12 +168,12 @@ public partial class OverheadPlayer : CharacterBody3D
 		Vector3 direction = GlobalTransform.Basis.Z;
 		if (direction != Vector3.Zero)
 		{
-			//velocity.X = direction.X * speed;
+			//Velocity.X = direction.X * speed;
 			velocity = direction * inputDir * speed;
 		}
 		else
 		{
-			//velocity.X = Mathf.MoveToward(Velocity.X, 0, speed);
+			//Velocity.X = Mathf.MoveToward(Velocity.X, 0, speed);
 			velocity.Z = Mathf.MoveToward(Velocity.Z, 0, speed);
 		}
 
@@ -262,7 +266,7 @@ public partial class OverheadPlayer : CharacterBody3D
         if(currentWeapon != selectedWeapon)
 		{
 			SwitchWeapon();
-			GD.Print("Switched: " + currentWeapon);
+			//GD.Print("Switched: " + currentWeapon);
 		}
     }
 
@@ -340,7 +344,7 @@ public partial class OverheadPlayer : CharacterBody3D
 		{
 			if (!isWeaponRaised)
 			{
-				GD.Print("Weapon Raised");
+				//GD.Print("Weapon Raised");
                 isWeaponRaised = true;
             }
         }
@@ -360,7 +364,7 @@ public partial class OverheadPlayer : CharacterBody3D
         currentRaisedBlend = (float)AnimTree.Get("parameters/One Handed Weapon/Locomotion/Idle/Raised Blend/blend_amount");
         await BlendLoop(delta, newRaisedBlend, currentRaisedBlend, targetRaisedBlend, raisedBlends);
 		isRaising = false;
-		GD.Print("Done Raising");
+		//GD.Print("Done Raising");
     }
 
 	void IsShooting(double delta)
@@ -385,7 +389,7 @@ public partial class OverheadPlayer : CharacterBody3D
                     }
 					bulletDirection = -this.GlobalTransform.Basis.Z.Normalized();
                     SpawnBullet();
-                    GD.Print("Shoot Started");
+                    //GD.Print("Shoot Started");
                 }
 			}
 		}
@@ -398,14 +402,14 @@ public partial class OverheadPlayer : CharacterBody3D
             AnimTree.Set("parameters/Two Handed Weapon/Two Handed Shoot/request", (int)AnimationNodeOneShot.OneShotRequest.Abort);
 
             isShooting = false;
-            GD.Print("Shoot Over");
+            //GD.Print("Shoot Over");
         }
     }
 
 	public void ResetIsShooting() //put this as Call Method track on any fast interruptable shoot animations (uzi, ak47 etc.)
 	{
 		isShooting = false;
-        GD.Print("Shoot Over");
+        //GD.Print("Shoot Over");
     }
 
 	void SpawnBullet()

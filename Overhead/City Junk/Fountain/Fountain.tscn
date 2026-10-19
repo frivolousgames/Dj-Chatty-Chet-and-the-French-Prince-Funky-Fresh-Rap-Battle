@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://8hhvtlhxnvvw"]
+
+[ext_resource type="PackedScene" uid="uid://cpugfnygb2ugs" path="res://Overhead/City Junk/Fountain/Fountaiin.glb" id="1_ino3u"]
+[ext_resource type="Material" uid="uid://d2wo6hwljhpdg" path="res://Overhead/Buildings/Bank/Concrete.tres" id="2_ntrv8"]
+[ext_resource type="Texture2D" uid="uid://cg2bpyulbv2qd" path="res://_Writing/particle.png" id="3_leyre"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_lfxu0"]
+height = 4.309082
+radius = 5.0063477
+
+[sub_resource type="Gradient" id="Gradient_fwe2n"]
+offsets = PackedFloat32Array(0, 0.19469027, 1)
+colors = PackedColorArray(18.892157, 18.892157, 18.892157, 0, 15.410621, 15.410621, 15.410621, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_fwe2n"]
+gradient = SubResource("Gradient_fwe2n")
+
+[sub_resource type="Curve" id="Curve_01s3q"]
+_data = [Vector2(0, 1), 0.0, -2.8232496, 0, 0, Vector2(1, 0), 0.027399957, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_yxlja"]
+curve = SubResource("Curve_01s3q")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_hjb8m"]
+angle_min = 1.0728835e-05
+angle_max = 1.0728835e-05
+direction = Vector3(0, 1, 0)
+spread = 15.75
+initial_velocity_min = 10.0
+initial_velocity_max = 15.0
+gravity = Vector3(0, -21.24, 0)
+scale_min = 0.19999999
+scale_max = 0.29999998
+scale_curve = SubResource("CurveTexture_yxlja")
+color = Color(1.0938475, 1.2326523, 1.2326523, 0.07058824)
+color_ramp = SubResource("GradientTexture1D_fwe2n")
+turbulence_enabled = true
+turbulence_noise_strength = 0.3
+turbulence_noise_scale = 1.791
+turbulence_influence_min = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r6c0r"]
+transparency = 1
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("3_leyre")
+billboard_mode = 1
+billboard_keep_scale = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_lfxu0"]
+material = SubResource("StandardMaterial3D_r6c0r")
+size = Vector2(5, 5)
+
+[node name="Fountaiin" unique_id=272069030 instance=ExtResource("1_ino3u")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="0" unique_id=860807795 groups=["Vehicle Static Hit"]]
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=1618020412]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.154541, 0)
+shape = SubResource("CylinderShape3D_lfxu0")
+
+[node name="Cylinder" parent="." index="1" unique_id=1108655169]
+transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, 0, -0.045, 0)
+surface_material_override/0 = ExtResource("2_ntrv8")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="." index="2" unique_id=1427514797]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.8483005, 0)
+amount = 2000
+lifetime = 1.99
+randomness = 0.27
+process_material = SubResource("ParticleProcessMaterial_hjb8m")
+draw_pass_1 = SubResource("QuadMesh_lfxu0")

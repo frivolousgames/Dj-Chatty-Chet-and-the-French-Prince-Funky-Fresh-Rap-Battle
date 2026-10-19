@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bg03bxk0ldw2f"]
+
+[ext_resource type="PackedScene" uid="uid://bbxpjjmgvfiro" path="res://Overhead/City Junk/Signs/No Parking.glb" id="1_nvpk1"]
+[ext_resource type="Material" uid="uid://dfixdng4dow0m" path="res://Overhead/City Junk/Signs/No Parking.tres" id="2_nmsxl"]
+
+[node name="No Parking Sign Only" type="Node3D" unique_id=1492134314]
+
+[node name="No Parking2" parent="." unique_id=1186605812 instance=ExtResource("1_nvpk1")]
+transform = Transform3D(5.01, 0, 0, 0, 5.01, 0, 0, 0, 5.01, 0, 0, 0)
+
+[node name="No Parking" parent="No Parking2" index="0" unique_id=995154448]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.007871807, 0.0028367043)
+surface_material_override/0 = ExtResource("2_nmsxl")
+
+[editable path="No Parking2"]

@@ -18,8 +18,8 @@ public partial class CarMover : VehicleBody3D
     bool isLit;
     bool isBraking;
 
-    [Export]
-    public Node3D MainNode { get; set; }
+    //[Export]
+    //public Node3D MainNode { get; set; }
     [Export]
     public float TireDecalThreshold { get; set; }
     [Export]
@@ -38,7 +38,7 @@ public partial class CarMover : VehicleBody3D
 
         //Hitting buildings or other static objects creates damage particles
         ContactMonitor = true;
-        MaxContactsReported = 5;
+        MaxContactsReported = 10;
         BodyEntered += HitStaticObject;
     }
     public override void _PhysicsProcess(double delta)
@@ -102,7 +102,7 @@ public partial class CarMover : VehicleBody3D
             while (LinearVelocity.Length() > TireDecalThreshold && isBraking)
             {
                 var trackPrefab = TireTrack.Instantiate<Decal>();
-                MainNode.AddChild(trackPrefab);
+                GetTree().Root.GetChild(0).AddChild(trackPrefab);
                 Vector3 offset = ToGlobal(new Vector3(0f, -.15f, -1.881f));
                 trackPrefab.GlobalPosition = offset;
                 //trackPrefab.Position = new Vector3(Transform.Basis.X.X, Transform.Origin.Y + offsetY, Transform.Origin.Z + offsetZ);
@@ -144,11 +144,11 @@ public partial class CarMover : VehicleBody3D
                 if(obj == body)
                 {
                     var damageParts = DamageParticles.Instantiate<Node3D>();
-                    MainNode.AddChild(damageParts);
+                    GetTree().Root.GetChild(0).AddChild(damageParts);
                     damageParts.Position = state.GetContactLocalPosition(i);
                     GpuParticles3D parts = damageParts.GetNode<GpuParticles3D>("GPUParticles3D");
                     parts.Emitting = true;
-                    GD.Print("Hit Static: " + damageParts.Position);
+                    //GD.Print("Hit Static: " + damageParts.Position);
                 }
             }
 

@@ -8,14 +8,14 @@ height = 1.0253906
 radius = 0.3486328
 
 [node name="Citty Can" type="RigidBody3D" unique_id=2041047398]
-collision_layer = 7
-collision_mask = 7
+collision_layer = 64
+collision_mask = 255
 mass = 15.0
 
 [node name="City Can" parent="." unique_id=1206472990 instance=ExtResource("1_8csnp")]
 transform = Transform3D(3.36, 0, 0, 0, 3.36, 0, 0, 0, 3.36, 0, 1.0327365, 0)
 
-[node name="City Garbage Can" parent="City Can" index="0" unique_id=1678360508]
+[node name="City Garbage Can" parent="City Can" index="0" unique_id=1530098735]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, -0.3045048, 0)
 surface_material_override/0 = ExtResource("2_f76ug")
 

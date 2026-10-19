@@ -55,11 +55,11 @@ particles_anim_loop = false
 [sub_resource type="QuadMesh" id="QuadMesh_hjb8m"]
 material = SubResource("StandardMaterial3D_r6c0r")
 
-[node name="Fire Hydrant" type="Node3D" unique_id=1751279221]
+[node name="Fire Hydrant" type="Node3D" unique_id=1751279221 groups=["Vehicle Static Hit"]]
 
 [node name="RigidBody3D" type="RigidBody3D" parent="." unique_id=1485573775]
-collision_layer = 4
-collision_mask = 7
+collision_layer = 64
+collision_mask = 255
 
 [node name="Fire Hydrant2" parent="RigidBody3D" unique_id=402206182 instance=ExtResource("1_bu2hy")]
 transform = Transform3D(2.2, 0, 0, 0, 2.2, 0, 0, 0, 2.2, 0, 0.45155382, 0)

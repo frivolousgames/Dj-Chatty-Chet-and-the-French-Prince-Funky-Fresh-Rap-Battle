@@ -2,11 +2,10 @@
 
 [ext_resource type="Script" uid="uid://da0ix8pag7f78" path="res://Overhead/Overhead Player/Bullets/Bullet3dMover.cs" id="1_b4lll"]
 [ext_resource type="PackedScene" uid="uid://b4rn1gw1406to" path="res://Overhead/Overhead Player/Bullets/bullet.fbx" id="2_1w2bf"]
+[ext_resource type="PackedScene" uid="uid://bfkbur8n21lt0" path="res://Overhead/blood_spatter_small.tscn" id="2_opiv7"]
 [ext_resource type="Material" uid="uid://coq2vhctiexfj" path="res://Overhead/Overhead Player/Bullets/Bullet Material.tres" id="3_ek20n"]
+[ext_resource type="PackedScene" uid="uid://c2g1hek7toyio" path="res://Overhead/Car/Vehicle Static Hit Particles.tscn" id="3_opiv7"]
 [ext_resource type="Texture2D" uid="uid://cg2bpyulbv2qd" path="res://_Writing/particle.png" id="4_qpxfl"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_b4lll"]
-size = Vector3(0.028320313, 0.029296875, 0.18267822)
 
 [sub_resource type="Gradient" id="Gradient_dpqey"]
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
@@ -44,27 +43,29 @@ billboard_keep_scale = true
 material = SubResource("StandardMaterial3D_r6c0r")
 size = Vector2(0.01, 0.01)
 
-[node name="Bullet 3D" type="RigidBody3D" unique_id=1669801883]
-collision_layer = 0
-collision_mask = 0
+[sub_resource type="BoxShape3D" id="BoxShape3D_lfxu0"]
+size = Vector3(0.01586914, 0.013671875, 0.2062378)
+
+[node name="Bullet 3D" type="RigidBody3D" unique_id=1669801883 node_paths=PackedStringArray("Ray")]
+collision_layer = 128
+collision_mask = 95
 axis_lock_angular_x = true
 axis_lock_angular_y = true
 axis_lock_angular_z = true
 gravity_scale = 0.0
 script = ExtResource("1_b4lll")
-velocity = 18.0
-waitTime = 2.0
+Velocity = 18.0
+WaitTime = 2.0
+Ray = NodePath("RayCast3D")
+BloodSpatter = ExtResource("2_opiv7")
+Sparks = ExtResource("3_opiv7")
 
 [node name="bullet" parent="." unique_id=426940860 instance=ExtResource("2_1w2bf")]
 transform = Transform3D(0.39, 0, 0, 0, 0.39, 0, 0, 0, 0.39, 0, -0.011094455, 0.048569873)
 
-[node name="bullet" parent="bullet" index="0" unique_id=2102825140]
+[node name="bullet" parent="bullet" index="0" unique_id=2037569584]
 transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 100, 0, -100, -1.1920929e-05, 0, 0.030680709, -0.277126)
 surface_material_override/0 = ExtResource("3_ek20n")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1137311286]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.09024048)
-shape = SubResource("BoxShape3D_b4lll")
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=1132092052]
 amount = 50
@@ -75,7 +76,13 @@ draw_pass_1 = SubResource("QuadMesh_hjb8m")
 
 [node name="RayCast3D" type="RayCast3D" parent="." unique_id=277688073]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.16166392)
-target_position = Vector3(0, 0, -0.035)
+target_position = Vector3(0, 0, -0.125)
+collision_mask = 127
+collide_with_areas = true
 debug_shape_custom_color = Color(1, 0, 0, 1)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2026539654]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0007324219, 0.0005645752, -0.09689331)
+shape = SubResource("BoxShape3D_lfxu0")
 
 [editable path="bullet"]

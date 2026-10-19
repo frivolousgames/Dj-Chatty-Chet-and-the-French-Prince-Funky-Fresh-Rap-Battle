@@ -1,0 +1,115 @@
+[gd_scene format=3 uid="uid://d1darjoah1aeo"]
+
+[ext_resource type="Material" uid="uid://ccv28v68qsfvd" path="res://_Blender/Quad.tres" id="1_stcef"]
+[ext_resource type="Material" uid="uid://gdiwv2odsgck" path="res://Overhead/Roads/Materials/Park Turn.tres" id="2_stcef"]
+[ext_resource type="PackedScene" uid="uid://cw8g2c1xse6ur" path="res://Overhead/City Junk/Tree 1/Tree Bare Dark.tscn" id="3_tku1g"]
+[ext_resource type="PackedScene" uid="uid://cek7ruhu7wa6i" path="res://Overhead/City Junk/Tree 1/Tree Bare Light.tscn" id="4_4kyva"]
+[ext_resource type="PackedScene" uid="uid://dila7ajfyqa43" path="res://Overhead/City Junk/Tree 1/Tree Bare Brown.tscn" id="5_duirj"]
+[ext_resource type="PackedScene" uid="uid://d2bvcofng6uj5" path="res://Overhead/City Junk/Park Light Post/Park Light Post.tscn" id="6_4kyva"]
+[ext_resource type="PackedScene" uid="uid://dyup7ii0u876b" path="res://Overhead/City Junk/Bench/Bench.tscn" id="7_duirj"]
+[ext_resource type="PackedScene" uid="uid://cetxwsdxwbpuj" path="res://Overhead/City Junk/Picnic Table/Picnic Table.tscn" id="8_qt7ns"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_cnrv6"]
+_surfaces = [{
+"aabb": AABB(-2, 0, 0, 2, 1e-05, 2),
+"format": 34896613377,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 0, 0, 3, 0, 1, 0),
+"name": "Quad",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 255, 255, 0, 0, 255, 255, 0, 0, 0, 0, 0, 0, 255, 255, 0, 0, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_6f3hw"]
+resource_name = "Quad_Plane"
+_surfaces = [{
+"aabb": AABB(-2, 0, 0, 2, 1e-05, 2),
+"attribute_data": PackedByteArray(65, 0, 189, 255, 189, 255, 65, 0, 189, 255, 189, 255, 65, 0, 65, 0),
+"format": 34896613399,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 0, 0, 3, 0, 1, 0),
+"material": ExtResource("1_stcef"),
+"name": "Quad",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 255, 255, 255, 191, 255, 255, 0, 0, 0, 0, 255, 191, 255, 255, 0, 0, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 255, 191, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127)
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_cnrv6")
+
+[node name="Park Bare" type="Node3D" unique_id=1518042359]
+
+[node name="Quad2" type="MeshInstance3D" parent="." unique_id=265062065]
+transform = Transform3D(16, 0, 0, 0, 16, 0, 0, 0, 16, 0, 0, 0)
+mesh = SubResource("ArrayMesh_6f3hw")
+surface_material_override/0 = ExtResource("2_stcef")
+
+[node name="Tree 1" parent="." unique_id=936985911 instance=ExtResource("3_tku1g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 8)
+
+[node name="Tree 2" parent="." unique_id=2043508979 instance=ExtResource("4_4kyva")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -5, 0, 23)
+
+[node name="Tree 4" parent="." unique_id=1316319634 instance=ExtResource("4_4kyva")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -24, 0, 27)
+
+[node name="Tree 3" parent="." unique_id=1513244712 instance=ExtResource("5_duirj")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -17, 0, 16)
+
+[node name="Tree 5" parent="." unique_id=2118993042 instance=ExtResource("3_tku1g")]
+transform = Transform3D(0.7547096, 0, -0.656059, 0, 1, 0, 0.656059, 0, 0.7547096, -29, 0, 7)
+
+[node name="Park Light Post" parent="." unique_id=610693196 instance=ExtResource("6_4kyva")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 14)
+
+[node name="Park Light Post2" parent="." unique_id=212856817 instance=ExtResource("6_4kyva")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, 19)
+
+[node name="Park Light Post3" parent="." unique_id=1632365538 instance=ExtResource("6_4kyva")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, 19)
+
+[node name="Park Light Post4" parent="." unique_id=578975890 instance=ExtResource("6_4kyva")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 0, 26)
+
+[node name="Park Light Post5" parent="." unique_id=125725846 instance=ExtResource("6_4kyva")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 13)
+
+[node name="Park Light Post6" parent="." unique_id=373356343 instance=ExtResource("6_4kyva")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 8)
+
+[node name="Park Light Post7" parent="." unique_id=1643135691 instance=ExtResource("6_4kyva")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 0, 10.388672)
+
+[node name="Park Light Post8" parent="." unique_id=1050533145 instance=ExtResource("6_4kyva")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.013384, 0, 9.412598)
+
+[node name="Park Light Post9" parent="." unique_id=41734160 instance=ExtResource("6_4kyva")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.65709, 0, 15.468689)
+
+[node name="Bench" parent="." unique_id=2086597506 instance=ExtResource("7_duirj")]
+transform = Transform3D(0.85201937, 0, 0.5235103, 0, 1, 0, -0.5235103, 0, 0.85201937, -28.122997, 0, 11.735291)
+
+[node name="Bench2" parent="." unique_id=1372406359 instance=ExtResource("7_duirj")]
+transform = Transform3D(-0.8482995, 0, -0.5295167, 0, 1, 0, 0.5295167, 0, -0.8482995, -21.244987, 0, 12.3125)
+
+[node name="Bench3" parent="." unique_id=2009397 instance=ExtResource("7_duirj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.46002, 0, 6.156555)
+
+[node name="Bench4" parent="." unique_id=1816145870 instance=ExtResource("7_duirj")]
+transform = Transform3D(0.96449804, 0, -0.26409006, 0, 1, 0, 0.26409006, 0, 0.96449804, -7.327942, 0, 9.423157)
+
+[node name="Bench5" parent="." unique_id=839259281 instance=ExtResource("7_duirj")]
+transform = Transform3D(0.7668005, 0, 0.6418855, 0, 1, 0, -0.6418855, 0, 0.7668005, -12.330444, 0, 15.879211)
+
+[node name="Bench6" parent="." unique_id=987724408 instance=ExtResource("7_duirj")]
+transform = Transform3D(-0.51489866, 0, -0.85725105, 0, 1, 0, 0.85725105, 0, -0.51489866, -11.040091, 0, 22.153442)
+
+[node name="Picnic Table" parent="." unique_id=1391091169 instance=ExtResource("8_qt7ns")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.25448, 0, 19.375305)
+
+[node name="Picnic Table2" parent="." unique_id=1369876134 instance=ExtResource("8_qt7ns")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.013178, 0, 27.685974)

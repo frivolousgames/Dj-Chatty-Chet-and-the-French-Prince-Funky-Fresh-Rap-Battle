@@ -7,18 +7,19 @@
 [ext_resource type="Material" uid="uid://dylmy4ubpfr4n" path="res://Overhead/Buildings/Building 3/Building 3 Orange.tres" id="5_0kj3t"]
 [ext_resource type="PackedScene" uid="uid://df4n4i8clxdb3" path="res://Overhead/Buildings/Top Objects/Roof Entrance.tscn" id="6_osgl4"]
 [ext_resource type="PackedScene" uid="uid://dwkmcie5cjcnp" path="res://Overhead/Buildings/Top Objects/Roof Fan.tscn" id="7_jgwuv"]
+[ext_resource type="PackedScene" uid="uid://mllydg1yol0" path="res://Overhead/Buildings/Window Light Rounded.tscn" id="8_r644c"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_lfxu0"]
 size = Vector3(6.0168457, 7.3535767, 5.991699)
 
 [node name="Building 3" type="StaticBody3D" unique_id=1015380335 groups=["Vehicle Static Hit"]]
 collision_layer = 4
-collision_mask = 7
+collision_mask = 0
 
 [node name="Building 3" parent="." unique_id=2011168181 instance=ExtResource("1_nkr1m")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -0.027548134, 0, -1.002996)
 
-[node name="Building 5" parent="Building 3" index="0" unique_id=1541865394]
+[node name="Building 5" parent="Building 3" index="0" unique_id=1199264412]
 surface_material_override/0 = ExtResource("2_0kj3t")
 surface_material_override/1 = ExtResource("3_nkr1m")
 surface_material_override/2 = ExtResource("4_25vsi")
@@ -33,5 +34,85 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9145508, 7.328842, -0.85595
 
 [node name="Roof Fan" parent="." unique_id=1301821086 instance=ExtResource("7_jgwuv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.496277, 7.255966, -1.6584091)
+
+[node name="Window Lights" type="Node3D" parent="." unique_id=2133314129]
+
+[node name="Front" type="Node3D" parent="Window Lights" unique_id=1894295125]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.6342926)
+
+[node name="Wiindow Light" parent="Window Lights/Front" unique_id=1421635116 instance=ExtResource("8_r644c")]
+transform = Transform3D(-1.2720014e-07, 0, -2.91, 0, 3.197, 0, 2.91, 0, -1.2720014e-07, 1.0645232, 4.192498, 2.6680908)
+
+[node name="Wiindow Light2" parent="Window Lights/Front" unique_id=2089124805 instance=ExtResource("8_r644c")]
+transform = Transform3D(-1.2720014e-07, 0, -2.91, 0, 3.197, 0, 2.91, 0, -1.2720014e-07, 3.6515634, 4.192498, 2.6680908)
+
+[node name="Wiindow Light3" parent="Window Lights/Front" unique_id=1663752022 instance=ExtResource("8_r644c")]
+transform = Transform3D(-1.2720014e-07, 0, -2.91, 0, 3.197, 0, 2.91, 0, -1.2720014e-07, 3.6515634, 6.3255897, 2.6680908)
+
+[node name="Wiindow Light4" parent="Window Lights/Front" unique_id=1107271211 instance=ExtResource("8_r644c")]
+transform = Transform3D(-1.2720014e-07, 0, -2.91, 0, 3.197, 0, 2.91, 0, -1.2720014e-07, 4.955864, 6.3255897, 2.6680908)
+
+[node name="Back" type="Node3D" parent="Window Lights" unique_id=5051094]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, -1, 0.13269138, 0.1190505, -1.3604736)
+
+[node name="Wiindow Light6" parent="Window Lights/Back" unique_id=1039346143 instance=ExtResource("8_r644c")]
+transform = Transform3D(-1.2720014e-07, 0, -2.91, 0, 3.197, 0, 2.91, 0, -1.2720014e-07, 2.3314514, 2.0919743, 2.6680908)
+
+[node name="Wiindow Light7" parent="Window Lights/Back" unique_id=463134406 instance=ExtResource("8_r644c")]
+transform = Transform3D(-1.2720014e-07, 0, -2.91, 0, 3.197, 0, 2.91, 0, -1.2720014e-07, 4.955661, 2.0919743, 2.6680908)
+
+[node name="Wiindow Light5" parent="Window Lights/Back" unique_id=1654473399 instance=ExtResource("8_r644c")]
+transform = Transform3D(-1.2720014e-07, 0, -2.91, 0, 3.197, 0, 2.91, 0, -1.2720014e-07, 1.0645232, 4.192498, 2.6680908)
+
+[node name="Wiindow Light2" parent="Window Lights/Back" unique_id=304956791 instance=ExtResource("8_r644c")]
+transform = Transform3D(-1.2720014e-07, 0, -2.91, 0, 3.197, 0, 2.91, 0, -1.2720014e-07, 3.6515634, 4.192498, 2.6680908)
+
+[node name="Wiindow Light3" parent="Window Lights/Back" unique_id=1407146637 instance=ExtResource("8_r644c")]
+transform = Transform3D(-1.2720014e-07, 0, -2.91, 0, 3.197, 0, 2.91, 0, -1.2720014e-07, 3.6515634, 6.3255897, 2.6680908)
+
+[node name="Wiindow Light4" parent="Window Lights/Back" unique_id=2015989867 instance=ExtResource("8_r644c")]
+transform = Transform3D(-1.2720014e-07, 0, -2.91, 0, 3.197, 0, 2.91, 0, -1.2720014e-07, 4.955864, 6.3255897, 2.6680908)
+
+[node name="Side L" type="Node3D" parent="Window Lights" unique_id=1264414465]
+transform = Transform3D(-4.371139e-08, -3.821371e-15, -1, -8.742278e-08, 1, 0, -1, -8.742278e-08, 4.371139e-08, 2.719574, 0.1190505, 1.878869)
+
+[node name="Wiindow Light6" parent="Window Lights/Side L" unique_id=1429227146 instance=ExtResource("8_r644c")]
+transform = Transform3D(-1.2720014e-07, 0, -2.91, 0, 3.197, 0, 2.91, 0, -1.2720014e-07, 2.201868, 2.119255, 2.6680908)
+
+[node name="Wiindow Light7" parent="Window Lights/Side L" unique_id=264828207 instance=ExtResource("8_r644c")]
+transform = Transform3D(-1.2720014e-07, 0, -2.91, 0, 3.197, 0, 2.91, 0, -1.2720014e-07, 4.955661, 2.1260753, 2.6680908)
+
+[node name="Wiindow Light5" parent="Window Lights/Side L" unique_id=105088291 instance=ExtResource("8_r644c")]
+transform = Transform3D(-1.2720014e-07, 0, -2.91, 0, 3.197, 0, 2.91, 0, -1.2720014e-07, 0.84627676, 4.192498, 2.6680908)
+
+[node name="Wiindow Light2" parent="Window Lights/Side L" unique_id=587636576 instance=ExtResource("8_r644c")]
+transform = Transform3D(-1.2720014e-07, 0, -2.91, 0, 3.197, 0, 2.91, 0, -1.2720014e-07, 3.5629008, 4.1924977, 2.668091)
+
+[node name="Wiindow Light3" parent="Window Lights/Side L" unique_id=1038593049 instance=ExtResource("8_r644c")]
+transform = Transform3D(-1.2720014e-07, 0, -2.91, 0, 3.197, 0, 2.91, 0, -1.2720014e-07, 3.5784993, 6.2482266, 2.6680913)
+
+[node name="Wiindow Light4" parent="Window Lights/Side L" unique_id=1746061733 instance=ExtResource("8_r644c")]
+transform = Transform3D(-1.2720014e-07, 0, -2.91, 0, 3.197, 0, 2.91, 0, -1.2720014e-07, 4.9386725, 6.2482276, 2.6680908)
+
+[node name="Side R" type="Node3D" parent="Window Lights" unique_id=1631210655]
+transform = Transform3D(-4.371139e-08, -6.600236e-15, 1, -1.509958e-07, 1, 0, -1, -1.509958e-07, -4.371139e-08, 3.4334307, 0.1190505, 1.8998187)
+
+[node name="Wiindow Light6" parent="Window Lights/Side R" unique_id=1422149699 instance=ExtResource("8_r644c")]
+transform = Transform3D(-1.2720014e-07, 0, -2.91, 0, 3.197, 0, 2.91, 0, -1.2720014e-07, 2.201868, 2.119255, 2.6680908)
+
+[node name="Wiindow Light7" parent="Window Lights/Side R" unique_id=1644250560 instance=ExtResource("8_r644c")]
+transform = Transform3D(-1.2720014e-07, 0, -2.91, 0, 3.197, 0, 2.91, 0, -1.2720014e-07, 4.955661, 2.1260753, 2.6680908)
+
+[node name="Wiindow Light5" parent="Window Lights/Side R" unique_id=334062467 instance=ExtResource("8_r644c")]
+transform = Transform3D(-1.2720014e-07, 0, -2.91, 0, 3.197, 0, 2.91, 0, -1.2720014e-07, 0.84627676, 4.192498, 2.6680908)
+
+[node name="Wiindow Light2" parent="Window Lights/Side R" unique_id=1254165831 instance=ExtResource("8_r644c")]
+transform = Transform3D(-1.2720014e-07, 0, -2.91, 0, 3.197, 0, 2.91, 0, -1.2720014e-07, 3.5629008, 4.1924977, 2.668091)
+
+[node name="Wiindow Light3" parent="Window Lights/Side R" unique_id=618235354 instance=ExtResource("8_r644c")]
+transform = Transform3D(-1.2720014e-07, 0, -2.91, 0, 3.197, 0, 2.91, 0, -1.2720014e-07, 3.5784993, 6.2482266, 2.6680913)
+
+[node name="Wiindow Light4" parent="Window Lights/Side R" unique_id=697440691 instance=ExtResource("8_r644c")]
+transform = Transform3D(-1.2720014e-07, 0, -2.91, 0, 3.197, 0, 2.91, 0, -1.2720014e-07, 4.9386725, 6.2482276, 2.6680908)
 
 [editable path="Building 3"]

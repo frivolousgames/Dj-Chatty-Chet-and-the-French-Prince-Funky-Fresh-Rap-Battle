@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://cqif4i6tiwb3w"]
+
+[ext_resource type="PackedScene" uid="uid://bsj5m0cp07st4" path="res://Overhead/Buildings/Church/Church.glb" id="1_2cyb0"]
+[ext_resource type="Material" uid="uid://cou2rcww7tl1g" path="res://Overhead/Buildings/Church/Church.tres" id="2_lfb3f"]
+[ext_resource type="Material" uid="uid://uq3j6gcbqsep" path="res://Overhead/Buildings/Asphalt Dark.tres" id="3_8rk0x"]
+[ext_resource type="Material" uid="uid://0hsj0qcumhvp" path="res://Overhead/Buildings/Church/Steeple.tres" id="4_8rk0x"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lfxu0"]
+size = Vector3(1.9941406, 4.4223022, 2.0007324)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hjb8m"]
+size = Vector3(6.115509, 3.3735352, 4.973877)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_r6c0r"]
+size = Vector3(6.986267, 4.597168, 1.4697266)
+
+[node name="Church" type="StaticBody3D" unique_id=1128391268]
+collision_layer = 4
+collision_mask = 7
+
+[node name="Church2" parent="." unique_id=755436539 instance=ExtResource("1_2cyb0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.46534455, 0, -1.0007534)
+
+[node name="Church" parent="Church2" index="0" unique_id=1801549805]
+surface_material_override/0 = ExtResource("2_lfb3f")
+surface_material_override/1 = ExtResource("3_8rk0x")
+surface_material_override/2 = ExtResource("4_8rk0x")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1369029004]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.4585266, 2.2475524, -0.99108887)
+shape = SubResource("BoxShape3D_lfxu0")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=52653378 groups=["Vehicle Static Hit"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.4626007, 1.702936, -4.5035267)
+shape = SubResource("BoxShape3D_hjb8m")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="." unique_id=1105006209]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.4715881, 2.2827876, -1.2036133)
+shape = SubResource("BoxShape3D_r6c0r")
+
+[editable path="Church2"]

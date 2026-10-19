@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://bywn7mr05746g" path="res://Overhead/Overhead Player/Overhead Player.tscn" id="10_n4wm0"]
 [ext_resource type="PackedScene" uid="uid://byslipu8e1k3m" path="res://Overhead/Buildings/Building 1/Building 1 Brown.tscn" id="15_clhls"]
 [ext_resource type="PackedScene" uid="uid://d6i2xf1qyjrf" path="res://Overhead/City Junk/Garbage Can/Garbage Can.tscn" id="16_5pe4o"]
-[ext_resource type="PackedScene" uid="uid://30vwb1kc8h4u" path="res://Overhead/City Junk/Tree 1/Tree 1.tscn" id="18_370m3"]
+[ext_resource type="PackedScene" uid="uid://30vwb1kc8h4u" path="res://Overhead/City Junk/Tree 1/Tree Light.tscn" id="18_370m3"]
 [ext_resource type="PackedScene" uid="uid://b865civlh0q33" path="res://Overhead/Car/Car.tscn" id="18_k5dlt"]
 [ext_resource type="PackedScene" uid="uid://b4olejawymq7l" path="res://Overhead/Buildings/Building 2/Building 2 Tan.tscn" id="19_ioy5q"]
 [ext_resource type="PackedScene" uid="uid://clf6xwyw4yail" path="res://Overhead/Buildings/Building 3/Building 3 Red.tscn" id="20_k5dlt"]

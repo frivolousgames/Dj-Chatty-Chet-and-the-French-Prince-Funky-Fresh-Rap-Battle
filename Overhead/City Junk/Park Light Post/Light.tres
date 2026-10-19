@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cl6n7d64byxxx"]
+
+[ext_resource type="Texture2D" uid="uid://br8uo17g7lrqp" path="res://Overhead/City Junk/Park Light Post/Park Light.png" id="1_7je0g"]
+
+[resource]
+albedo_texture = ExtResource("1_7je0g")
+emission = Color(1, 0.9552649, 0.4408114, 1)
+emission_energy_multiplier = 4.5
+backlight_enabled = true
+backlight = Color(0.44491094, 0.43190333, 0.071406245, 1)

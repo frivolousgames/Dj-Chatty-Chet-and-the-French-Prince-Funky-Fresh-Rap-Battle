@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://d2bvcofng6uj5"]
+
+[ext_resource type="Script" uid="uid://b088npqcai3y2" path="res://TipOverWhenHit.cs" id="1_q62qc"]
+[ext_resource type="PackedScene" uid="uid://b122bldue03oj" path="res://Overhead/City Junk/Park Light Post/Park Light Post.glb" id="2_erwc4"]
+[ext_resource type="Material" uid="uid://cl6n7d64byxxx" path="res://Overhead/City Junk/Park Light Post/Light.tres" id="3_erwc4"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_r6c0r"]
+height = 3.3706055
+radius = 0.14111328
+
+[node name="Park Light Post" type="Node3D" unique_id=610693196 groups=["Vehicle Static Hit"]]
+
+[node name="RigidBody3D" type="RigidBody3D" parent="." unique_id=1569408966 node_paths=PackedStringArray("Spot") groups=["Vehicle Static Hit"]]
+collision_layer = 64
+collision_mask = 255
+mass = 100.0
+freeze_mode = 1
+linear_damp = 6.0
+angular_damp = 6.0
+script = ExtResource("1_q62qc")
+Spot = NodePath("SpotLight3D")
+
+[node name="Park Light Post" parent="RigidBody3D" unique_id=1374751732 instance=ExtResource("2_erwc4")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+
+[node name="Park Light" parent="RigidBody3D/Park Light Post" index="0" unique_id=1787773620]
+surface_material_override/1 = ExtResource("3_erwc4")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="RigidBody3D" unique_id=819414989]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.0853271, 0)
+light_color = Color(0.9997145, 1, 0.74990755, 1)
+light_energy = 0.396
+light_size = 1.0
+shadow_enabled = true
+distance_fade_begin = 0.0
+distance_fade_shadow = 0.0
+distance_fade_length = 208.83
+omni_range = 0.538
+omni_attenuation = 2.458
+
+[node name="SpotLight3D" type="SpotLight3D" parent="RigidBody3D" unique_id=1983270241 groups=["Vehicle Static Hit"]]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 2.8448029, 0)
+light_color = Color(2.063, 2.057583, 1.7589623, 1)
+light_energy = 3.5
+spot_range = 5.595
+spot_attenuation = 2.2
+spot_angle = 46.65
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D" unique_id=1256292838]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.701416, 0)
+shape = SubResource("CylinderShape3D_r6c0r")
+
+[editable path="RigidBody3D/Park Light Post"]

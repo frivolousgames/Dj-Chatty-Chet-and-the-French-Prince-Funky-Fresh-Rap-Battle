@@ -5,4 +5,5 @@
 
 [resource]
 albedo_texture = ExtResource("1_536mp")
+normal_scale = 0.5
 normal_texture = ExtResource("2_nfoay")

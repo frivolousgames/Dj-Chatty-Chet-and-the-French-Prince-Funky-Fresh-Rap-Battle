@@ -2,6 +2,13 @@
 
 [ext_resource type="Material" uid="uid://ccv28v68qsfvd" path="res://_Blender/Quad.tres" id="1_kx1w8"]
 [ext_resource type="Material" uid="uid://du5qafdr60eol" path="res://Overhead/Roads/Materials/Road Alley 3 Way.tres" id="2_kx1w8"]
+[ext_resource type="PackedScene" uid="uid://chksc5xpresfg" path="res://Overhead/City Junk/Light Post/Light Post.tscn" id="3_phff3"]
+[ext_resource type="PackedScene" uid="uid://30vwb1kc8h4u" path="res://Overhead/City Junk/Tree 1/Tree Light.tscn" id="4_l8605"]
+[ext_resource type="PackedScene" uid="uid://dyup7ii0u876b" path="res://Overhead/City Junk/Bench/Bench.tscn" id="5_y0iv2"]
+[ext_resource type="PackedScene" uid="uid://dchpumgppxwec" path="res://Overhead/City Junk/Signs/One Way Sign.tscn" id="6_y0iv2"]
+[ext_resource type="PackedScene" uid="uid://bhnsii3hrj4nc" path="res://Overhead/City Junk/Signs/Stop Sign.tscn" id="7_lxrwu"]
+[ext_resource type="PackedScene" uid="uid://da1tjgbpt30e6" path="res://Overhead/City Junk/City Garbage Can/City Can.tscn" id="8_lxrwu"]
+[ext_resource type="PackedScene" uid="uid://bg03bxk0ldw2f" path="res://Overhead/City Junk/Signs/No Parking Solo.tscn" id="9_c633l"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_cnrv6"]
 _surfaces = [{
@@ -41,3 +48,33 @@ shadow_mesh = SubResource("ArrayMesh_cnrv6")
 transform = Transform3D(16, 0, 0, 0, 16, 0, 0, 0, 16, 0, 0, 0)
 mesh = SubResource("ArrayMesh_f5anv")
 surface_material_override/0 = ExtResource("2_kx1w8")
+
+[node name="Light Post3" parent="." unique_id=1902395794 instance=ExtResource("3_phff3")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -21.331936, 0, 12.829821)
+
+[node name="Tree 1" parent="." unique_id=936985911 instance=ExtResource("4_l8605")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.962847, 0, 4.5825596)
+
+[node name="Tree 2" parent="." unique_id=244440896 instance=ExtResource("4_l8605")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -21.962847, 0, 21.371344)
+
+[node name="Tree 3" parent="." unique_id=1623495782 instance=ExtResource("4_l8605")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -9.971964, 0, 28.399446)
+
+[node name="Bench6" parent="." unique_id=2086597506 instance=ExtResource("5_y0iv2")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -23.325531, 0.02881372, 16.503408)
+
+[node name="Bench7" parent="." unique_id=937058891 instance=ExtResource("5_y0iv2")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -8.621082, 0.02881372, 4.1843777)
+
+[node name="One Way Sign" parent="." unique_id=1762005356 instance=ExtResource("6_y0iv2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.196667, 0, 18.473404)
+
+[node name="Stop Sign" parent="." unique_id=1161472926 instance=ExtResource("7_lxrwu")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -11.193115, 0, 13.470409)
+
+[node name="Citty Can" parent="." unique_id=2041047398 instance=ExtResource("8_lxrwu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.624044, 0, 7.7632637)
+
+[node name="No Parking Sign Only" parent="." unique_id=1492134314 instance=ExtResource("9_c633l")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -21.100452, 3.4715576, 12.8189335)

@@ -11,5 +11,7 @@ public partial class WeaponItem : Resource
     [Export]
     public PackedScene WeaponBullet { get; set; }
     [Export]
-    public float WeaponDamage { get; set; }
+    public int WeaponDamage { get; set; }
+    [Export]
+    public float WeaponForce { get; set; }
 }

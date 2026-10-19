@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://mllydg1yol0"]
+
+[ext_resource type="PackedScene" uid="uid://b0ognukhjpnne" path="res://Overhead/Buildings/Window Rounded.glb" id="1_viskq"]
+[ext_resource type="Material" uid="uid://nb65kd5cfgsl" path="res://Overhead/Buildings/Window Light.tres" id="2_viskq"]
+
+[node name="Node3D" type="Node3D" unique_id=1421635116]
+
+[node name="Window Rounded" parent="." unique_id=1187153909 instance=ExtResource("1_viskq")]
+
+[node name="Window" parent="Window Rounded" index="0" unique_id=1817981598]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+surface_material_override/0 = ExtResource("2_viskq")
+
+[editable path="Window Rounded"]

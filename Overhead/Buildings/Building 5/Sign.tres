@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dm06pad7xmdkd"]
+
+[ext_resource type="Texture2D" uid="uid://cw11ucxnjktii" path="res://Overhead/Buildings/Building 5/Buildings 5.png" id="1_iv1ew"]
+
+[resource]
+albedo_texture = ExtResource("1_iv1ew")
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.26
+backlight = Color(1.4954206, 1.4954206, 1.4262633, 1)
