@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="PedestrianType" format=3 uid="uid://ch2kje8p51psf"]
+
+[ext_resource type="Script" uid="uid://vutfogv03l3r" path="res://Overhead/Pedestrians/PedestrianType.cs" id="1_56okb"]
+
+[resource]
+script = ExtResource("1_56okb")
+metadata/_custom_type_script = "uid://vutfogv03l3r"

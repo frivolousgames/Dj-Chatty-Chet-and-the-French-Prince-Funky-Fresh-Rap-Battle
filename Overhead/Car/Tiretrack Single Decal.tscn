@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://827ogf0flo1l"]
+
+[ext_resource type="Texture2D" uid="uid://cvgp3amyilmom" path="res://Overhead/Car/Tire Track Single.png" id="1_ahep5"]
+[ext_resource type="Script" uid="uid://bmgvkq3ye021i" path="res://Overhead/Car/TiretrackDecal.cs" id="2_idpt3"]
+
+[node name="Tiretrack Decal" type="Decal" unique_id=850649037]
+sorting_offset = 1.5
+size = Vector3(0.43, 0.22363281, 0.45031738)
+texture_albedo = ExtResource("1_ahep5")
+modulate = Color(0.58846134, 0, 0.11011601, 1)
+albedo_mix = 0.62
+upper_fade = 0.03882244
+lower_fade = 0.027451608
+script = ExtResource("2_idpt3")
+WaitTime = 2.0

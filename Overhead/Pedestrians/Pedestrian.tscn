@@ -4,19 +4,106 @@
 [ext_resource type="Script" uid="uid://c4gwymbauuifb" path="res://Overhead/Pedestrians/Pedestrian.cs" id="1_ujsu2"]
 [ext_resource type="Resource" uid="uid://dngoj24bucpvi" path="res://Overhead/Pedestrians/Normal Man.tres" id="2_cjcea"]
 [ext_resource type="Material" uid="uid://cgp62bd4yept" path="res://Overhead/Pedestrians/Accessories/Stroller/Fabric.tres" id="2_v2yr3"]
-[ext_resource type="PackedScene" uid="uid://78cfpgprfok2" path="res://Overhead/blood_decal_lage.tscn" id="3_a3r0w"]
-[ext_resource type="PackedScene" uid="uid://5xbuk5l7o3ef" path="res://Overhead/blood_spatter_large.tscn" id="3_aqhud"]
+[ext_resource type="PackedScene" uid="uid://78cfpgprfok2" path="res://Overhead/Blood/blood_decal_lage.tscn" id="3_a3r0w"]
+[ext_resource type="PackedScene" uid="uid://5xbuk5l7o3ef" path="res://Overhead/Blood/blood_spatter_large.tscn" id="3_aqhud"]
 [ext_resource type="Material" uid="uid://c4g0t0a13bxfa" path="res://Overhead/Car/Bumper.tres" id="3_ujsu2"]
 [ext_resource type="Material" uid="uid://384teyswvo8s" path="res://Overhead/Pedestrians/Accessories/Stroller/Cushion.tres" id="4_cjcea"]
-[ext_resource type="PackedScene" uid="uid://b5n5i7tx8dsh8" path="res://Overhead/blood_smear 2.tscn" id="5_18n00"]
+[ext_resource type="PackedScene" uid="uid://b5n5i7tx8dsh8" path="res://Overhead/Blood/blood_smear 2.tscn" id="5_18n00"]
 [ext_resource type="Material" uid="uid://bw1iculdrfdj8" path="res://Overhead/Pedestrians/Accessories/Stroller/Wheels.tres" id="5_80bfy"]
-[ext_resource type="PackedScene" uid="uid://bnvjuut8ik68e" path="res://Overhead/blood_smear.tscn" id="5_aqhud"]
+[ext_resource type="PackedScene" uid="uid://bnvjuut8ik68e" path="res://Overhead/Blood/blood_smear.tscn" id="5_aqhud"]
 [ext_resource type="Material" uid="uid://chcfea5sghby4" path="res://Overhead/Pedestrians/Accessories/Stroller/Handles.tres" id="6_5s4b4"]
-[ext_resource type="PackedScene" uid="uid://hkn1ifudkofx" path="res://Overhead/blood_smear 3.tscn" id="7_optv7"]
+[ext_resource type="PackedScene" uid="uid://hkn1ifudkofx" path="res://Overhead/Blood/blood_smear 3.tscn" id="7_optv7"]
 [ext_resource type="Script" uid="uid://cblytgupdpo4j" path="res://Overhead/Pedestrians/RagdollTrigger.cs" id="9_80bfy"]
-[ext_resource type="PackedScene" uid="uid://by2vng5vwh7l6" path="res://Overhead/blood_decal_spatter.tscn" id="10_mckh7"]
-[ext_resource type="PackedScene" uid="uid://b71rl7x2eg2j" path="res://Overhead/blood_decal_small.tscn" id="11_pptbd"]
+[ext_resource type="PackedScene" uid="uid://by2vng5vwh7l6" path="res://Overhead/Blood/blood_decal_spatter.tscn" id="10_mckh7"]
+[ext_resource type="PackedScene" uid="uid://b71rl7x2eg2j" path="res://Overhead/Blood/blood_decal_small.tscn" id="11_pptbd"]
+[ext_resource type="Texture2D" uid="uid://bfoxxmch6rdil" path="res://_Blender/Main Character/Textures/curly hair Normal.png" id="14_r2wrd"]
+[ext_resource type="Script" uid="uid://dn8hgtidmincb" path="res://Overhead/Pedestrians/Clothing Materials/SetMeshMaterial.cs" id="15_fklor"]
+[ext_resource type="Script" uid="uid://dpyg07g6mnu64" path="res://Overhead/Pedestrians/Body Parts/BoneShrinker.cs" id="16_afm6m"]
+[ext_resource type="Texture2D" uid="uid://vnh0m0iqf4u2" path="res://Overhead/Pedestrians/Pedestrian_sock big normal.png" id="16_fklor"]
+[ext_resource type="PackedScene" uid="uid://dkw8i4px4jiem" path="res://Overhead/Blood/blood_spatter permanent.tscn" id="16_thgqf"]
 [ext_resource type="PackedScene" uid="uid://vw41dwhkdciv" path="res://Overhead/Pedestrians/Body Parts/ped_leg.tscn" id="17_d6vy2"]
+[ext_resource type="PackedScene" uid="uid://tkvvqwee31v7" path="res://Overhead/Pedestrians/Body Parts/Guts Full.tscn" id="17_g5xge"]
+[ext_resource type="PackedScene" uid="uid://by5gad63p603y" path="res://Overhead/Pedestrians/Body Parts/ped_arm.tscn" id="18_8k6n4"]
+[ext_resource type="PackedScene" uid="uid://b1nsv3y408o1o" path="res://Overhead/Pedestrians/Body Parts/ped_head.tscn" id="21_g5xge"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_46f4k"]
+resource_local_to_scene = true
+metallic_specular = 0.0
+roughness = 0.78
+normal_enabled = true
+normal_scale = 16.0
+normal_texture = ExtResource("14_r2wrd")
+uv1_scale = Vector3(2.85, 2.85, 2.85)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r2wrd"]
+resource_local_to_scene = true
+roughness = 0.61
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hiiit"]
+resource_local_to_scene = true
+albedo_color = Color(0.09239707, 0.09239706, 0.09239706, 1)
+roughness = 0.51
+normal_enabled = true
+normal_scale = 5.86
+normal_texture = ExtResource("14_r2wrd")
+uv1_scale = Vector3(9.23, 9.23, 9.23)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fmgf3"]
+resource_local_to_scene = true
+metallic_specular = 0.42
+roughness = 0.45
+normal_scale = 0.59
+normal_texture = ExtResource("16_fklor")
+uv1_scale = Vector3(20.235, 20.235, 20.235)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kt83r"]
+resource_local_to_scene = true
+normal_enabled = true
+normal_scale = 0.59
+normal_texture = ExtResource("16_fklor")
+uv1_scale = Vector3(20.235, 20.235, 20.235)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4htnb"]
+resource_local_to_scene = true
+metallic_specular = 0.0
+normal_scale = 0.59
+normal_texture = ExtResource("16_fklor")
+uv1_scale = Vector3(20.235, 20.235, 20.235)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8hjmc"]
+resource_local_to_scene = true
+normal_enabled = true
+normal_scale = 0.59
+normal_texture = ExtResource("16_fklor")
+uv1_scale = Vector3(20.235, 20.235, 20.235)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6b70b"]
+resource_local_to_scene = true
+metallic_specular = 0.0
+normal_scale = 0.59
+normal_texture = ExtResource("16_fklor")
+uv1_scale = Vector3(20.235, 20.235, 20.235)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6a50e"]
+resource_local_to_scene = true
+normal_enabled = true
+normal_scale = 0.95
+normal_texture = ExtResource("16_fklor")
+uv1_scale = Vector3(29.86, 29.86, 29.86)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dfspx"]
+resource_local_to_scene = true
+metallic_specular = 0.0
+normal_scale = 0.59
+normal_texture = ExtResource("16_fklor")
+uv1_scale = Vector3(20.235, 20.235, 20.235)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_omt6i"]
+resource_local_to_scene = true
+metallic_specular = 0.0
+normal_scale = 0.59
+normal_texture = ExtResource("16_fklor")
+uv1_scale = Vector3(20.235, 20.235, 20.235)
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_8k6n4"]
 height = 0.0703125
@@ -454,7 +541,7 @@ height = 2.1
 height = 2.0595703
 radius = 0.50927734
 
-[node name="Pedestrian" type="CharacterBody3D" unique_id=1381419650 node_paths=PackedStringArray("LeftCast", "RightCast", "Stroller", "StrollerCol", "FrontTrans", "BackTrans", "LeftTrans", "RightTrans", "AnimPlayer", "AnimTree", "Limbs", "BloodDecals") groups=["Bleedable"]]
+[node name="Pedestrian" type="CharacterBody3D" unique_id=1381419650 node_paths=PackedStringArray("LeftCast", "RightCast", "FrontTrans", "BackTrans", "LeftTrans", "RightTrans", "AnimPlayer", "AnimTree", "Limbs", "physBones", "LimbBloods", "IntestineNode", "intestineJoint", "BloodDecals", "Body", "Pants", "Shorts", "Hoodie", "Tshirt", "Tanktop", "Socks", "Shoes", "WomanHair", "ManHair", "SeveredWomanHair", "SeveredManHair", "Stroller", "StrollerCol") groups=["Bleedable"]]
 collision_layer = 8
 collision_mask = 253
 script = ExtResource("1_ujsu2")
@@ -462,8 +549,6 @@ LeftCast = NodePath("L Cast")
 RightCast = NodePath("R Cast")
 RotSpeed = 5.0
 type = ExtResource("2_cjcea")
-Stroller = NodePath("Pedestrian/Player/Skeleton3D/hand_R/Stroller")
-StrollerCol = NodePath("StrollerCol")
 FrontTrans = NodePath("Pedestrian/Front Trans")
 BackTrans = NodePath("Pedestrian/Back Trans")
 LeftTrans = NodePath("Pedestrian/Left Trans")
@@ -471,81 +556,173 @@ RightTrans = NodePath("Pedestrian/Right Trans")
 AnimPlayer = NodePath("Pedestrian/AnimationPlayer")
 AnimTree = NodePath("Pedestrian/AnimationTree")
 BloodSpatterLarge = ExtResource("3_aqhud")
-Limbs = [NodePath("Ped Leg L"), NodePath("Ped Leg")]
+Limbs = [NodePath("Ped Leg L"), NodePath("Ped Leg"), NodePath("Ped Arm L"), NodePath("Ped Arm R"), NodePath("Ped_Head")]
+boneNames = PackedStringArray("thigh.L", "thigh.R", "upper_arm.L", "upper_arm.R", "spine.004")
+physBones = [NodePath("Pedestrian/Player/Skeleton3D/Ragdoll/Physical Bone thigh_L"), NodePath("Pedestrian/Player/Skeleton3D/Ragdoll/Physical Bone thigh_R"), NodePath("Pedestrian/Player/Skeleton3D/Ragdoll/Physical Bone upper_arm_L"), NodePath("Pedestrian/Player/Skeleton3D/Ragdoll/Physical Bone upper_arm_R"), NodePath("Pedestrian/Player/Skeleton3D/Ragdoll/Physical Bone Neck")]
+LimbBloods = [NodePath("Pedestrian/Player/Skeleton3D/Ragdoll/Physical Bone spine/Blood Spatter L"), NodePath("Pedestrian/Player/Skeleton3D/Ragdoll/Physical Bone spine/Blood Spatter R"), NodePath("Pedestrian/Player/Skeleton3D/Ragdoll/Physical Bone shoulder_L/Blood Spatter"), NodePath("Pedestrian/Player/Skeleton3D/Ragdoll/Physical Bone shoulder_R/Blood Spatter"), NodePath("Pedestrian/Player/Skeleton3D/Ragdoll/Physical Bone spine_004/Blood Spatter Neck")]
+IntestineNode = NodePath("Pedestrian/Player/Skeleton3D/Ragdoll/Physical Bone spine/Intestine Joint/Guts")
+intestineJoint = NodePath("Pedestrian/Player/Skeleton3D/Ragdoll/Physical Bone spine/Intestine Joint")
 BloodDecals = [NodePath("Pedestrian/Player/Skeleton3D/Ragdoll/Physical Bone spine/Blood Decal Small2"), NodePath("Pedestrian/Player/Skeleton3D/Ragdoll/Physical Bone spine/Blood Decal Small"), NodePath("Pedestrian/Player/Skeleton3D/Ragdoll/Physical Bone spine_003/Blood Decal Small"), NodePath("Pedestrian/Player/Skeleton3D/Ragdoll/Physical Bone shoulder_L/Blood Decal Small"), NodePath("Pedestrian/Player/Skeleton3D/Ragdoll/Physical Bone thigh_R/Blood Decal Small"), NodePath("Pedestrian/Player/Skeleton3D/Ragdoll/Physical Bone shin_L/Blood Decal Small"), NodePath("Pedestrian/Player/Skeleton3D/Ragdoll/Physical Bone forearm_R/Blood Decal Small"), NodePath("Pedestrian/Player/Skeleton3D/Ragdoll/Physical Bone Head/Blood Decal Small"), NodePath("Pedestrian/Player/Skeleton3D/Ragdoll/Physical Bone shin_R/Blood Decal Small")]
 GroundBlood = ExtResource("3_a3r0w")
 BloodStreak = Array[PackedScene]([ExtResource("5_18n00"), ExtResource("5_aqhud"), ExtResource("7_optv7")])
 BloodStreakThreshold = 2.4
 BloodStreakDist = 0.4
+Body = NodePath("Pedestrian/Player/Skeleton3D/Body LOW")
+Pants = NodePath("Pedestrian/Player/Skeleton3D/Pants LOW")
+Shorts = NodePath("Pedestrian/Player/Skeleton3D/ShortsLOW")
+Hoodie = NodePath("Pedestrian/Player/Skeleton3D/Hoodie LOW")
+Tshirt = NodePath("Pedestrian/Player/Skeleton3D/Tshirt LOW")
+Tanktop = NodePath("Pedestrian/Player/Skeleton3D/Tank Top LOW")
+Socks = NodePath("Pedestrian/Player/Skeleton3D/Socks LOW")
+Shoes = NodePath("Pedestrian/Player/Skeleton3D/Shoes LOW")
+WomanHair = [NodePath("Pedestrian/Player/Skeleton3D/Afro LOW"), NodePath("Pedestrian/Player/Skeleton3D/Dreds LOW"), NodePath("Pedestrian/Player/Skeleton3D/Long Hair LOW"), NodePath("Pedestrian/Player/Skeleton3D/Pony Tail LOW")]
+ManHair = [NodePath("Pedestrian/Player/Skeleton3D/Afro LOW"), NodePath("Pedestrian/Player/Skeleton3D/Baseball Hat LOW"), NodePath("Pedestrian/Player/Skeleton3D/Corn Rows LOW"), NodePath("Pedestrian/Player/Skeleton3D/Dreds LOW"), NodePath("Pedestrian/Player/Skeleton3D/Hair Box LOW"), NodePath("Pedestrian/Player/Skeleton3D/Short Hair LOW")]
+SeveredWomanHair = [NodePath("Ped_Head/Head2/Head/Afro LOW_001"), NodePath("Ped_Head/Head2/Head/Dreds LOW_001"), NodePath("Ped_Head/Head2/Head/Long Hair LOW_001"), NodePath("Ped_Head/Head2/Head/Pony Tail LOW_001")]
+SeveredManHair = [NodePath("Pedestrian/Player/Skeleton3D/Afro LOW"), NodePath("Pedestrian/Player/Skeleton3D/Baseball Hat LOW"), NodePath("Pedestrian/Player/Skeleton3D/Corn Rows LOW"), NodePath("Pedestrian/Player/Skeleton3D/Dreds LOW"), NodePath("Pedestrian/Player/Skeleton3D/Hair Box LOW"), NodePath("Pedestrian/Player/Skeleton3D/Short Hair LOW")]
+Stroller = NodePath("Pedestrian/Player/Skeleton3D/hand_R/Stroller")
+StrollerCol = NodePath("StrollerCol")
 
 [node name="Pedestrian" parent="." unique_id=1459903753 instance=ExtResource("1_lhsvs")]
 
-[node name="Player" parent="Pedestrian" index="0" unique_id=867403538]
+[node name="Player" parent="Pedestrian" index="0" unique_id=1768344938]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
-[node name="Stroller" parent="Pedestrian/Player/Skeleton3D/hand_R" parent_id_path=PackedInt32Array(1459903753, 766129842) index="0" unique_id=859621940]
+[node name="Stroller" parent="Pedestrian/Player/Skeleton3D/hand_R" parent_id_path=PackedInt32Array(1459903753, 1329087237) index="0" unique_id=164454833]
 visible = false
+layers = 2
 surface_material_override/0 = ExtResource("2_v2yr3")
 surface_material_override/1 = ExtResource("3_ujsu2")
 surface_material_override/2 = ExtResource("4_cjcea")
 surface_material_override/3 = ExtResource("5_80bfy")
 surface_material_override/4 = ExtResource("6_5s4b4")
 
-[node name="Afro LOW" parent="Pedestrian/Player/Skeleton3D" parent_id_path=PackedInt32Array(1459903753, 674864602) index="1" unique_id=401613677]
+[node name="Afro LOW" parent="Pedestrian/Player/Skeleton3D" parent_id_path=PackedInt32Array(1459903753, 1745754886) index="1" unique_id=980963369]
 visible = false
+layers = 2
+surface_material_override/0 = SubResource("StandardMaterial3D_46f4k")
+script = ExtResource("15_fklor")
+Colors = Array[Color]([Color(0.051970966, 0.05197096, 0.05197095, 1), Color(0.122013755, 0.07517596, 0.0023897279, 1), Color(0.16260222, 0.11908462, 0.020149264, 1), Color(0.24665979, 0.17095295, 0.06834947, 1), Color(0.25458923, 0.12868193, 0.03872468, 1), Color(0.31447065, 0.10837855, 0.074814074, 1), Color(0.39404455, 0.2075055, 0.07637245, 1), Color(0.38424274, 0.27342644, 0.07741933, 1), Color(0.4164417, 0.34397134, 0.13063633, 1)])
 
-[node name="Baseball Hat LOW" parent="Pedestrian/Player/Skeleton3D" parent_id_path=PackedInt32Array(1459903753, 674864602) index="2" unique_id=458395200]
+[node name="Baseball Hat LOW" parent="Pedestrian/Player/Skeleton3D" parent_id_path=PackedInt32Array(1459903753, 1745754886) index="2" unique_id=393640283]
 visible = false
+layers = 2
+surface_material_override/0 = SubResource("StandardMaterial3D_r2wrd")
+surface_material_override/1 = SubResource("StandardMaterial3D_hiiit")
+script = ExtResource("15_fklor")
+Colors = Array[Color]([Color(0.5271557, 0.14050439, 0.19636843, 1), Color(0.59818625, 0.4374482, 0.17501214, 1), Color(0.35060272, 0.6519481, 0.3994046, 1), Color(0.15026072, 0.28096935, 0.5903531, 1), Color(0.25176838, 0.12769076, 0.38073337, 1)])
 
-[node name="Body LOW" parent="Pedestrian/Player/Skeleton3D" parent_id_path=PackedInt32Array(1459903753, 674864602) index="3" unique_id=2040238782]
-"blend_shapes/Short Sleeve Shrink" = 1.0
-"blend_shapes/Pants Shrink" = 1.0
+[node name="Body LOW" parent="Pedestrian/Player/Skeleton3D" parent_id_path=PackedInt32Array(1459903753, 1745754886) index="3" unique_id=1558121113]
+layers = 2
+surface_material_override/0 = SubResource("StandardMaterial3D_fmgf3")
+script = ExtResource("15_fklor")
+Colors = Array[Color]([Color(0.18228719, 0.14694777, 0.06338226, 1), Color(0.4004299, 0.327663, 0.22318035, 1), Color(0.74864525, 0.6093473, 0.52897054, 1)])
 
-[node name="Corn Rows LOW" parent="Pedestrian/Player/Skeleton3D" parent_id_path=PackedInt32Array(1459903753, 674864602) index="4" unique_id=762640457]
+[node name="Corn Rows LOW" parent="Pedestrian/Player/Skeleton3D" parent_id_path=PackedInt32Array(1459903753, 1745754886) index="4" unique_id=1634143599]
 visible = false
+layers = 2
+surface_material_override/0 = SubResource("StandardMaterial3D_46f4k")
+script = ExtResource("15_fklor")
+Colors = Array[Color]([Color(0.051970966, 0.05197096, 0.05197095, 1), Color(0.122013755, 0.07517596, 0.0023897279, 1), Color(0.16260222, 0.11908462, 0.020149264, 1), Color(0.24665979, 0.17095295, 0.06834947, 1), Color(0.25458923, 0.12868193, 0.03872468, 1), Color(0.31447065, 0.10837855, 0.074814074, 1), Color(0.39404455, 0.2075055, 0.07637245, 1), Color(0.38424274, 0.27342644, 0.07741933, 1), Color(0.4164417, 0.34397134, 0.13063633, 1)])
 
-[node name="Hair Box LOW" parent="Pedestrian/Player/Skeleton3D" parent_id_path=PackedInt32Array(1459903753, 674864602) index="6" unique_id=2053682837]
+[node name="Dreds LOW" parent="Pedestrian/Player/Skeleton3D" parent_id_path=PackedInt32Array(1459903753, 1745754886) index="5" unique_id=1471795637]
 visible = false
+layers = 2
+surface_material_override/0 = SubResource("StandardMaterial3D_46f4k")
+script = ExtResource("15_fklor")
+Colors = Array[Color]([Color(0.051970966, 0.05197096, 0.05197095, 1), Color(0.122013755, 0.07517596, 0.0023897279, 1), Color(0.16260222, 0.11908462, 0.020149264, 1), Color(0.24665979, 0.17095295, 0.06834947, 1), Color(0.25458923, 0.12868193, 0.03872468, 1), Color(0.31447065, 0.10837855, 0.074814074, 1), Color(0.39404455, 0.2075055, 0.07637245, 1), Color(0.38424274, 0.27342644, 0.07741933, 1), Color(0.4164417, 0.34397134, 0.13063633, 1)])
 
-[node name="Hoodie LOW" parent="Pedestrian/Player/Skeleton3D" parent_id_path=PackedInt32Array(1459903753, 674864602) index="7" unique_id=644768399]
+[node name="Hair Box LOW" parent="Pedestrian/Player/Skeleton3D" parent_id_path=PackedInt32Array(1459903753, 1745754886) index="6" unique_id=711074704]
 visible = false
+layers = 2
+surface_material_override/0 = SubResource("StandardMaterial3D_46f4k")
+script = ExtResource("15_fklor")
+Colors = Array[Color]([Color(0.051970966, 0.05197096, 0.05197095, 1), Color(0.122013755, 0.07517596, 0.0023897279, 1), Color(0.16260222, 0.11908462, 0.020149264, 1), Color(0.24665979, 0.17095295, 0.06834947, 1), Color(0.25458923, 0.12868193, 0.03872468, 1), Color(0.31447065, 0.10837855, 0.074814074, 1), Color(0.39404455, 0.2075055, 0.07637245, 1), Color(0.38424274, 0.27342644, 0.07741933, 1), Color(0.4164417, 0.34397134, 0.13063633, 1)])
 
-[node name="Long Hair LOW" parent="Pedestrian/Player/Skeleton3D" parent_id_path=PackedInt32Array(1459903753, 674864602) index="8" unique_id=2125580284]
+[node name="Hoodie LOW" parent="Pedestrian/Player/Skeleton3D" parent_id_path=PackedInt32Array(1459903753, 1745754886) index="7" unique_id=1051695797]
 visible = false
+layers = 2
+surface_material_override/0 = SubResource("StandardMaterial3D_kt83r")
+script = ExtResource("15_fklor")
+Colors = Array[Color]([Color(0.06469653, 0.06469653, 0.06469653, 1), Color(0.8992589, 0.89925826, 0.8992584, 1), Color(0.40069774, 0.40069774, 0.40069768, 1), Color(0.16103852, 0.3239389, 0.68772876, 1), Color(0.80954534, 0.36298776, 0.5017718, 1), Color(0.40974224, 0.58155227, 0.16882974, 1), Color(0.43117353, 0.42124563, 0.8697384, 1), Color(0.74640435, 0.50222945, 0.15010196, 1), Color(0.5791201, 0.5747648, 0.16853222, 1), Color(0.11493068, 0.7296576, 0.64980847, 1)])
 
-[node name="Pants LOW" parent="Pedestrian/Player/Skeleton3D" parent_id_path=PackedInt32Array(1459903753, 674864602) index="9" unique_id=1623162718]
-blend_shapes/Shrink = 1.0
-blend_shapes/Woman = 1.0
-
-[node name="Pony Tail LOW" parent="Pedestrian/Player/Skeleton3D" parent_id_path=PackedInt32Array(1459903753, 674864602) index="10" unique_id=516626477]
+[node name="Long Hair LOW" parent="Pedestrian/Player/Skeleton3D" parent_id_path=PackedInt32Array(1459903753, 1745754886) index="8" unique_id=2029803103]
 visible = false
+layers = 2
+surface_material_override/0 = SubResource("StandardMaterial3D_46f4k")
+script = ExtResource("15_fklor")
+Colors = Array[Color]([Color(0.051970966, 0.05197096, 0.05197095, 1), Color(0.122013755, 0.07517596, 0.0023897279, 1), Color(0.16260222, 0.11908462, 0.020149264, 1), Color(0.24665979, 0.17095295, 0.06834947, 1), Color(0.25458923, 0.12868193, 0.03872468, 1), Color(0.31447065, 0.10837855, 0.074814074, 1), Color(0.39404455, 0.2075055, 0.07637245, 1), Color(0.38424274, 0.27342644, 0.07741933, 1), Color(0.4164417, 0.34397134, 0.13063633, 1)])
 
-[node name="Round Glasses LOW" parent="Pedestrian/Player/Skeleton3D" parent_id_path=PackedInt32Array(1459903753, 674864602) index="11" unique_id=1623564308]
+[node name="Pants LOW" parent="Pedestrian/Player/Skeleton3D" parent_id_path=PackedInt32Array(1459903753, 1745754886) index="9" unique_id=117281553]
 visible = false
+layers = 2
+surface_material_override/0 = SubResource("StandardMaterial3D_4htnb")
+script = ExtResource("15_fklor")
+Colors = Array[Color]([Color(0.080783345, 0.080783345, 0.080783345, 1), Color(0.1642392, 0.30838537, 0.48420203, 1), Color(0.36509132, 0.31222653, 0.18345323, 1), Color(0.24477637, 0.2447764, 0.24477637, 1), Color(0.02561787, 0.118267395, 0.27015957, 1)])
 
-[node name="Short Hair LOW" parent="Pedestrian/Player/Skeleton3D" parent_id_path=PackedInt32Array(1459903753, 674864602) index="13" unique_id=926355214]
+[node name="Pony Tail LOW" parent="Pedestrian/Player/Skeleton3D" parent_id_path=PackedInt32Array(1459903753, 1745754886) index="10" unique_id=1257872964]
 visible = false
+layers = 2
+surface_material_override/0 = SubResource("StandardMaterial3D_46f4k")
+script = ExtResource("15_fklor")
+Colors = Array[Color]([Color(0.051970966, 0.05197096, 0.05197095, 1), Color(0.122013755, 0.07517596, 0.0023897279, 1), Color(0.16260222, 0.11908462, 0.020149264, 1), Color(0.24665979, 0.17095295, 0.06834947, 1), Color(0.25458923, 0.12868193, 0.03872468, 1), Color(0.31447065, 0.10837855, 0.074814074, 1), Color(0.39404455, 0.2075055, 0.07637245, 1), Color(0.38424274, 0.27342644, 0.07741933, 1), Color(0.4164417, 0.34397134, 0.13063633, 1)])
 
-[node name="ShortsLOW" parent="Pedestrian/Player/Skeleton3D" parent_id_path=PackedInt32Array(1459903753, 674864602) index="14" unique_id=598180907]
+[node name="Round Glasses LOW" parent="Pedestrian/Player/Skeleton3D" parent_id_path=PackedInt32Array(1459903753, 1745754886) index="11" unique_id=1724275198]
 visible = false
-blend_shapes/Shrink = 1.0
+layers = 2
 
-[node name="Socks LOW" parent="Pedestrian/Player/Skeleton3D" parent_id_path=PackedInt32Array(1459903753, 674864602) index="15" unique_id=2023988160]
+[node name="Shoes LOW" parent="Pedestrian/Player/Skeleton3D" parent_id_path=PackedInt32Array(1459903753, 1745754886) index="12" unique_id=2066385969]
+layers = 2
+surface_material_override/0 = SubResource("StandardMaterial3D_8hjmc")
+script = ExtResource("15_fklor")
+Colors = Array[Color]([Color(0.14406255, 0.14406255, 0.14406255, 1), Color(0.28485027, 0.28485027, 0.28485027, 1), Color(0.92099476, 0.9209946, 0.9209946, 1)])
+
+[node name="Short Hair LOW" parent="Pedestrian/Player/Skeleton3D" parent_id_path=PackedInt32Array(1459903753, 1745754886) index="13" unique_id=1217709246]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0034389496, 0)
 visible = false
+layers = 2
+surface_material_override/0 = SubResource("StandardMaterial3D_46f4k")
+script = ExtResource("15_fklor")
+Colors = Array[Color]([Color(0.051970966, 0.05197096, 0.05197095, 1), Color(0.122013755, 0.07517596, 0.0023897279, 1), Color(0.16260222, 0.11908462, 0.020149264, 1), Color(0.24665979, 0.17095295, 0.06834947, 1), Color(0.25458923, 0.12868193, 0.03872468, 1), Color(0.31447065, 0.10837855, 0.074814074, 1), Color(0.39404455, 0.2075055, 0.07637245, 1), Color(0.38424274, 0.27342644, 0.07741933, 1), Color(0.4164417, 0.34397134, 0.13063633, 1)])
 
-[node name="Tank Top LOW" parent="Pedestrian/Player/Skeleton3D" parent_id_path=PackedInt32Array(1459903753, 674864602) index="16" unique_id=603932665]
+[node name="ShortsLOW" parent="Pedestrian/Player/Skeleton3D" parent_id_path=PackedInt32Array(1459903753, 1745754886) index="14" unique_id=794048673]
 visible = false
+layers = 2
+surface_material_override/0 = SubResource("StandardMaterial3D_6b70b")
+script = ExtResource("15_fklor")
+Colors = Array[Color]([Color(0.06879827, 0.06879828, 0.06879828, 1), Color(0.19056511, 0.2964543, 0.42242447, 1), Color(0.26657522, 0.2665752, 0.2665752, 1), Color(0.8992584, 0.8992584, 0.8992584, 1), Color(0.4518296, 0.41099393, 0.28129265, 1), Color(0.15988848, 0.3369203, 0.1393243, 1), Color(0.43057272, 0.12707758, 0.1485259, 1)])
 
-[node name="Ragdoll" type="PhysicalBoneSimulator3D" parent="Pedestrian/Player/Skeleton3D" parent_id_path=PackedInt32Array(1459903753, 674864602) index="18" unique_id=1203951848]
+[node name="Socks LOW" parent="Pedestrian/Player/Skeleton3D" parent_id_path=PackedInt32Array(1459903753, 1745754886) index="15" unique_id=1004033255]
+visible = false
+layers = 2
+surface_material_override/0 = SubResource("StandardMaterial3D_6a50e")
+script = ExtResource("15_fklor")
+Colors = Array[Color]([Color(0.8732984, 0.8732984, 0.8732984, 1), Color(0.12955844, 0.12955847, 0.12955844, 1)])
+
+[node name="Tank Top LOW" parent="Pedestrian/Player/Skeleton3D" parent_id_path=PackedInt32Array(1459903753, 1745754886) index="16" unique_id=1870025168]
+visible = false
+layers = 2
+surface_material_override/0 = SubResource("StandardMaterial3D_dfspx")
+script = ExtResource("15_fklor")
+Colors = Array[Color]([Color(0.06469653, 0.06469653, 0.06469653, 1), Color(0.9340804, 0.9340805, 0.93408036, 1), Color(0.40069774, 0.40069774, 0.40069768, 1), Color(0.061281033, 0.35690737, 0.99999994, 1), Color(0.9303546, 0.21745804, 0.3748497, 1), Color(3.657937e-06, 0.6294837, 5.7756904e-07, 1), Color(0.54608464, 0.30447388, 0.97756344, 1), Color(0.78184605, 0.48356515, 0.024459856, 1), Color(0.63922274, 0.67105734, 0, 1), Color(2.7915835e-06, 0.73490745, 0.64819473, 1), Color(0.6266108, 0.2519163, 0.47471988, 1), Color(0.027859258, 0.18784702, 0.026606763, 1), Color(0.66656864, 0.6665687, 0.6665685, 1)])
+
+[node name="Tshirt LOW" parent="Pedestrian/Player/Skeleton3D" parent_id_path=PackedInt32Array(1459903753, 1745754886) index="17" unique_id=1674629579]
+visible = false
+layers = 2
+surface_material_override/0 = SubResource("StandardMaterial3D_omt6i")
+script = ExtResource("15_fklor")
+Colors = Array[Color]([Color(0.06469653, 0.06469653, 0.06469653, 1), Color(0.8346154, 0.83461386, 0.83461416, 1), Color(0.40069774, 0.40069774, 0.40069768, 1), Color(0.19772857, 0.41199264, 0.83445585, 1), Color(0.8535217, 0.33242363, 0.40649158, 1), Color(3.657937e-06, 0.6294837, 5.7756904e-07, 1), Color(0.54608464, 0.30447388, 0.97756344, 1), Color(0.78184605, 0.48356515, 0.024459856, 1), Color(0.63922274, 0.67105734, 0, 1), Color(2.7915835e-06, 0.73490745, 0.64819473, 1), Color(0.18000486, 0.18000486, 0.18000486, 1), Color(0.81675005, 0.24219307, 0.1236917, 1), Color(0.2500085, 0.41956863, 0.49407464, 1)])
+
+[node name="Ragdoll" type="PhysicalBoneSimulator3D" parent="Pedestrian/Player/Skeleton3D" parent_id_path=PackedInt32Array(1459903753, 1745754886) index="18" unique_id=1203951848]
 active = false
 
 [node name="Physical Bone spine" type="PhysicalBone3D" parent="Pedestrian/Player/Skeleton3D/Ragdoll" unique_id=1508145829]
-transform = Transform3D(-0.9997289, -0.0028873717, 0.023106456, -0.023008917, -0.030177856, -0.99927974, 0.003582595, -0.99954045, 0.030103238, -0.0026353316, 1.0950886, 0.052953303)
+transform = Transform3D(-0.9997289, -0.0028873717, 0.023106454, -0.023008917, -0.030177856, -0.9992797, 0.003582595, -0.99954045, 0.030103236, -0.002635332, 1.095099, 0.05295299)
 collision_layer = 16
 collision_mask = 255
 joint_type = 5
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00066645606, 0.00031754412, 0.08525576)
-body_offset = Transform3D(0.9999975, 5.877833e-05, 0.0022544237, 0.0022544225, 7.5306743e-06, -0.9999977, -5.8795093e-05, 1.0000002, 7.400289e-06, 0.00047423318, 0.08525705, -0.0003182143)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0006662168, 0.00031754404, 0.08526611)
+body_offset = Transform3D(0.9999975, 5.877833e-05, 0.0022544237, 0.0022544225, 7.5306743e-06, -0.99999774, -5.8795093e-05, 1.0000002, 7.400289e-06, 0.00047397055, 0.085267425, -0.0003182143)
+mass = 4.0
 bone_name = "spine"
 joint_constraints/x/linear_limit_enabled = true
 joint_constraints/x/linear_limit_upper = 0.0
@@ -620,6 +797,7 @@ debug_color = Color(1, 0, 0.2570362, 0.41960785)
 transform = Transform3D(0.26470903, 0.9590029, 0.101316385, -0.9600683, 0.2521757, 0.121361285, 0.09083712, -0.1293934, 0.9874315, 0.113764755, 0.062063448, -0.036904335)
 visible = false
 size = Vector3(0.3911621, 0.15924378, 0.35)
+cull_mask = 1047554
 
 [node name="Blood Decal Spatter" parent="Pedestrian/Player/Skeleton3D/Ragdoll/Physical Bone spine/Blood Decal Small2" unique_id=644771901 instance=ExtResource("10_mckh7")]
 transform = Transform3D(0.9999991, -3.7550926e-06, -6.183982e-07, 8.940697e-08, 0.9999881, -4.0978193e-07, -1.5869737e-06, 1.3913959e-06, 0.9999494, -1.937151e-07, 0.04605046, 0.035704017)
@@ -629,18 +807,125 @@ size = Vector3(0.53222656, 0.13800049, 0.52160645)
 transform = Transform3D(0.9995095, 0.019506058, 0.024940206, -0.021002948, 0.9979066, 0.06124132, -0.023693267, -0.061733734, 0.9978135, -0.051356047, -0.12483807, 0.060308218)
 visible = false
 size = Vector3(0.29987794, 0.083544925, 0.37407225)
+cull_mask = 1047554
 
 [node name="Blood Decal Spatter" parent="Pedestrian/Player/Skeleton3D/Ragdoll/Physical Bone spine/Blood Decal Small" unique_id=630261976 instance=ExtResource("10_mckh7")]
 transform = Transform3D(1, 0, -1.0826625e-08, 6.9849193e-07, 1, -5.3830445e-07, -2.438901e-08, -5.029142e-08, 1.0000447, 0.012054447, 0.18548566, 1.1920929e-07)
 size = Vector3(0.42926025, 0.47253418, 0.44921875)
 
+[node name="Blood Spatter R" parent="Pedestrian/Player/Skeleton3D/Ragdoll/Physical Bone spine" unique_id=1211169511 instance=ExtResource("16_thgqf")]
+transform = Transform3D(-1.4444191, 0.6253189, 0.22523254, 0.5794287, 1.4486749, -0.3061099, -0.32560065, -0.196003, -1.5439129, -0.13628781, 0.030056948, 0.11433233)
+visible = false
+
+[node name="Blood Spatter L" parent="Pedestrian/Player/Skeleton3D/Ragdoll/Physical Bone spine" unique_id=256901590 instance=ExtResource("16_thgqf")]
+transform = Transform3D(-1.4458867, 0.62531877, -0.21561128, 0.6443379, 1.448675, -0.11945493, 0.14946747, -0.196003, -1.5707777, 0.14040379, 0.03115305, 0.10582534)
+visible = false
+
+[node name="Intestine Joint" type="Generic6DOFJoint3D" parent="Pedestrian/Player/Skeleton3D/Ragdoll/Physical Bone spine" unique_id=139677823]
+node_a = NodePath("..")
+node_b = NodePath("Guts/Guts Full/Guts Rig/Skeleton3D/PhysicalBoneSimulator3D/Physical Bone Bone")
+
+[node name="Guts" parent="Pedestrian/Player/Skeleton3D/Ragdoll/Physical Bone spine/Intestine Joint" unique_id=1407316508 instance=ExtResource("17_g5xge")]
+transform = Transform3D(1, -3.3469405e-10, 2.3283064e-09, 0, -5.7742e-08, 1, 5.456968e-10, -1, -2.7939677e-08, -0.024934696, 0.00067555904, 0.026305914)
+
+[node name="Physical Bone Bone" parent="Pedestrian/Player/Skeleton3D/Ragdoll/Physical Bone spine/Intestine Joint/Guts/Guts Full/Guts Rig/Skeleton3D/PhysicalBoneSimulator3D" parent_id_path=PackedInt32Array(1407316508, 698350907) index="0" unique_id=1745897766]
+transform = Transform3D(0.8206941, -0.54308605, -0.17753515, 2.1979213e-07, -0.31071925, 0.95050186, -0.5713678, -0.78007126, -0.25500527, 0.021054845, -0.112733245, 0.030242428)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.313226e-09, -2.540648e-06, 0.11860304)
+body_offset = Transform3D(-0.82069445, 0.54308575, 0.17753486, 1.6763806e-07, 0.31071946, -0.95050174, -0.5713675, -0.7800715, -0.25500578, -0.021054804, 0.112733185, 0.030242473)
+
+[node name="Physical Bone Bone_001" parent="Pedestrian/Player/Skeleton3D/Ragdoll/Physical Bone spine/Intestine Joint/Guts/Guts Full/Guts Rig/Skeleton3D/PhysicalBoneSimulator3D" parent_id_path=PackedInt32Array(1407316508, 698350907) index="1" unique_id=489409610]
+transform = Transform3D(-0.99662566, 0.0008664122, -0.082076654, -0.08204779, -0.039058097, 0.99586284, -0.00234293, 0.9992366, 0.038997397, 0.048626464, -0.30452, 0.057389382)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.111858e-07, -2.3166501e-06, 0.07940298)
+body_offset = Transform3D(1, -7.9278834e-08, -2.991801e-07, -2.8857175e-07, -2.1606684e-07, -0.99999994, 7.939525e-08, 0.99999994, -1.937151e-07, -3.874302e-07, 0.07940298, 2.3320317e-06)
+
+[node name="Physical Bone Bone_002" parent="Pedestrian/Player/Skeleton3D/Ragdoll/Physical Bone spine/Intestine Joint/Guts/Guts Full/Guts Rig/Skeleton3D/PhysicalBoneSimulator3D" parent_id_path=PackedInt32Array(1407316508, 698350907) index="2" unique_id=1663494660]
+transform = Transform3D(-0.9913977, 0.001479855, 0.1308754, 0.13071808, -0.039105296, 0.99064815, 0.006583943, 0.999234, 0.038575478, 0.04375953, -0.4697793, 0.050935477)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9888578e-06, -9.4687874e-07, 0.08699697)
+body_offset = Transform3D(1.0000002, 1.3969839e-08, -5.943584e-07, -5.8242586e-07, 1.5646219e-07, -1, -7.450581e-09, 1.0000001, 1.7881393e-07, -1.937151e-06, 0.08699697, 9.313226e-07)
+
+[node name="Physical Bone Bone_003" parent="Pedestrian/Player/Skeleton3D/Ragdoll/Physical Bone spine/Intestine Joint/Guts/Guts Full/Guts Rig/Skeleton3D/PhysicalBoneSimulator3D" parent_id_path=PackedInt32Array(1407316508, 698350907) index="3" unique_id=1487736040]
+transform = Transform3D(-0.5963547, 0.0010210157, -0.80272037, -0.80220264, -0.03668967, 0.5959235, -0.028843112, 0.9993261, 0.022699136, 0.08311258, -0.59361047, 0.046145134)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.0288032e-06, -5.30186e-07, 0.06321003)
+body_offset = Transform3D(1, -2.719462e-07, 1.972774e-06, 1.8801074e-06, 3.5762787e-07, -1.0000001, 2.6077032e-07, 1, 3.7252903e-07, 3.9041042e-06, 0.06321004, 5.066395e-07)
+
+[node name="Physical Bone Bone_004" parent="Pedestrian/Player/Skeleton3D/Ragdoll/Physical Bone spine/Intestine Joint/Guts/Guts Full/Guts Rig/Skeleton3D/PhysicalBoneSimulator3D" parent_id_path=PackedInt32Array(1407316508, 698350907) index="4" unique_id=851912135]
+transform = Transform3D(-0.8428527, -0.008403439, 0.5380787, 0.53793955, 0.01442958, 0.8428599, -0.014847155, 0.9998606, -0.007641446, 0.1041553, -0.67778635, 0.045132175)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3948774e-06, -3.3264683e-07, 0.055186324)
+body_offset = Transform3D(1.0000005, 4.6431087e-06, 6.220925e-05, 6.237494e-05, 9.04873e-06, -1.0000001, -4.6086498e-06, 1, 9.065494e-06, -4.827976e-06, 0.05518633, -1.6763806e-07)
+
+[node name="Physical Bone Bone_005" parent="Pedestrian/Player/Skeleton3D/Ragdoll/Physical Bone spine/Intestine Joint/Guts/Guts Full/Guts Rig/Skeleton3D/PhysicalBoneSimulator3D" parent_id_path=PackedInt32Array(1407316508, 698350907) index="5" unique_id=830232737]
+transform = Transform3D(0.2653097, -0.07346487, 0.9613603, 0.96369195, -0.0109697115, -0.26679146, 0.030145662, 0.9972374, 0.06788712, 0.018058892, -0.7086312, 0.0415717)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.239322e-07, -3.2827256e-07, 0.058669776)
+body_offset = Transform3D(1.0000005, -2.0861626e-07, 6.635673e-08, 1.1874363e-08, 1.8626451e-08, -1.0000005, 2.1979213e-07, 0.9999998, -5.5879354e-08, -3.2782555e-07, 0.058669806, 3.3155084e-07)
+
+[node name="Physical Bone Bone_007" parent="Pedestrian/Player/Skeleton3D/Ragdoll/Physical Bone spine/Intestine Joint/Guts/Guts Full/Guts Rig/Skeleton3D/PhysicalBoneSimulator3D" parent_id_path=PackedInt32Array(1407316508, 698350907) index="6" unique_id=1691270888]
+transform = Transform3D(-0.99828357, 0.0024548003, -0.058513466, -0.058229428, 0.06518915, 0.9961726, 0.006259848, 0.9978699, -0.06493428, 0.1621938, -0.28447276, 0.055739637)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4866702e-07, -4.0522963e-08, 0.07959638)
+body_offset = Transform3D(1.0000001, -1.21071935e-08, -1.2875535e-07, -1.3402314e-07, 1.7881393e-07, -1.0000002, 1.3969839e-08, 1.0000002, 2.0489097e-07, -2.3841858e-07, 0.0795964, 2.4214387e-08)
+
+[node name="Physical Bone Bone_008" parent="Pedestrian/Player/Skeleton3D/Ragdoll/Physical Bone spine/Intestine Joint/Guts/Guts Full/Guts Rig/Skeleton3D/PhysicalBoneSimulator3D" parent_id_path=PackedInt32Array(1407316508, 698350907) index="7" unique_id=615450118]
+transform = Transform3D(-0.99753356, -0.0013431681, -0.07017912, -0.06996523, -0.06127335, 0.99566597, -0.0056374553, 0.99812007, 0.06102827, 0.1729734, -0.45066428, 0.055581234)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.8796196e-06, -9.025806e-07, 0.08728892)
+body_offset = Transform3D(0.99999994, -2.2398308e-07, 2.1304004e-07, 2.0320294e-07, 2.2351742e-07, -0.99999994, 2.2212043e-07, 1.0000001, 2.682209e-07, 2.861023e-06, 0.087288916, 8.791685e-07)
+
+[node name="Physical Bone Bone_010" parent="Pedestrian/Player/Skeleton3D/Ragdoll/Physical Bone spine/Intestine Joint/Guts/Guts Full/Guts Rig/Skeleton3D/PhysicalBoneSimulator3D" parent_id_path=PackedInt32Array(1407316508, 698350907) index="8" unique_id=477033182]
+transform = Transform3D(-0.62679654, 0.016832294, 0.77900106, 0.7790278, 0.0334882, 0.6260945, -0.015548712, 0.9992973, -0.034103096, -0.21026655, -0.26194042, 0.04163638)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8914885e-06, -8.780232e-08, 0.07941821)
+body_offset = Transform3D(1.0000001, -2.0172447e-06, 2.7968796e-05, 2.7932125e-05, 3.1106174e-07, -1, 2.0461157e-06, 1.0000001, 3.3155084e-07, -4.1127205e-06, 0.07941821, 6.146729e-08)
+
+[node name="Physical Bone Bone_011" parent="Pedestrian/Player/Skeleton3D/Ragdoll/Physical Bone spine/Intestine Joint/Guts/Guts Full/Guts Rig/Skeleton3D/PhysicalBoneSimulator3D" parent_id_path=PackedInt32Array(1407316508, 698350907) index="9" unique_id=792331186]
+transform = Transform3D(-0.5964698, 0.017616559, -0.8024422, -0.80263364, -0.01087367, 0.59637344, 0.001780536, 0.99978566, 0.020625478, -0.20236017, -0.36352247, 0.042545445)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7335595e-05, 5.276909e-06, 0.086956)
+body_offset = Transform3D(1.0000001, 2.134405e-05, 6.0554128e-05, 6.065378e-05, 1.3411045e-06, -1.0000002, -2.1362677e-05, 1, 1.3448298e-06, 1.2069941e-05, 0.086956024, -5.3942204e-06)
+
+[node name="Physical Bone Bone_012" parent="Pedestrian/Player/Skeleton3D/Ragdoll/Physical Bone spine/Intestine Joint/Guts/Guts Full/Guts Rig/Skeleton3D/PhysicalBoneSimulator3D" parent_id_path=PackedInt32Array(1407316508, 698350907) index="10" unique_id=1038117330]
+transform = Transform3D(-0.66196525, 0.019299174, 0.74928606, 0.74840164, -0.037926063, 0.6621607, 0.041196648, 0.9990942, 0.010662217, -0.18002918, -0.45732492, 0.04008188)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.416131e-06, -1.5528235e-07, 0.06334022)
+body_offset = Transform3D(1.0000006, 7.450581e-09, -8.50996e-08, -3.7252903e-08, -5.401671e-08, -1.0000002, 0, 1.0000002, -1.8626451e-08, -4.4107437e-06, 0.06334023, 1.5646219e-07)
+
+[node name="Physical Bone Bone_013" parent="Pedestrian/Player/Skeleton3D/Ragdoll/Physical Bone spine/Intestine Joint/Guts/Guts Full/Guts Rig/Skeleton3D/PhysicalBoneSimulator3D" parent_id_path=PackedInt32Array(1407316508, 698350907) index="11" unique_id=248676308]
+transform = Transform3D(-0.67556417, 0.043359056, 0.7360251, 0.73617667, -0.015445581, 0.6766133, 0.04070566, 0.9989401, -0.021485433, -0.26809895, -0.5365889, 0.040591456)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.393884e-06, 6.7401004e-07, 0.05517312)
+body_offset = Transform3D(1.0000004, 3.7252903e-07, 4.4970657e-06, 4.4457556e-06, -4.8030633e-06, -1.0000001, -3.7252903e-07, 1.0000004, -4.7890935e-06, 2.1457672e-06, 0.05517313, -4.0978193e-07)
+
+[node name="Physical Bone Bone_015" parent="Pedestrian/Player/Skeleton3D/Ragdoll/Physical Bone spine/Intestine Joint/Guts/Guts Full/Guts Rig/Skeleton3D/PhysicalBoneSimulator3D" parent_id_path=PackedInt32Array(1407316508, 698350907) index="12" unique_id=1325975918]
+transform = Transform3D(-0.9997849, -0.0018890904, 0.020653933, 0.020729465, -0.05906862, 0.9980388, -0.0006653832, 0.9982521, 0.0590951, -0.08576201, -0.2528422, 0.061160028)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0666426e-07, -8.2145203e-07, 0.052534282)
+body_offset = Transform3D(1, -1.1641532e-08, 2.3879693e-07, 2.4895417e-07, 7.1525574e-07, -1, 1.3969839e-08, 1, 7.4505806e-07, -1.1920929e-07, 0.052534282, 7.8231096e-07)
+
+[node name="Physical Bone Bone_017" parent="Pedestrian/Player/Skeleton3D/Ragdoll/Physical Bone spine/Intestine Joint/Guts/Guts Full/Guts Rig/Skeleton3D/PhysicalBoneSimulator3D" parent_id_path=PackedInt32Array(1407316508, 698350907) index="13" unique_id=703854209]
+transform = Transform3D(-0.9995437, 3.7191436e-05, 0.030201841, 0.030201862, 0.00094066747, 0.9995434, 8.768402e-06, 0.9999995, -0.00094133615, -0.037354264, -0.2587815, -0.029272407)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.531177e-07, 6.9039165e-06, 0.064398944)
+body_offset = Transform3D(1, -7.310882e-08, 5.084439e-07, 5.1756797e-07, -1.0244548e-07, -1, 7.7299774e-08, 0.99999994, -7.264316e-08, 3.2037497e-07, 0.064398944, -6.8992376e-06)
+
+[node name="Physical Bone Bone_018" parent="Pedestrian/Player/Skeleton3D/Ragdoll/Physical Bone spine/Intestine Joint/Guts/Guts Full/Guts Rig/Skeleton3D/PhysicalBoneSimulator3D" parent_id_path=PackedInt32Array(1407316508, 698350907) index="14" unique_id=1635414298]
+transform = Transform3D(-0.9997575, -0.00020076125, 0.022016615, 0.022017535, -0.009142572, 0.9997159, 5.8766454e-07, 0.9999581, 0.0091448, -0.041213218, -0.4100324, -0.029998615)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.3344753e-07, -9.2167255e-07, 0.08689659)
+body_offset = Transform3D(1.0000002, -1.07102096e-07, 3.5894045e-06, 3.5894045e-06, -1.1660159e-06, -1.0000001, 1.09896064e-07, 1.0000001, -1.1399388e-06, 5.2154064e-07, 0.0868966, 1.0207295e-06)
+
+[node name="Physical Bone Bone_019" parent="Pedestrian/Player/Skeleton3D/Ragdoll/Physical Bone spine/Intestine Joint/Guts/Guts Full/Guts Rig/Skeleton3D/PhysicalBoneSimulator3D" parent_id_path=PackedInt32Array(1407316508, 698350907) index="15" unique_id=278256613]
+transform = Transform3D(-0.9999816, 0.00022635539, 0.0060551376, 0.006059369, 0.03727591, 0.99928665, 4.856847e-07, 0.99930495, -0.037276566, -0.043448415, -0.560146, -0.0284388)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.1798135e-05, 1.1394397e-06, 0.06323522)
+body_offset = Transform3D(1, 4.2608008e-08, 1.130431e-06, 1.1263728e-06, -1.2340024e-07, -1, -3.934838e-08, 1.0000002, -1.09896064e-07, -6.186962e-05, 0.06323522, -1.1324883e-06)
+
+[node name="Physical Bone Bone_021" parent="Pedestrian/Player/Skeleton3D/Ragdoll/Physical Bone spine/Intestine Joint/Guts/Guts Full/Guts Rig/Skeleton3D/PhysicalBoneSimulator3D" parent_id_path=PackedInt32Array(1407316508, 698350907) index="16" unique_id=49739999]
+transform = Transform3D(-0.9999452, 0.00853392, 0.0060449303, 0.0066264146, 0.06984043, 0.99753624, 0.008090718, 0.99752164, -0.06989312, 0.136145, -0.29287767, -0.04361421)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4533045e-06, 6.1616845e-07, 0.073945984)
+body_offset = Transform3D(1, -1.13621354e-07, -2.0748121e-07, -2.1356391e-07, -1.899898e-07, -1.0000002, 1.17346644e-07, 1.0000001, -1.7136335e-07, -1.437962e-06, 0.073946, -6.03497e-07)
+
+[node name="Physical Bone Bone_023" parent="Pedestrian/Player/Skeleton3D/Ragdoll/Physical Bone spine/Intestine Joint/Guts/Guts Full/Guts Rig/Skeleton3D/PhysicalBoneSimulator3D" parent_id_path=PackedInt32Array(1407316508, 698350907) index="17" unique_id=237787697]
+transform = Transform3D(-0.9998644, 0.008540877, -0.014082827, -0.012271604, 0.18398577, 0.9828524, 0.010985464, 0.9828918, -0.18385597, -0.16644391, -0.20986307, -0.036441974)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.408778e-07, 1.570643e-06, 0.023317812)
+body_offset = Transform3D(1.0000001, 9.033829e-08, -1.0547228e-07, -1.0454096e-07, 6.2584877e-07, -1.0000001, -8.8475645e-08, 1, 7.003546e-07, -2.3841858e-07, 0.023317814, -1.5869737e-06)
+
 [node name="Physical Bone spine_001" type="PhysicalBone3D" parent="Pedestrian/Player/Skeleton3D/Ragdoll" unique_id=1483347457]
-transform = Transform3D(-0.99940896, -0.004960105, 0.03401715, -0.034359727, 0.17537487, -0.983902, -0.0010854966, -0.98448926, -0.17544164, -0.013339164, 1.2310367, 0.06474824)
+transform = Transform3D(-0.999409, -0.004960106, 0.034017153, -0.034359735, 0.17537487, -0.983902, -0.0010854959, -0.98448926, -0.17544164, -0.013340179, 1.2310545, 0.064752206)
 collision_layer = 16
 collision_mask = 255
 joint_type = 5
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00705993, 0.0011636323, 0.073559314)
-body_offset = Transform3D(1, -0.00011597539, 0.0005847378, 0.00058473105, -1.6093254e-06, -1.0000001, 0.0001159762, 1, -1.6391277e-06, 0.007017052, 0.07356346, -0.0011626929)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.007060324, 0.0011643923, 0.07357768)
+body_offset = Transform3D(0.99999994, -0.00011597306, 0.00058472663, 0.00058472, -1.6093254e-06, -1.0000001, 0.000115973526, 1, -1.6391277e-06, 0.0070174355, 0.073581815, -0.0011634529)
+mass = 4.0
 bone_name = "spine.001"
 joint_constraints/x/linear_limit_enabled = true
 joint_constraints/x/linear_limit_upper = 0.0
@@ -712,12 +997,13 @@ shape = SubResource("CylinderShape3D_afm6m")
 debug_color = Color(1, 0, 0.2570362, 0.41960785)
 
 [node name="Physical Bone spine_002" type="PhysicalBone3D" parent="Pedestrian/Player/Skeleton3D/Ragdoll" unique_id=2037416396]
-transform = Transform3D(-0.99998087, 0.0013325601, -0.0060414514, 0.0061828434, 0.18092796, -0.983477, -0.00021747459, -0.98349553, -0.18093273, -0.009480172, 1.3610035, 0.088664636)
+transform = Transform3D(-0.9999809, 0.0013325548, -0.006041466, 0.0061828573, 0.18092796, -0.983477, -0.00021746696, -0.98349553, -0.18093273, -0.009480172, 1.3610035, 0.088664636)
 collision_layer = 16
 collision_mask = 255
 joint_type = 5
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0014505899, 0.0015431743, 0.070619546)
-body_offset = Transform3D(0.99999994, -0.00012182223, 0.0006744902, 0.000674503, -3.874302e-07, -1.0000001, 0.0001218252, 1.0000002, -3.874302e-07, 0.0014031455, 0.07062054, -0.0015429705)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0014505908, 0.0015431743, 0.070619546)
+body_offset = Transform3D(0.9999999, -0.00012181711, 0.00067450415, 0.00067451736, -3.874302e-07, -1.0000001, 0.00012182008, 1.0000002, -3.874302e-07, 0.0014031455, 0.07062054, -0.0015429705)
+mass = 4.0
 bone_name = "spine.002"
 joint_constraints/x/linear_limit_enabled = true
 joint_constraints/x/linear_limit_upper = 0.0
@@ -789,12 +1075,13 @@ shape = SubResource("CylinderShape3D_thgqf")
 debug_color = Color(1, 0, 0.2570362, 0.41960785)
 
 [node name="Physical Bone spine_003" type="PhysicalBone3D" parent="Pedestrian/Player/Skeleton3D/Ragdoll" unique_id=1597539819]
-transform = Transform3D(-0.9997327, -0.0023798028, -0.022999573, 0.023106478, -0.06595838, -0.99755484, 0.0008569694, -0.9978196, 0.06599574, -0.008417786, 1.5307477, 0.096595846)
+transform = Transform3D(-0.9997327, -0.0023798207, -0.022999639, 0.023106547, -0.06595818, -0.99755484, 0.00085698743, -0.9978196, 0.06599553, -0.008417786, 1.5307477, 0.096595846)
 collision_layer = 16
 collision_mask = 255
 joint_type = 5
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0027328734, -0.0008852015, 0.08355334)
-body_offset = Transform3D(0.9999999, 4.0554733e-05, 0.00087493384, 0.00087494886, -1.5124679e-06, -0.9999998, -4.0554325e-05, 1.0000002, -1.527369e-06, 0.0026598051, 0.0835557, 0.0008852184)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0027328786, -0.00088521885, 0.08355334)
+body_offset = Transform3D(0.9999999, 4.057685e-05, 0.000874997, 0.00087501475, -1.3113022e-06, -0.99999976, -4.0576793e-05, 1.0000002, -1.3187528e-06, 0.0026598051, 0.0835557, 0.0008852184)
+mass = 4.0
 bone_name = "spine.003"
 joint_constraints/x/linear_limit_enabled = true
 joint_constraints/x/linear_limit_upper = 0.0
@@ -869,18 +1156,20 @@ debug_color = Color(1, 0, 0.2570362, 0.41960785)
 transform = Transform3D(0.99877155, 0.0011451101, -0.049953435, 0.007899118, 0.98354864, 0.18048134, 0.049338304, -0.18065016, 0.98233867, -0.12968102, 0.046019852, 0.07714617)
 visible = false
 size = Vector3(0.4222168, 0.44518194, 0.35507813)
+cull_mask = 1047554
 
 [node name="Blood Decal Spatter" parent="Pedestrian/Player/Skeleton3D/Ragdoll/Physical Bone spine_003/Blood Decal Small" unique_id=237751253 instance=ExtResource("10_mckh7")]
 transform = Transform3D(0.99993503, 0, -6.236951e-07, 5.5879354e-09, 1, 2.1606684e-07, -4.7768117e-07, 0, 0.9999471, 0.0076603517, 0.037887454, -0.021820307)
 size = Vector3(0.39942932, 0.4532776, 0.4413452)
 
 [node name="Physical Bone spine_004" type="PhysicalBone3D" parent="Pedestrian/Player/Skeleton3D/Ragdoll" unique_id=1555432357]
-transform = Transform3D(-0.9993793, -0.00063832564, -0.035225235, 0.030055048, -0.5371335, -0.8429616, -0.01838257, -0.84349704, 0.5368192, -0.0020557176, 1.6895828, 0.057072375)
+transform = Transform3D(-0.9993793, -0.00063832564, -0.035225235, 0.030055048, -0.5371335, -0.8429616, -0.01838257, -0.84349704, 0.5368192, -0.0020551814, 1.6895828, 0.057072386)
 collision_layer = 16
 collision_mask = 255
 joint_type = 5
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000816718, -0.0016887946, 0.059034806)
-body_offset = Transform3D(1.0000001, 0.00039289147, 0.00056295656, 0.00056248065, 0.0012399256, -0.9999994, -0.00039359834, 0.9999995, 0.001239717, 0.00078414753, 0.059037328, 0.0016152859)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00081618153, -0.0016887943, 0.05903481)
+body_offset = Transform3D(1.0000001, 0.00039289147, 0.00056295656, 0.00056248065, 0.0012399256, -0.9999994, -0.00039359834, 0.9999995, 0.001239717, 0.0007836111, 0.059037328, 0.0016152859)
+mass = 4.0
 bone_name = "spine.004"
 joint_constraints/x/linear_limit_enabled = true
 joint_constraints/x/linear_limit_upper = 0.0
@@ -951,13 +1240,18 @@ transform = Transform3D(0.9999982, -3.115274e-06, 0.00082350895, -0.000822925, -
 shape = SubResource("CylinderShape3D_g5xge")
 debug_color = Color(1, 0, 0.2570362, 0.41960785)
 
+[node name="Blood Spatter Neck" parent="Pedestrian/Player/Skeleton3D/Ragdoll/Physical Bone spine_004" unique_id=792262060 instance=ExtResource("16_thgqf")]
+transform = Transform3D(0.84395367, -0.9669155, 0.1727473, 0.5742587, 0.67050195, 0.9474592, -0.7968653, -0.5408572, 0.8657391, 0, 0, 0)
+visible = false
+
 [node name="Physical Bone Neck" type="PhysicalBone3D" parent="Pedestrian/Player/Skeleton3D/Ragdoll" unique_id=498535267]
-transform = Transform3D(-0.97928405, -0.17167944, 0.1073727, -0.037389014, -0.36783502, -0.92913914, 0.19900951, -0.9139057, 0.35379604, -0.00097107614, 1.8052616, 0.024816105)
+transform = Transform3D(-0.97928405, -0.17167944, 0.10737269, -0.037389014, -0.36783502, -0.92913914, 0.19900951, -0.9139057, 0.35379604, -0.00097109005, 1.8052616, 0.024821542)
 collision_layer = 16
 collision_mask = 255
 joint_type = 5
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0049536973, 0.018002857, 0.083008364)
-body_offset = Transform3D(0.98098314, 0.17166366, -0.0905781, -0.07139797, -0.11479667, -0.99082035, -0.18048581, 0.9784447, -0.1003571, -0.0004311893, 0.08466673, -0.008390248)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0049526016, 0.018007815, 0.08300642)
+body_offset = Transform3D(0.98098314, 0.17166366, -0.09057811, -0.07139797, -0.11479667, -0.99082035, -0.18048581, 0.9784447, -0.1003571, -0.00043114088, 0.0846653, -0.008395493)
+mass = 4.0
 bone_name = "Neck"
 joint_constraints/x/linear_limit_enabled = true
 joint_constraints/x/linear_limit_upper = 0.0
@@ -1029,13 +1323,14 @@ shape = SubResource("CylinderShape3D_3dys0")
 debug_color = Color(1, 0, 0.2570362, 0.41960785)
 
 [node name="Physical Bone Head" type="PhysicalBone3D" parent="Pedestrian/Player/Skeleton3D/Ragdoll" unique_id=168988973]
-transform = Transform3D(0.98789424, 0.040234756, 0.14982049, -0.008885068, 0.97886974, -0.20429167, -0.15487435, 0.20048739, 0.9673773, 0.004576908, 1.9689012, -0.010181982)
+transform = Transform3D(0.98789424, 0.040234756, 0.14982049, -0.008885068, 0.97886974, -0.20429167, -0.15487435, 0.20048739, 0.96737725, 0.004576908, 1.9689012, -0.010181982)
 collision_layer = 16
 collision_mask = 255
 joint_type = 5
-joint_offset = Transform3D(0.9999968, 0, 0, 0, 0.9562959, 0.29236874, 0, -0.29236904, 0.95629495, -0.00890615, -0.1743126, 0.067665964)
+joint_offset = Transform3D(0.9999968, 0, 0, 0, 0.9562959, 0.29236874, 0, -0.29236904, 0.95629495, -0.00890615, -0.17431262, 0.067665964)
 joint_rotation = Vector3(-0.29670602, 0, 0)
-body_offset = Transform3D(-0.9877672, -0.016920583, -0.15501821, 0.034622476, 0.9454875, -0.32381466, 0.1520468, -0.3252204, -0.9333352, -0.0012572184, 0.18702996, 0.007819161)
+body_offset = Transform3D(-0.9877672, -0.016920583, -0.15501821, 0.034622476, 0.9454875, -0.3238147, 0.1520468, -0.3252204, -0.93333524, -0.0012572184, 0.18702996, 0.007819161)
+mass = 4.0
 bone_name = "Head"
 joint_constraints/x/linear_limit_enabled = true
 joint_constraints/x/linear_limit_upper = 0.0
@@ -1110,18 +1405,20 @@ debug_color = Color(1, 0, 0.2570362, 0.41960785)
 transform = Transform3D(0.19091827, 0.9812018, 0.028411984, 0.96674883, -0.18293032, -0.17873651, -0.17017786, 0.061592586, -0.98349357, 0.03785906, -0.09190941, 0.057146072)
 visible = false
 size = Vector3(0.35, 0.31394044, 0.35)
+cull_mask = 1047554
 
 [node name="Blood Decal Spatter" parent="Pedestrian/Player/Skeleton3D/Ragdoll/Physical Bone Head/Blood Decal Small" unique_id=1656889896 instance=ExtResource("10_mckh7")]
 transform = Transform3D(-0.71113986, 0.19274978, 0.6761134, 0.663815, -0.13269001, 0.7360325, 0.2315833, 0.97223425, -0.033588827, 0.035777092, -0.008251756, 0.02044709)
 size = Vector3(0.39899293, 0.36015624, 0.37399903)
 
 [node name="Physical Bone shoulder_L" type="PhysicalBone3D" parent="Pedestrian/Player/Skeleton3D/Ragdoll" unique_id=893447246]
-transform = Transform3D(-0.4652146, 0.06326076, 0.8829346, 0.70001274, 0.6368037, 0.32320794, -0.5418096, 0.7684265, -0.34053367, -0.2081458, 1.6054392, -0.020280343)
+transform = Transform3D(-0.4652146, 0.06326075, 0.8829346, 0.70001274, 0.6368036, 0.3232079, -0.5418096, 0.7684264, -0.34053367, -0.2081491, 1.6054392, -0.020278137)
 collision_layer = 16
 collision_mask = 255
 joint_type = 5
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.018923108, 0.0021790694, 0.16971019)
-body_offset = Transform3D(0.7028368, -0.6944257, -0.15425277, 0.12581584, 0.334778, -0.93386006, 0.7001367, 0.6369436, 0.32266393, 0.04099133, 0.16013688, -0.042898536)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.018923458, 0.002177583, 0.16971385)
+body_offset = Transform3D(0.7028368, -0.6944257, -0.15425277, 0.12581584, 0.33477804, -0.93386006, 0.7001367, 0.63694364, 0.32266396, 0.040991105, 0.16014084, -0.042898536)
+mass = 4.0
 bone_name = "shoulder.L"
 joint_constraints/x/linear_limit_enabled = true
 joint_constraints/x/linear_limit_upper = 0.0
@@ -1196,18 +1493,24 @@ debug_color = Color(1, 0, 0.2570362, 0.41960785)
 transform = Transform3D(-0.43093127, -0.77389634, 0.4641437, -0.88450587, 0.4641686, -0.04724467, -0.17887667, -0.43089914, -0.88452905, -0.007675767, 0.039051414, -0.04749918)
 visible = false
 size = Vector3(0.22641602, 0.273526, 0.34703368)
+cull_mask = 1047554
 
 [node name="Blood Decal Spatter" parent="Pedestrian/Player/Skeleton3D/Ragdoll/Physical Bone shoulder_L/Blood Decal Small" unique_id=256360127 instance=ExtResource("10_mckh7")]
 transform = Transform3D(0.9999988, 0, 9.313226e-10, 2.0861626e-07, 1, 9.313226e-10, 4.1909516e-09, 0, 1, 0.009401679, 0.0030519366, 0.03326407)
 size = Vector3(0.19018555, 0.24389648, 0.43371582)
 
+[node name="Blood Spatter" parent="Pedestrian/Player/Skeleton3D/Ragdoll/Physical Bone shoulder_L" unique_id=376927665 instance=ExtResource("16_thgqf")]
+transform = Transform3D(0.97452503, -1.0867301, -1.3599056, 1.4709806, 1.3474889, -0.022684868, 0.93088233, -0.99162304, 1.459509, 0.020525118, 0.028513167, -0.09006349)
+visible = false
+
 [node name="Physical Bone upper_arm_L" type="PhysicalBone3D" parent="Pedestrian/Player/Skeleton3D/Ragdoll" unique_id=1942196785]
-transform = Transform3D(0.9797862, -0.18608238, 0.07343226, 0.18837133, 0.98176616, -0.025523629, -0.06734381, 0.038840234, 0.9969736, -0.3434248, 1.5955107, 0.02131264)
+transform = Transform3D(0.9797862, -0.18608238, 0.07343226, 0.18837133, 0.98176616, -0.025523629, -0.06734381, 0.038840234, 0.9969736, -0.34342188, 1.5955099, 0.021310508)
 collision_layer = 16
 collision_mask = 255
 joint_type = 5
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.046410978, 0.004180574, 0.0031021165)
-body_offset = Transform3D(-0.13274476, -0.98159695, 0.1372841, -0.98968536, 0.12374224, -0.07219032, 0.053873856, -0.14545089, -0.9878978, 0.009838581, 0.04563889, 0.0011723042)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.04640812, 0.0041820747, 0.0031040027)
+body_offset = Transform3D(-0.13274476, -0.98159695, 0.1372841, -0.98968536, 0.12374224, -0.07219032, 0.053873856, -0.14545089, -0.9878978, 0.009839416, 0.045636013, 0.0011745393)
+mass = 4.0
 bone_name = "upper_arm.L"
 joint_constraints/x/linear_limit_enabled = true
 joint_constraints/x/linear_limit_upper = 0.0
@@ -1279,12 +1582,13 @@ shape = SubResource("CylinderShape3D_fklor")
 debug_color = Color(1, 0, 0.2570362, 0.41960785)
 
 [node name="Physical Bone forearm_L" type="PhysicalBone3D" parent="Pedestrian/Player/Skeleton3D/Ragdoll" unique_id=227459501]
-transform = Transform3D(0.03828999, 0.10844938, -0.9933643, -0.039500896, 0.99348056, 0.10693949, 0.9984857, 0.03514407, 0.042324204, -0.721565, 1.6039565, 0.0131022325)
+transform = Transform3D(0.03828999, 0.108450405, -0.99336416, -0.039500896, 0.99348044, 0.10694051, 0.9984857, 0.03514402, 0.04232424, -0.721565, 1.6039565, 0.0131022325)
 collision_layer = 16
 collision_mask = 255
 joint_type = 5
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.013166521, -0.0023151597, -0.11541031)
-body_offset = Transform3D(-0.056185164, -0.9984024, 0.0060728877, -0.08294706, 0.010729108, 0.9964967, -0.99496907, 0.05548458, -0.08341722, -0.00087082386, 0.11612296, 0.0036015287)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.013166521, -0.0023150395, -0.11541032)
+body_offset = Transform3D(-0.056185164, -0.9984024, 0.006071849, -0.08294706, 0.010728067, 0.9964967, -0.99496907, 0.055484675, -0.08341716, -0.00087082386, 0.11612296, 0.0036015287)
+mass = 4.0
 bone_name = "forearm.L"
 joint_constraints/x/linear_limit_enabled = true
 joint_constraints/x/linear_limit_upper = 0.0
@@ -1356,12 +1660,13 @@ shape = SubResource("CylinderShape3D_46f4k")
 debug_color = Color(1, 0, 0.2570362, 0.41960785)
 
 [node name="Physical Bone hand_L" type="PhysicalBone3D" parent="Pedestrian/Player/Skeleton3D/Ragdoll" unique_id=1615601962]
-transform = Transform3D(-0.063329324, -0.99797386, -0.0061334353, -0.9966747, 0.06292875, 0.051763758, -0.051272903, 0.0093912035, -0.9986406, -0.9340517, 1.6258475, 0.011067762)
+transform = Transform3D(-0.063329324, -0.99797386, -0.0061334353, -0.9966747, 0.06292875, 0.051763754, -0.051272903, 0.0093912035, -0.99864054, -0.9340517, 1.6258475, 0.011067762)
 collision_layer = 16
 collision_mask = 255
 joint_type = 5
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0016655412, -0.07601912, -0.0008003572)
-body_offset = Transform3D(0.9999858, -0.0035958565, 0.004086029, 0.0033160478, 0.9977785, 0.066546194, -0.004316248, -0.0665316, 0.99777555, -0.0019356012, 0.07589799, -0.0042519085)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0016655413, -0.07601913, -0.0008003572)
+body_offset = Transform3D(0.9999858, -0.0035958565, 0.004086029, 0.0033160478, 0.9977785, 0.0665462, -0.004316248, -0.0665316, 0.9977756, -0.0019356012, 0.07589799, -0.0042519085)
+mass = 4.0
 bone_name = "hand.L"
 joint_constraints/x/linear_limit_enabled = true
 joint_constraints/x/linear_limit_upper = 0.0
@@ -1433,12 +1738,13 @@ shape = SubResource("CylinderShape3D_r2wrd")
 debug_color = Color(1, 0, 0.2570362, 0.41960785)
 
 [node name="Physical Bone shoulder_R" type="PhysicalBone3D" parent="Pedestrian/Player/Skeleton3D/Ragdoll" unique_id=2035030102]
-transform = Transform3D(-0.4665652, -0.061903972, -0.88231784, -0.6988197, 0.63729393, 0.32481933, 0.5421882, 0.7681305, -0.34059885, 0.17478727, 1.6240697, -0.020330798)
+transform = Transform3D(-0.4665652, -0.06190398, -0.8823179, -0.6988197, 0.6372939, 0.32481933, 0.5421882, 0.7681305, -0.34059885, 0.17478727, 1.6240867, -0.020330787)
 collision_layer = 16
 collision_mask = 255
 joint_type = 5
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.016654171, -0.011900928, 0.1341831)
-body_offset = Transform3D(0.7038482, 0.69348276, 0.15388405, -0.12678838, 0.33579707, -0.93336254, -0.69894433, 0.6374344, 0.32427567, -0.02411756, 0.13134933, -0.024285913)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.01666608, -0.011911796, 0.13417758)
+body_offset = Transform3D(0.7038482, 0.69348276, 0.15388402, -0.12678838, 0.33579707, -0.9333625, -0.69894433, 0.6374345, 0.32427564, -0.024117552, 0.13134933, -0.024268866)
+mass = 4.0
 bone_name = "shoulder.R"
 joint_constraints/x/linear_limit_enabled = true
 joint_constraints/x/linear_limit_upper = 0.0
@@ -1509,12 +1815,17 @@ transform = Transform3D(1.0000002, -1.4901161e-07, 1.6391277e-06, -3.2782555e-07
 shape = SubResource("SphereShape3D_5s4b4")
 debug_color = Color(1, 0, 0.2570362, 0.41960785)
 
+[node name="Blood Spatter" parent="Pedestrian/Player/Skeleton3D/Ragdoll/Physical Bone shoulder_R" unique_id=252074066 instance=ExtResource("16_thgqf")]
+transform = Transform3D(1.4490765, -1.0598471, 0.87001544, 1.0735464, 1.6643851, 0.23947023, -0.85305387, 0.29423118, 1.7792561, -0.023726983, 0.010023138, -0.12940143)
+visible = false
+
 [node name="Physical Bone upper_arm_R" type="PhysicalBone3D" parent="Pedestrian/Player/Skeleton3D/Ragdoll" unique_id=1764548478]
-transform = Transform3D(0.06267708, 0.9980071, -0.0073070787, 0.9922077, -0.063099466, -0.10743553, -0.107682504, -0.0005163943, -0.9941852, 0.29850197, 1.6082784, 0.02144228)
+transform = Transform3D(0.06267586, 0.9980072, -0.007307142, 0.99220777, -0.06309827, -0.107435204, -0.10768217, -0.0005166091, -0.99418527, 0.29850197, 1.6082784, 0.02144228)
 collision_layer = 16
 collision_mask = 255
 joint_type = 5
-body_offset = Transform3D(1.0000005, 4.0524537e-07, 9.685755e-08, -4.5970228e-07, 1.0000005, 1.1292286e-07, 0, 3.282912e-08, 1.0000006, 0, 0, 0)
+body_offset = Transform3D(1.0000005, 1.6204176e-06, 4.0978193e-07, -1.6743179e-06, 1.0000005, 2.8696377e-08, -3.2037497e-07, 1.1740485e-07, 1.0000006, 0, 0, 0)
+mass = 4.0
 bone_name = "upper_arm.R"
 joint_constraints/x/linear_limit_enabled = true
 joint_constraints/x/linear_limit_upper = 0.0
@@ -1586,11 +1897,12 @@ shape = SubResource("CylinderShape3D_hiiit")
 debug_color = Color(1, 0, 0.2570362, 0.41960785)
 
 [node name="Physical Bone forearm_R" type="PhysicalBone3D" parent="Pedestrian/Player/Skeleton3D/Ragdoll" unique_id=1650035517]
-transform = Transform3D(-0.11645985, 0.9918962, -0.050783303, 0.9890241, 0.12050029, 0.08550438, 0.09093088, -0.040268082, -0.99504274, 0.6066673, 1.5887941, 0.021282855)
+transform = Transform3D(-0.11645985, 0.9918962, -0.050783135, 0.9890241, 0.120500274, 0.085504405, 0.09093088, -0.040267915, -0.99504274, 0.6066673, 1.5887941, 0.021282855)
 collision_layer = 16
 collision_mask = 255
 joint_type = 5
-body_offset = Transform3D(1.0000006, -1.3341196e-07, -5.2154064e-08, 5.3551048e-08, 1.0000005, 3.5390258e-07, 1.4156103e-07, -2.0489097e-07, 1.0000006, 0, 0, 0)
+body_offset = Transform3D(1.0000006, -1.3317913e-07, -5.2154064e-08, 5.3551048e-08, 1.0000006, 5.2526593e-07, 1.4156103e-07, -3.7625432e-07, 1.0000006, 0, 0, 0)
+mass = 4.0
 bone_name = "forearm.R"
 joint_constraints/x/linear_limit_enabled = true
 joint_constraints/x/linear_limit_upper = 0.0
@@ -1664,17 +1976,19 @@ debug_color = Color(1, 0, 0.2570362, 0.41960785)
 [node name="Blood Decal Small" parent="Pedestrian/Player/Skeleton3D/Ragdoll/Physical Bone forearm_R" unique_id=984849056 instance=ExtResource("11_pptbd")]
 transform = Transform3D(0.5669073, -0.11218857, -0.81610596, 0.3726717, -0.8485829, 0.37552917, -0.73466414, -0.51702976, -0.4392584, -0.2577694, 0.41991532, 0.30211967)
 visible = false
+cull_mask = 1047554
 
 [node name="Blood Decal Spatter" parent="Pedestrian/Player/Skeleton3D/Ragdoll/Physical Bone forearm_R/Blood Decal Small" unique_id=2139592380 instance=ExtResource("10_mckh7")]
 transform = Transform3D(0.26661646, 0.7761492, -0.5714244, -0.93573666, 0.35049418, 0.03946822, 0.23090842, 0.5241722, 0.8197254, -0.029722601, -0.009408712, 0.007493615)
 size = Vector3(0.1675415, 0.1618042, 0.4560547)
 
 [node name="Physical Bone hand_R" type="PhysicalBone3D" parent="Pedestrian/Player/Skeleton3D/Ragdoll" unique_id=819469509]
-transform = Transform3D(-0.059764545, 0.99637437, -0.060550053, 0.9966748, 0.06292828, 0.05176419, 0.055386823, -0.05725504, -0.9968221, 0.85828686, 1.6193621, 0.011067762)
+transform = Transform3D(-0.059764434, 0.9963744, -0.06054972, 0.9966747, 0.06292821, 0.051764924, 0.055387534, -0.057254672, -0.996822, 0.85828686, 1.6193621, 0.011067762)
 collision_layer = 16
 collision_mask = 255
 joint_type = 5
-body_offset = Transform3D(1.0000007, -3.1851232e-07, 4.61936e-07, 2.2910535e-07, 1.0000006, 3.7252903e-07, -3.6880374e-07, -2.1234155e-07, 1.0000008, 0, 0, 0)
+body_offset = Transform3D(1.0000007, -3.837049e-07, 1.1846423e-06, 2.963934e-07, 1.0000006, 7.4878335e-07, -1.0877848e-06, -5.8859587e-07, 1.0000008, 0, 0, 0)
+mass = 4.0
 bone_name = "hand.R"
 joint_constraints/x/linear_limit_enabled = true
 joint_constraints/x/linear_limit_upper = 0.0
@@ -1746,12 +2060,13 @@ shape = SubResource("CylinderShape3D_optv7")
 debug_color = Color(1, 0, 0.2570362, 0.41960785)
 
 [node name="Physical Bone thigh_L" type="PhysicalBone3D" parent="Pedestrian/Player/Skeleton3D/Ragdoll" unique_id=238086814]
-transform = Transform3D(-0.8957311, 0.44181526, -0.04964953, -0.08293424, -0.05632986, 0.99496174, 0.43679252, 0.89533585, 0.08709802, -0.13587968, 0.7246368, 0.010131335)
+transform = Transform3D(-0.8957313, 0.44181493, -0.049649082, -0.08293369, -0.056329824, 0.9949618, 0.43679225, 0.895336, 0.087097734, -0.13587968, 0.7246369, 0.010132272)
 collision_layer = 16
 collision_mask = 255
 joint_type = 5
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.013169012, 0.00033308892, 0.26312426)
-body_offset = Transform3D(0.89554983, -0.4417719, 0.0531813, 0.0482826, -0.02233398, -0.9985842, 0.44233376, 0.8968487, 0.0013286546, -0.002052635, 0.263395, 0.0051767677)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.013169275, 0.00033226795, 0.2631241)
+body_offset = Transform3D(0.89555, -0.44177157, 0.053180855, 0.04828208, -0.022334024, -0.9985842, 0.44233343, 0.8968488, 0.001328364, -0.002052635, 0.26339483, 0.0051776916)
+mass = 4.0
 bone_name = "thigh.L"
 joint_constraints/x/linear_limit_enabled = true
 joint_constraints/x/linear_limit_upper = 0.0
@@ -1829,6 +2144,7 @@ collision_mask = 255
 joint_type = 5
 joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.013969674, 0.0039690323, 0.24367638)
 body_offset = Transform3D(0.8940342, -0.42489675, 0.14200535, 0.15932572, 0.005303189, -0.987212, 0.4187096, 0.9052255, 0.072438456, -0.020427555, 0.24276492, -0.015395172)
+mass = 4.0
 bone_name = "shin.L"
 joint_constraints/x/linear_limit_enabled = true
 joint_constraints/x/linear_limit_upper = 0.0
@@ -1903,18 +2219,20 @@ debug_color = Color(1, 0, 0.2570362, 0.41960785)
 transform = Transform3D(0.87391603, 0.47729275, -0.091936335, -0.48003453, 0.87719756, -0.009032249, 0.076336, 0.052025445, 0.9957175, -0.0005502179, 0.008907283, 0.117640495)
 visible = false
 size = Vector3(0.35, 0.3, 0.346167)
+cull_mask = 1047554
 
 [node name="Blood Decal Spatter" parent="Pedestrian/Player/Skeleton3D/Ragdoll/Physical Bone shin_L/Blood Decal Small" unique_id=1925291543 instance=ExtResource("10_mckh7")]
 transform = Transform3D(1.0000002, 0, 2.0582229e-07, -1.4416873e-06, 1.0000185, -2.5331974e-07, 4.5634806e-08, 6.854534e-07, 0.9999977, 0.016546816, -0.018493779, -0.13645786)
 size = Vector3(0.2241211, 0.26953125, 0.3249359)
 
 [node name="Physical Bone foot_L" type="PhysicalBone3D" parent="Pedestrian/Player/Skeleton3D/Ragdoll" unique_id=583847550]
-transform = Transform3D(-0.8990204, 0.20603806, 0.3864075, -0.0046647787, -0.8868523, 0.4620294, 0.43788207, 0.4135713, 0.79825944, -0.14590895, 0.061341118, -0.020201035)
+transform = Transform3D(-0.8990203, 0.20603807, 0.3864075, -0.0046647782, -0.8868524, 0.4620294, 0.43788204, 0.41357133, 0.79825944, -0.14591108, 0.061341107, -0.020202372)
 collision_layer = 16
 collision_mask = 255
 joint_type = 5
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.040268462, -0.0053957924, 0.04534215)
-body_offset = Transform3D(0.8990206, -0.20603788, -0.3864073, -0.38604438, 0.043641865, -0.9214468, 0.20671615, 0.97757035, -0.040305674, -0.019793376, 0.05756128, -0.0012218282)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.04026713, -0.005394809, 0.045344047)
+body_offset = Transform3D(0.8990207, -0.20603786, -0.3864073, -0.3860444, 0.043641865, -0.9214468, 0.20671616, 0.9775703, -0.040305674, -0.019791245, 0.05756247, -0.0012224391)
+mass = 4.0
 bone_name = "foot.L"
 joint_constraints/x/linear_limit_enabled = true
 joint_constraints/x/linear_limit_upper = 0.0
@@ -1986,12 +2304,13 @@ shape = SubResource("CylinderShape3D_a3r0w")
 debug_color = Color(1, 0, 0.2570362, 0.41960785)
 
 [node name="Physical Bone thigh_R" type="PhysicalBone3D" parent="Pedestrian/Player/Skeleton3D/Ragdoll" unique_id=18982679]
-transform = Transform3D(-0.5647725, -0.7861062, -0.25113568, -0.11323263, -0.22762024, 0.96714395, -0.81744146, 0.574653, 0.039540775, 0.15692665, 0.7276424, 0.00957058)
+transform = Transform3D(-0.56477857, -0.786102, -0.25113517, -0.11323258, -0.22762, 0.967144, -0.81743723, 0.5746589, 0.039542537, 0.15692452, 0.7276424, 0.009571407)
 collision_layer = 16
 collision_mask = 255
 joint_type = 5
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.032905605, -0.033129063, 0.25704506)
-body_offset = Transform3D(0.56538457, 0.7867515, 0.24771264, 0.18101896, 0.17464603, -0.9678489, -0.8047099, 0.592041, -0.043674335, -0.019004658, 0.2605232, 0.004360568)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.032905925, -0.033131126, 0.25704455)
+body_offset = Transform3D(0.56539065, 0.78674734, 0.2477121, 0.18101853, 0.17464532, -0.96784914, -0.80470574, 0.59204686, -0.043672588, -0.019002527, 0.26052314, 0.004361395)
+mass = 4.0
 bone_name = "thigh.R"
 joint_constraints/x/linear_limit_enabled = true
 joint_constraints/x/linear_limit_upper = 0.0
@@ -2066,18 +2385,20 @@ debug_color = Color(1, 0, 0.2570362, 0.41960785)
 transform = Transform3D(0.323066, 0.1165753, -0.9391812, -0.540223, 0.83753616, -0.08186126, 0.77703744, 0.5338085, 0.33354974, -0.04284835, -0.10270268, 0.14712787)
 visible = false
 size = Vector3(0.4464844, 0.25889283, 0.35)
+cull_mask = 1047554
 
 [node name="Blood Decal Spatter" parent="Pedestrian/Player/Skeleton3D/Ragdoll/Physical Bone thigh_R/Blood Decal Small" unique_id=1436104005 instance=ExtResource("10_mckh7")]
 transform = Transform3D(0.8544467, -0.27164987, -0.44286075, 0.25985974, 0.9615852, -0.08846253, 0.44988132, -0.039497137, 0.8922157, -0.14270478, 0.0061126202, -0.098543525)
 size = Vector3(0.5574951, 0.26550293, 0.28826904)
 
 [node name="Physical Bone shin_R" type="PhysicalBone3D" parent="Pedestrian/Player/Skeleton3D/Ragdoll" unique_id=2062191828]
-transform = Transform3D(-0.6077464, -0.77663255, -0.16578968, -0.22342473, -0.033117093, 0.9741584, -0.76205355, 0.62908286, -0.15339212, 0.14067361, 0.27986696, 0.032425098)
+transform = Transform3D(-0.6077464, -0.77663255, -0.16578968, -0.22342473, -0.033117093, 0.97415847, -0.76205355, 0.62908286, -0.15339214, 0.14067344, 0.279859, 0.032426454)
 collision_layer = 16
 collision_mask = 255
 joint_type = 5
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.015705433, -0.03497275, 0.23337147)
-body_offset = Transform3D(0.61553216, 0.78130853, 0.1033279, 0.103682525, 0.049689386, -0.99336845, -0.7812542, 0.6221568, -0.050418057, 0.012877926, 0.23518997, 0.021254733)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.015706278, -0.03497399, 0.23337936)
+body_offset = Transform3D(0.61553216, 0.78130853, 0.1033279, 0.103682525, 0.049689386, -0.9933684, -0.7812542, 0.6221568, -0.05041804, 0.012878597, 0.23519799, 0.021255244)
+mass = 4.0
 bone_name = "shin.R"
 joint_constraints/x/linear_limit_enabled = true
 joint_constraints/x/linear_limit_upper = 0.0
@@ -2151,18 +2472,20 @@ debug_color = Color(1, 0, 0.2570362, 0.41960785)
 [node name="Blood Decal Small" parent="Pedestrian/Player/Skeleton3D/Ragdoll/Physical Bone shin_R" unique_id=2081589114 instance=ExtResource("11_pptbd")]
 transform = Transform3D(0.092838466, 0.556765, -0.8254733, 0.3502059, 0.75781435, 0.5505291, 0.9320607, -0.3401926, -0.124631844, 0.14208953, 0.06897749, -0.12424812)
 visible = false
+cull_mask = 1047554
 
 [node name="Blood Decal Spatter" parent="Pedestrian/Player/Skeleton3D/Ragdoll/Physical Bone shin_R/Blood Decal Small" unique_id=1260494242 instance=ExtResource("10_mckh7")]
 transform = Transform3D(0.8602932, -0.2771783, -0.4278642, -0.49980578, -0.29320294, -0.8149995, 0.10044925, 0.9149889, -0.39077532, 0.12202639, -0.07041891, -0.018810214)
 size = Vector3(0.31025392, 0.2, 0.24863282)
 
 [node name="Physical Bone foot_R" type="PhysicalBone3D" parent="Pedestrian/Player/Skeleton3D/Ragdoll" unique_id=769528625]
-transform = Transform3D(-0.77803, -0.17002882, -0.6047807, -0.112490185, -0.9094145, 0.40038884, -0.61807394, 0.37954637, 0.6884252, 0.16373712, 0.016883627, 0.014331199)
+transform = Transform3D(-0.77803, -0.17002882, -0.6047806, -0.112490185, -0.9094145, 0.40038878, -0.61807394, 0.37954637, 0.6884252, 0.16373712, 0.016883627, 0.014331199)
 collision_layer = 16
 collision_mask = 255
 joint_type = 5
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.019951053, -0.057520658, 0.038588073)
-body_offset = Transform3D(0.7780286, 0.17002966, 0.60478175, 0.5999888, 0.0842531, -0.79554987, -0.18621662, 0.9818286, -0.036472827, 0.001965344, 0.04751544, 0.054167625)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.019951057, -0.057520658, 0.038588073)
+body_offset = Transform3D(0.7780286, 0.17002966, 0.6047818, 0.5999888, 0.0842531, -0.79554987, -0.18621662, 0.9818286, -0.036472857, 0.001965344, 0.04751544, 0.054167625)
+mass = 4.0
 bone_name = "foot.R"
 joint_constraints/x/linear_limit_enabled = true
 joint_constraints/x/linear_limit_upper = 0.0
@@ -2232,6 +2555,27 @@ joint_constraints/z/angular_equilibrium_point = 0.0
 transform = Transform3D(0.76299757, 0.622815, 0.17302038, 0.02792518, -0.29917672, 0.953789, 0.64579785, -0.72290707, -0.24566336, 0.03839974, -0.029206913, -0.04208018)
 shape = SubResource("CylinderShape3D_5s4b4")
 debug_color = Color(1, 0, 0.2570362, 0.41960785)
+
+[node name="BoneShrinker" type="SkeletonModifier3D" parent="Pedestrian/Player/Skeleton3D" parent_id_path=PackedInt32Array(1459903753, 1745754886) index="19" unique_id=854150452 node_paths=PackedStringArray("pedestrian")]
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+rotation_edit_mode = 0
+rotation_order = 2
+top_level = false
+visible = true
+visibility_parent = NodePath("")
+active = true
+influence = 1.0
+script = ExtResource("16_afm6m")
+pedestrian = NodePath("../../../..")
+metadata/_custom_type_script = "uid://dpyg07g6mnu64"
 
 [node name="AnimationTree" type="AnimationTree" parent="Pedestrian" unique_id=1874415668]
 tree_root = SubResource("AnimationNodeStateMachine_lfxu0")
@@ -2332,4 +2676,35 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1315651, 0.0007457733, 0)
 [node name="Ped Leg" parent="." unique_id=1276321037 instance=ExtResource("17_d6vy2")]
 transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15990448, 0, 0)
 
+[node name="Thigh Bone" parent="Ped Leg/Left Leg/Left Leg Armature/Skeleton3D/Ragdoll" parent_id_path=PackedInt32Array(1276321037, 441841665) index="0" unique_id=842399809]
+transform = Transform3D(-7.179612, -0.4950857, 4.2014904, 0.11262265, -8.295508, -0.7850548, 4.22906, -0.6195847, 7.153713, 0.114480495, -1.4835143, -0.11120334)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.021089563, -0.1829741, -0.012770101)
+body_offset = Transform3D(8.333332, 8.940697e-08, 2.3841858e-07, -1.4901161e-07, 8.333333, 1.1920929e-07, 7.1525574e-07, -1.7881393e-07, 8.333334, -0.17574632, 1.5247841, 0.10641748)
+
+[node name="Blood Spatter2" parent="Ped Leg/Left Leg/Left Leg Armature/Skeleton3D/Ragdoll/Thigh Bone" index="3" unique_id=1211169511]
+transform = Transform3D(-0.8771678, -1.2700949, 0.18830737, -0.3032232, -0.016693234, -1.5250579, -1.2476604, 0.89699745, 0.23825052, 0.00288295, -0.1952942, -0.018618755)
+
+[node name="Calf Bone" parent="Ped Leg/Left Leg/Left Leg Armature/Skeleton3D/Ragdoll" parent_id_path=PackedInt32Array(1276321037, 441841665) index="1" unique_id=836694578]
+transform = Transform3D(-8.309108, -0.629349, -0.08432488, 0.6255646, -8.3032875, 0.3294618, -0.108902395, 0.3221739, 8.326392, -0.18751001, -4.7479124, -0.33291775)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.014091859, -0.1531851, 0.014617806)
+body_offset = Transform3D(7.150821, 0.08067502, 4.2782817, -0.25857067, 8.324772, 0.27520224, -4.2712216, -0.36889914, 7.14598, -0.15094924, 1.2748518, -0.10077894)
+
+[node name="Foot Bone" parent="Ped Leg/Left Leg/Left Leg Armature/Skeleton3D/Ragdoll" parent_id_path=PackedInt32Array(1276321037, 441841665) index="2" unique_id=2043350681]
+transform = Transform3D(-0.6113306, 1.4827409, 8.177544, -8.259251, -1.0209498, -0.4323216, 0.9249407, -8.1365595, 1.5444558, -0.37882578, -7.443146, 0.04852897)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0100398455, 0.0029212304, -0.0014403225)
+body_offset = Transform3D(4.7057486, -1.6783751, -6.66959, 0.8823023, 8.161929, -1.4314041, 6.8206954, 0.10214782, 4.7866592, -0.05194843, -0.03476274, -0.061882794)
+
+[node name="Ped Arm L" parent="." unique_id=1521164034 instance=ExtResource("18_8k6n4")]
+
+[node name="Ped Arm R" parent="." unique_id=31015618 instance=ExtResource("18_8k6n4")]
+
+[node name="Ped_Head" parent="." unique_id=365884972 instance=ExtResource("21_g5xge")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8837368, -0.013793945)
+
 [editable path="Pedestrian"]
+[editable path="Pedestrian/Player/Skeleton3D/Ragdoll/Physical Bone spine/Intestine Joint/Guts"]
+[editable path="Pedestrian/Player/Skeleton3D/Ragdoll/Physical Bone spine/Intestine Joint/Guts/Guts Full"]
+[editable path="Ped Leg"]
+[editable path="Ped Leg/Left Leg"]
+[editable path="Ped_Head"]
+[editable path="Ped_Head/Head2"]

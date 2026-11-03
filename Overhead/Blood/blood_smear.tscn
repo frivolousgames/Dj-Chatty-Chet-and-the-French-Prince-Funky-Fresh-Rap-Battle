@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://bnvjuut8ik68e"]
+
+[ext_resource type="Texture2D" uid="uid://c0re0ughawpls" path="res://Overhead/Blood/Blood Smear.png" id="1_5xf01"]
+[ext_resource type="Script" uid="uid://d3hmx4h07g3bf" path="res://Overhead/FadeOverTime.cs" id="2_farmq"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_u2uip"]
+size = Vector3(1, 0.13647461, 1)
+
+[node name="Node3D" type="Decal" unique_id=124006760]
+sorting_offset = 1.0
+size = Vector3(1, 0.6286621, 1)
+texture_albedo = ExtResource("1_5xf01")
+modulate = Color(0.6118008, 0, 0, 1)
+albedo_mix = 0.63
+distance_fade_enabled = true
+script = ExtResource("2_farmq")
+FadeDelay = 5000
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1571827220 groups=["Blood Decals"]]
+collision_layer = 512
+collision_mask = 0
+monitoring = false
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Area3D" unique_id=1218800677]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.01889038, 0)
+shape = SubResource("BoxShape3D_u2uip")

@@ -23,7 +23,11 @@ public partial class OverheadPlayer : CharacterBody3D
 	public AnimationPlayer AnimPlayer { get; set; }
     [Export]
 	public AnimationTree AnimTree { get; set; }
-
+    [Export]
+    public CollisionShape3D BodyCol;
+    [Export]
+    public Camera3D PlayerCam;
+    Node parent;
 
     //Animation
     bool isMoving;
@@ -111,6 +115,24 @@ public partial class OverheadPlayer : CharacterBody3D
         "parameters/Two Handed Weapon/Locomotion/Strafe/Raised Blend/blend_amount"
     };
 
+	//Doors//
+	public bool isCarDoor;
+    bool isOpening;
+    bool isDooring;
+    public Node3D standPosNode;
+    public Node3D standRotNode;
+    public Node3D sitPosNode;
+    public Vector3 carStandPos;
+	public Vector3 carStandRot;
+    public Vector3 carSitPos;
+    public CarDoor carDoor;
+    public bool doorOpen;
+    public bool doorAnimOpen;
+    public Camera3D carCam;
+    Vector3 playerCamPos;
+    Vector3 playerCamRot;
+    public CarMover carMover;
+    bool inVehicle;
 	public override void _Ready()
 	{
 		//Weapons
@@ -130,135 +152,190 @@ public partial class OverheadPlayer : CharacterBody3D
 		speed = WalkSpeed;
         walkBackReset = true;
 		AnimTree.AnimationFinished += ShotOver;
-		//Weapons
-		//currentWeapon = availableWeapons[0].Name;
-		
+        //Weapons
+        //currentWeapon = availableWeapons[0].Name;
+
 	}
 
 	public override void _PhysicsProcess(double delta)
 	{
-
-        Vector3 velocity = Velocity;
-
-		// Add the gravity.
-		if (!IsOnFloor())
+		if (!isDooring)
 		{
-			velocity += GetGravity() * (float)delta;
-		}
+            Vector3 velocity = Velocity;
 
-		// Handle Jump.
-		if (Input.IsActionJustPressed("ui_accept") && IsOnFloor())
-		{
-			velocity.Y = JumpVelocity;
-		}
+            // Add the gravity.
+            if (!IsOnFloor())
+            {
+                velocity += GetGravity() * (float)delta;
+            }
 
-		///Rotation
-		if (!isStrafing)
-		{
-            float inputRotDir = Input.GetAxis("ui_right", "ui_left");
-            Vector3 rotDir = new Vector3(0f, inputRotDir, 0f);
-            Rotation += rotDir * RotSpeed;
+            // Handle Jump.
+            if (Input.IsActionJustPressed("ui_accept") && IsOnFloor())
+            {
+                velocity.Y = JumpVelocity;
+            }
+
+            ///Rotation
+            if (!isStrafing)
+            {
+                float inputRotDir = Input.GetAxis("ui_right", "ui_left");
+                Vector3 rotDir = new Vector3(0f, inputRotDir, 0f);
+                Rotation += rotDir * RotSpeed;
+            }
+
+
+
+            // Get the input direction and handle the movement/deceleration.
+            // As good practice, you should replace UI actions with custom gameplay actions.
+            float inputDir = Input.GetAxis("ui_up", "ui_down");
+            Vector3 direction = GlobalTransform.Basis.Z;
+            if (direction != Vector3.Zero)
+            {
+                //Velocity.X = direction.X * speed;
+                velocity = direction * inputDir * speed;
+            }
+            else
+            {
+                //Velocity.X = Mathf.MoveToward(Velocity.X, 0, speed);
+                velocity.Z = Mathf.MoveToward(Velocity.Z, 0, speed);
+            }
+
+
+
+
+
+            ///Animation Conditions
+            if (inputDir < 0f)
+            {
+                isMoving = true;
+                if (isRunning)
+                {
+                    speed = RunSpeed;
+                }
+                else
+                {
+                    speed = WalkSpeed;
+                }
+                //if(!isShooting && isWeaponRaised)
+                //{
+                //	isWeaponRaised = false;
+                //}
+            }
+            else
+            {
+                isMoving = false;
+            }
+
+            if (inputDir > 0f)
+            {
+                isWalkBackward = true;
+                speed = WalkBackSpeed;
+            }
+            else
+            {
+                isWalkBackward = false;
+            }
+
+            //Strafe
+            Vector3 strafeDir = GlobalTransform.Basis.X;
+            if (Mathf.Abs(Input.GetAxis("ui_left", "ui_right")) > 0 && Input.IsActionPressed("Strafe"))
+            {
+                isStrafing = true;
+                speed = WalkSpeed;
+                velocity = strafeDir * Input.GetAxis("ui_left", "ui_right") * speed;
+            }
+            else
+            {
+                isStrafing = false;
+            }
+            Velocity = velocity;
+            Transform.LookingAt(Position + direction);
+            MoveAndSlide();
+
+            isTurning = velocity == Vector3.Zero && Mathf.Abs(Input.GetAxis("ui_left", "ui_right")) > 0 ? true : false;
+            IsRunning(delta);
+            IsShooting(delta);
+            RaiseWeapon(delta);
+            Strafe(delta);
+
+            //////Locomotion
+            //One Handed
+            AnimTree.Set("parameters/One Handed Weapon/Locomotion/conditions/is_moving", isMoving);
+            AnimTree.Set("parameters/One Handed Weapon/Locomotion/conditions/is_not_moving", !isMoving);
+            AnimTree.Set("parameters/One Handed Weapon/Locomotion/conditions/is_turning", isTurning);
+            AnimTree.Set("parameters/One Handed Weapon/Locomotion/conditions/is_not_turning", !isTurning);
+            AnimTree.Set("parameters/One Handed Weapon/Locomotion/conditions/is_walk_backward", isWalkBackward);
+            AnimTree.Set("parameters/One Handed Weapon/Locomotion/conditions/is_not_walk_backward", !isWalkBackward);
+            AnimTree.Set("parameters/One Handed Weapon/Locomotion/conditions/is_strafing", isStrafing);
+            AnimTree.Set("parameters/One Handed Weapon/Locomotion/conditions/is_not_strafing", !isStrafing);
+
+            //Two Handed
+            AnimTree.Set("parameters/Two Handed Weapon/Locomotion/conditions/is_moving", isMoving);
+            AnimTree.Set("parameters/Two Handed Weapon/Locomotion/conditions/is_not_moving", !isMoving);
+            AnimTree.Set("parameters/Two Handed Weapon/Locomotion/conditions/is_turning", isTurning);
+            AnimTree.Set("parameters/Two Handed Weapon/Locomotion/conditions/is_not_turning", !isTurning);
+            AnimTree.Set("parameters/Two Handed Weapon/Locomotion/conditions/is_walk_backward", isWalkBackward);
+            AnimTree.Set("parameters/Two Handed Weapon/Locomotion/conditions/is_not_walk_backward", !isWalkBackward);
+            AnimTree.Set("parameters/Two Handed Weapon/Locomotion/conditions/is_strafing", isStrafing);
+            AnimTree.Set("parameters/Two Handed Weapon/Locomotion/conditions/is_not_strafing", !isStrafing);
+
+            /////Weapons
+            AnimTree.Set("parameters/conditions/is_one_handed", isOneHanded);
+            AnimTree.Set("parameters/conditions/is_two_handed", !isOneHanded);
+
+            //Door//
+            if(isCarDoor && !isDooring && Input.IsActionJustPressed("Action"))
+            {
+                isCarDoor = false;
+                isDooring = true;
+                _ = OpenDoor();  
+            }
         }
-		
-
-
-		// Get the input direction and handle the movement/deceleration.
-		// As good practice, you should replace UI actions with custom gameplay actions.
-		float inputDir = Input.GetAxis("ui_up", "ui_down");
-		Vector3 direction = GlobalTransform.Basis.Z;
-		if (direction != Vector3.Zero)
-		{
-			//Velocity.X = direction.X * speed;
-			velocity = direction * inputDir * speed;
-		}
-		else
-		{
-			//Velocity.X = Mathf.MoveToward(Velocity.X, 0, speed);
-			velocity.Z = Mathf.MoveToward(Velocity.Z, 0, speed);
-		}
-
-        
-
-        
-
-		///Animation Conditions
-		if(inputDir < 0f)
-		{
-			isMoving = true;
-			if (isRunning)
-			{
-				speed = RunSpeed;
-			}
-			else
-			{
-				speed = WalkSpeed;
-			}
-			//if(!isShooting && isWeaponRaised)
-			//{
-			//	isWeaponRaised = false;
-			//}
-		}
-		else
-		{
-			isMoving = false;
-		}
-
-		if (inputDir > 0f)
-		{
-			isWalkBackward = true;
-			speed = WalkBackSpeed;
-		}
-		else
-		{
-			isWalkBackward = false;
-		}
-
-		//Strafe
-		Vector3 strafeDir = GlobalTransform.Basis.X;
-        if (Mathf.Abs(Input.GetAxis("ui_left", "ui_right")) > 0 && Input.IsActionPressed("Strafe"))
+        else if (isDooring)
         {
-            isStrafing = true;
-            speed = WalkSpeed;
-            velocity = strafeDir * Input.GetAxis("ui_left", "ui_right") * speed;
+
+
+            //////Locomotion
+            //One Handed
+            AnimTree.Set("parameters/One Handed Weapon/Locomotion/conditions/is_moving", isMoving);
+            AnimTree.Set("parameters/One Handed Weapon/Locomotion/conditions/is_not_moving", !isMoving);
+            AnimTree.Set("parameters/One Handed Weapon/Locomotion/conditions/is_turning", isTurning);
+            AnimTree.Set("parameters/One Handed Weapon/Locomotion/conditions/is_not_turning", !isTurning);
+            AnimTree.Set("parameters/One Handed Weapon/Locomotion/conditions/is_walk_backward", isWalkBackward);
+            AnimTree.Set("parameters/One Handed Weapon/Locomotion/conditions/is_not_walk_backward", !isWalkBackward);
+            AnimTree.Set("parameters/One Handed Weapon/Locomotion/conditions/is_strafing", isStrafing);
+            AnimTree.Set("parameters/One Handed Weapon/Locomotion/conditions/is_not_strafing", !isStrafing);
+
+            //Two Handed
+            AnimTree.Set("parameters/Two Handed Weapon/Locomotion/conditions/is_moving", isMoving);
+            AnimTree.Set("parameters/Two Handed Weapon/Locomotion/conditions/is_not_moving", !isMoving);
+            AnimTree.Set("parameters/Two Handed Weapon/Locomotion/conditions/is_turning", isTurning);
+            AnimTree.Set("parameters/Two Handed Weapon/Locomotion/conditions/is_not_turning", !isTurning);
+            AnimTree.Set("parameters/Two Handed Weapon/Locomotion/conditions/is_walk_backward", isWalkBackward);
+            AnimTree.Set("parameters/Two Handed Weapon/Locomotion/conditions/is_not_walk_backward", !isWalkBackward);
+            AnimTree.Set("parameters/Two Handed Weapon/Locomotion/conditions/is_strafing", isStrafing);
+            AnimTree.Set("parameters/Two Handed Weapon/Locomotion/conditions/is_not_strafing", !isStrafing);
+
+            /////Weapons
+            AnimTree.Set("parameters/conditions/is_one_handed", isOneHanded);
+            AnimTree.Set("parameters/conditions/is_two_handed", !isOneHanded);
+
+            //Door
+            AnimTree.Set("parameters/One Handed Weapon/Locomotion/conditions/is_entering", doorOpen);
+            AnimTree.Set("parameters/Two Handed Weapon/Locomotion/conditions/is_entering", doorOpen);
+            AnimTree.Set("parameters/One Handed Weapon/Locomotion/conditions/is_exiting", !doorOpen);
+            AnimTree.Set("parameters/Two Handed Weapon/Locomotion/conditions/is_exiting", !doorOpen);
+            //doorAnim.Set("parameters/StateMachine/conditions/is_open", doorAnimOpen);
+            //doorAnim.Set("parameters/StateMachine/conditions/is_closed", !doorAnimOpen);
+            if (carMover.LinearVelocity.Length() < .01f)
+            {
+                if(inVehicle && Input.IsActionJustPressed("Action"))
+                {
+                    inVehicle = false;
+                    _ = ExitVehicle();
+                }
+            }
         }
-        else
-        {
-            isStrafing = false;
-        }
-        Velocity = velocity;
-        Transform.LookingAt(Position + direction);
-        MoveAndSlide();
-
-        isTurning = velocity == Vector3.Zero && Mathf.Abs(Input.GetAxis("ui_left", "ui_right")) > 0 ? true : false;
-		IsRunning(delta);
-		IsShooting(delta);
-		RaiseWeapon(delta);
-        Strafe(delta);
-
-        //////Locomotion
-        //One Handed
-        AnimTree.Set("parameters/One Handed Weapon/Locomotion/conditions/is_moving", isMoving);
-        AnimTree.Set("parameters/One Handed Weapon/Locomotion/conditions/is_not_moving", !isMoving);
-        AnimTree.Set("parameters/One Handed Weapon/Locomotion/conditions/is_turning", isTurning);
-        AnimTree.Set("parameters/One Handed Weapon/Locomotion/conditions/is_not_turning", !isTurning);
-        AnimTree.Set("parameters/One Handed Weapon/Locomotion/conditions/is_walk_backward", isWalkBackward);
-        AnimTree.Set("parameters/One Handed Weapon/Locomotion/conditions/is_not_walk_backward", !isWalkBackward);
-        AnimTree.Set("parameters/One Handed Weapon/Locomotion/conditions/is_strafing", isStrafing);
-        AnimTree.Set("parameters/One Handed Weapon/Locomotion/conditions/is_not_strafing", !isStrafing);
-
-        //Two Handed
-        AnimTree.Set("parameters/Two Handed Weapon/Locomotion/conditions/is_moving", isMoving);
-        AnimTree.Set("parameters/Two Handed Weapon/Locomotion/conditions/is_not_moving", !isMoving);
-        AnimTree.Set("parameters/Two Handed Weapon/Locomotion/conditions/is_turning", isTurning);
-        AnimTree.Set("parameters/Two Handed Weapon/Locomotion/conditions/is_not_turning", !isTurning);
-        AnimTree.Set("parameters/Two Handed Weapon/Locomotion/conditions/is_walk_backward", isWalkBackward);
-        AnimTree.Set("parameters/Two Handed Weapon/Locomotion/conditions/is_not_walk_backward", !isWalkBackward);
-        AnimTree.Set("parameters/Two Handed Weapon/Locomotion/conditions/is_strafing", isStrafing);
-        AnimTree.Set("parameters/Two Handed Weapon/Locomotion/conditions/is_not_strafing", !isStrafing);
-
-        /////Weapons
-        AnimTree.Set("parameters/conditions/is_one_handed", isOneHanded);
-        AnimTree.Set("parameters/conditions/is_two_handed", !isOneHanded);
     }
 
     public override void _Process(double delta)
@@ -470,5 +547,141 @@ public partial class OverheadPlayer : CharacterBody3D
     void SetShootBlend() //Run this when new weapon is selected
     {
 
+    }
+
+	//Doors//
+	public async Task OpenDoor()
+	{
+        carStandPos = new Vector3(standPosNode.GlobalPosition.X, GlobalPosition.Y, standPosNode.GlobalPosition.Z);
+        carStandRot = new Vector3(standRotNode.GlobalPosition.X, GlobalPosition.Y, standRotNode.GlobalPosition.Z);
+        carSitPos = new Vector3(sitPosNode.GlobalPosition.X, GlobalPosition.Y, sitPosNode.GlobalPosition.Z);
+        //GD.Print("Started Moving Towards Door");
+        BodyCol.Disabled = true;
+        while (GlobalPosition.DistanceTo(carStandPos) > .001f)
+		{
+            Vector3 direction = GlobalPosition.DirectionTo(carStandPos);
+            Vector3 velocity = direction * RunSpeed;
+            Transform3D targetTrans = Transform.LookingAt(carStandPos, Vector3.Up);
+            Transform = Transform.InterpolateWith(targetTrans, RotSpeed);
+            Velocity = velocity;
+            isRunning = false;
+            isMoving = true;
+            MoveAndSlide();
+            //GD.Print("Pos :" + GlobalPosition + " " + carStandPos);
+            await Task.Delay(5);  
+		}
+        GlobalPosition = carStandPos;
+        isMoving = false;
+        Velocity = Vector3.Zero;
+        float i = 0;
+        while(i < 60)
+        {
+            Transform3D targetRotTrans = Transform.LookingAt(carStandRot, Vector3.Up);
+            Transform = Transform.InterpolateWith(targetRotTrans, RotSpeed);
+            i += 1f;
+            await Task.Delay(5);
+            //GD.Print("Turning");
+        }
+        doorOpen = true;
+        await Task.Delay(600);
+        
+        
+        while(GlobalPosition.DistanceTo(carSitPos) > .08f)
+        {
+            Vector3 direction = GlobalPosition.DirectionTo(carSitPos);
+            Vector3 velocity = direction * RunSpeed * 3f;
+            Velocity = velocity;
+            MoveAndSlide();
+            //GD.Print("Entering");
+            await Task.Delay(5);
+        }
+        parent = GetParent();
+        Reparent(sitPosNode);
+        playerCamPos = PlayerCam.Position;
+        playerCamRot = PlayerCam.Rotation;
+        float t = 0;
+        while(Mathf.Abs(PlayerCam.GlobalPosition.Length() - carCam.GlobalPosition.Length()) > .01f)
+        {
+            PlayerCam.GlobalPosition = PlayerCam.GlobalPosition.Lerp(carCam.GlobalPosition, t);
+            PlayerCam.GlobalBasis = PlayerCam.GlobalBasis.Slerp(carCam.GlobalBasis, t);
+            t += .05f;
+            await Task.Delay(5);
+        }
+        PlayerCam.GlobalPosition = carCam.GlobalPosition;
+        PlayerCam.GlobalBasis = carCam.GlobalBasis;
+        PlayerCam.Current = false;
+        carCam.MakeCurrent();
+        carDoor.isOpen = false;
+        carMover.isDriving = true;
+        Visible = false;
+        inVehicle = true;
+    }
+    public void DoorAnimOpen()
+    {
+        //GD.Print("open door");
+        if (!carDoor.isOpen)
+        {
+            carDoor.isOpen = true;
+        }
+        else
+        {
+            carDoor.isOpen = false;
+        }
+    }
+
+    public void IsDooring()
+    {
+        isDooring = false;
+    }
+
+    async Task ExitVehicle()
+    {
+        carStandPos = new Vector3(standPosNode.GlobalPosition.X, GlobalPosition.Y, standPosNode.GlobalPosition.Z);
+        carStandRot = new Vector3(standRotNode.GlobalPosition.X, GlobalPosition.Y, standRotNode.GlobalPosition.Z);
+        carDoor.isOpen = true;
+        carMover.isDriving = false;
+        Visible = true;
+        doorOpen = false;
+        Reparent(parent);
+        while (GlobalPosition.DistanceTo(carStandPos) > .08f)
+        {
+            Vector3 direction = GlobalPosition.DirectionTo(carStandPos);
+            Vector3 velocity = direction * RunSpeed * 3f;
+            Velocity = velocity;
+            MoveAndSlide();
+            //GD.Print("Entering");
+            await Task.Delay(5);
+        }
+        float i = 0;
+        while (i < 60)
+        {
+            Transform3D targetRotTrans = Transform.LookingAt(carStandRot, Vector3.Up);
+            Transform = Transform.InterpolateWith(targetRotTrans, RotSpeed);
+            i += 1f;
+            await Task.Delay(5);
+            //GD.Print("Turning");
+        }
+        PlayerCam.Position = playerCamPos;
+        PlayerCam.Rotation = playerCamRot;
+        Vector3 carCamPos = carCam.GlobalPosition;
+        Vector3 carCamRot = carCam.GlobalRotation;
+        float t = 0;
+        while (Mathf.Abs(PlayerCam.GlobalPosition.Length() - carCam.GlobalPosition.Length()) > .01f)
+        {
+            carCam.GlobalPosition = carCam.GlobalPosition.Lerp(PlayerCam.GlobalPosition, t);
+            carCam.GlobalBasis = carCam.GlobalBasis.Slerp(PlayerCam.GlobalBasis, t);
+            t += .05f;
+            await Task.Delay(5);
+        }
+        //PlayerCam.GlobalPosition = carCam.GlobalPosition;
+        //PlayerCam.GlobalBasis = carCam.GlobalBasis;
+        carCam.Current = false;
+        PlayerCam.MakeCurrent();
+        carCam.GlobalPosition = carCamPos;
+        carCam.GlobalRotation = carCamRot;
+        BodyCol.Disabled = false;
+        //GD.Print("IsCarDoor: " + isCarDoor);
+        //await Task.Delay(600);
+        //isDooring = false;
     }
 }

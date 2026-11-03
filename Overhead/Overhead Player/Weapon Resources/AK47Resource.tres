@@ -7,4 +7,6 @@
 script = ExtResource("1_3n3ey")
 WeaponName = "AK47"
 WeaponBullet = ExtResource("1_se26a")
+WeaponDamage = 1
+WeaponForce = 10.0
 metadata/_custom_type_script = "uid://btre2vno24n1f"

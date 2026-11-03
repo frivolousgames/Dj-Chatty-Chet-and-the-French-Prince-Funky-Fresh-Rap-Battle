@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dmxkevsj6xfxw"]
+
+[ext_resource type="Texture2D" uid="uid://vnh0m0iqf4u2" path="res://Overhead/Pedestrians/Pedestrian_sock big normal.png" id="1_ynaqt"]
+
+[resource]
+resource_local_to_scene = true
+normal_enabled = true
+normal_scale = 0.95
+normal_texture = ExtResource("1_ynaqt")
+uv1_scale = Vector3(29.86, 29.86, 29.86)

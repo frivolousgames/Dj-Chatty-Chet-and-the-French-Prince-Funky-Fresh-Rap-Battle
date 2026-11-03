@@ -51,7 +51,7 @@ public partial class Bullet3dMover : RigidBody3D
                     //blood.Scale = new Vector3(.1f, .1f, .1f);
                     if (collider is Pedestrian ped)
                     {
-                        ped.bulletVelocity = LinearVelocity;
+                        ped.bulletVelocity = new Vector3(LinearVelocity.X, 0f, LinearVelocity.Z).Normalized();
                         ped.BulletHit();
                         ped.bulletPosition = Ray.GetCollisionPoint();
                     }

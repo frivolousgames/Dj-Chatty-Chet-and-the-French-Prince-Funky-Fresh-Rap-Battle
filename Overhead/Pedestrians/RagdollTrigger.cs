@@ -12,14 +12,15 @@ public partial class RagdollTrigger : Area3D
 	{
 		if(body is CarMover car)
 		{
-            if (car.LinearVelocity.Length() > 1f)
+            if (car.LinearVelocity.Length() > 17f)
             {
                 GetParent<Pedestrian>().isLimb = true;
             }
-            if (car.LinearVelocity.Length() > .1f)
+            if (car.LinearVelocity.Length() > 1f)
 			{
                 GetParent<Pedestrian>().CarHit();
             }
+			//GD.Print("Hit Car");
 		}
 	}
 }

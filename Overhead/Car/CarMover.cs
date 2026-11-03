@@ -24,6 +24,8 @@ public partial class CarMover : VehicleBody3D
     public float TireDecalThreshold { get; set; }
     [Export]
     public PackedScene TireTrack { get; set; }
+    float spawnDistance = .2f;
+    Vector3 lastSpawnPos;
 
     [Export]
     public Node3D HeadLights { get; set; }
@@ -32,6 +34,8 @@ public partial class CarMover : VehicleBody3D
     public PackedScene DamageParticles { get; set; }
 
     PhysicsDirectBodyState3D state;
+
+    public bool isDriving;
     public override void _Ready()
     {
         _ = SpawnTireDecals();
@@ -40,32 +44,50 @@ public partial class CarMover : VehicleBody3D
         ContactMonitor = true;
         MaxContactsReported = 10;
         BodyEntered += HitStaticObject;
+        isDriving = false;
+        Steering = 0f;
+        Brake = MaxBrakeForce;
+
+        lastSpawnPos = GlobalPosition;
     }
     public override void _PhysicsProcess(double delta)
     {
-        float steering = Input.GetAxis("ui_right", "ui_left");
-        Steering = steering * MaxSteeringAngle;
-
-        float brake = Input.IsActionPressed("ui_accept") ? 1.0f : 0.0f;
-        Brake = brake * MaxBrakeForce;
-        
-
-        if (brake < 1f)
+        if (isDriving)
         {
-            float throttle = Input.GetAxis("ui_up", "ui_down");
-            EngineForce = throttle * -MaxEngineForce;
-            SetLightsOff();
-            isBraking = false;
+            float steering = Input.GetAxis("ui_right", "ui_left");
+            Steering = steering * MaxSteeringAngle;
+
+            float brake = Input.IsActionPressed("ui_accept") ? 1.0f : 0.0f;
+            Brake = brake * MaxBrakeForce;
+
+
+            if (brake < 1f)
+            {
+                float throttle = Input.GetAxis("ui_up", "ui_down");
+                EngineForce = throttle * -MaxEngineForce;
+                SetLightsOff();
+                isBraking = false;
+                if (throttle > 0 && AngularVelocity.Length() < 2)
+                {
+                    ApplyCentralImpulse(Vector3.Forward * 20 * throttle);
+                }
+            }
+            else
+            {
+                SetLightsOn();
+                EngineForce = 0f;
+                isBraking = true;
+
+            }
+
+            state = PhysicsServer3D.BodyGetDirectState(GetRid());
+            //GD.Print("Velocity: " + LinearVelocity.Length());
         }
         else
         {
-            SetLightsOn();
+            Brake = MaxBrakeForce;
             EngineForce = 0f;
-            isBraking = true;
-            
         }
-
-        state = PhysicsServer3D.BodyGetDirectState(GetRid());
     }
 
     public override void _Process(double delta)
@@ -101,17 +123,22 @@ public partial class CarMover : VehicleBody3D
         {
             while (LinearVelocity.Length() > TireDecalThreshold && isBraking)
             {
-                var trackPrefab = TireTrack.Instantiate<Decal>();
-                GetTree().Root.GetChild(0).AddChild(trackPrefab);
-                Vector3 offset = ToGlobal(new Vector3(0f, -.15f, -1.881f));
-                trackPrefab.GlobalPosition = offset;
-                //trackPrefab.Position = new Vector3(Transform.Basis.X.X, Transform.Origin.Y + offsetY, Transform.Origin.Z + offsetZ);
-                trackPrefab.Rotation = new Vector3(0f, Rotation.Y, 0f);
-                trackPrefab.Scale = Vector3.One;
-                trackPrefab.Size = new Vector3(2.75f, 2.52f, .732f);
-                //trackPrefab.Size = new Vector3(.819f, .075f, .218f);
-                trackPrefab.Modulate = new Color(0f, 0f, 0f, 1f);
-                await Task.Delay(10);
+                if(GlobalPosition.DistanceTo(lastSpawnPos) >= spawnDistance)
+                {
+                    lastSpawnPos = GlobalPosition;
+                    var trackPrefab = TireTrack.Instantiate<Decal>();
+                    GetTree().Root.GetChild(0).AddChild(trackPrefab);
+                    Vector3 offset = ToGlobal(new Vector3(0f, -.95f, -1.881f));
+                    trackPrefab.GlobalPosition = offset;
+                    //trackPrefab.Position = new Vector3(Transform.Basis.X.X, Transform.Origin.Y + offsetY, Transform.Origin.Z + offsetZ);
+                    trackPrefab.Rotation = new Vector3(0f, Rotation.Y, 0f);
+                    trackPrefab.Scale = Vector3.One;
+                    trackPrefab.Size = new Vector3(2.75f, 2.52f, .732f);
+                    //trackPrefab.Size = new Vector3(.819f, .075f, .218f);
+                    trackPrefab.Modulate = new Color(0f, 0f, 0f, 1f);
+                }
+                
+                await Task.Delay(1);
             }
             await Task.Delay(10);
         }
@@ -152,6 +179,14 @@ public partial class CarMover : VehicleBody3D
                 }
             }
 
+        }
+        if(body is CollisionObject3D col && col.GetCollisionLayerValue(5))
+        {
+            if(body.Owner is Pedestrian ped)
+            {
+                ped.groundBloodSpawned = false;
+            }
+            
         }
     }
 }

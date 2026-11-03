@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://b1nsv3y408o1o"]
+
+[ext_resource type="PackedScene" uid="uid://db0wktdwfg0ix" path="res://Overhead/Pedestrians/Body Parts/Head.glb" id="1_o4b4k"]
+[ext_resource type="Material" uid="uid://bmivnejoqwb32" path="res://Overhead/Pedestrians/Body Parts/Guts.tres" id="2_gm4yu"]
+[ext_resource type="PackedScene" uid="uid://by2vng5vwh7l6" path="res://Overhead/Blood/blood_decal_spatter.tscn" id="3_8hynu"]
+[ext_resource type="PackedScene" uid="uid://b71rl7x2eg2j" path="res://Overhead/Blood/blood_decal_small.tscn" id="4_lh8cb"]
+[ext_resource type="PackedScene" uid="uid://dkw8i4px4jiem" path="res://Overhead/Blood/blood_spatter permanent.tscn" id="5_lasf1"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hjb8m"]
+radius = 0.19921875
+height = 0.47962952
+
+[node name="Ped_Head" type="RigidBody3D" unique_id=365884972]
+visible = false
+collision_layer = 16
+collision_mask = 255
+mass = 6.0
+sleeping = true
+angular_damp = 1.98
+
+[node name="Head2" parent="." unique_id=384247576 instance=ExtResource("1_o4b4k")]
+transform = Transform3D(0.14, 0, 0, 0, 0.14, 0, 0, 0, 0.14, 0, 0, 0)
+
+[node name="Head" parent="Head2" index="0" unique_id=1229503450]
+layers = 2
+surface_material_override/3 = ExtResource("2_gm4yu")
+
+[node name="Afro LOW_001" parent="Head2/Head" index="0" unique_id=1398778419]
+visible = false
+layers = 2
+
+[node name="Baseball Hat LOW_001" parent="Head2/Head" index="1" unique_id=2023602396]
+visible = false
+
+[node name="Corn Rows LOW_001" parent="Head2/Head" index="2" unique_id=157408713]
+visible = false
+layers = 2
+
+[node name="Dreds LOW_001" parent="Head2/Head" index="3" unique_id=2096491719]
+visible = false
+layers = 2
+
+[node name="Hair Box LOW_001" parent="Head2/Head" index="4" unique_id=1071237451]
+visible = false
+layers = 2
+
+[node name="Long Hair LOW_001" parent="Head2/Head" index="5" unique_id=1386078033]
+visible = false
+layers = 2
+
+[node name="Pony Tail LOW_001" parent="Head2/Head" index="6" unique_id=279314140]
+visible = false
+layers = 2
+
+[node name="Blood Decal Spatter" parent="Head2/Head" index="7" unique_id=644771901 instance=ExtResource("3_8hynu")]
+transform = Transform3D(0.82592726, -0.20620948, 0.52471155, -0.15259027, 0.8142057, 0.5601659, -0.5427345, -0.5427219, 0.641009, -0.13250291, 0.88086843, 0.22288449)
+size = Vector3(1.7260742, 1.9118652, 2)
+cull_mask = 1047554
+
+[node name="Blood Decal Small" parent="Head2/Head" index="8" unique_id=1868960435 instance=ExtResource("4_lh8cb")]
+transform = Transform3D(-0.4361302, -0.8987835, 0.04448583, 0.8994149, -0.43377453, 0.053786155, -0.02904528, 0.06346898, 0.9975612, 0, 0.34189507, 0.057171658)
+size = Vector3(2.0898438, 1.4376831, 2.9308228)
+cull_mask = 1047554
+
+[node name="Short Hair LOW_001" parent="Head2/Head" index="9" unique_id=1528836450]
+visible = false
+layers = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=216006363]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0052108765, 0.031626694)
+shape = SubResource("CapsuleShape3D_hjb8m")
+
+[node name="Blood Spatter" parent="." unique_id=1211169511 instance=ExtResource("5_lasf1")]
+transform = Transform3D(1.505, 0, 0, 0, -0.9326054, 1.1812164, 0, -1.1812164, -0.9326054, 0, -0.18307877, 0.07342854)
+
+[editable path="Head2"]

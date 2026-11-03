@@ -1,0 +1,12 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://c2epoxlqv1d24"]
+
+[ext_resource type="Texture2D" uid="uid://dwmgh0m2hyrlv" path="res://Overhead/Pedestrians/Guts.png" id="1_jk1oo"]
+[ext_resource type="Texture2D" uid="uid://cirwf732l8xho" path="res://Overhead/Pedestrians/Guts normal.png" id="2_wjdif"]
+
+[resource]
+albedo_texture = ExtResource("1_jk1oo")
+roughness = 0.19
+normal_enabled = true
+normal_scale = 0.75
+normal_texture = ExtResource("2_wjdif")
+uv1_scale = Vector3(3.555, 3.555, 3.555)

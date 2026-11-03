@@ -1,5 +1,11 @@
 [gd_resource type="AnimationNodeBlendTree" format=3 uid="uid://ckli37wqyn3rd"]
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_63hol"]
+animation = &"EnterCar"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_wnyou"]
+animation = &"ExitCar"
+
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_dk7q4"]
 animation = &"Idle One Handed"
 
@@ -298,6 +304,9 @@ nodes/Animation/position = Vector2(-120, 80)
 "nodes/Two Handed Idle/position" = Vector2(200, 600)
 node_connections = [&"output", 0, &"Raised Blend", &"Idle Blend", 0, &"Run Blend", &"Idle Blend", 1, &"Two Handed Idle", &"Run Blend", 0, &"Animation", &"Run Blend", 1, &"Animation 2", &"Raised Blend", 0, &"Idle Blend", &"Raised Blend", 1, &"Two Handed Raised"]
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_kmxv2"]
+animation = &"Sit Idle"
+
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_hl3me"]
 animation = &"Strafe R"
 
@@ -525,21 +534,43 @@ xfade_time = 0.1
 advance_mode = 2
 advance_condition = &"is_not_strafing"
 
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_wnyou"]
+advance_mode = 2
+advance_condition = &"is_entering"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_2aay4"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_qd570"]
+xfade_time = 0.5
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_yn8bx"]
+xfade_time = 0.5
+advance_mode = 2
+advance_condition = &"is_exiting"
+
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_kjiig"]
 states/End/position = Vector2(999, 136)
+states/EnterCar/node = SubResource("AnimationNodeAnimation_63hol")
+states/EnterCar/position = Vector2(112, 41)
+states/ExitCar/node = SubResource("AnimationNodeAnimation_wnyou")
+states/ExitCar/position = Vector2(292, -66)
 states/Idle/node = SubResource("AnimationNodeBlendTree_x0ksm")
 states/Idle/position = Vector2(441, 125)
 "states/Move Backward/node" = SubResource("AnimationNodeBlendTree_hd0tm")
 "states/Move Backward/position" = Vector2(648, 26)
 "states/Move Forward/node" = SubResource("AnimationNodeBlendTree_aqhks")
 "states/Move Forward/position" = Vector2(441, -4)
+"states/Sit Idle/node" = SubResource("AnimationNodeAnimation_kmxv2")
+"states/Sit Idle/position" = Vector2(133, -67)
 states/Start/position = Vector2(186, 125)
 states/Strafe/node = SubResource("AnimationNodeBlendTree_4nx6x")
 states/Strafe/position = Vector2(654, 177)
 states/Turn/node = SubResource("AnimationNodeBlendTree_fb2r8")
 states/Turn/position = Vector2(441, 250)
-transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_dggd4"), "Idle", "Move Forward", SubResource("AnimationNodeStateMachineTransition_dk7q4"), "Idle", "Turn", SubResource("AnimationNodeStateMachineTransition_0xaec"), "Idle", "Move Backward", SubResource("AnimationNodeStateMachineTransition_x0ksm"), "Move Forward", "Idle", SubResource("AnimationNodeStateMachineTransition_kjiig"), "Move Backward", "Idle", SubResource("AnimationNodeStateMachineTransition_ngyjq"), "Turn", "Idle", SubResource("AnimationNodeStateMachineTransition_35xqn"), "Idle", "Strafe", SubResource("AnimationNodeStateMachineTransition_g8bv4"), "Strafe", "Idle", SubResource("AnimationNodeStateMachineTransition_lvhlq")]
-graph_offset = Vector2(-129, -31)
+transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_dggd4"), "Idle", "Move Forward", SubResource("AnimationNodeStateMachineTransition_dk7q4"), "Idle", "Turn", SubResource("AnimationNodeStateMachineTransition_0xaec"), "Idle", "Move Backward", SubResource("AnimationNodeStateMachineTransition_x0ksm"), "Move Forward", "Idle", SubResource("AnimationNodeStateMachineTransition_kjiig"), "Move Backward", "Idle", SubResource("AnimationNodeStateMachineTransition_ngyjq"), "Turn", "Idle", SubResource("AnimationNodeStateMachineTransition_35xqn"), "Idle", "Strafe", SubResource("AnimationNodeStateMachineTransition_g8bv4"), "Strafe", "Idle", SubResource("AnimationNodeStateMachineTransition_lvhlq"), "Idle", "EnterCar", SubResource("AnimationNodeStateMachineTransition_wnyou"), "ExitCar", "Idle", SubResource("AnimationNodeStateMachineTransition_2aay4"), "EnterCar", "Sit Idle", SubResource("AnimationNodeStateMachineTransition_qd570"), "Sit Idle", "ExitCar", SubResource("AnimationNodeStateMachineTransition_yn8bx")]
+graph_offset = Vector2(-148, -113)
 
 [sub_resource type="AnimationNodeOneShot" id="AnimationNodeOneShot_0xaec"]
 filter_enabled = true
@@ -571,7 +602,7 @@ transitions = ["Start", "AK47", SubResource("AnimationNodeStateMachineTransition
 
 [resource]
 resource_local_to_scene = true
-graph_offset = Vector2(-772.1782, 110.92905)
+graph_offset = Vector2(-851.1473, 190.79257)
 nodes/output/position = Vector2(260, 360)
 nodes/Locomotion/node = SubResource("AnimationNodeStateMachine_kjiig")
 nodes/Locomotion/position = Vector2(-480, 180)

@@ -60,16 +60,7 @@ public partial class Pedestrian : CharacterBody3D
     bool isInjured;
 	bool isDead;
 
-	bool hasStroller;
-	bool isMale;
-    int maxHealth;
-    int health;
-    int damage;
-
-    [Export]
-    public MeshInstance3D Stroller {  get; set; }
-    [Export]
-    public CollisionShape3D StrollerCol {  get; set; }
+	
 
 	[Export]
 	public Node3D FrontTrans;
@@ -115,13 +106,30 @@ public partial class Pedestrian : CharacterBody3D
     public PackedScene BloodSpatterLarge;
     [Export]
     public Node3D[] Limbs;
+    [Export]
+    public string[] boneNames;
+    private int[] boneIndexes;
+    [Export]
+    public PhysicalBone3D[] physBones;
+    public List<int> rejectedBoneIndexes;
+    [Export]
+    public Node3D[] LimbBloods;
+    [Export]
+    public Node3D IntestineNode;
+    PhysicalBoneSimulator3D intestine;
+    PhysicalBone3D intestineRoot;
+    [Export]
+    public Generic6DofJoint3D intestineJoint;
+    string spinePath;
+    string intestinePath;
+    //List<CollisionShape3D> intestineCols;
 
     //Blood Decals
     [Export]
     public Godot.Collections.Array<Node3D> BloodDecals;
     [Export]
     public PackedScene GroundBlood;
-    bool groundBloodSpawned;
+    public bool groundBloodSpawned;
     int groundBloodDelay;
     [Export]
     public PackedScene[] BloodStreak;
@@ -129,7 +137,45 @@ public partial class Pedestrian : CharacterBody3D
     public float BloodStreakThreshold;
     [Export]
     public float BloodStreakDist;
-    float streakOffset = .01f;
+    float streakOffset = .02f;
+    float dynamicSortingOrder;
+    float maxSortingLimit = 200f;
+
+    ///Person Type
+    bool hasStroller;
+    bool isMale;
+    int maxHealth;
+    int health;
+    int damage;
+    [Export]
+    public MeshInstance3D Body;
+    [Export]
+    public MeshInstance3D Pants;
+    [Export]
+    public MeshInstance3D Shorts;
+    [Export]
+    public MeshInstance3D Hoodie;
+    [Export]
+    public MeshInstance3D Tshirt;
+    [Export]
+    public MeshInstance3D Tanktop;
+    [Export]
+    public MeshInstance3D Socks;
+    [Export]
+    public MeshInstance3D Shoes;
+    [Export]
+    public Godot.Collections.Array<Node3D> WomanHair;
+    [Export]
+    public Godot.Collections.Array<Node3D> ManHair;
+    [Export]
+    public Godot.Collections.Array<Node3D> SeveredWomanHair;
+    [Export]
+    public Godot.Collections.Array<Node3D> SeveredManHair;
+
+    [Export]
+    public MeshInstance3D Stroller { get; set; }
+    [Export]
+    public CollisionShape3D StrollerCol { get; set; }
 
     public override void _Ready()
     {
@@ -149,10 +195,11 @@ public partial class Pedestrian : CharacterBody3D
             StrollerCol.Disabled = false;
         }
 
-        walkSpeed = type.WalkSpeed;
-        runSpeed = type.RunSpeed;
-        injuredRunSpeed = type.InjuredRunSpeed;
-        maxHealth = type.Health;
+        //walkSpeed = type.WalkSpeed;
+        //runSpeed = type.RunSpeed;
+        //injuredRunSpeed = type.InjuredRunSpeed;
+        maxHealth = 4;
+        SetType();
         health = maxHealth;
 
         speed = walkSpeed;
@@ -165,7 +212,23 @@ public partial class Pedestrian : CharacterBody3D
         spineBone = GetNode<PhysicalBone3D>("Pedestrian/Player/Skeleton3D/Ragdoll/Physical Bone spine_001");
         hitArea = GetNode<Area3D>("HitCol");
 
+        dynamicSortingOrder = (float)GD.RandRange(0, maxSortingLimit - 1);
         _ = SpawnBloodStreaks();
+
+        boneIndexes = new int[boneNames.Length];
+        for(int i = 0; i < boneNames.Length; i++)
+        {
+            boneIndexes[i] = skeleton.FindBone(boneNames[i]);
+            //GD.Print("Bone: " + skeleton.FindBone(boneNames[i]));
+        }
+        rejectedBoneIndexes = new List<int>();
+
+        intestine = IntestineNode.GetNode<PhysicalBoneSimulator3D>("Guts Full/Guts Rig/Skeleton3D/PhysicalBoneSimulator3D");
+        intestineRoot = intestine.GetNode<PhysicalBone3D>("Physical Bone Bone");
+        spinePath = spineBone.GetPath();
+        intestinePath = intestine.GetPath();
+        //intestineCols = new List<CollisionShape3D>();
+        //foreach()
     }
     private void _Start()
     {
@@ -253,6 +316,7 @@ public partial class Pedestrian : CharacterBody3D
         else
 		{
             ActivateRagdoll();
+            
         }
         //if(IsVisibleInTree())
         //{
@@ -297,19 +361,8 @@ public partial class Pedestrian : CharacterBody3D
             {
                 d.Visible = true;
             }
-            groundBloodDelay = 1000;
-            if (isLimb)
-            {
-                int amount = GD.RandRange(0, Limbs.Length);
-                List<int> nums = new List<int>(Limbs.Length);
-                for(int i = 0; i < amount; i++)
-                {
-                    int j = GD.RandRange(0, nums.Count - 1);
-                    Limbs[j].Visible = true;
-                    nums.Remove(nums[j]);
-                    GD.Print("Limb");
-                }
-            }
+            groundBloodDelay = 500;
+            
         }
     }
     public void BulletHit()
@@ -321,7 +374,7 @@ public partial class Pedestrian : CharacterBody3D
             isShot = true;
             bulletVelocityMulti = OverheadPlayer.weaponForce;
             bulletVelocity *= bulletVelocityMulti;
-            groundBloodDelay = 1000;
+            groundBloodDelay = 500;
             AddBloodDecal();
             //GD.Print("Hit Bullet");
         }
@@ -740,31 +793,139 @@ public partial class Pedestrian : CharacterBody3D
         {
             if (!ragdoll.IsSimulatingPhysics())
             {
-                ragdoll.Active = true;
-                ragdoll.PhysicalBonesStartSimulation();
+                if (isLimb)
+                {
+                    int amount = GD.RandRange(1, Limbs.Length);
+                    //GD.Print("IsLimb: " + amount);
+                    List<int> nums = new List<int>(Limbs.Length);
+                    var activeBoneNames = new Godot.Collections.Array<StringName>();
+                    for (int i = 0; i < Limbs.Length; i++)
+                    {
+                        nums.Add(i);
+                    }
+                    List<string> bones = new List<string>();
+
+                    for (int i = 0; i < amount; i++)
+                    {
+                        if (nums.Count > 0)
+                        {
+                            var j = GD.Randi() % nums.Count;
+                            int k = nums[(int)j];
+                            Limbs[k].Visible = true;
+                            Limbs[k].Reparent(GetTree().Root.GetChild(0), true);
+                            Limbs[k].GlobalPosition = spineBone.GlobalPosition;
+                            bones.Add(physBones[k].Name);
+                            LimbBloods[k].Visible = true;
+                            skeleton.SetBonePoseScale(boneIndexes[k], new Vector3(.001f, .001f, .001f));
+                            nums.Remove(nums[(int)j]);
+                        }
+                        else
+                        {
+                            //GD.Print("Break Loop");
+                            break;
+                        }
+                    }
+                    foreach (var child in ragdoll.GetChildren())
+                    {
+                        foreach (string b in bones)
+                        {
+                            if (child is PhysicalBone3D pb && pb.Name != b)
+                            {
+                                activeBoneNames.Add(skeleton.GetBoneName(pb.GetBoneId()));  
+                            }
+                            else
+                            {
+                                if(child is PhysicalBone3D p)
+                                {
+                                    rejectedBoneIndexes.Add(p.GetBoneId());
+                                    //GD.Print("Rejected Bone: " + child.Name);
+                                }
+                            }
+                        }
+                    }
+                    int legs = 0;
+                    for(int i = 0; i < rejectedBoneIndexes.Count; i++)
+                    {
+                        //GD.Print("Bone Name: " + skeleton.GetBoneName(rejectedBoneIndexes[i]));
+                        if (skeleton.GetBoneName(rejectedBoneIndexes[i]) == "thigh.L" ||
+                            skeleton.GetBoneName(rejectedBoneIndexes[i]) == "thigh.R")
+                        {
+                            legs++;
+                        }
+                    }
+                    if(legs == 2)
+                    {
+                        //intestineJoint.NodeA = spinePath;
+                        //intestineJoint.NodeB = intestinePath;
+                        intestine.Active = true;
+                        intestine.PhysicalBonesStartSimulation();
+                        IntestineNode.Visible = true;
+                        
+                        
+                        //var cols = intestine.FindChildren("*", "CollisionShape3D", recursive: true, owned: false);
+                        //foreach (CollisionShape3D child in cols)
+                        //{
+                        //    child.Disabled = false;
+                        //}
+                        GD.Print("intestine Spawned");
+                    }
+                    else
+                    {
+                        intestineJoint.NodeA = null;
+                        intestineJoint.NodeB = null;
+                    }
+                    ragdoll.Active = true;
+                    ragdoll.PhysicalBonesStartSimulation(activeBoneNames);
+                }
+                else
+                {
+                    intestineJoint.NodeA = null;
+                    intestineJoint.NodeB = null;
+                    ragdoll.Active = true;
+                    ragdoll.PhysicalBonesStartSimulation();
+                }
                 AnimTree.Active = false;
                 bodyCol.QueueFree();
                 hitArea.QueueFree();
                 if (isShot)
                 {
-                    var chestBone = GetNode<PhysicalBone3D>("Pedestrian/Player/Skeleton3D/Ragdoll/Physical Bone spine_003");
-                    chestBone.ApplyImpulse(bulletVelocity, Vector3.Zero);
-                    //GD.Print("Bullet Vel: " + bulletVelocity);
+                    Callable.From(ApplyBulletImpulse).CallDeferred();
+                    GD.Print("Bullet Vel: " + bulletVelocity);
                     isShot = false;
                 }
+                
                 SpawnGroundBlood();
             }
+
         }
+    }
+    async void ApplyBulletImpulse()
+    {
+        await Task.Delay(10);
+        var chestBone = GetNode<PhysicalBone3D>("Pedestrian/Player/Skeleton3D/Ragdoll/Physical Bone spine_003");
+        chestBone.ApplyImpulse(bulletVelocity, Vector3.Zero);
+    }
+
+    void OnSkeletonUpdated()
+    {
+        if (rejectedBoneIndexes.Count > 0)
+            {
+                for (int i = 0; i < rejectedBoneIndexes.Count; i++)
+                {
+                    skeleton.SetBonePoseScale(rejectedBoneIndexes[i], new Vector3(.001f, .001f, .001f));
+                    //GD.Print("Scale: " + skeleton.GetBoneName(rejectedBoneIndexes[i]));
+                }
+            }
     }
 
     async void SpawnGroundBlood()
     {
         while (true)
         {
-            if (!groundBloodSpawned && spineBone.LinearVelocity.Length() < 0.03f)
+            if (!groundBloodSpawned && spineBone.LinearVelocity.Length() < 0.04f)
             {
                 await Task.Delay(groundBloodDelay);
-                if (!groundBloodSpawned && spineBone.LinearVelocity.Length() < 0.03f)
+                if (!groundBloodSpawned && spineBone.LinearVelocity.Length() < 0.04f)
                 {
                     groundBloodSpawned = true;
                     var groundBlood = GroundBlood.Instantiate<Decal>();
@@ -775,11 +936,8 @@ public partial class Pedestrian : CharacterBody3D
                     groundBlood.GlobalPosition = new Vector3(spineBone.GlobalPosition.X, groundNode.GlobalPosition.Y, spineBone.GlobalPosition.Z);
                     //GD.Print("Ground Blood Spawned");
                 }
-                else
-                {
-                    groundBloodSpawned = false;
-                }
             }
+            //GD.Print("Moving..." + spineBone.LinearVelocity.Length());
             await Task.Delay(5);
         }
  
@@ -793,12 +951,16 @@ public partial class Pedestrian : CharacterBody3D
             while (spineBone.LinearVelocity.Length() > BloodStreakThreshold && isDead &&
                 spineBone.GlobalPosition.DistanceTo(new Vector3(spineBone.GlobalPosition.X, groundNode.GlobalPosition.Y, spineBone.GlobalPosition.Z)) < BloodStreakDist)
             {
+                dynamicSortingOrder = (dynamicSortingOrder + 1) % maxSortingLimit;
                 int i = GD.RandRange(0, BloodStreak.Length - 1);
                 var streakPrefab = BloodStreak[i].Instantiate<Decal>();
                 groundNode.AddChild(streakPrefab);
+                streakPrefab.Size = new Vector3(streakPrefab.Size.X, streakPrefab.Size.Y + (dynamicSortingOrder * .001f), streakPrefab.Size.Z);
                 Vector3 lookBasis = spineBone.LinearVelocity.Normalized();
                 streakPrefab.Basis = Basis.LookingAt(lookBasis);
                 streakPrefab.GlobalPosition = new Vector3(spineBone.GlobalPosition.X, groundNode.GlobalPosition.Y + streakOffset, spineBone.GlobalPosition.Z);
+                streakPrefab.SortingOffset += dynamicSortingOrder * 001f;
+
                 //GD.Print("Spawned Streak");
                 await Task.Delay(10);
             }
@@ -828,4 +990,107 @@ public partial class Pedestrian : CharacterBody3D
         }
         return groundNode;
     }
+
+    ///Person Type
+    
+    void SetType()
+    {
+        int m = GD.RandRange(0, 1);
+        isMale = m == 0 ? true : false;
+
+        walkSpeed = (float)GD.RandRange(1.8, 2.5);
+        runSpeed = (float)GD.RandRange(3.8, 5.3);
+        injuredRunSpeed = walkSpeed - 0.5f;
+        health = 4;
+
+        //Clothing
+        ///Add to these if adding more clothing or blendshapes
+        int p = GD.RandRange(0, 1);
+        if(p == 0)
+        {
+            Pants.Visible = true;
+            Pants.SetBlendShapeValue(0, 1);
+            if (!isMale)
+            {
+                Pants.SetBlendShapeValue(1, 1);
+            }
+            Body.SetBlendShapeValue(2, 1);
+        }
+        else
+        {
+            Shorts.Visible = true;
+            Shorts.SetBlendShapeValue(0, 1);
+            
+            if (!isMale)
+            {
+                Shorts.SetBlendShapeValue(1, 1);
+            }
+            int sock = GD.RandRange(0, 2);
+            if(sock == 0)
+            {
+                Socks.SetBlendShapeValue(0, 1);
+                Socks.Visible = true;
+            }
+            else if(sock == 1)
+            {
+                Socks.Visible = true;
+            }
+            Body.SetBlendShapeValue(5, 1);
+        }
+
+        int s = GD.RandRange(0, 3);
+        if(s == 0)
+        {
+            Tshirt.Visible = true;
+            if (!isMale)
+            {
+                Tshirt.SetBlendShapeValue(0, 1);
+            }
+            Body.SetBlendShapeValue(1, 1);
+        }
+        else if(s == 1)
+        {
+            Hoodie.Visible = true;
+            if (!isMale)
+            {
+                Hoodie.SetBlendShapeValue(0, 1);
+            }
+            Body.SetBlendShapeValue(3, 1);
+        }
+        else if( s == 2)
+        {
+            Tanktop.Visible = true;
+            if (!isMale)
+            {
+                Tanktop.SetBlendShapeValue(0, 1);
+            }
+            Body.SetBlendShapeValue(4, 1);
+        }
+        else
+        {
+            if (!isMale)
+            {
+                Tshirt.Visible = true;
+                Tshirt.SetBlendShapeValue(0, 1);
+                Body.SetBlendShapeValue(1, 1);
+            }
+        }
+
+        if(isMale)
+        {
+            int h = GD.RandRange(0, ManHair.Count - 1);
+            ManHair[h].Visible = true;
+            //SeveredManHair[h].Visible = true;
+            //GD.Print("Man Hair");
+        }
+        else
+        {
+            int h = GD.RandRange(0, WomanHair.Count - 1);
+            WomanHair[h].Visible = true;
+            //SeveredWomanHair[h].Visible = true;
+            //GD.Print("Woman Hair");
+        }
+            
+    }
+
 }

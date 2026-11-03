@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://78cfpgprfok2"]
+
+[ext_resource type="Texture2D" uid="uid://ucunk2d60lrp" path="res://Overhead/Blood/Blood Decal Small.png" id="1_nvk2j"]
+[ext_resource type="Script" uid="uid://bs7shawo54u0m" path="res://Overhead/Blood/GroundBloodDecal.cs" id="2_pfcus"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lfxu0"]
+size = Vector3(0.6813965, 0.11956787, 0.67285156)
+
+[node name="Blood Decal Small" type="Decal" unique_id=1868960435]
+sorting_offset = 1.75
+size = Vector3(0.65, 0.05, 0.65)
+texture_albedo = ExtResource("1_nvk2j")
+modulate = Color(0.47369397, 0.0063181156, 0.0063181156, 1)
+albedo_mix = 0.94
+upper_fade = 0.14489055
+lower_fade = 0.16076611
+script = ExtResource("2_pfcus")
+FadeDelay = 5000
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1044573183 groups=["Blood Decals"]]
+collision_layer = 512
+collision_mask = 0
+monitoring = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1280359393]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.01889038, 0)
+shape = SubResource("BoxShape3D_lfxu0")

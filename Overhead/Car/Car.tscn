@@ -6,8 +6,86 @@
 [ext_resource type="PackedScene" uid="uid://djwymdkxkxuue" path="res://Overhead/Car/Car.glb" id="3_ru8vy"]
 [ext_resource type="Material" uid="uid://c82gwxdoo3bj5" path="res://Overhead/Car/Car.tres" id="4_fv4aa"]
 [ext_resource type="Texture2D" uid="uid://cg2bpyulbv2qd" path="res://_Writing/particle.png" id="5_8tet2"]
+[ext_resource type="Script" uid="uid://dppa3wtv1ae2e" path="res://Overhead/Car/CarDoor.cs" id="5_wy8hd"]
 [ext_resource type="PackedScene" uid="uid://comgeoedl1oab" path="res://Overhead/Car/Wheel.glb" id="6_yabek"]
 [ext_resource type="Material" uid="uid://dhpl8vx04h85k" path="res://Overhead/Car/Headlight Bulb.tres" id="7_ogu7u"]
+[ext_resource type="Script" uid="uid://xobyykuy847u" path="res://Overhead/Car/DoorOpenCol.cs" id="8_oexy3"]
+[ext_resource type="Script" uid="uid://bx7wmcdujwpi3" path="res://Overhead/Car/BloodDecalCol.cs" id="10_emudj"]
+[ext_resource type="PackedScene" uid="uid://827ogf0flo1l" path="res://Overhead/Car/Tiretrack Single Decal.tscn" id="11_cj18k"]
+
+[sub_resource type="Animation" id="Animation_oexy3"]
+resource_name = "DoorClose]"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.16666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, -1.1082841, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_1066s"]
+resource_name = "DoorOpen"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.033333335, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -1.1082841, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_wy8hd"]
+length = 0.001
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_oexy3"]
+_data = {
+&"DoorClose]": SubResource("Animation_oexy3"),
+&"DoorOpen": SubResource("Animation_1066s"),
+&"RESET": SubResource("Animation_wy8hd")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_1066s"]
+animation = &"DoorClose]"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_emudj"]
+animation = &"DoorOpen"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_wy8hd"]
+advance_mode = 2
+advance_condition = &"is_open"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_oexy3"]
+advance_mode = 2
+advance_condition = &"is_closed"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_emudj"]
+advance_mode = 2
+advance_condition = &"is_open"
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_cj18k"]
+"states/DoorClose]/node" = SubResource("AnimationNodeAnimation_1066s")
+"states/DoorClose]/position" = Vector2(701, 82)
+states/DoorOpen/node = SubResource("AnimationNodeAnimation_emudj")
+states/DoorOpen/position = Vector2(474, 93)
+transitions = ["Start", "DoorOpen", SubResource("AnimationNodeStateMachineTransition_wy8hd"), "DoorOpen", "DoorClose]", SubResource("AnimationNodeStateMachineTransition_oexy3"), "DoorClose]", "DoorOpen", SubResource("AnimationNodeStateMachineTransition_emudj")]
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_hjb8m"]
+graph_offset = Vector2(-488.37946, 113.10263)
+nodes/output/position = Vector2(300, 200)
+nodes/StateMachine/node = SubResource("AnimationNodeStateMachine_cj18k")
+nodes/StateMachine/position = Vector2(-420, 220)
+node_connections = [&"output", 0, &"StateMachine"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mpqd1"]
 transparency = 1
@@ -30,11 +108,29 @@ point_count = 2
 offsets = PackedFloat32Array(0, 0.19753087, 1)
 colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 0.44705883, 1, 1, 1, 0)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_r6c0r"]
+size = Vector3(0.22280884, 0.52111816, 0.5432358)
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_lfxu0"]
 size = Vector3(2.8320313, 0.97525024, 7.1694336)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_hjb8m"]
 size = Vector3(2.2304688, 0.7159424, 3.288086)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_odlsx"]
+size = Vector3(0.85791016, 0.4204712, 0.20788574)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cj18k"]
+size = Vector3(0.44677734, 0.1875, 0.43554688)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dooah"]
+size = Vector3(0.44677734, 0.17382813, 0.43554688)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_oexy3"]
+size = Vector3(0.44677734, 0.1875, 0.43554688)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_emudj"]
+size = Vector3(0.44677734, 0.17382813, 0.43554688)
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_lfxu0"]
 
@@ -54,9 +150,9 @@ top_radius = 1.9
 bottom_radius = 0.07
 height = 4.7631836
 
-[node name="Car" type="VehicleBody3D" unique_id=805560789 node_paths=PackedStringArray("TailLights", "HeadLights") groups=["Player Vehicle"]]
+[node name="Car" type="VehicleBody3D" unique_id=805560789 node_paths=PackedStringArray("TailLights", "HeadLights") groups=["Player Vehicle", "Vehicle Static Hit"]]
 collision_layer = 2
-collision_mask = 119
+collision_mask = 247
 axis_lock_angular_x = true
 axis_lock_angular_z = true
 mass = 1000.0
@@ -74,12 +170,26 @@ HeadLights = NodePath("Headlights")
 DamageParticles = ExtResource("3_fv4aa")
 
 [node name="Car" parent="." unique_id=2094350815 instance=ExtResource("3_ru8vy")]
-transform = Transform3D(3.36, 0, 0, 0, 3.36, 0, 0, 0, 3.36, 0, 1.0559013, 0)
+transform = Transform3D(3.36, 0, 0, 0, 3.36, 0, 0, 0, 3.36, 0, 0.078332186, 0)
 
-[node name="Car " parent="Car" index="0" unique_id=2034696513]
+[node name="Car " parent="Car" index="0" unique_id=1467825388]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+surface_material_override/0 = ExtResource("4_fv4aa")
 
-[node name="Tail Pipe" parent="Car/Car " index="6" unique_id=1548325046]
+[node name="Door L" parent="Car/Car " index="3" unique_id=1919252798]
+surface_material_override/0 = ExtResource("4_fv4aa")
+script = ExtResource("5_wy8hd")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Car/Car /Door L" index="0" unique_id=1089245290]
+libraries/ = SubResource("AnimationLibrary_oexy3")
+
+[node name="AnimationTree" type="AnimationTree" parent="Car/Car /Door L" index="1" unique_id=1714669669]
+tree_root = SubResource("AnimationNodeBlendTree_hjb8m")
+anim_player = NodePath("../AnimationPlayer")
+parameters/StateMachine/conditions/is_closed = false
+parameters/StateMachine/conditions/is_open = false
+
+[node name="Tail Pipe" parent="Car/Car " index="6" unique_id=500276776]
 surface_material_override/0 = ExtResource("4_fv4aa")
 
 [node name="CPUParticles3D" type="CPUParticles3D" parent="Car/Car /Tail Pipe" index="0" unique_id=1741097038]
@@ -119,64 +229,146 @@ light_volumetric_fog_energy = 0.0
 light_size = 0.04
 light_specular = 0.817
 
+[node name="DoorOpenCol" type="Area3D" parent="Car/Car " index="9" unique_id=153760211 node_paths=PackedStringArray("StandPosNode", "StandRotNode", "SitPosNode", "CarDoor", "CarCam")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.40384933, 0, 0)
+collision_layer = 256
+script = ExtResource("8_oexy3")
+StandPosNode = NodePath("../../../DoorStandPos")
+StandRotNode = NodePath("../../../DoorStandRot")
+SitPosNode = NodePath("../../../DoorSitPos")
+CarDoor = NodePath("../Door L")
+CarCam = NodePath("../../../Camera3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Car/Car /DoorOpenCol" unique_id=258055989]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11643982, -0.045593277, 0.040599827)
+shape = SubResource("BoxShape3D_r6c0r")
+
 [node name="Body Collider" type="CollisionShape3D" parent="." unique_id=1755754264]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9418913, 0.23849487)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.03567779, 0.23849487)
 shape = SubResource("BoxShape3D_lfxu0")
 
 [node name="Top Collider" type="CollisionShape3D" parent="." unique_id=532090409]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7874491, 0.020355225)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.80988, 0.020355225)
 shape = SubResource("BoxShape3D_hjb8m")
 
+[node name="Front Collider" type="CollisionShape3D" parent="." unique_id=1897747454]
+transform = Transform3D(3.36, 0, 0, 0, 3.36, 0, 0, 0, 3.36, 0.0041015744, -0.23882127, 3.5303867)
+shape = SubResource("BoxShape3D_odlsx")
+
 [node name="Camera3D" type="Camera3D" parent="." unique_id=2079960638]
-transform = Transform3D(-1, -1.4712579e-07, 3.3966664e-08, 0, 0.22495104, 0.97437006, -1.509958e-07, 0.97437006, -0.22495104, 0, 45.946, -7.685)
+transform = Transform3D(-1, -1.4712579e-07, 3.3966664e-08, 0, 0.22495104, 0.97437006, -1.509958e-07, 0.97437006, -0.22495104, 0, 44.96843, -7.685)
 visible = false
 fov = 30.1
-near = 0.039
+near = 0.057
 
-[node name="Wheel FL" type="VehicleWheel3D" parent="." unique_id=12028068]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1601827, 0.54428375, 2.4914284)
+[node name="Wheel FR" type="VehicleWheel3D" parent="." unique_id=12028068]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1601827, -0.43328536, 2.4914284)
 engine_force = 50.0
 brake = 25.0
 steering = 0.37576938
 use_as_traction = true
 use_as_steering = true
-wheel_radius = 0.155
+wheel_radius = 0.565
+suspension_stiffness = 40.0
+damping_compression = 3.0
+damping_relaxation = 4.0
 
-[node name="Wheel" parent="Wheel FL" unique_id=86960338 instance=ExtResource("6_yabek")]
-transform = Transform3D(3.6, 0, 0, 0, 3.6, 0, 0, 0, 3.6, 0, -0.004, -0.002)
+[node name="Wheel" parent="Wheel FR" unique_id=86960338 instance=ExtResource("6_yabek")]
+transform = Transform3D(-3.6, 0, -3.14722e-07, 0, 3.6, 0, 3.14722e-07, 0, -3.6, 0, -0.004, -0.002)
 
-[node name="Wheel FR" type="VehicleWheel3D" parent="." unique_id=1284201633]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.166, 0.5442978, 2.4911098)
+[node name="Blood Decal Col" type="Area3D" parent="Wheel FR" unique_id=671685725]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.064002156, -0.047691822, 0)
+collision_layer = 0
+collision_mask = 512
+monitorable = false
+script = ExtResource("10_emudj")
+SpawnDistance = 0.2
+TireTrack = ExtResource("11_cj18k")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wheel FR/Blood Decal Col" unique_id=798816446]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.068603516, -0.5061773, -0.011962891)
+shape = SubResource("BoxShape3D_cj18k")
+
+[node name="Wheel FL" type="VehicleWheel3D" parent="." unique_id=1284201633]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.166, -0.4332713, 2.4911098)
 engine_force = 50.0
 brake = 25.0
 steering = 0.37576938
 use_as_traction = true
 use_as_steering = true
-wheel_radius = 0.155
+wheel_radius = 0.565
+suspension_stiffness = 40.0
+damping_compression = 3.0
+damping_relaxation = 4.0
 
-[node name="Wheel2" parent="Wheel FR" unique_id=180419207 instance=ExtResource("6_yabek")]
-transform = Transform3D(-3.6, 0, -5.4358486e-07, 0, 3.6, 0, 5.4358486e-07, 0, -3.6, 0, -0.004, -0.002)
-
-[node name="Wheel BL" type="VehicleWheel3D" parent="." unique_id=587912886]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1368062, 0.54428375, -1.9014101)
-engine_force = 50.0
-wheel_radius = 0.155
-wheel_friction_slip = 5.0
-
-[node name="Wheel" parent="Wheel BL" unique_id=1289626241 instance=ExtResource("6_yabek")]
+[node name="Wheel2" parent="Wheel FL" unique_id=180419207 instance=ExtResource("6_yabek")]
 transform = Transform3D(3.6, 0, 0, 0, 3.6, 0, 0, 0, 3.6, 0, -0.004, -0.002)
 
-[node name="Wheel BR" type="VehicleWheel3D" parent="." unique_id=623286091]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.166, 0.5442978, -1.9017284)
-engine_force = 50.0
-wheel_radius = 0.155
-wheel_friction_slip = 5.0
+[node name="Blood Decal Col2" type="Area3D" parent="Wheel FL" unique_id=1768325925]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.003709793, -0.04770589, 0.00031852722)
+collision_layer = 0
+collision_mask = 512
+monitorable = false
+script = ExtResource("10_emudj")
+SpawnDistance = 0.2
+TireTrack = ExtResource("11_cj18k")
 
-[node name="Wheel2" parent="Wheel BR" unique_id=1390947086 instance=ExtResource("6_yabek")]
-transform = Transform3D(-3.6, 0, -5.4358486e-07, 0, 3.6, 0, 5.4358486e-07, 0, -3.6, 0, -0.004, -0.002)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wheel FL/Blood Decal Col2" unique_id=1179632728]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.005741, -0.5061773, -0.011962891)
+shape = SubResource("BoxShape3D_dooah")
+
+[node name="Wheel BR" type="VehicleWheel3D" parent="." unique_id=587912886]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1368062, -0.43328536, -1.9014101)
+engine_force = 50.0
+wheel_radius = 0.565
+wheel_friction_slip = 5.0
+suspension_stiffness = 40.0
+damping_compression = 3.0
+damping_relaxation = 4.0
+
+[node name="Wheel" parent="Wheel BR" unique_id=1289626241 instance=ExtResource("6_yabek")]
+transform = Transform3D(-3.6, 0, -3.14722e-07, 0, 3.6, 0, 3.14722e-07, 0, -3.6, 0, -0.004, -0.002)
+
+[node name="Blood Decal Col2" type="Area3D" parent="Wheel BR" unique_id=837416640]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.08737862, -0.047691822, 0.008339405)
+collision_layer = 0
+collision_mask = 512
+monitorable = false
+script = ExtResource("10_emudj")
+SpawnDistance = 0.2
+TireTrack = ExtResource("11_cj18k")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wheel BR/Blood Decal Col2" unique_id=101559077]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.068603516, -0.5061773, -0.011962891)
+shape = SubResource("BoxShape3D_oexy3")
+
+[node name="Wheel BL" type="VehicleWheel3D" parent="." unique_id=623286091]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.166, -0.4332713, -1.9017284)
+engine_force = 50.0
+wheel_radius = 0.565
+wheel_friction_slip = 5.0
+suspension_stiffness = 40.0
+damping_compression = 3.0
+damping_relaxation = 4.0
+
+[node name="Wheel2" parent="Wheel BL" unique_id=1390947086 instance=ExtResource("6_yabek")]
+transform = Transform3D(3.6, 0, 0, 0, 3.6, 0, 0, 0, 3.6, 0, -0.004, -0.002)
+
+[node name="Blood Decal Col3" type="Area3D" parent="Wheel BL" unique_id=605491053]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.012238026, -0.04770589, 0.008657694)
+collision_layer = 0
+collision_mask = 512
+monitorable = false
+script = ExtResource("10_emudj")
+SpawnDistance = 0.2
+TireTrack = ExtResource("11_cj18k")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wheel BL/Blood Decal Col3" unique_id=1596985536]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.019396663, -0.5061773, -0.011962891)
+shape = SubResource("BoxShape3D_emudj")
 
 [node name="Headlights" type="Node3D" parent="." unique_id=577231109]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0559013, 3.933876)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.078332186, 3.933876)
 visible = false
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Headlights" unique_id=623343471]
@@ -220,7 +412,16 @@ visible = false
 mesh = SubResource("CylinderMesh_ogu7u")
 
 [node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="." unique_id=499268476]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9558265, 0.21777344)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.021742582, 0.21777344)
 size = Vector3(2.8532715, 0.94273376, 7.3828125)
+
+[node name="DoorStandRot" type="Node3D" parent="." unique_id=1724654287]
+transform = Transform3D(3.36, 0, 0, 0, 3.36, 0, 0, 0, 3.36, 0.7890753, 0.078332186, 1.1941736)
+
+[node name="DoorStandPos" type="Node3D" parent="." unique_id=695692271]
+transform = Transform3D(2.322055, 0, -2.42851, 0, 3.36, 0, 2.42851, 0, 2.322055, 1.8333019, -0.9745984, -0.10885799)
+
+[node name="DoorSitPos" type="Node3D" parent="." unique_id=262884522]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.60695124, -0.013337672, 0.6065963)
 
 [editable path="Car"]

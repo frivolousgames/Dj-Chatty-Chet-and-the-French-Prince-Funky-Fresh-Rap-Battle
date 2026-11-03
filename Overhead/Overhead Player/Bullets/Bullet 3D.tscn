@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://da0ix8pag7f78" path="res://Overhead/Overhead Player/Bullets/Bullet3dMover.cs" id="1_b4lll"]
 [ext_resource type="PackedScene" uid="uid://b4rn1gw1406to" path="res://Overhead/Overhead Player/Bullets/bullet.fbx" id="2_1w2bf"]
-[ext_resource type="PackedScene" uid="uid://bfkbur8n21lt0" path="res://Overhead/blood_spatter_small.tscn" id="2_opiv7"]
+[ext_resource type="PackedScene" uid="uid://bfkbur8n21lt0" path="res://Overhead/Blood/blood_spatter_small.tscn" id="2_opiv7"]
 [ext_resource type="Material" uid="uid://coq2vhctiexfj" path="res://Overhead/Overhead Player/Bullets/Bullet Material.tres" id="3_ek20n"]
 [ext_resource type="PackedScene" uid="uid://c2g1hek7toyio" path="res://Overhead/Car/Vehicle Static Hit Particles.tscn" id="3_opiv7"]
 [ext_resource type="Texture2D" uid="uid://cg2bpyulbv2qd" path="res://_Writing/particle.png" id="4_qpxfl"]

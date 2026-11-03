@@ -1,0 +1,12 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://8kfjcwixctee"]
+
+[ext_resource type="Texture2D" uid="uid://bfoxxmch6rdil" path="res://_Blender/Main Character/Textures/curly hair Normal.png" id="1_u32of"]
+
+[resource]
+resource_local_to_scene = true
+metallic_specular = 0.0
+roughness = 0.78
+normal_enabled = true
+normal_scale = 5.86
+normal_texture = ExtResource("1_u32of")
+uv1_scale = Vector3(9.23, 9.23, 9.23)

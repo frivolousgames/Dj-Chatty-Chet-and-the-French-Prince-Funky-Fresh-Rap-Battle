@@ -3,64 +3,84 @@
   "WorkspaceRootPath": "D:\\Godot\\Dj-Chatty-Chet-and-the-French-Prince-Funky-Fresh-Rap-Battle\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0338D309-D3D9-4409-BE90-F8B76F069347}|Rap Battle.csproj|d:\\godot\\dj-chatty-chet-and-the-french-prince-funky-fresh-rap-battle\\overhead\\pedestrians\\ragdolltrigger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0338D309-D3D9-4409-BE90-F8B76F069347}|Rap Battle.csproj|solutionrelative:overhead\\pedestrians\\ragdolltrigger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{0338D309-D3D9-4409-BE90-F8B76F069347}|Rap Battle.csproj|d:\\godot\\dj-chatty-chet-and-the-french-prince-funky-fresh-rap-battle\\overhead\\pedestrians\\pedestrian.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0338D309-D3D9-4409-BE90-F8B76F069347}|Rap Battle.csproj|solutionrelative:overhead\\pedestrians\\pedestrian.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0338D309-D3D9-4409-BE90-F8B76F069347}|Rap Battle.csproj|d:\\godot\\dj-chatty-chet-and-the-french-prince-funky-fresh-rap-battle\\overhead\\car\\carmover.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0338D309-D3D9-4409-BE90-F8B76F069347}|Rap Battle.csproj|solutionrelative:overhead\\car\\carmover.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0338D309-D3D9-4409-BE90-F8B76F069347}|Rap Battle.csproj|d:\\godot\\dj-chatty-chet-and-the-french-prince-funky-fresh-rap-battle\\tipoverwhenhit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0338D309-D3D9-4409-BE90-F8B76F069347}|Rap Battle.csproj|solutionrelative:tipoverwhenhit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0338D309-D3D9-4409-BE90-F8B76F069347}|Rap Battle.csproj|d:\\godot\\dj-chatty-chet-and-the-french-prince-funky-fresh-rap-battle\\overhead\\pedestrians\\body parts\\partcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0338D309-D3D9-4409-BE90-F8B76F069347}|Rap Battle.csproj|solutionrelative:overhead\\pedestrians\\body parts\\partcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0338D309-D3D9-4409-BE90-F8B76F069347}|Rap Battle.csproj|d:\\godot\\dj-chatty-chet-and-the-french-prince-funky-fresh-rap-battle\\overhead\\groundblooddecal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0338D309-D3D9-4409-BE90-F8B76F069347}|Rap Battle.csproj|solutionrelative:overhead\\groundblooddecal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0338D309-D3D9-4409-BE90-F8B76F069347}|Rap Battle.csproj|d:\\godot\\dj-chatty-chet-and-the-french-prince-funky-fresh-rap-battle\\overhead\\fadeovertime.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0338D309-D3D9-4409-BE90-F8B76F069347}|Rap Battle.csproj|solutionrelative:overhead\\fadeovertime.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0338D309-D3D9-4409-BE90-F8B76F069347}|Rap Battle.csproj|d:\\godot\\dj-chatty-chet-and-the-french-prince-funky-fresh-rap-battle\\overhead\\overhead player\\bullets\\bullet3dmover.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0338D309-D3D9-4409-BE90-F8B76F069347}|Rap Battle.csproj|solutionrelative:overhead\\overhead player\\bullets\\bullet3dmover.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0338D309-D3D9-4409-BE90-F8B76F069347}|Rap Battle.csproj|d:\\godot\\dj-chatty-chet-and-the-french-prince-funky-fresh-rap-battle\\overhead\\navmarkersarray.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0338D309-D3D9-4409-BE90-F8B76F069347}|Rap Battle.csproj|solutionrelative:overhead\\navmarkersarray.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0338D309-D3D9-4409-BE90-F8B76F069347}|Rap Battle.csproj|d:\\godot\\dj-chatty-chet-and-the-french-prince-funky-fresh-rap-battle\\overhead\\overhead player\\overheadplayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0338D309-D3D9-4409-BE90-F8B76F069347}|Rap Battle.csproj|solutionrelative:overhead\\overhead player\\overheadplayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0338D309-D3D9-4409-BE90-F8B76F069347}|Rap Battle.csproj|d:\\godot\\dj-chatty-chet-and-the-french-prince-funky-fresh-rap-battle\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0338D309-D3D9-4409-BE90-F8B76F069347}|Rap Battle.csproj|solutionrelative:gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0338D309-D3D9-4409-BE90-F8B76F069347}|Rap Battle.csproj|d:\\godot\\dj-chatty-chet-and-the-french-prince-funky-fresh-rap-battle\\overhead\\pedestrians\\clothing materials\\setmeshmaterial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0338D309-D3D9-4409-BE90-F8B76F069347}|Rap Battle.csproj|solutionrelative:overhead\\pedestrians\\clothing materials\\setmeshmaterial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0338D309-D3D9-4409-BE90-F8B76F069347}|Rap Battle.csproj|d:\\godot\\dj-chatty-chet-and-the-french-prince-funky-fresh-rap-battle\\overhead\\car\\carmover.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0338D309-D3D9-4409-BE90-F8B76F069347}|Rap Battle.csproj|solutionrelative:overhead\\car\\carmover.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0338D309-D3D9-4409-BE90-F8B76F069347}|Rap Battle.csproj|d:\\godot\\dj-chatty-chet-and-the-french-prince-funky-fresh-rap-battle\\overhead\\pedestrians\\ragdolltrigger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0338D309-D3D9-4409-BE90-F8B76F069347}|Rap Battle.csproj|solutionrelative:overhead\\pedestrians\\ragdolltrigger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0338D309-D3D9-4409-BE90-F8B76F069347}|Rap Battle.csproj|d:\\godot\\dj-chatty-chet-and-the-french-prince-funky-fresh-rap-battle\\overhead\\pedestrians\\pedestriantype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0338D309-D3D9-4409-BE90-F8B76F069347}|Rap Battle.csproj|solutionrelative:overhead\\pedestrians\\pedestriantype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0338D309-D3D9-4409-BE90-F8B76F069347}|Rap Battle.csproj|d:\\godot\\dj-chatty-chet-and-the-french-prince-funky-fresh-rap-battle\\overhead\\navigation\\navigationmarkers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0338D309-D3D9-4409-BE90-F8B76F069347}|Rap Battle.csproj|solutionrelative:overhead\\navigation\\navigationmarkers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0338D309-D3D9-4409-BE90-F8B76F069347}|Rap Battle.csproj|d:\\godot\\dj-chatty-chet-and-the-french-prince-funky-fresh-rap-battle\\overhead\\navmarkersarray.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0338D309-D3D9-4409-BE90-F8B76F069347}|Rap Battle.csproj|solutionrelative:overhead\\navmarkersarray.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0338D309-D3D9-4409-BE90-F8B76F069347}|Rap Battle.csproj|d:\\godot\\dj-chatty-chet-and-the-french-prince-funky-fresh-rap-battle\\overhead\\overhead player\\overheadplayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0338D309-D3D9-4409-BE90-F8B76F069347}|Rap Battle.csproj|solutionrelative:overhead\\overhead player\\overheadplayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0338D309-D3D9-4409-BE90-F8B76F069347}|Rap Battle.csproj|d:\\godot\\dj-chatty-chet-and-the-french-prince-funky-fresh-rap-battle\\overhead\\pedestrians\\body parts\\partcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0338D309-D3D9-4409-BE90-F8B76F069347}|Rap Battle.csproj|solutionrelative:overhead\\pedestrians\\body parts\\partcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0338D309-D3D9-4409-BE90-F8B76F069347}|Rap Battle.csproj|d:\\godot\\dj-chatty-chet-and-the-french-prince-funky-fresh-rap-battle\\overhead\\overhead player\\weaponitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0338D309-D3D9-4409-BE90-F8B76F069347}|Rap Battle.csproj|solutionrelative:overhead\\overhead player\\weaponitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0338D309-D3D9-4409-BE90-F8B76F069347}|Rap Battle.csproj|d:\\godot\\dj-chatty-chet-and-the-french-prince-funky-fresh-rap-battle\\overhead\\car\\blooddecalcol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0338D309-D3D9-4409-BE90-F8B76F069347}|Rap Battle.csproj|solutionrelative:overhead\\car\\blooddecalcol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0338D309-D3D9-4409-BE90-F8B76F069347}|Rap Battle.csproj|d:\\godot\\dj-chatty-chet-and-the-french-prince-funky-fresh-rap-battle\\overhead\\blood\\groundblooddecal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0338D309-D3D9-4409-BE90-F8B76F069347}|Rap Battle.csproj|solutionrelative:overhead\\blood\\groundblooddecal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0338D309-D3D9-4409-BE90-F8B76F069347}|Rap Battle.csproj|d:\\godot\\dj-chatty-chet-and-the-french-prince-funky-fresh-rap-battle\\overhead\\car\\dooropencol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0338D309-D3D9-4409-BE90-F8B76F069347}|Rap Battle.csproj|solutionrelative:overhead\\car\\dooropencol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0338D309-D3D9-4409-BE90-F8B76F069347}|Rap Battle.csproj|d:\\godot\\dj-chatty-chet-and-the-french-prince-funky-fresh-rap-battle\\overhead\\car\\cardoor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0338D309-D3D9-4409-BE90-F8B76F069347}|Rap Battle.csproj|solutionrelative:overhead\\car\\cardoor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0338D309-D3D9-4409-BE90-F8B76F069347}|Rap Battle.csproj|d:\\godot\\dj-chatty-chet-and-the-french-prince-funky-fresh-rap-battle\\overhead\\city junk\\hydrant\\firehydrant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0338D309-D3D9-4409-BE90-F8B76F069347}|Rap Battle.csproj|solutionrelative:overhead\\city junk\\hydrant\\firehydrant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0338D309-D3D9-4409-BE90-F8B76F069347}|Rap Battle.csproj|d:\\godot\\dj-chatty-chet-and-the-french-prince-funky-fresh-rap-battle\\tipoverwhenhit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0338D309-D3D9-4409-BE90-F8B76F069347}|Rap Battle.csproj|solutionrelative:tipoverwhenhit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0338D309-D3D9-4409-BE90-F8B76F069347}|Rap Battle.csproj|d:\\godot\\dj-chatty-chet-and-the-french-prince-funky-fresh-rap-battle\\overhead\\pedestrians\\body parts\\boneshrinker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0338D309-D3D9-4409-BE90-F8B76F069347}|Rap Battle.csproj|solutionrelative:overhead\\pedestrians\\body parts\\boneshrinker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0338D309-D3D9-4409-BE90-F8B76F069347}|Rap Battle.csproj|d:\\godot\\dj-chatty-chet-and-the-french-prince-funky-fresh-rap-battle\\overhead\\fadeovertime.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0338D309-D3D9-4409-BE90-F8B76F069347}|Rap Battle.csproj|solutionrelative:overhead\\fadeovertime.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0338D309-D3D9-4409-BE90-F8B76F069347}|Rap Battle.csproj|d:\\godot\\dj-chatty-chet-and-the-french-prince-funky-fresh-rap-battle\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0338D309-D3D9-4409-BE90-F8B76F069347}|Rap Battle.csproj|solutionrelative:gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0338D309-D3D9-4409-BE90-F8B76F069347}|Rap Battle.csproj|d:\\godot\\dj-chatty-chet-and-the-french-prince-funky-fresh-rap-battle\\overhead\\navigation\\navigationmarkers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0338D309-D3D9-4409-BE90-F8B76F069347}|Rap Battle.csproj|solutionrelative:overhead\\navigation\\navigationmarkers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0338D309-D3D9-4409-BE90-F8B76F069347}|Rap Battle.csproj|d:\\godot\\dj-chatty-chet-and-the-french-prince-funky-fresh-rap-battle\\overhead\\overhead player\\weaponitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0338D309-D3D9-4409-BE90-F8B76F069347}|Rap Battle.csproj|solutionrelative:overhead\\overhead player\\weaponitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0338D309-D3D9-4409-BE90-F8B76F069347}|Rap Battle.csproj|d:\\godot\\dj-chatty-chet-and-the-french-prince-funky-fresh-rap-battle\\savemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -74,37 +94,102 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 13,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
+              "Title": "SetMeshMaterial.cs",
+              "DocumentMoniker": "D:\\Godot\\Dj-Chatty-Chet-and-the-French-Prince-Funky-Fresh-Rap-Battle\\Overhead\\Pedestrians\\Clothing Materials\\SetMeshMaterial.cs",
+              "RelativeDocumentMoniker": "Overhead\\Pedestrians\\Clothing Materials\\SetMeshMaterial.cs",
+              "ToolTip": "D:\\Godot\\Dj-Chatty-Chet-and-the-French-Prince-Funky-Fresh-Rap-Battle\\Overhead\\Pedestrians\\Clothing Materials\\SetMeshMaterial.cs",
+              "RelativeToolTip": "Overhead\\Pedestrians\\Clothing Materials\\SetMeshMaterial.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAQwB0AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-02T23:44:53.972Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "BloodDecalCol.cs",
+              "DocumentMoniker": "D:\\Godot\\Dj-Chatty-Chet-and-the-French-Prince-Funky-Fresh-Rap-Battle\\Overhead\\Car\\BloodDecalCol.cs",
+              "RelativeDocumentMoniker": "Overhead\\Car\\BloodDecalCol.cs",
+              "ToolTip": "D:\\Godot\\Dj-Chatty-Chet-and-the-French-Prince-Funky-Fresh-Rap-Battle\\Overhead\\Car\\BloodDecalCol.cs",
+              "RelativeToolTip": "Overhead\\Car\\BloodDecalCol.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAQwBYAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-28T00:48:10.717Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "GroundBloodDecal.cs",
+              "DocumentMoniker": "D:\\Godot\\Dj-Chatty-Chet-and-the-French-Prince-Funky-Fresh-Rap-Battle\\Overhead\\Blood\\GroundBloodDecal.cs",
+              "RelativeDocumentMoniker": "Overhead\\Blood\\GroundBloodDecal.cs",
+              "ToolTip": "D:\\Godot\\Dj-Chatty-Chet-and-the-French-Prince-Funky-Fresh-Rap-Battle\\Overhead\\Blood\\GroundBloodDecal.cs",
+              "RelativeToolTip": "Overhead\\Blood\\GroundBloodDecal.cs",
+              "ViewState": "AgIAACMAAAAAAAAAAAAAACsAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-27T23:19:50.85Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "DoorOpenCol.cs",
+              "DocumentMoniker": "D:\\Godot\\Dj-Chatty-Chet-and-the-French-Prince-Funky-Fresh-Rap-Battle\\Overhead\\Car\\DoorOpenCol.cs",
+              "RelativeDocumentMoniker": "Overhead\\Car\\DoorOpenCol.cs",
+              "ToolTip": "D:\\Godot\\Dj-Chatty-Chet-and-the-French-Prince-Funky-Fresh-Rap-Battle\\Overhead\\Car\\DoorOpenCol.cs",
+              "RelativeToolTip": "Overhead\\Car\\DoorOpenCol.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABYAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-24T08:55:09.73Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "CarDoor.cs",
+              "DocumentMoniker": "D:\\Godot\\Dj-Chatty-Chet-and-the-French-Prince-Funky-Fresh-Rap-Battle\\Overhead\\Car\\CarDoor.cs",
+              "RelativeDocumentMoniker": "Overhead\\Car\\CarDoor.cs",
+              "ToolTip": "D:\\Godot\\Dj-Chatty-Chet-and-the-French-Prince-Funky-Fresh-Rap-Battle\\Overhead\\Car\\CarDoor.cs",
+              "RelativeToolTip": "Overhead\\Car\\CarDoor.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-23T19:31:49.069Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "BoneShrinker.cs",
+              "DocumentMoniker": "D:\\Godot\\Dj-Chatty-Chet-and-the-French-Prince-Funky-Fresh-Rap-Battle\\Overhead\\Pedestrians\\Body Parts\\BoneShrinker.cs",
+              "RelativeDocumentMoniker": "Overhead\\Pedestrians\\Body Parts\\BoneShrinker.cs",
+              "ToolTip": "D:\\Godot\\Dj-Chatty-Chet-and-the-French-Prince-Funky-Fresh-Rap-Battle\\Overhead\\Pedestrians\\Body Parts\\BoneShrinker.cs",
+              "RelativeToolTip": "Overhead\\Pedestrians\\Body Parts\\BoneShrinker.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-22T18:38:06.496Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "PartController.cs",
               "DocumentMoniker": "D:\\Godot\\Dj-Chatty-Chet-and-the-French-Prince-Funky-Fresh-Rap-Battle\\Overhead\\Pedestrians\\Body Parts\\PartController.cs",
               "RelativeDocumentMoniker": "Overhead\\Pedestrians\\Body Parts\\PartController.cs",
               "ToolTip": "D:\\Godot\\Dj-Chatty-Chet-and-the-French-Prince-Funky-Fresh-Rap-Battle\\Overhead\\Pedestrians\\Body Parts\\PartController.cs",
               "RelativeToolTip": "Overhead\\Pedestrians\\Body Parts\\PartController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAANAAAAAAAAAA==",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAQwBMAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-10-19T01:08:03.423Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "GroundBloodDecal.cs",
-              "DocumentMoniker": "D:\\Godot\\Dj-Chatty-Chet-and-the-French-Prince-Funky-Fresh-Rap-Battle\\Overhead\\GroundBloodDecal.cs",
-              "RelativeDocumentMoniker": "Overhead\\GroundBloodDecal.cs",
-              "ToolTip": "D:\\Godot\\Dj-Chatty-Chet-and-the-French-Prince-Funky-Fresh-Rap-Battle\\Overhead\\GroundBloodDecal.cs",
-              "RelativeToolTip": "Overhead\\GroundBloodDecal.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAA1wCMAAAAeAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-15T21:36:04.85Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 16,
               "Title": "FadeOverTime.cs",
               "DocumentMoniker": "D:\\Godot\\Dj-Chatty-Chet-and-the-French-Prince-Funky-Fresh-Rap-Battle\\Overhead\\FadeOverTime.cs",
               "RelativeDocumentMoniker": "Overhead\\FadeOverTime.cs",
@@ -116,32 +201,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 5,
               "Title": "RagdollTrigger.cs",
               "DocumentMoniker": "D:\\Godot\\Dj-Chatty-Chet-and-the-French-Prince-Funky-Fresh-Rap-Battle\\Overhead\\Pedestrians\\RagdollTrigger.cs",
               "RelativeDocumentMoniker": "Overhead\\Pedestrians\\RagdollTrigger.cs",
               "ToolTip": "D:\\Godot\\Dj-Chatty-Chet-and-the-French-Prince-Funky-Fresh-Rap-Battle\\Overhead\\Pedestrians\\RagdollTrigger.cs",
               "RelativeToolTip": "Overhead\\Pedestrians\\RagdollTrigger.cs",
-              "ViewState": "AgIAAAIAAAAAAAAAAAAAwBUAAAANAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA4AAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-10-06T01:34:47.275Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 1,
               "Title": "Bullet3dMover.cs",
               "DocumentMoniker": "D:\\Godot\\Dj-Chatty-Chet-and-the-French-Prince-Funky-Fresh-Rap-Battle\\Overhead\\Overhead Player\\Bullets\\Bullet3dMover.cs",
               "RelativeDocumentMoniker": "Overhead\\Overhead Player\\Bullets\\Bullet3dMover.cs",
               "ToolTip": "D:\\Godot\\Dj-Chatty-Chet-and-the-French-Prince-Funky-Fresh-Rap-Battle\\Overhead\\Overhead Player\\Bullets\\Bullet3dMover.cs",
               "RelativeToolTip": "Overhead\\Overhead Player\\Bullets\\Bullet3dMover.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAADUAAABuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-06T00:23:30.108Z"
+              "WhenOpened": "2026-10-06T00:23:30.108Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 7,
               "Title": "NavMarkersArray.cs",
               "DocumentMoniker": "D:\\Godot\\Dj-Chatty-Chet-and-the-French-Prince-Funky-Fresh-Rap-Battle\\Overhead\\NavMarkersArray.cs",
               "RelativeDocumentMoniker": "Overhead\\NavMarkersArray.cs",
@@ -149,11 +235,12 @@
               "RelativeToolTip": "Overhead\\NavMarkersArray.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-04T10:11:46.103Z"
+              "WhenOpened": "2026-09-04T10:11:46.103Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 18,
               "Title": "NavigationMarkers.cs",
               "DocumentMoniker": "D:\\Godot\\Dj-Chatty-Chet-and-the-French-Prince-Funky-Fresh-Rap-Battle\\Overhead\\Navigation\\NavigationMarkers.cs",
               "RelativeDocumentMoniker": "Overhead\\Navigation\\NavigationMarkers.cs",
@@ -165,32 +252,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 2,
               "Title": "OverheadPlayer.cs",
               "DocumentMoniker": "D:\\Godot\\Dj-Chatty-Chet-and-the-French-Prince-Funky-Fresh-Rap-Battle\\Overhead\\Overhead Player\\OverheadPlayer.cs",
               "RelativeDocumentMoniker": "Overhead\\Overhead Player\\OverheadPlayer.cs",
               "ToolTip": "D:\\Godot\\Dj-Chatty-Chet-and-the-French-Prince-Funky-Fresh-Rap-Battle\\Overhead\\Overhead Player\\OverheadPlayer.cs",
               "RelativeToolTip": "Overhead\\Overhead Player\\OverheadPlayer.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAgwCYBAAADAAAAAAAAAA==",
+              "ViewState": "AgIAAIEAAAAAAAAAAAAtwI8AAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-25T23:00:46.35Z"
+              "WhenOpened": "2026-08-25T23:00:46.35Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Pedestrian.cs",
               "DocumentMoniker": "D:\\Godot\\Dj-Chatty-Chet-and-the-French-Prince-Funky-Fresh-Rap-Battle\\Overhead\\Pedestrians\\Pedestrian.cs",
               "RelativeDocumentMoniker": "Overhead\\Pedestrians\\Pedestrian.cs",
               "ToolTip": "D:\\Godot\\Dj-Chatty-Chet-and-the-French-Prince-Funky-Fresh-Rap-Battle\\Overhead\\Pedestrians\\Pedestrian.cs",
               "RelativeToolTip": "Overhead\\Pedestrians\\Pedestrian.cs",
-              "ViewState": "AgIAACABAAAAAAAAAAAAADUBAAAlAAAAAAAAAA==",
+              "ViewState": "AgIAAPAAAAAAAAAAAAAAAIcDAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-08-24T19:52:05.746Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 6,
               "Title": "PedestrianType.cs",
               "DocumentMoniker": "D:\\Godot\\Dj-Chatty-Chet-and-the-French-Prince-Funky-Fresh-Rap-Battle\\Overhead\\Pedestrians\\PedestrianType.cs",
               "RelativeDocumentMoniker": "Overhead\\Pedestrians\\PedestrianType.cs",
@@ -198,11 +286,12 @@
               "RelativeToolTip": "Overhead\\Pedestrians\\PedestrianType.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-24T16:11:18.112Z"
+              "WhenOpened": "2026-08-24T16:11:18.112Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 19,
               "Title": "WeaponItem.cs",
               "DocumentMoniker": "D:\\Godot\\Dj-Chatty-Chet-and-the-French-Prince-Funky-Fresh-Rap-Battle\\Overhead\\Overhead Player\\WeaponItem.cs",
               "RelativeDocumentMoniker": "Overhead\\Overhead Player\\WeaponItem.cs",
@@ -214,32 +303,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 13,
               "Title": "FireHydrant.cs",
               "DocumentMoniker": "D:\\Godot\\Dj-Chatty-Chet-and-the-French-Prince-Funky-Fresh-Rap-Battle\\Overhead\\City Junk\\Hydrant\\FireHydrant.cs",
               "RelativeDocumentMoniker": "Overhead\\City Junk\\Hydrant\\FireHydrant.cs",
               "ToolTip": "D:\\Godot\\Dj-Chatty-Chet-and-the-French-Prince-Funky-Fresh-Rap-Battle\\Overhead\\City Junk\\Hydrant\\FireHydrant.cs",
               "RelativeToolTip": "Overhead\\City Junk\\Hydrant\\FireHydrant.cs",
-              "ViewState": "AgIAAAcAAAAAAAAAAAA1wAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-17T10:51:01.333Z"
+              "WhenOpened": "2026-08-17T10:51:01.333Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "CarMover.cs",
               "DocumentMoniker": "D:\\Godot\\Dj-Chatty-Chet-and-the-French-Prince-Funky-Fresh-Rap-Battle\\Overhead\\Car\\CarMover.cs",
               "RelativeDocumentMoniker": "Overhead\\Car\\CarMover.cs",
               "ToolTip": "D:\\Godot\\Dj-Chatty-Chet-and-the-French-Prince-Funky-Fresh-Rap-Battle\\Overhead\\Car\\CarMover.cs",
               "RelativeToolTip": "Overhead\\Car\\CarMover.cs",
-              "ViewState": "AgIAAHQAAAAAAAAAAAAAAJYAAAAWAAAAAAAAAA==",
+              "ViewState": "AgIAADUAAAAAAAAAAAAAAEUAAABBAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-08-17T10:40:32.402Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 17,
               "Title": "GameManager.cs",
               "DocumentMoniker": "D:\\Godot\\Dj-Chatty-Chet-and-the-French-Prince-Funky-Fresh-Rap-Battle\\GameManager.cs",
               "RelativeDocumentMoniker": "GameManager.cs",
@@ -251,7 +341,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 20,
               "Title": "SaveManager.cs",
               "DocumentMoniker": "D:\\Godot\\Dj-Chatty-Chet-and-the-French-Prince-Funky-Fresh-Rap-Battle\\SaveManager.cs",
               "RelativeDocumentMoniker": "SaveManager.cs",
@@ -263,13 +353,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 14,
               "Title": "TipOverWhenHit.cs",
               "DocumentMoniker": "D:\\Godot\\Dj-Chatty-Chet-and-the-French-Prince-Funky-Fresh-Rap-Battle\\TipOverWhenHit.cs",
               "RelativeDocumentMoniker": "TipOverWhenHit.cs",
               "ToolTip": "D:\\Godot\\Dj-Chatty-Chet-and-the-French-Prince-Funky-Fresh-Rap-Battle\\TipOverWhenHit.cs",
               "RelativeToolTip": "TipOverWhenHit.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAqwBMAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAywBMAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-07-29T17:40:00.796Z",
               "EditorCaption": ""
